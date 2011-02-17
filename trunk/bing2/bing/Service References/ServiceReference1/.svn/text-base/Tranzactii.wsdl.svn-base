@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Tranzactii" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+      <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITranzactii_StatisticaAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatisticaAnimal" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_StatisticaAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatisticaAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_PreiaDeces_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreiaDeces" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_PreiaDeces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreiaDecesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_GetToateAnimalele_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToateAnimalele" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_GetToateAnimalele_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToateAnimaleleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_GetToateFirmele_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToateFirmele" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_GetToateFirmele_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToateFirmeleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_gettranz_InputMessage">
+    <wsdl:part name="parameters" element="tns:gettranz" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_gettranz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gettranzResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_GetTranzactieCumparare_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTranzactieCumparare" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_GetTranzactieCumparare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTranzactieCumparareResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_AddTranzactie_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTranzactie" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_AddTranzactie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTranzactieResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_AddCumparare_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCumparare" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_AddCumparare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCumparareResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_Cauta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cauta" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_Cauta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CautaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITranzactii">
+    <wsdl:operation name="StatisticaAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/StatisticaAnimal" message="tns:ITranzactii_StatisticaAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/StatisticaAnimalResponse" message="tns:ITranzactii_StatisticaAnimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreiaDeces">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/PreiaDeces" message="tns:ITranzactii_PreiaDeces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/PreiaDecesResponse" message="tns:ITranzactii_PreiaDeces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/DoWork" message="tns:ITranzactii_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/DoWorkResponse" message="tns:ITranzactii_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToateAnimalele">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/GetToateAnimalele" message="tns:ITranzactii_GetToateAnimalele_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/GetToateAnimaleleResponse" message="tns:ITranzactii_GetToateAnimalele_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToateFirmele">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/GetToateFirmele" message="tns:ITranzactii_GetToateFirmele_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/GetToateFirmeleResponse" message="tns:ITranzactii_GetToateFirmele_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gettranz">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/gettranz" message="tns:ITranzactii_gettranz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/gettranzResponse" message="tns:ITranzactii_gettranz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranzactieCumparare">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/GetTranzactieCumparare" message="tns:ITranzactii_GetTranzactieCumparare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/GetTranzactieCumparareResponse" message="tns:ITranzactii_GetTranzactieCumparare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTranzactie">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/AddTranzactie" message="tns:ITranzactii_AddTranzactie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/AddTranzactieResponse" message="tns:ITranzactii_AddTranzactie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCumparare">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/AddCumparare" message="tns:ITranzactii_AddCumparare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/AddCumparareResponse" message="tns:ITranzactii_AddCumparare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cauta">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/Cauta" message="tns:ITranzactii_Cauta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/CautaResponse" message="tns:ITranzactii_Cauta_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITranzactii" type="tns:ITranzactii">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StatisticaAnimal">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/StatisticaAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreiaDeces">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/PreiaDeces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToateAnimalele">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/GetToateAnimalele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToateFirmele">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/GetToateFirmele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gettranz">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/gettranz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranzactieCumparare">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/GetTranzactieCumparare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTranzactie">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/AddTranzactie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCumparare">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/AddCumparare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cauta">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/Cauta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Tranzactii">
+    <wsdl:port name="BasicHttpBinding_ITranzactii" binding="tns:BasicHttpBinding_ITranzactii">
+      <soap:address location="http://localhost:11201/Tranzactii.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

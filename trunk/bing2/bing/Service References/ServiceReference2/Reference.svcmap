@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="225a870b-911b-47b4-940c-474e90f23cb4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11201/Campaigns.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Campaigns2.xsd" MetadataType="Schema" ID="6adfe6ea-55bd-4d5a-9228-3622258e2412" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?xsd=xsd1" />
+    <MetadataFile FileName="Campaigns.xsd" MetadataType="Schema" ID="05acd068-b034-406d-985a-25b102fee30c" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?xsd=xsd2" />
+    <MetadataFile FileName="Campaigns3.xsd" MetadataType="Schema" ID="30e9c976-66c0-4253-932d-0310cb1b7ce6" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?xsd=xsd3" />
+    <MetadataFile FileName="Campaigns1.xsd" MetadataType="Schema" ID="607af8dd-15bd-473f-9e49-4e1cda17bf96" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?xsd=xsd0" />
+    <MetadataFile FileName="Campaigns.disco" MetadataType="Disco" ID="6ce08f36-c09b-45d4-8382-b0832c848d26" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?disco" />
+    <MetadataFile FileName="Campaigns31.xsd" MetadataType="Schema" ID="f872b94e-04ce-45d6-b5e1-afb5337f4410" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?xsd=xsd4" />
+    <MetadataFile FileName="Campaigns.wsdl" MetadataType="Wsdl" ID="05dd925a-9487-47a3-ba08-b366cb12ba4d" SourceId="1" SourceUrl="http://localhost:11201/Campaigns.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

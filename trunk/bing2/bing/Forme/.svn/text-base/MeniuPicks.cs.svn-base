@@ -1,0 +1,201 @@
+﻿using System;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using System.Windows.Media.Imaging;
+using bing.testService;
+using System.Collections.Generic;
+using System.ServiceModel;
+
+namespace Forme
+{
+    /// <summary>
+    /// Meniul unde alegi animale plante,vine peste harta
+    /// </summary>
+    public class MeniuPicks:Canvas
+    {
+       private Image[] img = new Image[6];
+       private static int imagecount = 0;
+        private static short  imgcount=0;
+       Polygon polygonInainte;
+       Polygon polygonInapoi;
+       private readonly string[] poze = new string[] { "Game/bear.jpg", "Game/deer.jpg", "Game/boar.jpg", "Game/arici.jpg", "Game/vulpe.jpg", "Game/wolf.jpg", "Game/ras.jpg", "Game/jder.jpg", "Game/veverita.jpg" };
+        Canvas myMeniuPicksCanvas;
+        Canvas MeniuDreapta;
+        /// <summary>
+        /// Panelul e rascucit asa ca 0,0 este in dreapta sus
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="color">e transparent oricum:P</param>
+        /// <param name="opacity"></param>
+        /// <param name="left"></param>
+        /// <param name="top"></param>
+        public MeniuPicks(Canvas canvas,int width,int height,string color,double opacity,double left,double top,Canvas Md)
+        {
+            MeniuDreapta = Md;
+            ////HOLBANU
+            //BasicHttpBinding bind = new BasicHttpBinding();
+            //EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Service1.svc");
+            //bing.testService.Service1Client wcf = new bing.testService.Service1Client(bind, endpoint);
+            //wcf.GetAnimalByIDCompleted += new EventHandler<bing.testService.GetAnimalByIDCompletedEventArgs>(wcf_GetAnimalByIDCompleted);
+            //wcf.GetTop3IstoricAnimaleForUserXCompleted += new EventHandler<GetTop3IstoricAnimaleForUserXCompletedEventArgs>(wcf_GetTop3IstoricAnimaleForUserXCompleted);
+            //try
+            //{
+            //    wcf.GetAnimalByIDAsync(15);
+            //    wcf.GetTop3IstoricAnimaleForUserXAsync(2, 15);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            myMeniuPicksCanvas = new Canvas();
+            myMeniuPicksCanvas.Width = width;
+            myMeniuPicksCanvas.Height = height;
+            myMeniuPicksCanvas.Background = new SolidColorBrush(Colors.Transparent);
+            PlaneProjection ff = new PlaneProjection();
+            ff.RotationY = 180;
+            myMeniuPicksCanvas.Projection =ff;
+            myMeniuPicksCanvas.Opacity = opacity;
+            canvas.Children.Add(myMeniuPicksCanvas);
+            Canvas.SetLeft(myMeniuPicksCanvas, left);
+            Canvas.SetTop(myMeniuPicksCanvas, top);
+            #region Poza
+            img[0] = new Image();
+            img[0].MouseLeftButtonDown += new MouseButtonEventHandler(MeniuPicks_MouseLeftButtonDown);
+            ADDPozaCuBorder p = new ADDPozaCuBorder(myMeniuPicksCanvas, img[0], 70, 70, poze[0],520,15);
+            p.Border(new CornerRadius(2, 2, 2, 2),ConvertToColor("#FFFFFFFF"), new Thickness(2), 71, 71);
+            for (int i = 1; i < 6; i++)
+            {
+                
+                img[i] = new Image();
+                p = new ADDPozaCuBorder(myMeniuPicksCanvas, img[i], 70, 70, poze[i], 520-90*i, 15);
+                p.Border(new CornerRadius(2, 2, 2, 2), ConvertToColor("#FFFFFFFF"), new Thickness(2), 71, 71);
+            }
+            imagecount = 5;
+        #endregion
+            #region butoninainte
+           polygonInainte = new Polygon();
+           polygonInainte.Opacity = 0.9;
+           polygonInainte.Points = new PointCollection() { new Point(30, 50), new Point(40, 40), new Point(37, 50), new Point(40, 60), };
+           polygonInainte.Fill = new SolidColorBrush(Colors.Yellow);
+           polygonInainte.StrokeThickness = 2;
+           polygonInainte.MouseLeftButtonDown += new MouseButtonEventHandler(polygon_MouseLeftButtonDown);
+           polygonInainte.Stroke = new SolidColorBrush(Colors.Gray);
+           myMeniuPicksCanvas.Children.Add(polygonInainte);
+            #endregion
+           #region butoninapoi
+           polygonInapoi = new Polygon();
+           polygonInapoi.Opacity = 0.5;
+           polygonInapoi.Points = new PointCollection() { new Point(640, 50), new Point(630, 40), new Point(633, 50), new Point(630, 60), };
+           polygonInapoi.Fill = new SolidColorBrush(Colors.Red);
+           polygonInapoi.StrokeThickness = 2;
+           polygonInapoi.MouseLeftButtonDown += new MouseButtonEventHandler(polygonInapoi_MouseLeftButtonDown);
+           polygonInapoi.Stroke = new SolidColorBrush(Colors.Gray);
+           myMeniuPicksCanvas.Children.Add(polygonInapoi);
+            #endregion
+        }
+        List<IstoricAnimalPadureForUserX> templ;
+        //HOLBAN
+        //Animale temp;
+        //void wcf_GetTop3IstoricAnimaleForUserXCompleted(object sender, GetTop3IstoricAnimaleForUserXCompletedEventArgs e)
+        //{
+        //    templ = new List<IstoricAnimalPadureForUserX>(3);
+        //    foreach (var v in e.Result)
+        //    {
+        //        templ.Add(v);
+        //    }
+        //    MeniuAnimal add;
+
+        //    if (temp != null)
+        //        add = new MeniuAnimal(MeniuDreapta, "Moldova", "Moldova2", "Padure", temp, templ);
+        //}
+        //void wcf_GetAnimalByIDCompleted(object sender, bing.testService.GetAnimalByIDCompletedEventArgs e)
+        //{
+        //    temp = (Animale)e.Result;
+        //    MeniuAnimal add;
+        //    if (templ != null)
+        //        add = new MeniuAnimal(MeniuDreapta, "Moldova", "Moldova2", "Padure", temp, templ);
+        //}
+        void MeniuPicks_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        public MeniuAnimal MeniuAnimal
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+     
+
+        void polygon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            if (imagecount < poze.Length-1)
+            {
+                int i = 0;
+                imgcount = 0;
+                for (i = imagecount - 4; i <= imagecount + 1; i++,imgcount++)
+                {
+                    img[imgcount].Source = new BitmapImage(new Uri(poze[i], UriKind.Relative));
+                }
+                imagecount++;
+                if(imagecount>=poze.Length-1)
+                {
+                polygonInainte.Stroke = new SolidColorBrush(Colors.Gray);
+                polygonInainte.Fill = new SolidColorBrush(Colors.Red);
+                polygonInainte.Opacity = 0.5;
+                }
+                polygonInapoi.Stroke = new SolidColorBrush(Colors.Gray);
+                polygonInapoi.Fill = new SolidColorBrush(Colors.Yellow);
+                polygonInapoi.Opacity = 0.9;
+            }
+           
+        }
+        void polygonInapoi_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (imagecount-5>0)
+            {
+                imgcount = 0;
+                for (int i = imagecount - 6; i < imagecount; i++,imgcount++)
+                {
+                    img[imgcount].Source = new BitmapImage(new Uri(poze[i], UriKind.Relative));
+                }
+                imagecount--;
+                if(imagecount-5==0)
+                {
+               polygonInapoi.Stroke = new SolidColorBrush(Colors.Gray);
+                polygonInapoi.Fill = new SolidColorBrush(Colors.Red);
+                polygonInapoi.Opacity = 0.5;
+                }
+                polygonInainte.Stroke = new SolidColorBrush(Colors.Gray);
+                polygonInainte.Fill = new SolidColorBrush(Colors.Yellow);
+                polygonInainte.Opacity = 0.9;
+            }
+        }
+        private Color ConvertToColor(string colorString)
+        {
+            byte a = 255;
+
+            byte r = (byte)(Convert.ToUInt32(colorString.Substring(3, 2), 16));
+            byte g = (byte)(Convert.ToUInt32(colorString.Substring(5, 2), 16));
+            byte b = (byte)(Convert.ToUInt32(colorString.Substring(7, 2), 16));
+            return Color.FromArgb(a, r, g, b);
+        }
+    }
+}

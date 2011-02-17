@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="bing.AddCommentControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="134" d:DesignWidth="750">
+    
+    <Grid x:Name="LayoutRoot" Background="Black" Width="740">
+        <Image Height="72" HorizontalAlignment="Left" Margin="12,15,0,0" Name="userImage" Stretch="Fill" VerticalAlignment="Top" Width="77" />
+        <TextBox Height="75" HorizontalAlignment="Left" Margin="106,12,0,0" Name="commentTextBox" VerticalAlignment="Top" Width="514" Background="#FF191919" BorderBrush="Black" Foreground="White"></TextBox>
+        <Canvas Height="36" HorizontalAlignment="Left" Margin="511,98,0,0" Name="butonCanvas" VerticalAlignment="Top" Width="109" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="237,111,0,0" Name="idCampanieTextBlock" Text="TextBlock" VerticalAlignment="Top" Width="74" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,111,0,0" Name="succesTextBlock" Text="Comment added successfully!" VerticalAlignment="Top" Width="220" Foreground="#FFD81C1C" Visibility="Collapsed" />
+    </Grid>
+</UserControl>

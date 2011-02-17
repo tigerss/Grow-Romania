@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="bing.stat"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="500" d:DesignWidth="760" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <UserControl.Resources>
+        <Storyboard x:Name="tata">
+            <DoubleAnimation Storyboard.TargetName=""></DoubleAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+    <Canvas x:Name="LayoutRoot" Background="Black">
+        <ScrollViewer Height="415" HorizontalAlignment="Left" Margin="14,12,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="737" Canvas.Left="0" Canvas.Top="67">
+            <sdk:DataGrid AutoGenerateColumns="False" Height="532" AlternatingRowBackground="Black" RowBackground="Black" Name="dataGrid1" HeadersVisibility="None" Background="Black"  Width="718" >
+                <sdk:DataGrid.Columns >
+                    <sdk:DataGridTemplateColumn  Width="763">
+                        <sdk:DataGridTemplateColumn.CellTemplate >
+                            
+                            <DataTemplate >
+                                <Grid Height="38">
+                                    <TextBlock  Foreground="White"  FontStyle="Normal" Text="{Binding Text}" FontSize="16" Margin="2,12,-2,-12"></TextBlock>
+                                    <Line X1="0" X2="763" Y1="48" Y2="48" Stretch="Fill" Width="763" Stroke="White" StrokeThickness="1" Margin="0,36,0,0"></Line>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+        </ScrollViewer>
+    </Canvas>
+</UserControl>

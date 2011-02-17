@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="bing.HistoryAnimal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+      xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"      
+    d:DesignHeight="415" d:DesignWidth="718">
+   <Grid x:Name="LayoutRoot" Background="White" Height="388" Width="718">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="385*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <sdk:DataGrid AutoGenerateColumns="False" Height="532" AlternatingRowBackground="Black" RowBackground="Black" x:Name="dataGrid1" HeadersVisibility="None" Background="Black"  Width="718" Margin="-38,-14,-38,-130" Grid.RowSpan="2">
+            <sdk:DataGrid.Columns >
+                <sdk:DataGridTemplateColumn  Width="763">
+                    <sdk:DataGridTemplateColumn.CellTemplate >
+                       <DataTemplate >
+                            <Grid Height="38">
+                                <TextBlock  Foreground="White"  FontStyle="Normal" Text="{Binding Text}" FontSize="16" Margin="2,12,-2,-12"></TextBlock>
+                                <Line X1="0" X2="763" Y1="48" Y2="48" Stretch="Fill" Width="763" Stroke="White" StrokeThickness="1" Margin="0,36,0,0"></Line>
+                            </Grid>
+                        </DataTemplate>
+                        
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+            </sdk:DataGrid.Columns>
+            
+        </sdk:DataGrid>
+       </Grid>
+</UserControl>

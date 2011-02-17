@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/bing.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/bing.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOfReal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Real" nillable="true" type="tns:Real" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReal" nillable="true" type="tns:ArrayOfReal" />
+  <xs:complexType name="Real">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaniStransi" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BaniTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ComentariiReals" nillable="true" type="tns:ArrayOfComentariiReal" />
+          <xs:element minOccurs="0" name="DataFinalizarii" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataInceperii" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Donatiis" nillable="true" type="tns:ArrayOfDonatii" />
+          <xs:element minOccurs="0" name="FK_Ocol_Silvic" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Imag1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag10" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag5" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag6" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag7" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag8" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imag9" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSolved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NivelProblema" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="NrFirmeDonatoare" type="xs:short" />
+          <xs:element minOccurs="0" name="NrUsriDonatori" type="xs:short" />
+          <xs:element minOccurs="0" name="NumeCampanie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeZona" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ocol_Silvic" nillable="true" type="tns:Ocol_Silvic" />
+          <xs:element minOccurs="0" name="Ocol_SilvicReference" nillable="true" type="q1:EntityReferenceOfOcol_SilvicKvZjy4f9" />
+          <xs:element minOccurs="0" name="PctLocatie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Probleme" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Video1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Video2" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Real" nillable="true" type="tns:Real" />
+  <xs:complexType name="ArrayOfComentariiReal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComentariiReal" nillable="true" type="tns:ComentariiReal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComentariiReal" nillable="true" type="tns:ArrayOfComentariiReal" />
+  <xs:complexType name="ComentariiReal">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FK_Real" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_User" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Real" nillable="true" type="tns:Real" />
+          <xs:element minOccurs="0" name="RealReference" nillable="true" type="q2:EntityReferenceOfRealKvZjy4f9" />
+          <xs:element minOccurs="0" name="TextCampanie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q2:EntityReferenceOfUsrKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComentariiReal" nillable="true" type="tns:ComentariiReal" />
+  <xs:complexType name="Usr">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaniDonati" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ComentariiDonatiis" nillable="true" type="tns:ArrayOfComentariiDonatii" />
+          <xs:element minOccurs="0" name="ComentariiReals" nillable="true" type="tns:ArrayOfComentariiReal" />
+          <xs:element minOccurs="0" name="Data_Inreg" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Data_LastLogIn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateForDelete" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Donatiis" nillable="true" type="tns:ArrayOfDonatii" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsForDelete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Tranzact1" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Tranzact1" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
+          <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NrDonatii" type="xs:short" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Poza" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prenume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Regiunes" nillable="true" type="tns:ArrayOfRegiune" />
+          <xs:element minOccurs="0" name="Scor" type="xs:double" />
+          <xs:element minOccurs="0" name="TabelaTranzactiis" nillable="true" type="tns:ArrayOfTabelaTranzactii" />
+          <xs:element minOccurs="0" name="Usr1" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Usr" nillable="true" type="tns:Usr" />
+  <xs:complexType name="ArrayOfComentariiDonatii">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComentariiDonatii" nillable="true" type="tns:ComentariiDonatii" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComentariiDonatii" nillable="true" type="tns:ArrayOfComentariiDonatii" />
+  <xs:complexType name="ComentariiDonatii">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Donatii" nillable="true" type="tns:Donatii" />
+          <xs:element minOccurs="0" name="DonatiiReference" nillable="true" type="q4:EntityReferenceOfDonatiiKvZjy4f9" />
+          <xs:element minOccurs="0" name="FK_Donatie" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Usr" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="TextComentariu" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q4:EntityReferenceOfUsrKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComentariiDonatii" nillable="true" type="tns:ComentariiDonatii" />
+  <xs:complexType name="Donatii">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComentariiDonatiis" nillable="true" type="tns:ArrayOfComentariiDonatii" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FK_Firma" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Ocol_Silvic" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Real" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_User" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Firme" nillable="true" type="tns:Firme" />
+          <xs:element minOccurs="0" name="FirmeReference" nillable="true" type="q5:EntityReferenceOfFirmeKvZjy4f9" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsReal" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ocol_Silvic" nillable="true" type="tns:Ocol_Silvic" />
+          <xs:element minOccurs="0" name="Ocol_SilvicReference" nillable="true" type="q5:EntityReferenceOfOcol_SilvicKvZjy4f9" />
+          <xs:element minOccurs="0" name="Real" nillable="true" type="tns:Real" />
+          <xs:element minOccurs="0" name="RealReference" nillable="true" type="q5:EntityReferenceOfRealKvZjy4f9" />
+          <xs:element minOccurs="0" name="SumaBani" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q5:EntityReferenceOfUsrKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Donatii" nillable="true" type="tns:Donatii" />
+  <xs:complexType name="Firme">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BaniDonati" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DateForDelete" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Donatiis" nillable="true" type="tns:ArrayOfDonatii" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsForDelete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsForTransport" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NrDonatii" type="xs:short" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Scor" type="xs:double" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Firme" nillable="true" type="tns:Firme" />
+  <xs:complexType name="ArrayOfDonatii">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Donatii" nillable="true" type="tns:Donatii" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDonatii" nillable="true" type="tns:ArrayOfDonatii" />
+  <xs:complexType name="ArrayOfIstoric_Animal_Tranzact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Istoric_Animal_Tranzact" nillable="true" type="tns:Istoric_Animal_Tranzact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIstoric_Animal_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
+  <xs:complexType name="Istoric_Animal_Tranzact">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Animale" nillable="true" type="tns:Animale" />
+          <xs:element minOccurs="0" name="AnimaleReference" nillable="true" type="q7:EntityReferenceOfAnimaleKvZjy4f9" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FK_Animale" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Firma" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_ID_Cumparator" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_ID_Vanzator" type="xs:int" />
+          <xs:element minOccurs="0" name="Firme" nillable="true" type="tns:Firme" />
+          <xs:element minOccurs="0" name="FirmeReference" nillable="true" type="q7:EntityReferenceOfFirmeKvZjy4f9" />
+          <xs:element minOccurs="0" name="ID" type="xs:long" />
+          <xs:element minOccurs="0" name="MijlocTransport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numar" type="xs:short" />
+          <xs:element minOccurs="0" name="Pret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="Usr1" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="Usr1Reference" nillable="true" type="q7:EntityReferenceOfUsrKvZjy4f9" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q7:EntityReferenceOfUsrKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Istoric_Animal_Tranzact" nillable="true" type="tns:Istoric_Animal_Tranzact" />
+  <xs:complexType name="Animale">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataInmultInceput" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataInmultSfarsit" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataVanatInceput" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataVanatSfarsit" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Imagine1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imagine2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imagine3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Deces" nillable="true" type="tns:ArrayOfIstoric_Animal_Deces" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Deces1" nillable="true" type="tns:ArrayOfIstoric_Animal_Deces" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pui_An" type="xs:int" />
+          <xs:element minOccurs="0" name="Statistici_Animale" nillable="true" type="tns:ArrayOfStatistici_Animale" />
+          <xs:element minOccurs="0" name="TabelaTranzactiis" nillable="true" type="tns:ArrayOfTabelaTranzactii" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Animale" nillable="true" type="tns:Animale" />
+  <xs:complexType name="ArrayOfIstoric_Animal_Deces">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Istoric_Animal_Deces" nillable="true" type="tns:Istoric_Animal_Deces" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIstoric_Animal_Deces" nillable="true" type="tns:ArrayOfIstoric_Animal_Deces" />
+  <xs:complexType name="Istoric_Animal_Deces">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Animale" nillable="true" type="tns:Animale" />
+          <xs:element minOccurs="0" name="Animale1" nillable="true" type="tns:Animale" />
+          <xs:element minOccurs="0" name="Animale1Reference" nillable="true" type="q9:EntityReferenceOfAnimaleKvZjy4f9" />
+          <xs:element minOccurs="0" name="AnimaleReference" nillable="true" type="q9:EntityReferenceOfAnimaleKvZjy4f9" />
+          <xs:element minOccurs="0" name="Braconaj" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Camp" nillable="true" type="tns:Camp" />
+          <xs:element minOccurs="0" name="CampReference" nillable="true" type="q9:EntityReferenceOfCampKvZjy4f9" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Diverse" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FK_Animale" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Mancat_De" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
+          <xs:element minOccurs="0" name="Foc" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ID" type="xs:long" />
+          <xs:element minOccurs="0" name="Importanta" type="xs:double" />
+          <xs:element minOccurs="0" name="Inundatie" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsFromPadure" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Mancat" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Numar" type="xs:short" />
+          <xs:element minOccurs="0" name="Padure" nillable="true" type="tns:Padure" />
+          <xs:element minOccurs="0" name="PadureReference" nillable="true" type="q9:EntityReferenceOfPadureKvZjy4f9" />
+          <xs:element minOccurs="0" name="Vanat" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Istoric_Animal_Deces" nillable="true" type="tns:Istoric_Animal_Deces" />
+  <xs:complexType name="Camp">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FK_SubRegiune" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Deces" nillable="true" type="tns:ArrayOfIstoric_Animal_Deces" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Deces" nillable="true" type="tns:ArrayOfIstoric_Plante_Deces" />
+          <xs:element minOccurs="0" name="NivelPoluareAer" type="xs:double" />
+          <xs:element minOccurs="0" name="NivelPoluareApa" type="xs:double" />
+          <xs:element minOccurs="0" name="NivelPoluareSol" type="xs:double" />
+          <xs:element minOccurs="0" name="Statistici_Animale" nillable="true" type="tns:ArrayOfStatistici_Animale" />
+          <xs:element minOccurs="0" name="Statistici_Plante" nillable="true" type="tns:ArrayOfStatistici_Plante" />
+          <xs:element minOccurs="0" name="SubRegiune" nillable="true" type="tns:SubRegiune" />
+          <xs:element minOccurs="0" name="SubRegiuneReference" nillable="true" type="q10:EntityReferenceOfSubRegiuneKvZjy4f9" />
+          <xs:element minOccurs="0" name="Suprafata" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Camp" nillable="true" type="tns:Camp" />
+  <xs:complexType name="ArrayOfIstoric_Plante_Deces">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Istoric_Plante_Deces" nillable="true" type="tns:Istoric_Plante_Deces" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIstoric_Plante_Deces" nillable="true" type="tns:ArrayOfIstoric_Plante_Deces" />
+  <xs:complexType name="Istoric_Plante_Deces">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q11:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Camp" nillable="true" type="tns:Camp" />
+          <xs:element minOccurs="0" name="CampReference" nillable="true" type="q11:EntityReferenceOfCampKvZjy4f9" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Plante" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Foc" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ID" type="xs:long" />
+          <xs:element minOccurs="0" name="IsFromPadure" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Numar" type="xs:short" />
+          <xs:element minOccurs="0" name="Padure" nillable="true" type="tns:Padure" />
+          <xs:element minOccurs="0" name="PadureReference" nillable="true" type="q11:EntityReferenceOfPadureKvZjy4f9" />
+          <xs:element minOccurs="0" name="Plante" nillable="true" type="tns:Plante" />
+          <xs:element minOccurs="0" name="PlanteReference" nillable="true" type="q11:EntityReferenceOfPlanteKvZjy4f9" />
+          <xs:element minOccurs="0" name="Taiate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Trasnite" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Istoric_Plante_Deces" nillable="true" type="tns:Istoric_Plante_Deces" />
+  <xs:complexType name="Padure">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q12:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Braconat_zi" type="xs:short" />
+          <xs:element minOccurs="0" name="Exploatare_zi" type="xs:short" />
+          <xs:element minOccurs="0" name="FK_SubRegiune" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Istoric_Animal_Deces" nillable="true" type="tns:ArrayOfIstoric_Animal_Deces" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Deces" nillable="true" type="tns:ArrayOfIstoric_Plante_Deces" />
+          <xs:element minOccurs="0" name="NivelPoluareAer" type="xs:double" />
+          <xs:element minOccurs="0" name="NivelPoluareApa" type="xs:double" />
+          <xs:element minOccurs="0" name="NivelPoluareSol" type="xs:double" />
+          <xs:element minOccurs="0" name="Statistici_Animale" nillable="true" type="tns:ArrayOfStatistici_Animale" />
+          <xs:element minOccurs="0" name="Statistici_Plante" nillable="true" type="tns:ArrayOfStatistici_Plante" />
+          <xs:element minOccurs="0" name="SubRegiune" nillable="true" type="tns:SubRegiune" />
+          <xs:element minOccurs="0" name="SubRegiuneReference" nillable="true" type="q12:EntityReferenceOfSubRegiuneKvZjy4f9" />
+          <xs:element minOccurs="0" name="Suprafata" type="xs:double" />
+          <xs:element minOccurs="0" name="Turisti_zi" type="xs:short" />
+          <xs:element minOccurs="0" name="Vanat_zi" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Padure" nillable="true" type="tns:Padure" />
+  <xs:complexType name="ArrayOfStatistici_Animale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Statistici_Animale" nillable="true" type="tns:Statistici_Animale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatistici_Animale" nillable="true" type="tns:ArrayOfStatistici_Animale" />
+  <xs:complexType name="Statistici_Animale">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q13:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Animale" nillable="true" type="tns:Animale" />
+          <xs:element minOccurs="0" name="AnimaleReference" nillable="true" type="q13:EntityReferenceOfAnimaleKvZjy4f9" />
+          <xs:element minOccurs="0" name="Camp" nillable="true" type="tns:Camp" />
+          <xs:element minOccurs="0" name="CampReference" nillable="true" type="q13:EntityReferenceOfCampKvZjy4f9" />
+          <xs:element minOccurs="0" name="FK_Animale" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsFromPadure" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Morti" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Apa" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Brac" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Foc" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Mancati" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Vanatoare" type="xs:int" />
+          <xs:element minOccurs="0" name="Padure" nillable="true" type="tns:Padure" />
+          <xs:element minOccurs="0" name="PadureReference" nillable="true" type="q13:EntityReferenceOfPadureKvZjy4f9" />
+          <xs:element minOccurs="0" name="Vii" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Cumparati" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Nascuti" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Vanduti" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Statistici_Animale" nillable="true" type="tns:Statistici_Animale" />
+  <xs:complexType name="ArrayOfStatistici_Plante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Statistici_Plante" nillable="true" type="tns:Statistici_Plante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatistici_Plante" nillable="true" type="tns:ArrayOfStatistici_Plante" />
+  <xs:complexType name="Statistici_Plante">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q14:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Camp" nillable="true" type="tns:Camp" />
+          <xs:element minOccurs="0" name="CampReference" nillable="true" type="q14:EntityReferenceOfCampKvZjy4f9" />
+          <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Plante" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsFromPadure" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Morti" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Foc" type="xs:int" />
+          <xs:element minOccurs="0" name="Morti_Taiati" type="xs:int" />
+          <xs:element minOccurs="0" name="Padure" nillable="true" type="tns:Padure" />
+          <xs:element minOccurs="0" name="PadureReference" nillable="true" type="q14:EntityReferenceOfPadureKvZjy4f9" />
+          <xs:element minOccurs="0" name="Plante" nillable="true" type="tns:Plante" />
+          <xs:element minOccurs="0" name="PlanteReference" nillable="true" type="q14:EntityReferenceOfPlanteKvZjy4f9" />
+          <xs:element minOccurs="0" name="Vii" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Cumparati" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Nascuti" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Vanduti" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Statistici_Plante" nillable="true" type="tns:Statistici_Plante" />
+  <xs:complexType name="Plante">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q15:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Imagine1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imagine2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Imagine3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Deces" nillable="true" type="tns:ArrayOfIstoric_Plante_Deces" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Statistici_Plante" nillable="true" type="tns:ArrayOfStatistici_Plante" />
+          <xs:element minOccurs="0" name="alte_campuri_de_bagat" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Plante" nillable="true" type="tns:Plante" />
+  <xs:complexType name="ArrayOfIstoric_Plante_Tranzact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Istoric_Plante_Tranzact" nillable="true" type="tns:Istoric_Plante_Tranzact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIstoric_Plante_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
+  <xs:complexType name="Istoric_Plante_Tranzact">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q16:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FK_Firma" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_ID_Cumparator" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_ID_Vanzator" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Plante" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Firme" nillable="true" type="tns:Firme" />
+          <xs:element minOccurs="0" name="FirmeReference" nillable="true" type="q16:EntityReferenceOfFirmeKvZjy4f9" />
+          <xs:element minOccurs="0" name="ID" type="xs:long" />
+          <xs:element minOccurs="0" name="MijlocTransport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numar" type="xs:short" />
+          <xs:element minOccurs="0" name="Plante" nillable="true" type="tns:Plante" />
+          <xs:element minOccurs="0" name="PlanteReference" nillable="true" type="q16:EntityReferenceOfPlanteKvZjy4f9" />
+          <xs:element minOccurs="0" name="Pret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="Usr1" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="Usr1Reference" nillable="true" type="q16:EntityReferenceOfUsrKvZjy4f9" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q16:EntityReferenceOfUsrKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Istoric_Plante_Tranzact" nillable="true" type="tns:Istoric_Plante_Tranzact" />
+  <xs:complexType name="SubRegiune">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q17:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Camps" nillable="true" type="tns:ArrayOfCamp" />
+          <xs:element minOccurs="0" name="FK_Real_SubRegiune" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Regiune" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Padures" nillable="true" type="tns:ArrayOfPadure" />
+          <xs:element minOccurs="0" name="Populaties" nillable="true" type="tns:ArrayOfPopulatie" />
+          <xs:element minOccurs="0" name="Real_SubRegiune" nillable="true" type="tns:Real_SubRegiune" />
+          <xs:element minOccurs="0" name="Real_SubRegiuneReference" nillable="true" type="q17:EntityReferenceOfReal_SubRegiuneKvZjy4f9" />
+          <xs:element minOccurs="0" name="Regiune" nillable="true" type="tns:Regiune" />
+          <xs:element minOccurs="0" name="RegiuneReference" nillable="true" type="q17:EntityReferenceOfRegiuneKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubRegiune" nillable="true" type="tns:SubRegiune" />
+  <xs:complexType name="ArrayOfCamp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Camp" nillable="true" type="tns:Camp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCamp" nillable="true" type="tns:ArrayOfCamp" />
+  <xs:complexType name="ArrayOfPadure">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Padure" nillable="true" type="tns:Padure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPadure" nillable="true" type="tns:ArrayOfPadure" />
+  <xs:complexType name="ArrayOfPopulatie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Populatie" nillable="true" type="tns:Populatie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopulatie" nillable="true" type="tns:ArrayOfPopulatie" />
+  <xs:complexType name="Populatie">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q18:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bani_Zi" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FK_SubRegiune" type="xs:int" />
+          <xs:element minOccurs="0" name="Fermieri" type="xs:short" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="NivelPoluareAer" type="xs:double" />
+          <xs:element minOccurs="0" name="NivelPoluareApa" type="xs:double" />
+          <xs:element minOccurs="0" name="NivelPoluareSol" type="xs:double" />
+          <xs:element minOccurs="0" name="Oameni_Morti" type="xs:int" />
+          <xs:element minOccurs="0" name="Oameni_Vii" type="xs:int" />
+          <xs:element minOccurs="0" name="Padurari" type="xs:short" />
+          <xs:element minOccurs="0" name="SubRegiune" nillable="true" type="tns:SubRegiune" />
+          <xs:element minOccurs="0" name="SubRegiuneReference" nillable="true" type="q18:EntityReferenceOfSubRegiuneKvZjy4f9" />
+          <xs:element minOccurs="0" name="Suprafata" type="xs:double" />
+          <xs:element minOccurs="0" name="Turisti_Zi" type="xs:short" />
+          <xs:element minOccurs="0" name="Vanatori" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Populatie" nillable="true" type="tns:Populatie" />
+  <xs:complexType name="Real_SubRegiune">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q19:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Clima" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="NrJudete" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Precipitatii" type="xs:double" />
+          <xs:element minOccurs="0" name="Real_Judet" nillable="true" type="tns:ArrayOfReal_Judet" />
+          <xs:element minOccurs="0" name="SubRegiunes" nillable="true" type="tns:ArrayOfSubRegiune" />
+          <xs:element minOccurs="0" name="Temperatura" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Real_SubRegiune" nillable="true" type="tns:Real_SubRegiune" />
+  <xs:complexType name="ArrayOfReal_Judet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Real_Judet" nillable="true" type="tns:Real_Judet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReal_Judet" nillable="true" type="tns:ArrayOfReal_Judet" />
+  <xs:complexType name="Real_Judet">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q20:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalitateAer" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="FK_Real_SubRegiune" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="ID" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="IndustriaExtractiva" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IndustriaPrelucrativa" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NrHidrocentrale" type="xs:int" />
+          <xs:element minOccurs="0" name="NrOrase" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="NrTermocentrale" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ocol_Silvic" nillable="true" type="tns:ArrayOfOcol_Silvic" />
+          <xs:element minOccurs="0" name="ParcuriNationale" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="PoluareSol" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="ProcentPadure" type="xs:double" />
+          <xs:element minOccurs="0" name="Real_SubRegiune" nillable="true" type="tns:Real_SubRegiune" />
+          <xs:element minOccurs="0" name="Real_SubRegiuneReference" nillable="true" type="q20:EntityReferenceOfReal_SubRegiuneKvZjy4f9" />
+          <xs:element minOccurs="0" name="RezervatiiNaturale" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Real_Judet" nillable="true" type="tns:Real_Judet" />
+  <xs:complexType name="ArrayOfOcol_Silvic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ocol_Silvic" nillable="true" type="tns:Ocol_Silvic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOcol_Silvic" nillable="true" type="tns:ArrayOfOcol_Silvic" />
+  <xs:complexType name="Ocol_Silvic">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q21:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Donatiis" nillable="true" type="tns:ArrayOfDonatii" />
+          <xs:element minOccurs="0" name="FK_Judet" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Latitudine" type="xs:double" />
+          <xs:element minOccurs="0" name="Longitudine" type="xs:double" />
+          <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Real_Judet" nillable="true" type="tns:Real_Judet" />
+          <xs:element minOccurs="0" name="Real_JudetReference" nillable="true" type="q21:EntityReferenceOfReal_JudetKvZjy4f9" />
+          <xs:element minOccurs="0" name="Reals" nillable="true" type="tns:ArrayOfReal" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Ocol_Silvic" nillable="true" type="tns:Ocol_Silvic" />
+  <xs:complexType name="ArrayOfSubRegiune">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubRegiune" nillable="true" type="tns:SubRegiune" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubRegiune" nillable="true" type="tns:ArrayOfSubRegiune" />
+  <xs:complexType name="Regiune">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q22:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FK_User" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubRegiunes" nillable="true" type="tns:ArrayOfSubRegiune" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q22:EntityReferenceOfUsrKvZjy4f9" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Regiune" nillable="true" type="tns:Regiune" />
+  <xs:complexType name="ArrayOfTabelaTranzactii">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabelaTranzactii" nillable="true" type="tns:TabelaTranzactii" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabelaTranzactii" nillable="true" type="tns:ArrayOfTabelaTranzactii" />
+  <xs:complexType name="TabelaTranzactii">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q23:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Animale" nillable="true" type="tns:Animale" />
+          <xs:element minOccurs="0" name="AnimaleReference" nillable="true" type="q23:EntityReferenceOfAnimaleKvZjy4f9" />
+          <xs:element minOccurs="0" name="Cumparare" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Data_Expirarii" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FK_ID_Animale" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_ID_Firma" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_ID_Usr" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Numar" type="xs:int" />
+          <xs:element minOccurs="0" name="Pret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q23:EntityReferenceOfUsrKvZjy4f9" />
+          <xs:element minOccurs="0" name="Vanzare" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TabelaTranzactii" nillable="true" type="tns:TabelaTranzactii" />
+  <xs:complexType name="ArrayOfRegiune">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Regiune" nillable="true" type="tns:Regiune" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegiune" nillable="true" type="tns:ArrayOfRegiune" />
+  <xs:complexType name="ArrayOfComentariiDetaliat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComentariiDetaliat" nillable="true" type="tns:ComentariiDetaliat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComentariiDetaliat" nillable="true" type="tns:ArrayOfComentariiDetaliat" />
+  <xs:complexType name="ComentariiDetaliat">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q24:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CommentId" type="xs:int" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Numecampanie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Poza" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RealId" type="xs:int" />
+          <xs:element minOccurs="0" name="TextCampanie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Userid" type="xs:int" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComentariiDetaliat" nillable="true" type="tns:ComentariiDetaliat" />
+  <xs:complexType name="ArrayOfDonatiiDetalii">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DonatiiDetalii" nillable="true" type="tns:DonatiiDetalii" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDonatiiDetalii" nillable="true" type="tns:ArrayOfDonatiiDetalii" />
+  <xs:complexType name="DonatiiDetalii">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q25:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DonationId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsReal" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumeCampanie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeZona" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Probleme" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RealId" type="xs:int" />
+          <xs:element minOccurs="0" name="SumaBani" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numeJudet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numeOcol" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DonatiiDetalii" nillable="true" type="tns:DonatiiDetalii" />
+  <xs:complexType name="ArrayOfComentariiDonatiiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComentariiDonatiiType" nillable="true" type="tns:ComentariiDonatiiType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComentariiDonatiiType" nillable="true" type="tns:ArrayOfComentariiDonatiiType" />
+  <xs:complexType name="ComentariiDonatiiType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q26:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Poza" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TextComentariu" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="commentId" type="xs:int" />
+          <xs:element minOccurs="0" name="userId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComentariiDonatiiType" nillable="true" type="tns:ComentariiDonatiiType" />
+</xs:schema>

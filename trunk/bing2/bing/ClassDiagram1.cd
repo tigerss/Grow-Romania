@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="                                                                                                           &#xD;&#xA;                                                                                                                    Obiecte&#xD;&#xA;">
+    <Position X="0.5" Y="7" Height="1.083" Width="7.888" />
+  </Comment>
+  <Class Name="Regiuni.Banat" Collapsed="true">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <AssociationLine Name="nueterm" Type="bing.pesteHarta" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="1.031" />
+        <Point X="8.125" Y="1.031" />
+        <Point X="8.125" Y="2" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.141" Y="0.06" Height="0.182" Width="0.817" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgACAAAAAAAAAAAIAAAAAAACAAAAAAANA=</HashCode>
+      <FileName>Regiuni\Banat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="nueterm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Regiuni.Baragan" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAFEAgQAAIGABRAAAIAACAAAKAAIgAIUQAAAQQgAA=</HashCode>
+      <FileName>Regiuni\Baragan.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PestePoza" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Regiuni.Moldova" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACINAAAYAACWAAAQAAAABBAAAAAAKgAAUQAAAAJAAQ=</HashCode>
+      <FileName>Regiuni\Moldova.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PestePoza" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Regiuni.Transilvania" Collapsed="true">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAIAAEAgAAAAAEAAAAEAQAsBAAFAIAAIgAAAAAA=</HashCode>
+      <FileName>Regiuni\Transilvania.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="nueterm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Regiuni.MapLayers" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgRQEAMAUCACgAAgAAAgARgAQCIQACCEAASFQAYAAEk=</HashCode>
+      <FileName>Regiuni\MapLayers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainPage" />
+      <Property Name="Transilvania" />
+      <Property Name="Moldova" />
+      <Property Name="Baragan" />
+      <Property Name="Banat" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="bing.MainPage" Collapsed="true">
+    <Position X="1.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABQBGAECAAQAAgMIgQgAAAAABEAAQAAAEAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bing.pesteHarta" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgABAAACQCAAAAAIAAAAAAAAAQBAAAAEAAAAAAAA=</HashCode>
+      <FileName>Regiuni\PesteHarta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forme.LoginForm" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Q0BAAABAQEQBEAAAAIEQAIECAAIBAAAEQQAAgAAUAQA=</HashCode>
+      <FileName>Forme\LoginForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainPage" />
+      <Property Name="Register" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Forme.MeniuPicks" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQBBAAAEAAAAAAAAAAAIIAAAAAIBQQAAEAAAAA=</HashCode>
+      <FileName>Forme\MeniuPicks.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MeniuAnimal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shazzam.Shaders.HHEffect" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAEAAAAAAAIAAAAAUIAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>HHEffect.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="pesteHarta" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Forme.MeniuAnimal" Collapsed="true">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAIgAIAAAAAAAIAEAMIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forme\MeniuAnimal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bing_maps.Forme.MyTranzactii" Collapsed="true">
+    <Position X="2" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIKUEBNAFIAIQAEIYIlTiBQgiCpQAKYAyDB4wEA4AME=</HashCode>
+      <FileName>Forme\MyTranzactii.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnitTranzactii" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="bing.UnitTranzactii" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggICAAAAAgAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UnitTranzactii.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forme.ADDPoza" Collapsed="true">
+    <Position X="0.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forme\ADDPoza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forme.ADDPozaCuBorder" Collapsed="true">
+    <Position X="2.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forme\ADDPozaCuBorder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forme.ControlCuColturi" Collapsed="true">
+    <Position X="4" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAEAACAAAAAAAAAAAAAEACAAA=</HashCode>
+      <FileName>Forme\ControlCuColturi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forme.ControlCuColturiRotunde" Collapsed="true">
+    <Position X="5.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAIAAAAAAAEEEAAUAAARAAAAACAAABQgEACAAA=</HashCode>
+      <FileName>Forme\ControlCucolturiRotunde.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forme.Register" Collapsed="true">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAFACAlAgAhAADAEAIAAAAuIiABACAAASBAgAAAAYQE=</HashCode>
+      <FileName>Forme\Register.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

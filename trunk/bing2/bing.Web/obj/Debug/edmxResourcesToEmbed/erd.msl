@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbsqlModelStoreContainer" CdmEntityContainer="dbEntities">
+    <FunctionImportMapping FunctionImportName="BagaLaMyTrades" FunctionName="dbsqlModel.Store.BagaLaMyTrades" />
+    <FunctionImportMapping FunctionImportName="StoredProcedure1" FunctionName="dbsqlModel.Store.StoredProcedure1" />
+    <FunctionImportMapping FunctionImportName="Searching" FunctionName="dbsqlModel.Store.Searching" />
+    <EntitySetMapping Name="Animales">
+      <EntityTypeMapping TypeName="dbsqlModel.Animale">
+        <MappingFragment StoreEntitySet="Animale">
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="DataVanatSfarsit" ColumnName="DataVanatSfarsit" />
+          <ScalarProperty Name="DataVanatInceput" ColumnName="DataVanatInceput" />
+          <ScalarProperty Name="Pui_An" ColumnName="Pui_An" />
+          <ScalarProperty Name="DataInmultSfarsit" ColumnName="DataInmultSfarsit" />
+          <ScalarProperty Name="DataInmultInceput" ColumnName="DataInmultInceput" />
+          <ScalarProperty Name="Imagine3" ColumnName="Imagine3" />
+          <ScalarProperty Name="Imagine2" ColumnName="Imagine2" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Camps">
+      <EntityTypeMapping TypeName="dbsqlModel.Camp">
+        <MappingFragment StoreEntitySet="Camp">
+          <ScalarProperty Name="NivelPoluareApa" ColumnName="NivelPoluareApa" />
+          <ScalarProperty Name="NivelPoluareSol" ColumnName="NivelPoluareSol" />
+          <ScalarProperty Name="NivelPoluareAer" ColumnName="NivelPoluareAer" />
+          <ScalarProperty Name="Suprafata" ColumnName="Suprafata" />
+          <ScalarProperty Name="FK_SubRegiune" ColumnName="FK_SubRegiune" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComentariiReals">
+      <EntityTypeMapping TypeName="dbsqlModel.ComentariiReal">
+        <MappingFragment StoreEntitySet="ComentariiReal">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="FK_Real" ColumnName="FK_Real" />
+          <ScalarProperty Name="TextCampanie" ColumnName="TextCampanie" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firmes">
+      <EntityTypeMapping TypeName="dbsqlModel.Firme">
+        <MappingFragment StoreEntitySet="Firme">
+          <ScalarProperty Name="DateForDelete" ColumnName="DateForDelete" />
+          <ScalarProperty Name="IsForDelete" ColumnName="IsForDelete" />
+          <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
+          <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
+          <ScalarProperty Name="IsForTransport" ColumnName="IsForTransport" />
+          <ScalarProperty Name="Scor" ColumnName="Scor" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Istoric_Animal_Deces">
+      <EntityTypeMapping TypeName="dbsqlModel.Istoric_Animal_Deces">
+        <MappingFragment StoreEntitySet="Istoric_Animal_Deces">
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Importanta" ColumnName="Importanta" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Diverse" ColumnName="Diverse" />
+          <ScalarProperty Name="Vanat" ColumnName="Vanat" />
+          <ScalarProperty Name="Braconaj" ColumnName="Braconaj" />
+          <ScalarProperty Name="FK_Mancat_De" ColumnName="FK_Mancat_De" />
+          <ScalarProperty Name="Mancat" ColumnName="Mancat" />
+          <ScalarProperty Name="Inundatie" ColumnName="Inundatie" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="FK_Padure" ColumnName="FK_Padure" />
+          <ScalarProperty Name="FK_Camp" ColumnName="FK_Camp" />
+          <ScalarProperty Name="FK_Animale" ColumnName="FK_Animale" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Istoric_Animal_Tranzact">
+      <EntityTypeMapping TypeName="dbsqlModel.Istoric_Animal_Tranzact">
+        <MappingFragment StoreEntitySet="Istoric_Animal_Tranzact">
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="MijlocTransport" ColumnName="MijlocTransport" />
+          <ScalarProperty Name="FK_Firma" ColumnName="FK_Firma" />
+          <ScalarProperty Name="FK_Animale" ColumnName="FK_Animale" />
+          <ScalarProperty Name="FK_ID_Cumparator" ColumnName="FK_ID_Cumparator" />
+          <ScalarProperty Name="FK_ID_Vanzator" ColumnName="FK_ID_Vanzator" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Istoric_Plante_Deces">
+      <EntityTypeMapping TypeName="dbsqlModel.Istoric_Plante_Deces">
+        <MappingFragment StoreEntitySet="Istoric_Plante_Deces">
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Trasnite" ColumnName="Trasnite" />
+          <ScalarProperty Name="Taiate" ColumnName="Taiate" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="FK_Padure" ColumnName="FK_Padure" />
+          <ScalarProperty Name="FK_Camp" ColumnName="FK_Camp" />
+          <ScalarProperty Name="FK_Plante" ColumnName="FK_Plante" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Istoric_Plante_Tranzact">
+      <EntityTypeMapping TypeName="dbsqlModel.Istoric_Plante_Tranzact">
+        <MappingFragment StoreEntitySet="Istoric_Plante_Tranzact">
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="MijlocTransport" ColumnName="MijlocTransport" />
+          <ScalarProperty Name="FK_Firma" ColumnName="FK_Firma" />
+          <ScalarProperty Name="FK_Plante" ColumnName="FK_Plante" />
+          <ScalarProperty Name="FK_ID_Cumparator" ColumnName="FK_ID_Cumparator" />
+          <ScalarProperty Name="FK_ID_Vanzator" ColumnName="FK_ID_Vanzator" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ocol_Silvic">
+      <EntityTypeMapping TypeName="dbsqlModel.Ocol_Silvic">
+        <MappingFragment StoreEntitySet="Ocol_Silvic">
+          <ScalarProperty Name="Latitudine" ColumnName="Latitudine" />
+          <ScalarProperty Name="Longitudine" ColumnName="Longitudine" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="FK_Judet" ColumnName="FK_Judet" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Padures">
+      <EntityTypeMapping TypeName="dbsqlModel.Padure">
+        <MappingFragment StoreEntitySet="Padure">
+          <ScalarProperty Name="NivelPoluareApa" ColumnName="NivelPoluareApa" />
+          <ScalarProperty Name="NivelPoluareSol" ColumnName="NivelPoluareSol" />
+          <ScalarProperty Name="NivelPoluareAer" ColumnName="NivelPoluareAer" />
+          <ScalarProperty Name="Suprafata" ColumnName="Suprafata" />
+          <ScalarProperty Name="Braconat_zi" ColumnName="Braconat_zi" />
+          <ScalarProperty Name="Vanat_zi" ColumnName="Vanat_zi" />
+          <ScalarProperty Name="Exploatare_zi" ColumnName="Exploatare_zi" />
+          <ScalarProperty Name="Turisti_zi" ColumnName="Turisti_zi" />
+          <ScalarProperty Name="FK_SubRegiune" ColumnName="FK_SubRegiune" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plantes">
+      <EntityTypeMapping TypeName="dbsqlModel.Plante">
+        <MappingFragment StoreEntitySet="Plante">
+          <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
+          <ScalarProperty Name="alte_campuri_de_bagat" ColumnName="alte campuri de bagat" />
+          <ScalarProperty Name="Imagine3" ColumnName="Imagine3" />
+          <ScalarProperty Name="Imagine2" ColumnName="Imagine2" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Populaties">
+      <EntityTypeMapping TypeName="dbsqlModel.Populatie">
+        <MappingFragment StoreEntitySet="Populatie">
+          <ScalarProperty Name="NivelPoluareApa" ColumnName="NivelPoluareApa" />
+          <ScalarProperty Name="NivelPoluareSol" ColumnName="NivelPoluareSol" />
+          <ScalarProperty Name="NivelPoluareAer" ColumnName="NivelPoluareAer" />
+          <ScalarProperty Name="Suprafata" ColumnName="Suprafata" />
+          <ScalarProperty Name="Bani_Zi" ColumnName="Bani_Zi" />
+          <ScalarProperty Name="Turisti_Zi" ColumnName="Turisti_Zi" />
+          <ScalarProperty Name="Vanatori" ColumnName="Vanatori" />
+          <ScalarProperty Name="Fermieri" ColumnName="Fermieri" />
+          <ScalarProperty Name="Padurari" ColumnName="Padurari" />
+          <ScalarProperty Name="Oameni_Morti" ColumnName="Oameni_Morti" />
+          <ScalarProperty Name="Oameni_Vii" ColumnName="Oameni_Vii" />
+          <ScalarProperty Name="FK_SubRegiune" ColumnName="FK_SubRegiune" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Real_Judet">
+      <EntityTypeMapping TypeName="dbsqlModel.Real_Judet">
+        <MappingFragment StoreEntitySet="Real_Judet">
+          <ScalarProperty Name="PoluareSol" ColumnName="PoluareSol" />
+          <ScalarProperty Name="CalitateAer" ColumnName="CalitateAer" />
+          <ScalarProperty Name="ParcuriNationale" ColumnName="ParcuriNationale" />
+          <ScalarProperty Name="IndustriaExtractiva" ColumnName="IndustriaExtractiva" />
+          <ScalarProperty Name="IndustriaPrelucrativa" ColumnName="IndustriaPrelucrativa" />
+          <ScalarProperty Name="NrTermocentrale" ColumnName="NrTermocentrale" />
+          <ScalarProperty Name="NrOrase" ColumnName="NrOrase" />
+          <ScalarProperty Name="NrHidrocentrale" ColumnName="NrHidrocentrale" />
+          <ScalarProperty Name="ProcentPadure" ColumnName="ProcentPadure" />
+          <ScalarProperty Name="RezervatiiNaturale" ColumnName="RezervatiiNaturale" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="FK_Real_SubRegiune" ColumnName="FK_Real_SubRegiune" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Real_SubRegiune">
+      <EntityTypeMapping TypeName="dbsqlModel.Real_SubRegiune">
+        <MappingFragment StoreEntitySet="Real_SubRegiune">
+          <ScalarProperty Name="NrJudete" ColumnName="NrJudete" />
+          <ScalarProperty Name="Clima" ColumnName="Clima" />
+          <ScalarProperty Name="Precipitatii" ColumnName="Precipitatii" />
+          <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regiunes">
+      <EntityTypeMapping TypeName="dbsqlModel.Regiune">
+        <MappingFragment StoreEntitySet="Regiune">
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statistici_Animale">
+      <EntityTypeMapping TypeName="dbsqlModel.Statistici_Animale">
+        <MappingFragment StoreEntitySet="Statistici_Animale">
+          <ScalarProperty Name="FK_Usr" ColumnName="FK_Usr" />
+          <ScalarProperty Name="Morti_Vanatoare" ColumnName="Morti_Vanatoare" />
+          <ScalarProperty Name="Morti_Brac" ColumnName="Morti_Brac" />
+          <ScalarProperty Name="Morti_Mancati" ColumnName="Morti_Mancati" />
+          <ScalarProperty Name="Morti_Apa" ColumnName="Morti_Apa" />
+          <ScalarProperty Name="Morti_Foc" ColumnName="Morti_Foc" />
+          <ScalarProperty Name="Morti" ColumnName="Morti" />
+          <ScalarProperty Name="Vii_Cumparati" ColumnName="Vii_Cumparati" />
+          <ScalarProperty Name="Vii_Nascuti" ColumnName="Vii_Nascuti" />
+          <ScalarProperty Name="Vii_Vanduti" ColumnName="Vii_Vanduti" />
+          <ScalarProperty Name="Vii" ColumnName="Vii" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="FK_Padure" ColumnName="FK_Padure" />
+          <ScalarProperty Name="FK_Camp" ColumnName="FK_Camp" />
+          <ScalarProperty Name="FK_Animale" ColumnName="FK_Animale" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statistici_Plante">
+      <EntityTypeMapping TypeName="dbsqlModel.Statistici_Plante">
+        <MappingFragment StoreEntitySet="Statistici_Plante">
+          <ScalarProperty Name="Morti_Taiati" ColumnName="Morti_Taiati" />
+          <ScalarProperty Name="Morti_Foc" ColumnName="Morti_Foc" />
+          <ScalarProperty Name="Morti" ColumnName="Morti" />
+          <ScalarProperty Name="Vii_Cumparati" ColumnName="Vii_Cumparati" />
+          <ScalarProperty Name="Vii_Nascuti" ColumnName="Vii_Nascuti" />
+          <ScalarProperty Name="Vii_Vanduti" ColumnName="Vii_Vanduti" />
+          <ScalarProperty Name="Vii" ColumnName="Vii" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="FK_Padure" ColumnName="FK_Padure" />
+          <ScalarProperty Name="FK_Camp" ColumnName="FK_Camp" />
+          <ScalarProperty Name="FK_Plante" ColumnName="FK_Plante" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubRegiunes">
+      <EntityTypeMapping TypeName="dbsqlModel.SubRegiune">
+        <MappingFragment StoreEntitySet="SubRegiune">
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="FK_Real_SubRegiune" ColumnName="FK_Real_SubRegiune" />
+          <ScalarProperty Name="FK_Regiune" ColumnName="FK_Regiune" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dbsqlModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabelaTranzactiis">
+      <EntityTypeMapping TypeName="dbsqlModel.TabelaTranzactii">
+        <MappingFragment StoreEntitySet="TabelaTranzactii">
+          <ScalarProperty Name="Cumparare" ColumnName="Cumparare" />
+          <ScalarProperty Name="Vanzare" ColumnName="Vanzare" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+          <ScalarProperty Name="Data_Expirarii" ColumnName="Data_Expirarii" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="FK_ID_Firma" ColumnName="FK_ID_Firma" />
+          <ScalarProperty Name="FK_ID_Animale" ColumnName="FK_ID_Animale" />
+          <ScalarProperty Name="FK_ID_Usr" ColumnName="FK_ID_Usr" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usrs">
+      <EntityTypeMapping TypeName="dbsqlModel.Usr">
+        <MappingFragment StoreEntitySet="Usr">
+          <ScalarProperty Name="DateForDelete" ColumnName="DateForDelete" />
+          <ScalarProperty Name="IsForDelete" ColumnName="IsForDelete" />
+          <ScalarProperty Name="Data_LastLogIn" ColumnName="Data_LastLogIn" />
+          <ScalarProperty Name="Data_Inreg" ColumnName="Data_Inreg" />
+          <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
+          <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="Scor" ColumnName="Scor" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Usr1" ColumnName="Usr" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IstoricAnimalPadureForUserXes">
+      <EntityTypeMapping TypeName="dbsqlModel.IstoricAnimalPadureForUserX">
+        <MappingFragment StoreEntitySet="IstoricAnimalPadureForUserX">
+          <ScalarProperty Name="Importanta" ColumnName="Importanta" />
+          <ScalarProperty Name="Diverse" ColumnName="Diverse" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Vanat" ColumnName="Vanat" />
+          <ScalarProperty Name="Braconaj" ColumnName="Braconaj" />
+          <ScalarProperty Name="Mancat" ColumnName="Mancat" />
+          <ScalarProperty Name="Inundatie" ColumnName="Inundatie" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="DataIst" ColumnName="DataIst" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="IstoricID" ColumnName="IstoricID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="UsrID" ColumnName="UsrID" />
+          <ScalarProperty Name="NumeAnimal" ColumnName="NumeAnimal" />
+          <ScalarProperty Name="AnimalID" ColumnName="AnimalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Real_SubRegiune_CuNivelPoluare">
+      <EntityTypeMapping TypeName="dbsqlModel.Real_SubRegiune_CuNivelPoluare">
+        <MappingFragment StoreEntitySet="Real_SubRegiune_CuNivelPoluare">
+          <ScalarProperty Name="NivelPoluareApa" ColumnName="NivelPoluareApa" />
+          <ScalarProperty Name="NivelPoluareAer" ColumnName="NivelPoluareAer" />
+          <ScalarProperty Name="NivelPoluareSol" ColumnName="NivelPoluareSol" />
+          <ScalarProperty Name="NumeSubreg" ColumnName="NumeSubreg" />
+          <ScalarProperty Name="SRID" ColumnName="SRID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tranzacties">
+      <EntityTypeMapping TypeName="dbsqlModel.Tranzactie">
+        <MappingFragment StoreEntitySet="Tranzactie">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Cumparator" ColumnName="Cumparator" />
+          <ScalarProperty Name="Vanzator" ColumnName="Vanzator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TranzactiiCumparares">
+      <EntityTypeMapping TypeName="dbsqlModel.TranzactiiCumparare">
+        <MappingFragment StoreEntitySet="TranzactiiCumparare">
+          <ScalarProperty Name="Vanzare" ColumnName="Vanzare" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Data_Expirarii" ColumnName="Data_Expirarii" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Cumparare" ColumnName="Cumparare" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Regiune" ColumnName="Regiune" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View1">
+      <EntityTypeMapping TypeName="dbsqlModel.View1">
+        <MappingFragment StoreEntitySet="View1">
+          <ScalarProperty Name="ID_cumparator" ColumnName="ID_cumparator" />
+          <ScalarProperty Name="ID_vanzator" ColumnName="ID_vanzator" />
+          <ScalarProperty Name="EU" ColumnName="EU" />
+          <ScalarProperty Name="Animalul" ColumnName="Animalul" />
+          <ScalarProperty Name="NUmar_de_animale" ColumnName="NUmar de animale" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reals">
+      <EntityTypeMapping TypeName="dbsqlModel.Real">
+        <MappingFragment StoreEntitySet="Real">
+          <ScalarProperty Name="Video2" ColumnName="Video2" />
+          <ScalarProperty Name="Video1" ColumnName="Video1" />
+          <ScalarProperty Name="Imag10" ColumnName="Imag10" />
+          <ScalarProperty Name="Imag9" ColumnName="Imag9" />
+          <ScalarProperty Name="Imag8" ColumnName="Imag8" />
+          <ScalarProperty Name="Imag7" ColumnName="Imag7" />
+          <ScalarProperty Name="Imag6" ColumnName="Imag6" />
+          <ScalarProperty Name="Imag5" ColumnName="Imag5" />
+          <ScalarProperty Name="Imag4" ColumnName="Imag4" />
+          <ScalarProperty Name="Imag3" ColumnName="Imag3" />
+          <ScalarProperty Name="Imag2" ColumnName="Imag2" />
+          <ScalarProperty Name="Imag1" ColumnName="Imag1" />
+          <ScalarProperty Name="IsSolved" ColumnName="IsSolved" />
+          <ScalarProperty Name="DataFinalizarii" ColumnName="DataFinalizarii" />
+          <ScalarProperty Name="DataInceperii" ColumnName="DataInceperii" />
+          <ScalarProperty Name="NrFirmeDonatoare" ColumnName="NrFirmeDonatoare" />
+          <ScalarProperty Name="NrUsriDonatori" ColumnName="NrUsriDonatori" />
+          <ScalarProperty Name="BaniTotal" ColumnName="BaniTotal" />
+          <ScalarProperty Name="BaniStransi" ColumnName="BaniStransi" />
+          <ScalarProperty Name="FK_Ocol_Silvic" ColumnName="FK_Ocol_Silvic" />
+          <ScalarProperty Name="NivelProblema" ColumnName="NivelProblema" />
+          <ScalarProperty Name="Probleme" ColumnName="Probleme" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="PctLocatie" ColumnName="PctLocatie" />
+          <ScalarProperty Name="NumeZona" ColumnName="NumeZona" />
+          <ScalarProperty Name="NumeCampanie" ColumnName="NumeCampanie" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComentariuViews">
+      <EntityTypeMapping TypeName="dbsqlModel.ComentariuView">
+        <MappingFragment StoreEntitySet="ComentariuView">
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="FK_Real" ColumnName="FK_Real" />
+          <ScalarProperty Name="TextCampanie" ColumnName="TextCampanie" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonatiiViews">
+      <EntityTypeMapping TypeName="dbsqlModel.DonatiiView">
+        <MappingFragment StoreEntitySet="DonatiiView">
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="NumeZona" ColumnName="NumeZona" />
+          <ScalarProperty Name="NumeCampanie" ColumnName="NumeCampanie" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Comentarii" ColumnName="Comentarii" />
+          <ScalarProperty Name="SumaBani" ColumnName="SumaBani" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IsReal" ColumnName="IsReal" />
+          <ScalarProperty Name="FK_Ocol_Silvic" ColumnName="FK_Ocol_Silvic" />
+          <ScalarProperty Name="FK_Real" ColumnName="FK_Real" />
+          <ScalarProperty Name="IsUser" ColumnName="IsUser" />
+          <ScalarProperty Name="FK_Firma" ColumnName="FK_Firma" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectComentariiFct" FunctionName="dbsqlModel.Store.SelectComentarii">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.ComentariiDetaliat">
+          <ScalarProperty Name="RealId" ColumnName="RealId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="TextCampanie" ColumnName="TextCampanie" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Numecampanie" ColumnName="Numecampanie" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectDonatiiFct" FunctionName="dbsqlModel.Store.SelectDonatii">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.DonatiiDetalii">
+          <ScalarProperty Name="DonationId" ColumnName="DonationId" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="SumaBani" ColumnName="SumaBani" />
+          <ScalarProperty Name="IsUser" ColumnName="IsUser" />
+          <ScalarProperty Name="IsReal" ColumnName="IsReal" />
+          <ScalarProperty Name="NumeCampanie" ColumnName="NumeCampanie" />
+          <ScalarProperty Name="Probleme" ColumnName="Probleme" />
+          <ScalarProperty Name="RealId" ColumnName="RealId" />
+          <ScalarProperty Name="NumeZona" ColumnName="NumeZona" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="numeOcol" ColumnName="numeOcol" />
+          <ScalarProperty Name="numeJudet" ColumnName="numeJudet" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ComentariiDonatiis">
+      <EntityTypeMapping TypeName="dbsqlModel.ComentariiDonatii">
+        <MappingFragment StoreEntitySet="ComentariiDonatii">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="FK_Donatie" ColumnName="FK_Donatie" />
+          <ScalarProperty Name="FK_Usr" ColumnName="FK_Usr" />
+          <ScalarProperty Name="TextComentariu" ColumnName="TextComentariu" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectComentariiDonatiiFct" FunctionName="dbsqlModel.Store.SelectComentariiDonatii">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.ComentariiDonatiiType">
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+          <ScalarProperty Name="TextComentariu" ColumnName="TextComentariu" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Donatiis">
+      <EntityTypeMapping TypeName="dbsqlModel.Donatii">
+        <MappingFragment StoreEntitySet="Donatii">
+          <ScalarProperty Name="SumaBani" ColumnName="SumaBani" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IsReal" ColumnName="IsReal" />
+          <ScalarProperty Name="FK_Ocol_Silvic" ColumnName="FK_Ocol_Silvic" />
+          <ScalarProperty Name="FK_Real" ColumnName="FK_Real" />
+          <ScalarProperty Name="IsUser" ColumnName="IsUser" />
+          <ScalarProperty Name="FK_Firma" ColumnName="FK_Firma" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ProceduraDeces2" FunctionName="dbsqlModel.Store.ProceduraDeces">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.ProceduraDeces_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_Animale" ColumnName="FK_Animale" />
+          <ScalarProperty Name="FK_Camp" ColumnName="FK_Camp" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="FK_Padure" ColumnName="FK_Padure" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="Inundatie" ColumnName="Inundatie" />
+          <ScalarProperty Name="Mancat" ColumnName="Mancat" />
+          <ScalarProperty Name="FK_Mancat_De" ColumnName="FK_Mancat_De" />
+          <ScalarProperty Name="Braconaj" ColumnName="Braconaj" />
+          <ScalarProperty Name="Vanat" ColumnName="Vanat" />
+          <ScalarProperty Name="Diverse" ColumnName="Diverse" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Importanta" ColumnName="Importanta" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="StatisticaPerAnimals">
+      <EntityTypeMapping TypeName="dbsqlModel.StatisticaPerAnimal">
+        <MappingFragment StoreEntitySet="StatisticaPerAnimal">
+          <ScalarProperty Name="Vii_Vanduti" ColumnName="Vii_Vanduti" />
+          <ScalarProperty Name="Vii_Cumparati" ColumnName="Vii_Cumparati" />
+          <ScalarProperty Name="Vii" ColumnName="Vii" />
+          <ScalarProperty Name="Vanati" ColumnName="Vanati" />
+          <ScalarProperty Name="Mancati" ColumnName="Mancati" />
+          <ScalarProperty Name="Brac" ColumnName="Brac" />
+          <ScalarProperty Name="Inundatie" ColumnName="Inundatie" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="FK_Camp" ColumnName="FK_Camp" />
+          <ScalarProperty Name="FK_Padure" ColumnName="FK_Padure" />
+          <ScalarProperty Name="FK_Animale" ColumnName="FK_Animale" />
+          <ScalarProperty Name="FK_Usr" ColumnName="FK_Usr" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="StatisticaAimal" FunctionName="dbsqlModel.Store.StatisticaAimal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.StatisticaAimal_Result">
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="Inundatie" ColumnName="Inundatie" />
+          <ScalarProperty Name="Brac" ColumnName="Brac" />
+          <ScalarProperty Name="Mancati" ColumnName="Mancati" />
+          <ScalarProperty Name="Vanati" ColumnName="Vanati" />
+          <ScalarProperty Name="Vii" ColumnName="Vii" />
+          <ScalarProperty Name="Vii_Cumparati" ColumnName="Vii_Cumparati" />
+          <ScalarProperty Name="Vii_Vanduti" ColumnName="Vii_Vanduti" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="FK_Usr" ColumnName="FK_Usr" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAnimal" FunctionName="dbsqlModel.Store.SelectAnimal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.SelectAnimal_Result">
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAnimalStats" FunctionName="dbsqlModel.Store.getAnimalStats">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getAnimalStats_Result">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="FK_Animale" ColumnName="FK_Animale" />
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="Inundatie" ColumnName="Inundatie" />
+          <ScalarProperty Name="Mancat" ColumnName="Mancat" />
+          <ScalarProperty Name="Braconaj" ColumnName="Braconaj" />
+          <ScalarProperty Name="Vanat" ColumnName="Vanat" />
+          <ScalarProperty Name="Diverse" ColumnName="Diverse" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Importanta" ColumnName="Importanta" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Imagine2" ColumnName="Imagine2" />
+          <ScalarProperty Name="Imagine3" ColumnName="Imagine3" />
+          <ScalarProperty Name="DataInmultInceput" ColumnName="DataInmultInceput" />
+          <ScalarProperty Name="DataInmultSfarsit" ColumnName="DataInmultSfarsit" />
+          <ScalarProperty Name="Pui_An" ColumnName="Pui_An" />
+          <ScalarProperty Name="DataVanatInceput" ColumnName="DataVanatInceput" />
+          <ScalarProperty Name="DataVanatSfarsit" ColumnName="DataVanatSfarsit" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LoginFunction" FunctionName="dbsqlModel.Store.Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.LoginFunction_Result">
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Scor" ColumnName="Scor" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
+          <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
+          <ScalarProperty Name="Regiunenume" ColumnName="Regiunenume" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAchievement" FunctionName="dbsqlModel.Store.getAchievement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getAchievement_Result">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Challenges">
+      <EntityTypeMapping TypeName="dbsqlModel.Challenge">
+        <MappingFragment StoreEntitySet="Challenges">
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getChallenges" FunctionName="dbsqlModel.Store.getChallenges">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getChallenges_Result">
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlants" FunctionName="dbsqlModel.Store.getPlants">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getPlants_Result">
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

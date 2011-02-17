@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="bing.Web.Service1" CodeBehind="~/App_GlobalResources/Service1.svc.cs" %>

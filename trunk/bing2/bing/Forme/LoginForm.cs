@@ -1,0 +1,231 @@
+﻿using System;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+using System.ServiceModel;
+using bing;
+using System.ComponentModel;
+using System.Collections.Generic;
+using Regiuni;
+
+namespace Forme
+{
+    public class LoginForm
+    {
+        BasicHttpBinding bind = new BasicHttpBinding();
+        EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
+        // private DispatcherTimer t;
+        private PasswordBox Passordbox;
+        private TextBox username;
+        private Canvas butonlogin;
+        private TextBlock register;
+        private ControlCuColturi rf;
+        private TextBlock Recover;
+        private Canvas howtobutton;
+        private ControlCuColturiRotunde canvasforbutton;
+        private ControlCuColturiRotunde howto;
+        private ControlCuColturi ConnectwithFacebook;
+        private Canvas Connect;
+        private string GetPass = "";
+        private Canvas Meniu;
+        private Canvas canvas2;
+        //double timp = 0;
+        BusyIndicator bIndic = new BusyIndicator();
+        MapLayers mymap;
+        public LoginForm(Canvas can, Canvas canvas2, MapLayers map)
+        {
+            mymap = map;
+            bIndic.Width = 152;
+            bIndic.Height = 56;
+            this.canvas2 = canvas2;
+            canvas2.Children.Add(bIndic);
+            bIndic.IsBusy = false;
+            Canvas.SetLeft(bIndic, canvas2.Width / 2 - 78);
+            Canvas.SetTop(bIndic, canvas2.Height / 2);
+
+            #region Info+Welcome user
+            ControlCuColturiRotunde iws = new ControlCuColturiRotunde(can, 205, 200, 0, 10, true, 1);
+            iws.AddTextBlockMultiple(new TextBlock()
+                                      , 6
+                                      , new string[] { " Want to do something for your country?", "GrowRomania is a new game where you", "can grow forest and rise animals in any ", "region. Wild animals ,domestic animals", "and everthing.Join now and play.", "See how to play ..." }
+                                      , new string[] { "#FFFFFFFF" }
+                                      , new int[] { 11 });
+            howto = new ControlCuColturiRotunde(can, 100, 25, 120, 110, true, 1);
+            howto.Colors("#FF03132d", "#FF03132d", new Point(0.5, 1), new Point(0.5, 0), 1);
+            howto.Colturi(10, 10, new Rect(0, 0, 100, 25));
+            howtobutton = howto.intoarce();
+            howtobutton.MouseEnter += new MouseEventHandler(howtobutton_MouseEnter);
+            howtobutton.MouseLeave += new MouseEventHandler(howtobutton_MouseLeave);
+            howto.AddTextBlock(new TextBlock(), " + more info", 12, 5, 4, "#FF8b9205");
+            howto.Cursor = Cursors.Hand;
+            iws.AddTextBlock(new TextBlock(), "Welcome, Guest!", 20, 0, 190, "#FF8b9205");
+
+
+            #endregion
+            #region Username
+            ControlCuColturiRotunde b = new ControlCuColturiRotunde(can, 206, 39, 0, 230, false, 1);
+            username = new TextBox();
+            b.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+            b.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+            b.Colturi(10, 10, new Rect(0, 0, 206, 38));
+            b.AddTextBlock(new TextBlock(), "Username:", 15, 5, 10, null);
+            b.AddTextBox(username, "", 100, 30, 0, 14, "#FF992929", "#FF9F1C1C", "#FF581818", "#FFBE4141", null, true, 95, 5);
+            #endregion
+            #region Passward
+            //adaug canvas pt Password
+            ControlCuColturiRotunde c = new ControlCuColturiRotunde(can, 206, 39, 0, 274, false, 1);
+            Passordbox = new PasswordBox();
+            Passordbox.PasswordChanged += new RoutedEventHandler(pb_PasswordChanged);
+
+
+            c.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+            c.Border(new CornerRadius(9, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+            c.Colturi(10, 10, new Rect(0, 0, 206, 38));
+            c.AddTextBlock(new TextBlock(), "Password:", 15, 5, 10, null);
+            c.AddPasswordTextBox(Passordbox, "", 100, 30, 0, 14, "#FF992929", "#FF9F1C1C", "#FF581818", "#FFBE4141", null, true, 95, 5);
+            #endregion
+            #region Loginbutton
+
+            canvasforbutton = new ControlCuColturiRotunde(can, 206, 39, 0, 318, false, 1);
+            canvasforbutton.Colors("#FF969a07", "#FF7a7d04", new Point(0.5, 1), new Point(0.5, 0), null);
+            canvasforbutton.Border(new CornerRadius(10, 10, 10, 10), "#FF9fa13a", new Thickness(1), 208, 40);
+            canvasforbutton.Colturi(10, 10, new Rect(0, 0, 206, 38));
+            canvasforbutton.AddTextBlock(new TextBlock(), "Log in", 17, 80, 5, "#ffe0e1c0");
+            canvasforbutton.Cursor = Cursors.Hand;
+            butonlogin = canvasforbutton.intoarce();
+            butonlogin.MouseEnter += new MouseEventHandler(butonlogin_MouseEnter);
+            butonlogin.MouseLeave += new MouseEventHandler(butonlogin_MouseLeave);
+            butonlogin.MouseLeftButtonDown += new MouseButtonEventHandler(butonlogin_MouseLeftButtonDown);
+            #endregion
+            #region Register ForgotPassward
+            //register forgotpassward
+            register = new TextBlock() { Cursor = Cursors.Hand };
+            Recover = new TextBlock() { Cursor = Cursors.Hand };
+            rf = new ControlCuColturi(can, 205, 40, 0, 365, true, 1);
+            rf.AddTextBlock(register, "Register", 14, 0, 5, "#FF8b9205");
+            rf.AddTextBlock(new TextBlock(), "|", 14, 62, 5, "#FF8b9205");
+            rf.AddTextBlock(Recover, "Recover Password", 14, 74, 5, "#FF8b9205");
+            Recover.MouseEnter += new MouseEventHandler(Recover_MouseEnter);
+            Recover.MouseLeave += new MouseEventHandler(Recover_MouseLeave);
+            register.MouseEnter += new MouseEventHandler(register_MouseEnter);
+            register.MouseLeave += new MouseEventHandler(register_MouseLeave);
+            register.MouseLeftButtonDown += new MouseButtonEventHandler(register_MouseLeftButtonDown);
+            #endregion
+
+            Line l = new Line() { X1 = 0, X2 = 205, Y1 = 400, Y2 = 400, Stroke = new SolidColorBrush(Colors.White), StrokeThickness = 1 };
+            can.Children.Add(l);
+            #region ConnectWithFacebook
+            ConnectwithFacebook = new ControlCuColturi(can, 50, 50, 0, 405, true, 1);
+            ConnectwithFacebook.AddImage(new Image(), 30, 30, "DesignImages/1.png", 0, 0);
+            ConnectwithFacebook.AddTextBlock(new TextBlock(), "Connect with Facebook", 15, 30, 5, "#FF5a748d");
+            Connect = ConnectwithFacebook.intoarce();
+            Connect.Cursor = Cursors.Hand;
+            #endregion
+            Line l1 = new Line() { X1 = 0, X2 = 205, Y1 = 440, Y2 = 440, Stroke = new SolidColorBrush(Colors.White), StrokeThickness = 1 };
+            can.Children.Add(l1);
+            Meniu = can;
+        }
+
+        public bing.MainPage MainPage
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Register Register
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        void register_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //Meniu.Visibility = Visibility.Collapsed;
+            Register register;
+            if (AtributeGlobale.UserIsRegistering == false)
+                register = new Register(Meniu, "Moldova");
+        }
+        void howtobutton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            howto.AddTextBlock(new TextBlock(), " + more info", 12, 5, 4, "#FF8b9205");
+        }
+
+        void howtobutton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            howto.AddTextBlock(new TextBlock(), " + more info", 12, 5, 4, "#FFd0da08");
+        }
+
+        void Recover_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Recover.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x8b, 0x92, 0x05));
+        }
+        void Recover_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Recover.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xc6, 0xd0, 0x07));
+        }
+        void register_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            register.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x8b, 0x92, 0x05));
+        }
+        void register_MouseEnter(object sender, MouseEventArgs e)
+        {
+            register.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xc6, 0xd0, 0x07));
+
+        }
+        void butonlogin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            canvasforbutton.Colors("#FF7a7d04", "#FF969a07", new Point(0.5, 1), new Point(0.5, 0), null);
+        }
+        void butonlogin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            canvasforbutton.Colors("#FF7a7d04", "#FFe2e810", new Point(0.5, 1), new Point(0.5, 0), null);
+        }
+
+        void butonlogin_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            GetPass = Passordbox.Password;
+            string login = username.Text;
+            bIndic.IsBusy = true;
+            Meniu.Children.Clear();
+            bing.ServiceReference1.TranzactiiClient c = new bing.ServiceReference1.TranzactiiClient(bind, endpoint);
+            c.LoginUserCompleted += new EventHandler<bing.ServiceReference1.LoginUserCompletedEventArgs>(c_LoginUserCompleted);
+
+            c.LoginUserAsync("test", "testtest");
+        }
+
+        void c_LoginUserCompleted(object sender, bing.ServiceReference1.LoginUserCompletedEventArgs e)
+        {
+            List<bing.ServiceReference1.LoginFunction_Result> lista = new List<bing.ServiceReference1.LoginFunction_Result>();
+            foreach (var c in e.Result)
+                lista.Add(c);
+            Meniu.Children.Add(new PaginaUser(bIndic, lista, mymap,canvas2));
+        }
+        void pb_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+
+
+
+    }
+}

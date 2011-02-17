@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2a55687b-2dc6-440c-b831-b53e18c4b8e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11201/ServiceDeces.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceDeces.xsd" MetadataType="Schema" ID="a41401ec-9551-4c48-871d-a37b9cf14fff" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceDeces1.xsd" MetadataType="Schema" ID="c780d5b3-57a6-450d-964a-e5a61af41d7a" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceDeces2.xsd" MetadataType="Schema" ID="3ee5f730-70ff-4592-be9a-494d6471ac4d" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceDeces3.xsd" MetadataType="Schema" ID="7aa5d66a-c84a-4abb-a1c5-14a747184821" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceDeces.wsdl" MetadataType="Wsdl" ID="add9ec3d-8cf0-4cc4-a021-c84c781134ad" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?wsdl" />
+    <MetadataFile FileName="ServiceDeces.disco" MetadataType="Disco" ID="11e64603-1826-488c-9791-bd711fc4f868" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?disco" />
+    <MetadataFile FileName="ServiceDeces4.xsd" MetadataType="Schema" ID="b7590e2e-f625-466f-94be-c69720d8f4e1" SourceId="1" SourceUrl="http://localhost:11201/ServiceDeces.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

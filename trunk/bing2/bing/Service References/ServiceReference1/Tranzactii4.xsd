@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+  <xs:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="LoginUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nume" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passward" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="LoginUserResult" nillable="true" type="q1:ArrayOfLoginFunction_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatisticaAnimal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="idRegiune" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatisticaAnimalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="StatisticaAnimalResult" nillable="true" type="q2:ArrayOfStatisticaAimal_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreiaDeces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreiaDecesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="PreiaDecesResult" nillable="true" type="q3:ArrayOfProceduraDeces_Result1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetToateAnimalele">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetToateAnimaleleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetToateAnimaleleResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetToateFirmele">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetToateFirmeleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetToateFirmeleResult" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gettranz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gettranzResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="gettranzResult" nillable="true" type="q6:ArrayOfTranzactie" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTranzactieCumparare">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTranzactieCumparareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="GetTranzactieCumparareResult" nillable="true" type="q7:ArrayOfTranzactiiCumparare" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTranzactie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="animal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numar" type="xs:int" />
+        <xs:element minOccurs="0" name="numefirma" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pret" type="xs:int" />
+        <xs:element minOccurs="0" name="vinde" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cumpara" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTranzactieResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCumparare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numev" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numec" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numea" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numefirma" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pret" type="xs:int" />
+        <xs:element minOccurs="0" name="numar" type="xs:short" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCumparareResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cauta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="regiune" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyward" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cv" type="xs:int" />
+        <xs:element minOccurs="0" name="ascdsc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pretquantity" type="xs:boolean" />
+        <xs:element minOccurs="0" name="enull" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CautaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="CautaResult" nillable="true" type="q8:ArrayOfTranzactiiCumparare" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

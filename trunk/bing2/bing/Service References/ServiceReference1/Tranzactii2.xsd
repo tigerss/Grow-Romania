@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/bing.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/bing.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOfLoginFunction_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoginFunction_Result" nillable="true" type="tns:LoginFunction_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoginFunction_Result" nillable="true" type="tns:ArrayOfLoginFunction_Result" />
+  <xs:complexType name="LoginFunction_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaniDonati" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NrDonatii" type="xs:short" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Poza" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prenume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Regiunenume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Scor" type="xs:double" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginFunction_Result" nillable="true" type="tns:LoginFunction_Result" />
+  <xs:complexType name="ArrayOfStatisticaAimal_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatisticaAimal_Result" nillable="true" type="tns:StatisticaAimal_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatisticaAimal_Result" nillable="true" type="tns:ArrayOfStatisticaAimal_Result" />
+  <xs:complexType name="StatisticaAimal_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Brac" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Usr" type="xs:int" />
+          <xs:element minOccurs="0" name="Foc" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Imagine1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Inundatie" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Mancati" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vanati" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Cumparati" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Vii_Vanduti" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatisticaAimal_Result" nillable="true" type="tns:StatisticaAimal_Result" />
+  <xs:complexType name="ArrayOfProceduraDeces_Result1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProceduraDeces_Result1" nillable="true" type="tns:ProceduraDeces_Result1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProceduraDeces_Result1" nillable="true" type="tns:ArrayOfProceduraDeces_Result1" />
+  <xs:complexType name="ProceduraDeces_Result1">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Braconaj" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Diverse" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FK_Animale" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_Mancat_De" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
+          <xs:element minOccurs="0" name="FK_User" type="xs:int" />
+          <xs:element minOccurs="0" name="Foc" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ID" type="xs:long" />
+          <xs:element minOccurs="0" name="Importanta" type="xs:double" />
+          <xs:element minOccurs="0" name="Inundatie" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsFromPadure" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Mancat" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Numar" type="xs:short" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vanat" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProceduraDeces_Result1" nillable="true" type="tns:ProceduraDeces_Result1" />
+  <xs:complexType name="ArrayOfTranzactie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tranzactie" nillable="true" type="tns:Tranzactie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTranzactie" nillable="true" type="tns:ArrayOfTranzactie" />
+  <xs:complexType name="Tranzactie">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cumparator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Expr1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numar" type="xs:short" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vanzator" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tranzactie" nillable="true" type="tns:Tranzactie" />
+  <xs:complexType name="ArrayOfTranzactiiCumparare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TranzactiiCumparare" nillable="true" type="tns:TranzactiiCumparare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTranzactiiCumparare" nillable="true" type="tns:ArrayOfTranzactiiCumparare" />
+  <xs:complexType name="TranzactiiCumparare">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cumparare" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Data_Expirarii" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Numar" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Regiune" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vanzare" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TranzactiiCumparare" nillable="true" type="tns:TranzactiiCumparare" />
+</xs:schema>

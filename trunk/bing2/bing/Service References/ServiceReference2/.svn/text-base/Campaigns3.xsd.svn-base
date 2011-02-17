@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="EntityObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StructuralObject">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="EntityKey" nillable="true" type="q1:EntityKey" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityObject" nillable="true" type="tns:EntityObject" />
+  <xs:complexType name="StructuralObject">
+    <xs:sequence />
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="StructuralObject" nillable="true" type="tns:StructuralObject" />
+  <xs:complexType name="EntityReferenceOfRealKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Real" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfRealKvZjy4f9" nillable="true" type="tns:EntityReferenceOfRealKvZjy4f9" />
+  <xs:complexType name="EntityReference">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RelatedEnd">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="EntityKey" nillable="true" type="q2:EntityKey" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReference" nillable="true" type="tns:EntityReference" />
+  <xs:complexType name="RelatedEnd">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RelatedEnd" nillable="true" type="tns:RelatedEnd" />
+  <xs:complexType name="EntityReferenceOfAnimaleKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Animale" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfAnimaleKvZjy4f9" nillable="true" type="tns:EntityReferenceOfAnimaleKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfCampKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Camp" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfCampKvZjy4f9" nillable="true" type="tns:EntityReferenceOfCampKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfPadureKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Padure" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfPadureKvZjy4f9" nillable="true" type="tns:EntityReferenceOfPadureKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfFirmeKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Firme" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfFirmeKvZjy4f9" nillable="true" type="tns:EntityReferenceOfFirmeKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfPlanteKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Plante" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfPlanteKvZjy4f9" nillable="true" type="tns:EntityReferenceOfPlanteKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfUsrKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Usr" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfUsrKvZjy4f9" nillable="true" type="tns:EntityReferenceOfUsrKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfSubRegiuneKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SubRegiune" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfSubRegiuneKvZjy4f9" nillable="true" type="tns:EntityReferenceOfSubRegiuneKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfReal_JudetKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Real_Judet" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfReal_JudetKvZjy4f9" nillable="true" type="tns:EntityReferenceOfReal_JudetKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfReal_SubRegiuneKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Real_SubRegiune" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfReal_SubRegiuneKvZjy4f9" nillable="true" type="tns:EntityReferenceOfReal_SubRegiuneKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfRegiuneKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Regiune" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfRegiuneKvZjy4f9" nillable="true" type="tns:EntityReferenceOfRegiuneKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfOcol_SilvicKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Ocol_Silvic" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfOcol_SilvicKvZjy4f9" nillable="true" type="tns:EntityReferenceOfOcol_SilvicKvZjy4f9" />
+  <xs:complexType name="EntityReferenceOfDonatiiKvZjy4f9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Donatii" Namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOfDonatiiKvZjy4f9" nillable="true" type="tns:EntityReferenceOfDonatiiKvZjy4f9" />
+  <xs:complexType name="ComplexObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StructuralObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComplexObject" nillable="true" type="tns:ComplexObject" />
+</xs:schema>

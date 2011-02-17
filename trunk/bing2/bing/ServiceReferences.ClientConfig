@@ -1,0 +1,45 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ITranzactii" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITranzactii1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ICampaigns" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IServiceDeces" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:11201/Tranzactii.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ITranzactii" contract="ServiceReference1.ITranzactii"
+                name="BasicHttpBinding_ITranzactii" />
+            <endpoint address="http://localhost:11201/Tranzactii.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ITranzactii1" contract="ServiceReference1.ITranzactii"
+                name="BasicHttpBinding_ITranzactii1" />
+            <endpoint address="http://localhost:11201/Campaigns.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ICampaigns" contract="ServiceReference2.ICampaigns"
+                name="BasicHttpBinding_ICampaigns" />
+            <endpoint address="http://localhost:11201/ServiceDeces.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IServiceDeces" contract="ServiceReference3.IServiceDeces"
+                name="BasicHttpBinding_IServiceDeces" />
+            <endpoint address="http://localhost:11201/Service1.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IService1" contract="testService.IService1"
+                name="BasicHttpBinding_IService1" />
+        </client>
+    </system.serviceModel>
+</configuration>

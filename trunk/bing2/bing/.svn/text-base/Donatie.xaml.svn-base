@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="bing.Donatie"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="90" d:DesignWidth="750" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <HyperlinkButton Content="details" Height="23" HorizontalAlignment="Left" Margin="12,34,0,0" Name="detailsHyperlinkButton" VerticalAlignment="Top" Width="52" Foreground="#FFDDEF0C" FontSize="15" Click="detailsHyperlinkButton_Click" DataContext="{Binding}" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="93,22,0,0" Name="numeCampanieTextBlock" Text="NumeCampanie" VerticalAlignment="Top" FontFamily="Arial" Foreground="#FF9A9898" FontSize="18" Width="405" />
+        <TextBlock Height="27" HorizontalAlignment="Left" Margin="94,51,0,0" Name="dataTextBlock" Text="Data" VerticalAlignment="Top" Width="224" Foreground="#FF656464" FontSize="15"></TextBlock>
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="504,18,0,0" Name="ValueTextBlock" VerticalAlignment="Top" Width="58" Foreground="#FF656464" Text="value:" FontSize="15" />
+        <TextBlock Height="27" HorizontalAlignment="Left" Margin="557,16,0,0" Name="MoneyTextBlock" Text="bani" VerticalAlignment="Top" Width="166" Foreground="#FFAAA8A8" FontSize="18" />
+        <Canvas Height="5" HorizontalAlignment="Left" Margin="12,79,0,0" Name="linieCanvas" VerticalAlignment="Top" />
+        <!--<StackPanel HorizontalAlignment="Left" Height="0" Margin="12,84,0,0" Name="detaliiStackPanel" VerticalAlignment="Top" Width="664" />-->
+        <StackPanel HorizontalAlignment="Left" Margin="30,0,0,0" Height="0" Name="detaliiComentariiStackPanel" VerticalAlignment="Top" Width="750" />
+        <!--<Line Name="linieDonatii" X1="10" X2="630" Y1="86" Y2="86" Fill="White" ></Line>-->
+    </Grid>
+    <!--<UserControl.Resources>
+        <Style TargetType="Line">
+            <Setter Property="Fill" Value="White">
+            </Setter>
+        </Style>
+    </UserControl.Resources>-->
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="bing.DonatieDetalii"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100" d:DesignWidth="750">
+    
+    <Grid x:Name="LayoutRoot" Background="Black" Height="100">
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="ocolTextBlock" Text="ocol silvic:" VerticalAlignment="Top" Width="82" Foreground="#FF656464" FontSize="15" />
+        <TextBlock FontSize="15" Foreground="#FF656464" Height="23" HorizontalAlignment="Left" Margin="397,12,0,0" Name="judetTextBlock" Text="judet:" VerticalAlignment="Top" Width="55" />
+        <TextBlock FontSize="16" Foreground="#FFAAA8A8" Height="23" HorizontalAlignment="Left" Margin="100,12,0,0" Name="numeOcolTextBlock" Text="ocol" VerticalAlignment="Top" Width="217" />
+        <TextBlock FontSize="16" Foreground="#FFAAA8A8" Height="23" HorizontalAlignment="Right" Margin="0,11,12,0" Name="numeJudetTextBlock" Text="jud" VerticalAlignment="Top" Width="141" />
+        <TextBlock HorizontalAlignment="Left" Margin="12,41,0,0" Name="problemeTextBlock" Text="TextBlock" VerticalAlignment="Top" Width="576" Foreground="#FFAAA8A8" FontSize="13" Opacity="1" TextWrapping="Wrap" Height="59" />
+        <!--<Line Name="linieDonatii" X1="10" X2="590" Y1="96" Y2="96" Fill="White" Opacity="2"></Line>-->
+    </Grid>
+</UserControl>

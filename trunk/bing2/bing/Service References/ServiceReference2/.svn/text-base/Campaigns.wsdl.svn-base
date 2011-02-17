@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Campaigns" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
+      <xsd:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://localhost:11201/Campaigns.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICampaigns_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectCampaigns_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCampaigns" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectCampaigns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCampaignsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectCampanieById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCampanieById" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectCampanieById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCampanieByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectComentarii_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectComentarii" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectComentarii_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectComentariiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_InsertComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertComment" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_InsertComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectDonationsByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectDonationsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectDonationsByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectDonationsByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectDonatiiComentariiByDonatie_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectDonatiiComentariiByDonatie" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_SelectDonatiiComentariiByDonatie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectDonatiiComentariiByDonatieResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_InsertCommentDonations_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCommentDonations" />
+  </wsdl:message>
+  <wsdl:message name="ICampaigns_InsertCommentDonations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCommentDonationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICampaigns">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/DoWork" message="tns:ICampaigns_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/DoWorkResponse" message="tns:ICampaigns_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCampaigns">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/SelectCampaigns" message="tns:ICampaigns_SelectCampaigns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/SelectCampaignsResponse" message="tns:ICampaigns_SelectCampaigns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCampanieById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/SelectCampanieById" message="tns:ICampaigns_SelectCampanieById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/SelectCampanieByIdResponse" message="tns:ICampaigns_SelectCampanieById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectComentarii">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/SelectComentarii" message="tns:ICampaigns_SelectComentarii_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/SelectComentariiResponse" message="tns:ICampaigns_SelectComentarii_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/InsertComment" message="tns:ICampaigns_InsertComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/InsertCommentResponse" message="tns:ICampaigns_InsertComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDonationsByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/SelectDonationsByUserId" message="tns:ICampaigns_SelectDonationsByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/SelectDonationsByUserIdResponse" message="tns:ICampaigns_SelectDonationsByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDonatiiComentariiByDonatie">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/SelectDonatiiComentariiByDonatie" message="tns:ICampaigns_SelectDonatiiComentariiByDonatie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/SelectDonatiiComentariiByDonatieResponse" message="tns:ICampaigns_SelectDonatiiComentariiByDonatie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCommentDonations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICampaigns/InsertCommentDonations" message="tns:ICampaigns_InsertCommentDonations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICampaigns/InsertCommentDonationsResponse" message="tns:ICampaigns_InsertCommentDonations_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICampaigns" type="tns:ICampaigns">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCampaigns">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/SelectCampaigns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCampanieById">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/SelectCampanieById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectComentarii">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/SelectComentarii" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComment">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/InsertComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDonationsByUserId">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/SelectDonationsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDonatiiComentariiByDonatie">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/SelectDonatiiComentariiByDonatie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCommentDonations">
+      <soap:operation soapAction="http://tempuri.org/ICampaigns/InsertCommentDonations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Campaigns">
+    <wsdl:port name="BasicHttpBinding_ICampaigns" binding="tns:BasicHttpBinding_ICampaigns">
+      <soap:address location="http://localhost:11201/Campaigns.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

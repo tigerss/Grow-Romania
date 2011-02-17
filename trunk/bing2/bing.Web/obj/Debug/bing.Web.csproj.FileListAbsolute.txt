@@ -1,0 +1,5 @@
+D:\Proiecte\IC\trunk\bing2\bing.Web\bin\bing.Web.dll
+D:\Proiecte\IC\trunk\bing2\bing.Web\bin\bing.Web.pdb
+D:\Proiecte\IC\trunk\bing2\bing.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\Proiecte\IC\trunk\bing2\bing.Web\obj\Debug\bing.Web.dll
+D:\Proiecte\IC\trunk\bing2\bing.Web\obj\Debug\bing.Web.pdb

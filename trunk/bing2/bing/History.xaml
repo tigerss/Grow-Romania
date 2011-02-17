@@ -1,0 +1,51 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="bing.History"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="415" d:DesignWidth="718" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
+
+    <Grid x:Name="LayoutRoot" Background="Black" Height="408" Width="718">
+        
+           <sdk:TabControl Height="395" HorizontalAlignment="Left" Margin="12,0,0,0" Background="Black"  Name="tabControl1" VerticalAlignment="Top" Width="700">
+            <sdk:TabItem Header="Individual" Name="Individual" Background="Black" >
+                <Grid Height="338" Background="Black">
+                <sdk:DataGrid SelectionChanged="dataGrid1_SelectionChanged" AutoGenerateColumns="False" GridLinesVisibility="Horizontal" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"  Background="Black" AlternatingRowBackground="Black" RowBackground="Black" Height="246" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="100" HeadersVisibility="None"  Margin="36,72,0,0">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTemplateColumn x:Name="Coloana1"  >
+                            <sdk:DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Image Source="{Binding Image}" Width="100" Stretch="Fill" Height="100" ></Image>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+                <toolkit:Chart x:Name="MyPie" Background="Black"  Title="Writer Assignments" Margin="236,0,44,0">
+                    <toolkit:PieSeries ItemsSource="{Binding}" Background="Black"  IndependentValuePath="Name" 
+            DependentValuePath="Types" Title="Lol" BorderBrush="#FF675757" Foreground="#FFE76D6D">
+                    </toolkit:PieSeries>
+                </toolkit:Chart>
+                <TextBlock Height="33" HorizontalAlignment="Left" Margin="25,30,0,0" Name="textBlock1" Text="Select Animal" VerticalAlignment="Top" Width="162" Foreground="#FFF0F0F0" FontSize="20" />
+                <TextBlock FontSize="20" Foreground="#FFF0F0F0" Height="33" HorizontalAlignment="Left" Margin="343,30,0,0" Name="textBlock2" Text="Select Animal" VerticalAlignment="Top" Width="162" />
+             </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="All" Loaded="All_Loaded" MouseLeftButtonDown="All_MouseLeftButtonDown" Name="All" Background="Black" MouseEnter="All_MouseEnter">
+                <Grid Height="338" Background="Black">
+                   <toolkit:Chart x:Name="AllChart" Background="Black"  Title="Writer Assignments" Margin="236,0,44,0">
+                        <toolkit:Chart.Axes>
+                            <toolkit:CategoryAxis  Title="Animal" Orientation="X" Foreground="White" />
+                            <toolkit:LinearAxis x:Name="LinearAxis" Title="Types owned"  Foreground="White" Orientation="Y" Minimum="0" Maximum="{Binding Max}"  
+                  Interval="50" ShowGridLines="True"   FontStyle='Italic'/>
+                        </toolkit:Chart.Axes>
+                        <toolkit:ColumnSeries   Title="# of Types" ItemsSource="{Binding}"  IndependentValuePath="Name" 
+            DependentValuePath="Types"  SelectionChanged="ColumnSeries_SelectionChanged_1">
+                        </toolkit:ColumnSeries>
+                    </toolkit:Chart>
+                       </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+    </Grid>
+</UserControl>
