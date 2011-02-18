@@ -19,12 +19,14 @@ namespace bing
     public partial class ExtendedDescription : UserControl
     {
         Popup popup;
-        List<getAnimalStats_Result> list;
+        String Nume;
+        String Descriere;
 
-        public ExtendedDescription(Popup popup, List<getAnimalStats_Result> lista)
+        public ExtendedDescription(Popup popup, String Nume, String Descriere)
         {
             InitializeComponent();
-            list = lista;
+            this.Nume = Nume;
+            this.Descriere = Descriere;
             this.popup = popup;
 
             showFields();
@@ -80,8 +82,8 @@ namespace bing
         // Afisez datele animalului
         private void loadData()
         {
-            textBlock1.Text = list[0].Nume;
-            textBlock3.Text = list[0].Descriere;
+            textBlock1.Text = Nume;
+            textBlock3.Text = Descriere;
         }
 
         //private void loadImages()

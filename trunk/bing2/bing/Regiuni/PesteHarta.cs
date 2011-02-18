@@ -228,7 +228,7 @@ namespace bing
                     planeproj.RotationY = 0;
                     if (Animalule.getRegion() == "Padure")
                     {
-                        img.Source = new BitmapImage(new Uri("Game/munti2.jpg", UriKind.Relative));
+                        img.Source = new BitmapImage(new Uri("Game/munte.jpg", UriKind.Relative));
                     }
                     else
                         if (Animalule.getRegion() == "Campie")

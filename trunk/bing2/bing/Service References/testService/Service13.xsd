@@ -13,6 +13,7 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Foc" type="xs:boolean" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="Imagine1" nillable="true" type="xs:string" />
@@ -247,6 +248,7 @@
           <xs:element minOccurs="0" name="Camp" nillable="true" type="tns:Camp" />
           <xs:element minOccurs="0" name="CampReference" nillable="true" type="q10:EntityReferenceOfCampKvZjy4f9" />
           <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Plante" type="xs:unsignedByte" />

@@ -3382,6 +3382,8 @@ namespace bing.ServiceReference2 {
         
         private System.DateTime DataField;
         
+        private string DescriptionField;
+        
         private int FK_CampField;
         
         private int FK_PadureField;
@@ -3449,6 +3451,19 @@ namespace bing.ServiceReference2 {
                 if ((this.DataField.Equals(value) != true)) {
                     this.DataField = value;
                     this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }

@@ -24,6 +24,8 @@ namespace bing.testService {
         
         private string DescriereField;
         
+        private string DescriptionField;
+        
         private bool FocField;
         
         private int IDField;
@@ -64,6 +66,19 @@ namespace bing.testService {
                 if ((object.ReferenceEquals(this.DescriereField, value) != true)) {
                     this.DescriereField = value;
                     this.RaisePropertyChanged("Descriere");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
@@ -1164,6 +1179,8 @@ namespace bing.testService {
         
         private System.DateTime DataField;
         
+        private string DescriptionField;
+        
         private int FK_CampField;
         
         private int FK_PadureField;
@@ -1231,6 +1248,19 @@ namespace bing.testService {
                 if ((this.DataField.Equals(value) != true)) {
                     this.DataField = value;
                     this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }

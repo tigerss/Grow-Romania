@@ -313,7 +313,7 @@ namespace Forme
             // Afiseaza istoricul in meniul din stanga
             if (listPlantHistory.Count > 0)
             {
-
+                new MeniuPlanta(MeniuDreapta, "Moldova", "Subregiune1", "Padure", listPlantHistory); 
             }
         }
 

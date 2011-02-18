@@ -127,6 +127,7 @@
     <Compile Include="Forme\ButonAnimat.cs" />
     <Compile Include="Forme\ControlCuColturi.cs" />
     <Compile Include="Forme\ControlCucolturiRotunde.cs" />
+    <Compile Include="Forme\MeniuPlanta.cs" />
     <Compile Include="Forme\Linie.cs" />
     <Compile Include="Forme\LoadingBar.xaml.cs">
       <DependentUpon>LoadingBar.xaml</DependentUpon>

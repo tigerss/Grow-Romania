@@ -450,6 +450,7 @@
     <Property Name="Trasnite" Type="bit" Nullable="false" />
     <Property Name="Numar" Type="smallint" Nullable="false" />
     <Property Name="FK_User" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Istoric_Plante_Tranzact">
     <Key>

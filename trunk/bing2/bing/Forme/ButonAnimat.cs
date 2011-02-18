@@ -23,6 +23,7 @@ namespace bing.Forme
         double m_top;
         double m_left;
         bool m_selectAnimals;
+        string m_text;
 
         #region animatie
         DoubleAnimation da = new DoubleAnimation();
@@ -38,13 +39,14 @@ namespace bing.Forme
 
         MeniuPicks m_meniuPicks;
 
-        public ButonAnimat(Canvas c, String img, double top, double left, bool showAnimals, MeniuPicks picks)
+        public ButonAnimat(Canvas c, String img, double top, double left, bool showAnimals, MeniuPicks picks, string text)
         {
             m_c = c;
             m_top = top;
             m_left = left;
             m_selectAnimals = showAnimals;
             m_meniuPicks = picks;
+            m_text = text;
             m_image = new Image()
             {
                 Source = new BitmapImage(
@@ -56,6 +58,7 @@ namespace bing.Forme
                 Width = 38,
                 Height = 21
             };
+
             m_canvas = new Canvas()
             {
                 Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xcc, 0xdf, 0xf5)),
@@ -70,16 +73,34 @@ namespace bing.Forme
                 },
 
             };
+
+            initialize();
+            
+        }
+
+        void initialize()
+        {
+            TextBlock tb = new TextBlock()
+            {
+                Text = m_text,
+                FontFamily = new FontFamily("Tahoma"),
+                FontSize = 12,
+                Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170))
+            };
+
+            //m_canvas.Children.Add(tb);
             m_canvas.Children.Add(m_image);
             Canvas.SetTop(m_image, 10);
             Canvas.SetLeft(m_image, 6);
+
             m_popup = new Popup();
             m_popup.Child = m_canvas;
             m_popup.IsOpen = true;
             if (m_c != null)
-            m_c.Children.Add(m_popup);
-            Canvas.SetTop(m_popup, top);
-            Canvas.SetLeft(m_popup, left);
+                m_c.Children.Add(m_popup);
+            Canvas.SetTop(m_popup, m_top);
+            Canvas.SetLeft(m_popup, m_left);
+
             m_canvas.MouseEnter += new MouseEventHandler(m_canvas_MouseEnter);
             m_canvas.MouseLeave += new MouseEventHandler(m_canvas_MouseLeave);
             m_canvas.MouseLeftButtonDown += new MouseButtonEventHandler(m_canvas_MouseLeftButtonDown);

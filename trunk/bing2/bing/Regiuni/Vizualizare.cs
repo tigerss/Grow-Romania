@@ -52,8 +52,8 @@ namespace bing.Regiuni
             MeniuPicks p = new MeniuPicks(c, 663, 100, "", 1, 50, 370,md);
 
             c.Children.Add(p);
-            ButonAnimat plante = new ButonAnimat(c, "DesignImages/tree.png", 60, 707, false, p);
-            ButonAnimat animale = new ButonAnimat(c, "DesignImages/paw.jpg", 110, 707, true, p);
+            ButonAnimat plante = new ButonAnimat(c, "DesignImages/tree.png", 60, 707, false, p, "Plants");
+            ButonAnimat animale = new ButonAnimat(c, "DesignImages/paw.jpg", 110, 707, true, p, "Animals");
         }
     }
 }

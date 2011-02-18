@@ -423,6 +423,7 @@
     <NavigationProperty Name="Plante" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Plante" FromRole="Istoric_Plante_Deces" ToRole="Plante" />
     <Property Type="Int32" Name="FK_User" Nullable="false" />
     <NavigationProperty Name="Usr" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Istoric_Plante_Deces" ToRole="Usr" />
+    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Istoric_Plante_Tranzact">
     <Key>
@@ -1642,5 +1643,6 @@
     <Property Type="Boolean" Name="Taiate" Nullable="false" />
     <Property Type="Boolean" Name="Trasnite" Nullable="false" />
     <Property Type="Int16" Name="Numar" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
   </ComplexType>
 </Schema>

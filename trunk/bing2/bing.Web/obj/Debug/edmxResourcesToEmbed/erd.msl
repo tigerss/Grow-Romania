@@ -108,6 +108,7 @@
     <EntitySetMapping Name="Istoric_Plante_Deces">
       <EntityTypeMapping TypeName="dbsqlModel.Istoric_Plante_Deces">
         <MappingFragment StoreEntitySet="Istoric_Plante_Deces">
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="FK_User" ColumnName="FK_User" />
           <ScalarProperty Name="Numar" ColumnName="Numar" />
           <ScalarProperty Name="Trasnite" ColumnName="Trasnite" />
@@ -729,6 +730,7 @@
           <ScalarProperty Name="Taiate" ColumnName="Taiate" />
           <ScalarProperty Name="Trasnite" ColumnName="Trasnite" />
           <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

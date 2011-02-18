@@ -325,6 +325,7 @@
           <xs:element minOccurs="0" name="Camp" nillable="true" type="tns:Camp" />
           <xs:element minOccurs="0" name="CampReference" nillable="true" type="q11:EntityReferenceOfCampKvZjy4f9" />
           <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Plante" type="xs:unsignedByte" />

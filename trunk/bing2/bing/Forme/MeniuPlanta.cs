@@ -21,21 +21,22 @@ using bing.Forme;
 
 namespace Forme
 {
-    public class MeniuAnimal : UserControl
+    public class MeniuPlanta : UserControl
     {
         Canvas pan, canvas;
-        List<getAnimalStats_Result> lista;
-        public MeniuAnimal(Canvas can, string Regiune, string Subregiune, string Locatie, List<getAnimalStats_Result> lista)
+        List<getPlantHistory_Result> listPlantHistory;
+
+        public MeniuPlanta(Canvas can, string Regiune, string Subregiune, string Locatie, List<getPlantHistory_Result> lista)
         {
             canvas = can;
-            this.lista = lista;
+            this.listPlantHistory = lista;
             canvas.Children.Clear();
 
             #region Adresa + Nume animal
             ControlCuColturiRotunde adresscur = new ControlCuColturiRotunde(can, 230, 74, 0, 7, true, 1);
             adresscur.Colturi(13, 13, new Rect(0, 0, 230, 74));
             adresscur.Colors("#FFF0F8FF", "#FFF0F8FF", new Point(0.5, 1), new Point(0.5, 0), 0.3);
-        //    ControlCuColturiRotunde dd = new ControlCuColturiRotunde(can, 200, 100, 200, 100, false, 1);
+            //    ControlCuColturiRotunde dd = new ControlCuColturiRotunde(can, 200, 100, 200, 100, false, 1);
             Canvas wrap = new Canvas() { Margin = new Thickness(12, 12, 12, 12), Width = 210, Height = 60 };
             TextBlock tb1 = new TextBlock() { Text = "You are here: ", Margin = new Thickness(0, 1, 0, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 12, Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 42, 116)) };
             TextBlock tb2 = new TextBlock() { Text = Regiune, Margin = new Thickness(tb1.ActualWidth + 1, 1, 0, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 12, Foreground = new SolidColorBrush(Colors.Black), Cursor = Cursors.Hand };
@@ -48,11 +49,11 @@ namespace Forme
                 tb5.Margin = new Thickness(15, 18, 0, 0);
             TextBlock tb6 = new TextBlock() { Text = Animalule.getRegion(), Margin = new Thickness(tb5.Margin.Left + tb5.ActualWidth + 1, 18, 0, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 12, Foreground = new SolidColorBrush(Colors.Black), Cursor = Cursors.Hand };
             TextBlock tb7 = new TextBlock() { Text = " >> ", Margin = new Thickness(tb6.Margin.Left + tb6.ActualWidth + 1, 18, 0, 0), FontFamily = new FontFamily("Comic Sans MS"), FontWeight = FontWeights.SemiBold, FontSize = 8, Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 42, 116)) };
-            TextBlock tb8 = new TextBlock() { Text = "Animale", Margin = new Thickness(tb7.Margin.Left + tb7.ActualWidth + 1, 18, 0, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 12, Foreground = new SolidColorBrush(Colors.Black), Cursor = Cursors.Hand };
+            TextBlock tb8 = new TextBlock() { Text = "Plante", Margin = new Thickness(tb7.Margin.Left + tb7.ActualWidth + 1, 18, 0, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 12, Foreground = new SolidColorBrush(Colors.Black), Cursor = Cursors.Hand };
             wrap.Children.Add(tb1); wrap.Children.Add(tb2); wrap.Children.Add(tb3); wrap.Children.Add(tb4); wrap.Children.Add(tb5); wrap.Children.Add(tb6); wrap.Children.Add(tb7); wrap.Children.Add(tb8);
             can.Children.Add(wrap);
 
-            TextBlock tb9 = new TextBlock() { Text = lista[0].Nume, Margin = new Thickness(12, 48, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 23, Foreground = new SolidColorBrush(Colors.Black) };
+            TextBlock tb9 = new TextBlock() { Text = listPlantHistory[0].Nume, Margin = new Thickness(12, 48, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 23, Foreground = new SolidColorBrush(Colors.Black) };
             can.Children.Add(tb9);
 
             #endregion
@@ -74,7 +75,7 @@ namespace Forme
             p1.Colturi(10, 10, new Rect(0, 0, 60, 60));
             p1.Background = new SolidColorBrush(Colors.Transparent);
             Image img1;
-            if (lista[0].Imagine1 != null)
+            if (listPlantHistory[0].Imagine1 != null)
             {
                 img1 = new Image() { Source = new BitmapImage(new Uri(lista[0].Imagine1, UriKind.Relative)), Width = 60, Height = 60, Margin = new Thickness(0, 0, 0, 0) };
                 Canvas can1 = new Canvas(); can1 = p1.intoarce(); can1.Children.Add(img1);
@@ -88,7 +89,7 @@ namespace Forme
             p2.Colturi(10, 10, new Rect(0, 0, 60, 60));
             p2.Background = new SolidColorBrush(Colors.Transparent);
             Image img2;
-            if (lista[0].Imagine2 != null)
+            if (listPlantHistory[0].Imagine2 != null)
             {
                 img2 = new Image() { Source = new BitmapImage(new Uri(lista[0].Imagine2, UriKind.Relative)), Width = 60, Height = 60, Margin = new Thickness(0, 0, 0, 0) };
                 Canvas can2 = new Canvas(); can2 = p2.intoarce(); can2.Children.Add(img2);
@@ -102,7 +103,7 @@ namespace Forme
             p3.Colturi(10, 10, new Rect(0, 0, 60, 60));
             p3.Background = new SolidColorBrush(Colors.Transparent);
             Image img3;
-            if (lista[0].Imagine3 != null)
+            if (listPlantHistory[0].Imagine3 != null)
             {
                 img3 = new Image() { Source = new BitmapImage(new Uri(lista[0].Imagine3, UriKind.Relative)), Width = 60, Height = 60, Margin = new Thickness(0, 0, 0, 0) };
                 Canvas can3 = new Canvas(); can3 = p3.intoarce(); can3.Children.Add(img3);
@@ -110,7 +111,7 @@ namespace Forme
             }
 
             //max 80-85 caractere
-            TextBlock desc1 = new TextBlock() { Text = lista[0].Descriere.Length < 80 ? lista[0].Descriere : lista[0].Descriere.Substring(0, 80) + "...", Margin = new Thickness(8, 110, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, TextTrimming = TextTrimming.WordEllipsis, Width = 218, Height = 300 };
+            TextBlock desc1 = new TextBlock() { Text = listPlantHistory[0].Descriere.Length < 80 ? listPlantHistory[0].Descriere : listPlantHistory[0].Descriere.Substring(0, 80) + "...", Margin = new Thickness(8, 110, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, TextTrimming = TextTrimming.WordEllipsis, Width = 218, Height = 300 };
             TextBlock more1 = new TextBlock() { Text = "+ more info", Margin = new Thickness(150, 144, 12, 10), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Color.FromArgb(255, 139, 146, 5)), Cursor = Cursors.Hand };
             more1.MouseEnter += new MouseEventHandler(more1_MouseEnter);
             more1.MouseLeave += new MouseEventHandler(more1_MouseLeave);
@@ -125,13 +126,13 @@ namespace Forme
 
             TextBlock tb11 = new TextBlock() { Text = "Life cycle", Margin = new Thickness(10, 178, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 22, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb11);
-            TextBlock tb12 = new TextBlock() { Text = "Breeding Season: ", Margin = new Thickness(12, 208, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
+            TextBlock tb12 = new TextBlock() { Text = "Planting Season: ", Margin = new Thickness(12, 208, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
             pan.Children.Add(tb12);
-            TextBlock tb13 = new TextBlock() { Text = String.Format("{0:MMM}", lista[0].DataInmultInceput) + " - " + String.Format("{0:MMM}", lista[0].DataInmultSfarsit), Margin = new Thickness(140, 208, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
+            TextBlock tb13 = new TextBlock() { Text = String.Format("{0:MMM}", listPlantHistory[0].Data) + " - " + String.Format("{0:MMM}", listPlantHistory[0].Data), Margin = new Thickness(140, 208, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb13);
-            TextBlock tb14 = new TextBlock() { Text = "Hunting Season: ", Margin = new Thickness(12, 226, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
+            TextBlock tb14 = new TextBlock() { Text = "Harvesting Season: ", Margin = new Thickness(12, 226, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
             pan.Children.Add(tb14);
-            TextBlock tb15 = new TextBlock() { Text = String.Format("{0:MMM}", lista[0].DataVanatInceput) + " - " + String.Format("{0:MMM}", lista[0].DataVanatSfarsit), Margin = new Thickness(140, 226, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
+            TextBlock tb15 = new TextBlock() { Text = String.Format("{0:MMM}", listPlantHistory[0].Data) + " - " + String.Format("{0:MMM}", listPlantHistory[0].Data), Margin = new Thickness(140, 226, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb15);
             TextBlock tb16 = new TextBlock() { Text = "Hibernation: ", Margin = new Thickness(12, 244, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
             pan.Children.Add(tb16);
@@ -139,7 +140,7 @@ namespace Forme
             pan.Children.Add(tb17);
             TextBlock tb18 = new TextBlock() { Text = "Progeny per year: ", Margin = new Thickness(12, 262, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
             pan.Children.Add(tb18);
-            TextBlock tb19 = new TextBlock() { Text =lista[0].Pui_An.ToString(), Margin = new Thickness(140, 262, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
+            TextBlock tb19 = new TextBlock() { Text = listPlantHistory[0].Numar.ToString(), Margin = new Thickness(140, 262, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb19);
             #endregion
             //string istoric1 = "The Breedin Season began";
@@ -154,7 +155,7 @@ namespace Forme
             pan.Children.Add(tb20);
             if (lista.Count > 0)
             {
-                TextBlock ist1 = new TextBlock() { Text = GetNormal(lista[0].Description), Margin = new Thickness(12, 322, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
+                TextBlock ist1 = new TextBlock() { Text = GetNormal(listPlantHistory[0].Description), Margin = new Thickness(12, 322, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
                 Rectangle r1 = new Rectangle() { Fill = new SolidColorBrush(Color.FromArgb(255, 26, 28, 30)), Width = 218, Height = 36, Margin = new Thickness(8, 322, 12, 12) };
                 r1.Height = ist1.ActualHeight + 2;
                 pan.Children.Add(r1); pan.Children.Add(ist1);
@@ -162,7 +163,7 @@ namespace Forme
 
                 if (lista.Count > 1)
                 {
-                    TextBlock ist2 = new TextBlock() { Text = GetNormal(lista[1].Description), Margin = new Thickness(12, 322 + ist1.ActualHeight + 2, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
+                    TextBlock ist2 = new TextBlock() { Text = GetNormal(listPlantHistory[1].Description), Margin = new Thickness(12, 322 + ist1.ActualHeight + 2, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
                     Rectangle r2 = new Rectangle() { Fill = new SolidColorBrush(Colors.Transparent), Width = 218, Height = 36, Margin = new Thickness(8, 322 + ist1.ActualHeight + 2, 12, 12) };
                     r2.Height = ist2.ActualHeight + 2;
                     pan.Children.Add(r2); pan.Children.Add(ist2);
@@ -171,7 +172,7 @@ namespace Forme
 
                     if (lista.Count > 2)
                     {
-                        TextBlock ist3 = new TextBlock() { Text = GetNormal(lista[2].Description), Margin = new Thickness(12, 322 + ist1.ActualHeight + ist2.ActualHeight + 4, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
+                        TextBlock ist3 = new TextBlock() { Text = GetNormal(listPlantHistory[2].Description), Margin = new Thickness(12, 322 + ist1.ActualHeight + ist2.ActualHeight + 4, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White), TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
                         Rectangle r3 = new Rectangle() { Fill = new SolidColorBrush(Color.FromArgb(255, 26, 28, 30)), Width = 218, Height = 36, Margin = new Thickness(8, 322 + ist1.ActualHeight + ist2.ActualHeight + 4, 12, 12) };
                         r3.Height = ist3.ActualHeight + 2;
                         pan.Children.Add(r3); pan.Children.Add(ist3);
@@ -194,13 +195,18 @@ namespace Forme
 
         void more2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+
         }
 
         void more1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Popup popup = new Popup();
-            ExtendedDescription moreInfo = new ExtendedDescription(popup, lista[0].Nume, lista[0].Descriere);
+            ExtendedDescription moreInfo = new ExtendedDescription
+                (
+                popup,
+                listPlantHistory[0].Nume,
+                listPlantHistory[0].Descriere
+                );
             popup.Child = moreInfo;
             popup.VerticalOffset = 35;
             popup.HorizontalOffset = 380;
@@ -236,11 +242,11 @@ namespace Forme
                 if ((int)test.ActualHeight == 16)
                 {
                     TextBlock test2 = new TextBlock() { Text = GetNormal(istoric.Substring(0, istoric.Length - aux.Length) + aux.Substring(0, aux.IndexOf("[b]"))), Margin = new Thickness(12, 0, 12, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 14, TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
-                    add = new TextBlock() { Text = GetNormal(aux.Substring(aux.IndexOf("[b]"), aux.IndexOf("[/b]") - aux.IndexOf("[b]"))), Margin = new Thickness(left + test2.ActualWidth, top, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)), TextWrapping = TextWrapping.Wrap, Cursor=Cursors.Hand };
+                    add = new TextBlock() { Text = GetNormal(aux.Substring(aux.IndexOf("[b]"), aux.IndexOf("[/b]") - aux.IndexOf("[b]"))), Margin = new Thickness(left + test2.ActualWidth, top, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)), TextWrapping = TextWrapping.Wrap, Cursor = Cursors.Hand };
                 }
                 else
                 {
-                    double addleft = GetLeftValueFor2Rows(istoric,for2rows++);
+                    double addleft = GetLeftValueFor2Rows(istoric, for2rows++);
                     add = new TextBlock() { Text = GetNormal(aux.Substring(aux.IndexOf("[b]"), aux.IndexOf("[/b]") - aux.IndexOf("[b]"))), Margin = new Thickness(left + addleft, top + 16.9, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)), TextWrapping = TextWrapping.Wrap, Cursor = Cursors.Hand };
                 }
                 add.MouseEnter += new MouseEventHandler(add_MouseEnter);
@@ -264,13 +270,13 @@ namespace Forme
         /// </summary>
         /// <param name="istoric">Stringu tot</param>
         /// <returns>Stringu randului 2</returns>
-        private double GetLeftValueFor2Rows(string istoric,byte nrcrt)
+        private double GetLeftValueFor2Rows(string istoric, byte nrcrt)
         {
-            string aux=istoric;
+            string aux = istoric;
             bool ok = true;
             while (ok)
             {
-                TextBlock test = new TextBlock() { Text = GetNormal( aux=aux.Substring(0, aux.LastIndexOf(' '))), Margin = new Thickness(12, 0, 12, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 14, TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
+                TextBlock test = new TextBlock() { Text = GetNormal(aux = aux.Substring(0, aux.LastIndexOf(' '))), Margin = new Thickness(12, 0, 12, 0), FontFamily = new FontFamily("Tahoma"), FontSize = 14, TextWrapping = TextWrapping.Wrap, Width = 214, Height = 34 };
                 ok = (int)test.ActualHeight != 16;
             }
             istoric = aux = istoric.Substring(aux.Length).TrimStart();
@@ -286,7 +292,10 @@ namespace Forme
         /// <returns>Stringu normalizat</returns>
         private string GetNormal(string istoric)
         {
-            return istoric.Replace("[b]", "").Replace("[/b]", "");
+            if (istoric != null)
+                return istoric.Replace("[b]", "").Replace("[/b]", "");
+            return null;
+            
         }
         #endregion
     }
