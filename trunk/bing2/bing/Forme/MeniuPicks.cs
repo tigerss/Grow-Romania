@@ -29,7 +29,8 @@ namespace Forme
         private string[] poze;
         Canvas myMeniuPicksCanvas;
         Canvas MeniuDreapta;
-        List<getAnimalStats_Result> listHistory = new List<getAnimalStats_Result>();
+        List<getAnimalStats_Result> listAnimalHistory = new List<getAnimalStats_Result>();
+        List<getPlantHistory_Result> listPlantHistory = new List<getPlantHistory_Result>();
 
         static BasicHttpBinding bind = new BasicHttpBinding();
         static EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Service1.svc");
@@ -43,6 +44,7 @@ namespace Forme
         double top;
         ADDPozaCuBorder p;
         int isFromPadure = 1;
+        bool animalSelected = true;
        
         /// <summary>
         /// Panelul e rascucit asa ca 0,0 este in dreapta sus
@@ -123,28 +125,17 @@ namespace Forme
         }
 
         /*
-         * Afiseaza istoricul animalului in meniul din stanga
-         * */
-        void wcf_getAnimalHistoryFromDBCompleted(object sender, getAnimalHistoryFromDBCompletedEventArgs e)
-        {
-            listHistory.Clear();
-            foreach (var a in e.Result)
-                listHistory.Add(a);
-
-            MeniuAnimal ss;
-            if (listHistory.Count > 0)
-                ss = new MeniuAnimal(MeniuDreapta, "Moldova", "Subregiune1", "Padure", listHistory);
-        }
-
-        /*
          * Preia istoricul animalului selectat din baza de date
          * */
         void MeniuPicks_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             BitmapImage bi = (BitmapImage)((Image)sender).Source;
-            Uri uri = bi.UriSource; 
-            
-            wcf.getAnimalHistoryFromDBAsync(11, uri.OriginalString);
+            Uri uri = bi.UriSource;
+
+            if (animalSelected)
+                wcf.getAnimalHistoryFromDBAsync(11, uri.OriginalString);
+            else
+                wcf.getPlantHistoryFromDBAsync(11, uri.OriginalString);
 
         }
 
@@ -229,6 +220,7 @@ namespace Forme
         {
             wcf.GetAnimalFromDBCompleted += new EventHandler<GetAnimalFromDBCompletedEventArgs>(wcf_GetAnimalFromDBCompleted);
             wcf.getAnimalHistoryFromDBCompleted += new EventHandler<getAnimalHistoryFromDBCompletedEventArgs>(wcf_getAnimalHistoryFromDBCompleted);
+            animalSelected = true;
             
             try
             {
@@ -276,11 +268,28 @@ namespace Forme
         }
 
         /*
+         * Afiseaza istoricul animalului in meniul din stanga
+         * */
+        void wcf_getAnimalHistoryFromDBCompleted(object sender, getAnimalHistoryFromDBCompletedEventArgs e)
+        {
+            listAnimalHistory.Clear();
+            foreach (var a in e.Result)
+                listAnimalHistory.Add(a);
+
+            MeniuAnimal ss;
+            if (listAnimalHistory.Count > 0)
+                ss = new MeniuAnimal(MeniuDreapta, "Moldova", "Subregiune1", "Padure", listAnimalHistory);
+        }
+
+        /*
          * Afiseaza plantele
          * */
         public void showPlants()
         {
             wcf.getPlantsFromDBCompleted += new EventHandler<getPlantsFromDBCompletedEventArgs>(wcf_getPlantsFromDBCompleted);
+            wcf.getPlantHistoryFromDBCompleted += new EventHandler<getPlantHistoryFromDBCompletedEventArgs>(wcf_getPlantHistoryFromDBCompleted);
+            animalSelected = false;
+            
             try
             {
                 wcf.getPlantsFromDBAsync(isFromPadure);
@@ -288,6 +297,23 @@ namespace Forme
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        /*
+         * Preia istoricul plantei din baza de date
+         * Afiseaza informatiile in meniul din stanga
+         * */
+        void wcf_getPlantHistoryFromDBCompleted(object sender, getPlantHistoryFromDBCompletedEventArgs e)
+        {
+            listPlantHistory.Clear();
+            foreach (var a in e.Result)
+                listPlantHistory.Add(a);
+
+            // Afiseaza istoricul in meniul din stanga
+            if (listPlantHistory.Count > 0)
+            {
+
             }
         }
 

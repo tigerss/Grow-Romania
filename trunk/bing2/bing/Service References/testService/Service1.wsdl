@@ -9,6 +9,12 @@
       <xsd:import schemaLocation="http://localhost:11201/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_getPlantHistoryFromDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPlantHistoryFromDB" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPlantHistoryFromDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPlantHistoryFromDBResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getPlantsFromDB_InputMessage">
     <wsdl:part name="parameters" element="tns:getPlantsFromDB" />
   </wsdl:message>
@@ -76,6 +82,10 @@
     <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="getPlantHistoryFromDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPlantHistoryFromDB" message="tns:IService1_getPlantHistoryFromDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPlantHistoryFromDBResponse" message="tns:IService1_getPlantHistoryFromDB_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getPlantsFromDB">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPlantsFromDB" message="tns:IService1_getPlantsFromDB_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPlantsFromDBResponse" message="tns:IService1_getPlantsFromDB_OutputMessage" />
@@ -123,6 +133,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPlantHistoryFromDB">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPlantHistoryFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getPlantsFromDB">
       <soap:operation soapAction="http://tempuri.org/IService1/getPlantsFromDB" style="document" />
       <wsdl:input>

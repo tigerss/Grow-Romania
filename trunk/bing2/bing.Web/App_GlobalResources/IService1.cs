@@ -12,6 +12,8 @@ namespace bing.Web
     public interface IService1
     {
         [OperationContract]
+        List<getPlantHistory_Result> getPlantHistoryFromDB(int userID, string imagine1);
+        [OperationContract]
         List<getPlants_Result> getPlantsFromDB(int isFromPadure);
         [OperationContract]
         List<getChallenges_Result> getChallengesFromDB(int userID);

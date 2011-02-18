@@ -1175,6 +1175,8 @@ namespace bing.ServiceReference2 {
         
         private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Animal_Tranzact> Istoric_Animal_Tranzact1Field;
         
+        private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Deces> Istoric_Plante_DecesField;
+        
         private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Tranzact> Istoric_Plante_TranzactField;
         
         private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Tranzact> Istoric_Plante_Tranzact1Field;
@@ -1342,6 +1344,19 @@ namespace bing.ServiceReference2 {
                 if ((object.ReferenceEquals(this.Istoric_Animal_Tranzact1Field, value) != true)) {
                     this.Istoric_Animal_Tranzact1Field = value;
                     this.RaisePropertyChanged("Istoric_Animal_Tranzact1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Deces> Istoric_Plante_Deces {
+            get {
+                return this.Istoric_Plante_DecesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Istoric_Plante_DecesField, value) != true)) {
+                    this.Istoric_Plante_DecesField = value;
+                    this.RaisePropertyChanged("Istoric_Plante_Deces");
                 }
             }
         }
@@ -3373,6 +3388,8 @@ namespace bing.ServiceReference2 {
         
         private byte FK_PlanteField;
         
+        private int FK_UserField;
+        
         private bool FocField;
         
         private long IDField;
@@ -3392,6 +3409,10 @@ namespace bing.ServiceReference2 {
         private bool TaiateField;
         
         private bool TrasniteField;
+        
+        private bing.ServiceReference2.Usr UsrField;
+        
+        private bing.ServiceReference2.EntityReferenceOfUsrKvZjy4f9 UsrReferenceField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bing.ServiceReference2.Camp Camp {
@@ -3467,6 +3488,19 @@ namespace bing.ServiceReference2 {
                 if ((this.FK_PlanteField.Equals(value) != true)) {
                     this.FK_PlanteField = value;
                     this.RaisePropertyChanged("FK_Plante");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FK_User {
+            get {
+                return this.FK_UserField;
+            }
+            set {
+                if ((this.FK_UserField.Equals(value) != true)) {
+                    this.FK_UserField = value;
+                    this.RaisePropertyChanged("FK_User");
                 }
             }
         }
@@ -3597,6 +3631,32 @@ namespace bing.ServiceReference2 {
                 if ((this.TrasniteField.Equals(value) != true)) {
                     this.TrasniteField = value;
                     this.RaisePropertyChanged("Trasnite");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bing.ServiceReference2.Usr Usr {
+            get {
+                return this.UsrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
+                    this.UsrField = value;
+                    this.RaisePropertyChanged("Usr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bing.ServiceReference2.EntityReferenceOfUsrKvZjy4f9 UsrReference {
+            get {
+                return this.UsrReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsrReferenceField, value) != true)) {
+                    this.UsrReferenceField = value;
+                    this.RaisePropertyChanged("UsrReference");
                 }
             }
         }

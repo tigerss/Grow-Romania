@@ -17,12 +17,82 @@ namespace bing.testService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="getPlants_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
-    public partial class getPlants_Result : bing.testService.ComplexObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="getPlantHistory_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class getPlantHistory_Result : bing.testService.ComplexObject {
+        
+        private System.DateTime DataField;
+        
+        private string DescriereField;
+        
+        private bool FocField;
+        
+        private int IDField;
         
         private string Imagine1Field;
         
-        private System.Nullable<bool> isFromPadureField;
+        private string Imagine2Field;
+        
+        private string Imagine3Field;
+        
+        private short NumarField;
+        
+        private string NumeField;
+        
+        private bool TaiateField;
+        
+        private bool TrasniteField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((this.DataField.Equals(value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descriere {
+            get {
+                return this.DescriereField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriereField, value) != true)) {
+                    this.DescriereField = value;
+                    this.RaisePropertyChanged("Descriere");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Foc {
+            get {
+                return this.FocField;
+            }
+            set {
+                if ((this.FocField.Equals(value) != true)) {
+                    this.FocField = value;
+                    this.RaisePropertyChanged("Foc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Imagine1 {
@@ -38,14 +108,79 @@ namespace bing.testService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> isFromPadure {
+        public string Imagine2 {
             get {
-                return this.isFromPadureField;
+                return this.Imagine2Field;
             }
             set {
-                if ((this.isFromPadureField.Equals(value) != true)) {
-                    this.isFromPadureField = value;
-                    this.RaisePropertyChanged("isFromPadure");
+                if ((object.ReferenceEquals(this.Imagine2Field, value) != true)) {
+                    this.Imagine2Field = value;
+                    this.RaisePropertyChanged("Imagine2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Imagine3 {
+            get {
+                return this.Imagine3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Imagine3Field, value) != true)) {
+                    this.Imagine3Field = value;
+                    this.RaisePropertyChanged("Imagine3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public short Numar {
+            get {
+                return this.NumarField;
+            }
+            set {
+                if ((this.NumarField.Equals(value) != true)) {
+                    this.NumarField = value;
+                    this.RaisePropertyChanged("Numar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nume {
+            get {
+                return this.NumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeField, value) != true)) {
+                    this.NumeField = value;
+                    this.RaisePropertyChanged("Nume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Taiate {
+            get {
+                return this.TaiateField;
+            }
+            set {
+                if ((this.TaiateField.Equals(value) != true)) {
+                    this.TaiateField = value;
+                    this.RaisePropertyChanged("Taiate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Trasnite {
+            get {
+                return this.TrasniteField;
+            }
+            set {
+                if ((this.TrasniteField.Equals(value) != true)) {
+                    this.TrasniteField = value;
+                    this.RaisePropertyChanged("Trasnite");
                 }
             }
         }
@@ -81,11 +216,12 @@ namespace bing.testService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.Statistici_Animale))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.IstoricAnimalPadureForUserX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.ComplexObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlants_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getChallenges_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getAchievement_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getAnimalStats_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.SelectAnimal_Result))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlants_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlantHistory_Result))]
     public partial class StructuralObject : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1034,6 +1170,8 @@ namespace bing.testService {
         
         private byte FK_PlanteField;
         
+        private int FK_UserField;
+        
         private bool FocField;
         
         private long IDField;
@@ -1053,6 +1191,10 @@ namespace bing.testService {
         private bool TaiateField;
         
         private bool TrasniteField;
+        
+        private bing.testService.Usr UsrField;
+        
+        private bing.testService.EntityReferenceOfUsrKvZjy4f9 UsrReferenceField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bing.testService.Camp Camp {
@@ -1128,6 +1270,19 @@ namespace bing.testService {
                 if ((this.FK_PlanteField.Equals(value) != true)) {
                     this.FK_PlanteField = value;
                     this.RaisePropertyChanged("FK_Plante");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FK_User {
+            get {
+                return this.FK_UserField;
+            }
+            set {
+                if ((this.FK_UserField.Equals(value) != true)) {
+                    this.FK_UserField = value;
+                    this.RaisePropertyChanged("FK_User");
                 }
             }
         }
@@ -1258,6 +1413,32 @@ namespace bing.testService {
                 if ((this.TrasniteField.Equals(value) != true)) {
                     this.TrasniteField = value;
                     this.RaisePropertyChanged("Trasnite");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bing.testService.Usr Usr {
+            get {
+                return this.UsrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
+                    this.UsrField = value;
+                    this.RaisePropertyChanged("Usr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bing.testService.EntityReferenceOfUsrKvZjy4f9 UsrReference {
+            get {
+                return this.UsrReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsrReferenceField, value) != true)) {
+                    this.UsrReferenceField = value;
+                    this.RaisePropertyChanged("UsrReference");
                 }
             }
         }
@@ -1887,6 +2068,8 @@ namespace bing.testService {
         
         private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Animal_Tranzact> Istoric_Animal_Tranzact1Field;
         
+        private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Deces> Istoric_Plante_DecesField;
+        
         private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Tranzact> Istoric_Plante_TranzactField;
         
         private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Tranzact> Istoric_Plante_Tranzact1Field;
@@ -2054,6 +2237,19 @@ namespace bing.testService {
                 if ((object.ReferenceEquals(this.Istoric_Animal_Tranzact1Field, value) != true)) {
                     this.Istoric_Animal_Tranzact1Field = value;
                     this.RaisePropertyChanged("Istoric_Animal_Tranzact1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Deces> Istoric_Plante_Deces {
+            get {
+                return this.Istoric_Plante_DecesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Istoric_Plante_DecesField, value) != true)) {
+                    this.Istoric_Plante_DecesField = value;
+                    this.RaisePropertyChanged("Istoric_Plante_Deces");
                 }
             }
         }
@@ -6372,12 +6568,49 @@ namespace bing.testService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ComplexObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlants_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getChallenges_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getAchievement_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getAnimalStats_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.SelectAnimal_Result))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlants_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlantHistory_Result))]
     public partial class ComplexObject : bing.testService.StructuralObject {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="getPlants_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class getPlants_Result : bing.testService.ComplexObject {
+        
+        private string Imagine1Field;
+        
+        private System.Nullable<bool> isFromPadureField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Imagine1 {
+            get {
+                return this.Imagine1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Imagine1Field, value) != true)) {
+                    this.Imagine1Field = value;
+                    this.RaisePropertyChanged("Imagine1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> isFromPadure {
+            get {
+                return this.isFromPadureField;
+            }
+            set {
+                if ((this.isFromPadureField.Equals(value) != true)) {
+                    this.isFromPadureField = value;
+                    this.RaisePropertyChanged("isFromPadure");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7087,6 +7320,8 @@ namespace bing.testService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.EntityReferenceOfRealKvZjy4f9))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.EntityReferenceOfOcol_SilvicKvZjy4f9))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.EntityReferenceOfDonatiiKvZjy4f9))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlantHistory_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlants_Result>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.testService.getPlants_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.testService.getChallenges_Result>))]
@@ -7329,6 +7564,11 @@ namespace bing.testService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="testService.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getPlantHistoryFromDB", ReplyAction="http://tempuri.org/IService1/getPlantHistoryFromDBResponse")]
+        System.IAsyncResult BegingetPlantHistoryFromDB(int userID, string imagine1, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result> EndgetPlantHistoryFromDB(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getPlantsFromDB", ReplyAction="http://tempuri.org/IService1/getPlantsFromDBResponse")]
         System.IAsyncResult BegingetPlantsFromDB(int isFromPadure, System.AsyncCallback callback, object asyncState);
         
@@ -7387,6 +7627,25 @@ namespace bing.testService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : bing.testService.IService1, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getPlantHistoryFromDBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getPlantHistoryFromDBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result>)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7602,6 +7861,12 @@ namespace bing.testService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<bing.testService.IService1>, bing.testService.IService1 {
         
+        private BeginOperationDelegate onBegingetPlantHistoryFromDBDelegate;
+        
+        private EndOperationDelegate onEndgetPlantHistoryFromDBDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetPlantHistoryFromDBCompletedDelegate;
+        
         private BeginOperationDelegate onBegingetPlantsFromDBDelegate;
         
         private EndOperationDelegate onEndgetPlantsFromDBDelegate;
@@ -7721,6 +7986,8 @@ namespace bing.testService {
             }
         }
         
+        public event System.EventHandler<getPlantHistoryFromDBCompletedEventArgs> getPlantHistoryFromDBCompleted;
+        
         public event System.EventHandler<getPlantsFromDBCompletedEventArgs> getPlantsFromDBCompleted;
         
         public event System.EventHandler<getChallengesFromDBCompletedEventArgs> getChallengesFromDBCompleted;
@@ -7746,6 +8013,54 @@ namespace bing.testService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.testService.IService1.BegingetPlantHistoryFromDB(int userID, string imagine1, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetPlantHistoryFromDB(userID, imagine1, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result> bing.testService.IService1.EndgetPlantHistoryFromDB(System.IAsyncResult result) {
+            return base.Channel.EndgetPlantHistoryFromDB(result);
+        }
+        
+        private System.IAsyncResult OnBegingetPlantHistoryFromDB(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int userID = ((int)(inValues[0]));
+            string imagine1 = ((string)(inValues[1]));
+            return ((bing.testService.IService1)(this)).BegingetPlantHistoryFromDB(userID, imagine1, callback, asyncState);
+        }
+        
+        private object[] OnEndgetPlantHistoryFromDB(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result> retVal = ((bing.testService.IService1)(this)).EndgetPlantHistoryFromDB(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetPlantHistoryFromDBCompleted(object state) {
+            if ((this.getPlantHistoryFromDBCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getPlantHistoryFromDBCompleted(this, new getPlantHistoryFromDBCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getPlantHistoryFromDBAsync(int userID, string imagine1) {
+            this.getPlantHistoryFromDBAsync(userID, imagine1, null);
+        }
+        
+        public void getPlantHistoryFromDBAsync(int userID, string imagine1, object userState) {
+            if ((this.onBegingetPlantHistoryFromDBDelegate == null)) {
+                this.onBegingetPlantHistoryFromDBDelegate = new BeginOperationDelegate(this.OnBegingetPlantHistoryFromDB);
+            }
+            if ((this.onEndgetPlantHistoryFromDBDelegate == null)) {
+                this.onEndgetPlantHistoryFromDBDelegate = new EndOperationDelegate(this.OnEndgetPlantHistoryFromDB);
+            }
+            if ((this.ongetPlantHistoryFromDBCompletedDelegate == null)) {
+                this.ongetPlantHistoryFromDBCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetPlantHistoryFromDBCompleted);
+            }
+            base.InvokeAsync(this.onBegingetPlantHistoryFromDBDelegate, new object[] {
+                        userID,
+                        imagine1}, this.onEndgetPlantHistoryFromDBDelegate, this.ongetPlantHistoryFromDBCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult bing.testService.IService1.BegingetPlantsFromDB(int isFromPadure, System.AsyncCallback callback, object asyncState) {
@@ -8343,6 +8658,20 @@ namespace bing.testService {
             
             public Service1ClientChannel(System.ServiceModel.ClientBase<bing.testService.IService1> client) : 
                     base(client) {
+            }
+            
+            public System.IAsyncResult BegingetPlantHistoryFromDB(int userID, string imagine1, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = userID;
+                _args[1] = imagine1;
+                System.IAsyncResult _result = base.BeginInvoke("getPlantHistoryFromDB", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result> EndgetPlantHistoryFromDB(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.testService.getPlantHistory_Result>)(base.EndInvoke("getPlantHistoryFromDB", _args, result)));
+                return _result;
             }
             
             public System.IAsyncResult BegingetPlantsFromDB(int isFromPadure, System.AsyncCallback callback, object asyncState) {

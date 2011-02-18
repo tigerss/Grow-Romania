@@ -379,6 +379,9 @@
     <None Include="Service References\testService\bing.testService.getChallenges_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\testService\bing.testService.getPlantHistory_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\testService\bing.testService.getPlants_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -484,6 +487,14 @@
     <Resource Include="Game\Achievements\partnership.png" />
     <Resource Include="Game\Challenges\question.jpg" />
     <Resource Include="Game\Plante\molid.JPG" />
+    <Resource Include="Game\Plante\anin_negru.jpg" />
+    <Resource Include="Game\Plante\brad.JPG" />
+    <Resource Include="Game\Plante\fag.jpg" />
+    <Resource Include="Game\Plante\larice.jpg" />
+    <Resource Include="Game\Plante\mesteacan.jpg" />
+    <Resource Include="Game\Plante\pinul.jpg" />
+    <Resource Include="Game\Plante\stejar_pedunculat.jpg" />
+    <Resource Include="Game\Plante\gorun.jpg" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>

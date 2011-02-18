@@ -86,6 +86,7 @@
           <xs:element minOccurs="0" name="IsForDelete" type="xs:boolean" />
           <xs:element minOccurs="0" name="Istoric_Animal_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
           <xs:element minOccurs="0" name="Istoric_Animal_Tranzact1" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
+          <xs:element minOccurs="0" name="Istoric_Plante_Deces" nillable="true" type="tns:ArrayOfIstoric_Plante_Deces" />
           <xs:element minOccurs="0" name="Istoric_Plante_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
           <xs:element minOccurs="0" name="Istoric_Plante_Tranzact1" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
           <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
@@ -327,6 +328,7 @@
           <xs:element minOccurs="0" name="FK_Camp" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Padure" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Plante" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="FK_User" type="xs:int" />
           <xs:element minOccurs="0" name="Foc" type="xs:boolean" />
           <xs:element minOccurs="0" name="ID" type="xs:long" />
           <xs:element minOccurs="0" name="IsFromPadure" type="xs:boolean" />
@@ -337,6 +339,8 @@
           <xs:element minOccurs="0" name="PlanteReference" nillable="true" type="q11:EntityReferenceOfPlanteKvZjy4f9" />
           <xs:element minOccurs="0" name="Taiate" type="xs:boolean" />
           <xs:element minOccurs="0" name="Trasnite" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
+          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q11:EntityReferenceOfUsrKvZjy4f9" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

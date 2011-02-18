@@ -108,6 +108,7 @@
     <EntitySetMapping Name="Istoric_Plante_Deces">
       <EntityTypeMapping TypeName="dbsqlModel.Istoric_Plante_Deces">
         <MappingFragment StoreEntitySet="Istoric_Plante_Deces">
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
           <ScalarProperty Name="Numar" ColumnName="Numar" />
           <ScalarProperty Name="Trasnite" ColumnName="Trasnite" />
           <ScalarProperty Name="Taiate" ColumnName="Taiate" />
@@ -711,6 +712,23 @@
         <ComplexTypeMapping TypeName="dbsqlModel.getPlants_Result">
           <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
           <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlantHistory" FunctionName="dbsqlModel.Store.getPlantHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getPlantHistory_Result">
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="Imagine2" ColumnName="Imagine2" />
+          <ScalarProperty Name="Imagine3" ColumnName="Imagine3" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Foc" ColumnName="Foc" />
+          <ScalarProperty Name="Taiate" ColumnName="Taiate" />
+          <ScalarProperty Name="Trasnite" ColumnName="Trasnite" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

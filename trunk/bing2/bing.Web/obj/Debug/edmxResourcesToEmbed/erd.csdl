@@ -275,6 +275,14 @@
     <FunctionImport Name="getPlants" ReturnType="Collection(dbsqlModel.getPlants_Result)">
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
     </FunctionImport>
+    <AssociationSet Name="FK_Istoric_Plante_Deces_Usr" Association="dbsqlModel.FK_Istoric_Plante_Deces_Usr">
+      <End Role="Usr" EntitySet="Usrs" />
+      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
+    </AssociationSet>
+    <FunctionImport Name="getPlantHistory" ReturnType="Collection(dbsqlModel.getPlantHistory_Result)">
+      <Parameter Name="parameter1" Mode="In" Type="Int32" />
+      <Parameter Name="parameter2" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Animale">
     <Key>
@@ -413,6 +421,8 @@
     <NavigationProperty Name="Camp" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Camp" FromRole="Istoric_Plante_Deces" ToRole="Camp" />
     <NavigationProperty Name="Padure" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Padure" FromRole="Istoric_Plante_Deces" ToRole="Padure" />
     <NavigationProperty Name="Plante" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Plante" FromRole="Istoric_Plante_Deces" ToRole="Plante" />
+    <Property Type="Int32" Name="FK_User" Nullable="false" />
+    <NavigationProperty Name="Usr" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Istoric_Plante_Deces" ToRole="Usr" />
   </EntityType>
   <EntityType Name="Istoric_Plante_Tranzact">
     <Key>
@@ -662,6 +672,7 @@
     <NavigationProperty Name="ComentariiDonatiis" Relationship="dbsqlModel.FK_User" FromRole="Usr" ToRole="ComentariiDonatii" />
     <NavigationProperty Name="Donatiis" Relationship="dbsqlModel.FK_Donatii_Usr" FromRole="Usr" ToRole="Donatii" />
     <NavigationProperty Name="StatisticaPerAnimals" Relationship="dbsqlModel.FK_StatisticaPerAnimal_FK_Usr" FromRole="Usr" ToRole="StatisticaPerAnimal" />
+    <NavigationProperty Name="Istoric_Plante_Deces" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Usr" ToRole="Istoric_Plante_Deces" />
   </EntityType>
   <EntityType Name="IstoricAnimalPadureForUserX">
     <Key>
@@ -1606,5 +1617,30 @@
   <ComplexType Name="getPlants_Result">
     <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
     <Property Type="Boolean" Name="isFromPadure" Nullable="true" />
+  </ComplexType>
+  <Association Name="FK_Istoric_Plante_Deces_Usr">
+    <End Type="dbsqlModel.Usr" Role="Usr" Multiplicity="1" />
+    <End Type="dbsqlModel.Istoric_Plante_Deces" Role="Istoric_Plante_Deces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Deces">
+        <PropertyRef Name="FK_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="getPlantHistory_Result">
+    <Property Type="String" Name="Descriere" Nullable="true" />
+    <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Imagine2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Imagine3" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nume" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="Data" Nullable="false" Precision="16" />
+    <Property Type="Boolean" Name="Foc" Nullable="false" />
+    <Property Type="Boolean" Name="Taiate" Nullable="false" />
+    <Property Type="Boolean" Name="Trasnite" Nullable="false" />
+    <Property Type="Int16" Name="Numar" Nullable="false" />
   </ComplexType>
 </Schema>

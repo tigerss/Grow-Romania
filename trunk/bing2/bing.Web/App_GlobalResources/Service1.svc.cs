@@ -10,7 +10,16 @@ namespace bing.Web
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     public class Service1 : IService1
     {
-        //Retrieve all plants images from the database
+        // Retrieve plant history from database
+        public List<getPlantHistory_Result> getPlantHistoryFromDB(int userID, string imagine1)
+        {
+            using (dbEntities select = new dbEntities())
+            {
+                return select.getPlantHistory(userID, imagine1).ToList<getPlantHistory_Result>();
+            } 
+        }
+
+        // Retrieve all plants images from the database
         public List<getPlants_Result> getPlantsFromDB(int isFromPadure)
         {
             using (dbEntities select = new dbEntities())

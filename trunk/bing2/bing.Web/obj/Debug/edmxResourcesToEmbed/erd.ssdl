@@ -204,6 +204,10 @@
       <End Role="Plante" EntitySet="Plante" />
       <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
     </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Deces_Usr" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Usr">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
+    </AssociationSet>
     <AssociationSet Name="FK_Istoric_Plante_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Firma">
       <End Role="Firme" EntitySet="Firme" />
       <End Role="Istoric_Plante_Tranzact" EntitySet="Istoric_Plante_Tranzact" />
@@ -445,6 +449,7 @@
     <Property Name="Taiate" Type="bit" Nullable="false" />
     <Property Name="Trasnite" Type="bit" Nullable="false" />
     <Property Name="Numar" Type="smallint" Nullable="false" />
+    <Property Name="FK_User" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Istoric_Plante_Tranzact">
     <Key>
@@ -1119,6 +1124,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Istoric_Plante_Deces_Usr">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="Istoric_Plante_Deces" Type="dbsqlModel.Store.Istoric_Plante_Deces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Deces">
+        <PropertyRef Name="FK_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Istoric_Plante_Tranzact_Firma">
     <End Role="Firme" Type="dbsqlModel.Store.Firme" Multiplicity="0..1" />
     <End Role="Istoric_Plante_Tranzact" Type="dbsqlModel.Store.Istoric_Plante_Tranzact" Multiplicity="*" />
@@ -1441,6 +1458,10 @@
   </Function>
   <Function Name="getChallenges" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPlantHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+    <Parameter Name="parameter2" Type="varchar" Mode="In" />
   </Function>
   <Function Name="getPlants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parameter1" Type="int" Mode="In" />

@@ -62,6 +62,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("dbsqlModel", "FK_StatisticaPerAnimal_FK_Camp", "Camp", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(bing.Web.Camp), "StatisticaPerAnimal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(bing.Web.StatisticaPerAnimal), true)]
 [assembly: EdmRelationshipAttribute("dbsqlModel", "FK_StatisticaPerAnimal_FK_Padure", "Padure", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(bing.Web.Padure), "StatisticaPerAnimal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(bing.Web.StatisticaPerAnimal), true)]
 [assembly: EdmRelationshipAttribute("dbsqlModel", "FK_StatisticaPerAnimal_FK_Usr", "Usr", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(bing.Web.Usr), "StatisticaPerAnimal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(bing.Web.StatisticaPerAnimal), true)]
+[assembly: EdmRelationshipAttribute("dbsqlModel", "FK_Istoric_Plante_Deces_Usr", "Usr", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(bing.Web.Usr), "Istoric_Plante_Deces", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(bing.Web.Istoric_Plante_Deces), true)]
 
 #endregion
 
@@ -1428,6 +1429,36 @@ namespace bing.Web
             }
     
             return base.ExecuteFunction<getPlants_Result>("getPlants", parameter1Parameter);
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="parameter1">No Metadata Documentation available.</param>
+        /// <param name="parameter2">No Metadata Documentation available.</param>
+        public ObjectResult<getPlantHistory_Result> getPlantHistory(Nullable<global::System.Int32> parameter1, global::System.String parameter2)
+        {
+            ObjectParameter parameter1Parameter;
+            if (parameter1.HasValue)
+            {
+                parameter1Parameter = new ObjectParameter("parameter1", parameter1);
+            }
+            else
+            {
+                parameter1Parameter = new ObjectParameter("parameter1", typeof(global::System.Int32));
+            }
+    
+            ObjectParameter parameter2Parameter;
+            if (parameter2 != null)
+            {
+                parameter2Parameter = new ObjectParameter("parameter2", parameter2);
+            }
+            else
+            {
+                parameter2Parameter = new ObjectParameter("parameter2", typeof(global::System.String));
+            }
+    
+            return base.ExecuteFunction<getPlantHistory_Result>("getPlantHistory", parameter1Parameter, parameter2Parameter);
         }
 
         #endregion
@@ -5723,7 +5754,8 @@ namespace bing.Web
         /// <param name="taiate">Initial value of the Taiate property.</param>
         /// <param name="trasnite">Initial value of the Trasnite property.</param>
         /// <param name="numar">Initial value of the Numar property.</param>
-        public static Istoric_Plante_Deces CreateIstoric_Plante_Deces(global::System.Int64 id, global::System.Byte fK_Plante, global::System.Int32 fK_Camp, global::System.Int32 fK_Padure, global::System.Boolean isFromPadure, global::System.DateTime data, global::System.Boolean foc, global::System.Boolean taiate, global::System.Boolean trasnite, global::System.Int16 numar)
+        /// <param name="fK_User">Initial value of the FK_User property.</param>
+        public static Istoric_Plante_Deces CreateIstoric_Plante_Deces(global::System.Int64 id, global::System.Byte fK_Plante, global::System.Int32 fK_Camp, global::System.Int32 fK_Padure, global::System.Boolean isFromPadure, global::System.DateTime data, global::System.Boolean foc, global::System.Boolean taiate, global::System.Boolean trasnite, global::System.Int16 numar, global::System.Int32 fK_User)
         {
             Istoric_Plante_Deces istoric_Plante_Deces = new Istoric_Plante_Deces();
             istoric_Plante_Deces.ID = id;
@@ -5736,6 +5768,7 @@ namespace bing.Web
             istoric_Plante_Deces.Taiate = taiate;
             istoric_Plante_Deces.Trasnite = trasnite;
             istoric_Plante_Deces.Numar = numar;
+            istoric_Plante_Deces.FK_User = fK_User;
             return istoric_Plante_Deces;
         }
 
@@ -5984,6 +6017,30 @@ namespace bing.Web
         private global::System.Int16 _Numar;
         partial void OnNumarChanging(global::System.Int16 value);
         partial void OnNumarChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 FK_User
+        {
+            get
+            {
+                return _FK_User;
+            }
+            set
+            {
+                OnFK_UserChanging(value);
+                ReportPropertyChanging("FK_User");
+                _FK_User = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("FK_User");
+                OnFK_UserChanged();
+            }
+        }
+        private global::System.Int32 _FK_User;
+        partial void OnFK_UserChanging(global::System.Int32 value);
+        partial void OnFK_UserChanged();
 
         #endregion
     
@@ -6099,6 +6156,44 @@ namespace bing.Web
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Plante>("dbsqlModel.FK_Istoric_Plante_Deces_Plante", "Plante", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbsqlModel", "FK_Istoric_Plante_Deces_Usr", "Usr")]
+        public Usr Usr
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usr>("dbsqlModel.FK_Istoric_Plante_Deces_Usr", "Usr").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usr>("dbsqlModel.FK_Istoric_Plante_Deces_Usr", "Usr").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usr> UsrReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usr>("dbsqlModel.FK_Istoric_Plante_Deces_Usr", "Usr");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usr>("dbsqlModel.FK_Istoric_Plante_Deces_Usr", "Usr", value);
                 }
             }
         }
@@ -13693,6 +13788,28 @@ namespace bing.Web
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbsqlModel", "FK_Istoric_Plante_Deces_Usr", "Istoric_Plante_Deces")]
+        public EntityCollection<Istoric_Plante_Deces> Istoric_Plante_Deces
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Istoric_Plante_Deces>("dbsqlModel.FK_Istoric_Plante_Deces_Usr", "Istoric_Plante_Deces");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Istoric_Plante_Deces>("dbsqlModel.FK_Istoric_Plante_Deces_Usr", "Istoric_Plante_Deces", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -16035,6 +16152,309 @@ namespace bing.Web
         private global::System.Int32 _Expr1;
         partial void OnExpr1Changing(global::System.Int32 value);
         partial void OnExpr1Changed();
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="dbsqlModel", Name="getPlantHistory_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class getPlantHistory_Result : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new getPlantHistory_Result object.
+        /// </summary>
+        /// <param name="nume">Initial value of the Nume property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="data">Initial value of the Data property.</param>
+        /// <param name="foc">Initial value of the Foc property.</param>
+        /// <param name="taiate">Initial value of the Taiate property.</param>
+        /// <param name="trasnite">Initial value of the Trasnite property.</param>
+        /// <param name="numar">Initial value of the Numar property.</param>
+        public static getPlantHistory_Result CreategetPlantHistory_Result(global::System.String nume, global::System.Int32 id, global::System.DateTime data, global::System.Boolean foc, global::System.Boolean taiate, global::System.Boolean trasnite, global::System.Int16 numar)
+        {
+            getPlantHistory_Result getPlantHistory_Result = new getPlantHistory_Result();
+            getPlantHistory_Result.Nume = nume;
+            getPlantHistory_Result.ID = id;
+            getPlantHistory_Result.Data = data;
+            getPlantHistory_Result.Foc = foc;
+            getPlantHistory_Result.Taiate = taiate;
+            getPlantHistory_Result.Trasnite = trasnite;
+            getPlantHistory_Result.Numar = numar;
+            return getPlantHistory_Result;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Descriere
+        {
+            get
+            {
+                return _Descriere;
+            }
+            set
+            {
+                OnDescriereChanging(value);
+                ReportPropertyChanging("Descriere");
+                _Descriere = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Descriere");
+                OnDescriereChanged();
+            }
+        }
+        private global::System.String _Descriere;
+        partial void OnDescriereChanging(global::System.String value);
+        partial void OnDescriereChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Imagine1
+        {
+            get
+            {
+                return _Imagine1;
+            }
+            set
+            {
+                OnImagine1Changing(value);
+                ReportPropertyChanging("Imagine1");
+                _Imagine1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Imagine1");
+                OnImagine1Changed();
+            }
+        }
+        private global::System.String _Imagine1;
+        partial void OnImagine1Changing(global::System.String value);
+        partial void OnImagine1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Imagine2
+        {
+            get
+            {
+                return _Imagine2;
+            }
+            set
+            {
+                OnImagine2Changing(value);
+                ReportPropertyChanging("Imagine2");
+                _Imagine2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Imagine2");
+                OnImagine2Changed();
+            }
+        }
+        private global::System.String _Imagine2;
+        partial void OnImagine2Changing(global::System.String value);
+        partial void OnImagine2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Imagine3
+        {
+            get
+            {
+                return _Imagine3;
+            }
+            set
+            {
+                OnImagine3Changing(value);
+                ReportPropertyChanging("Imagine3");
+                _Imagine3 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Imagine3");
+                OnImagine3Changed();
+            }
+        }
+        private global::System.String _Imagine3;
+        partial void OnImagine3Changing(global::System.String value);
+        partial void OnImagine3Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nume
+        {
+            get
+            {
+                return _Nume;
+            }
+            set
+            {
+                OnNumeChanging(value);
+                ReportPropertyChanging("Nume");
+                _Nume = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nume");
+                OnNumeChanged();
+            }
+        }
+        private global::System.String _Nume;
+        partial void OnNumeChanging(global::System.String value);
+        partial void OnNumeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                OnIDChanging(value);
+                ReportPropertyChanging("ID");
+                _ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ID");
+                OnIDChanged();
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Data
+        {
+            get
+            {
+                return _Data;
+            }
+            set
+            {
+                OnDataChanging(value);
+                ReportPropertyChanging("Data");
+                _Data = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Data");
+                OnDataChanged();
+            }
+        }
+        private global::System.DateTime _Data;
+        partial void OnDataChanging(global::System.DateTime value);
+        partial void OnDataChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Foc
+        {
+            get
+            {
+                return _Foc;
+            }
+            set
+            {
+                OnFocChanging(value);
+                ReportPropertyChanging("Foc");
+                _Foc = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Foc");
+                OnFocChanged();
+            }
+        }
+        private global::System.Boolean _Foc;
+        partial void OnFocChanging(global::System.Boolean value);
+        partial void OnFocChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Taiate
+        {
+            get
+            {
+                return _Taiate;
+            }
+            set
+            {
+                OnTaiateChanging(value);
+                ReportPropertyChanging("Taiate");
+                _Taiate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Taiate");
+                OnTaiateChanged();
+            }
+        }
+        private global::System.Boolean _Taiate;
+        partial void OnTaiateChanging(global::System.Boolean value);
+        partial void OnTaiateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Trasnite
+        {
+            get
+            {
+                return _Trasnite;
+            }
+            set
+            {
+                OnTrasniteChanging(value);
+                ReportPropertyChanging("Trasnite");
+                _Trasnite = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Trasnite");
+                OnTrasniteChanged();
+            }
+        }
+        private global::System.Boolean _Trasnite;
+        partial void OnTrasniteChanging(global::System.Boolean value);
+        partial void OnTrasniteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 Numar
+        {
+            get
+            {
+                return _Numar;
+            }
+            set
+            {
+                OnNumarChanging(value);
+                ReportPropertyChanging("Numar");
+                _Numar = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Numar");
+                OnNumarChanged();
+            }
+        }
+        private global::System.Int16 _Numar;
+        partial void OnNumarChanging(global::System.Int16 value);
+        partial void OnNumarChanged();
 
         #endregion
     }
