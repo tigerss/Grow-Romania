@@ -134,11 +134,11 @@ namespace Forme
             pan.Children.Add(tb14);
             TextBlock tb15 = new TextBlock() { Text = String.Format("{0:MMM}", listPlantHistory[0].Data) + " - " + String.Format("{0:MMM}", listPlantHistory[0].Data), Margin = new Thickness(140, 226, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb15);
-            TextBlock tb16 = new TextBlock() { Text = "Hibernation: ", Margin = new Thickness(12, 244, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
+            TextBlock tb16 = new TextBlock() { Text = "Oxygen Production: ", Margin = new Thickness(12, 244, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
             pan.Children.Add(tb16);
             TextBlock tb17 = new TextBlock() { Text = "-", Margin = new Thickness(140, 244, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb17);
-            TextBlock tb18 = new TextBlock() { Text = "Progeny per year: ", Margin = new Thickness(12, 262, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
+            TextBlock tb18 = new TextBlock() { Text = "Crops per year: ", Margin = new Thickness(12, 262, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 15, Foreground = new SolidColorBrush(Color.FromArgb(255, 33, 124, 170)) };
             pan.Children.Add(tb18);
             TextBlock tb19 = new TextBlock() { Text = listPlantHistory[0].Numar.ToString(), Margin = new Thickness(140, 262, 12, 12), FontFamily = new FontFamily("Tahoma"), FontSize = 14, Foreground = new SolidColorBrush(Colors.White) };
             pan.Children.Add(tb19);

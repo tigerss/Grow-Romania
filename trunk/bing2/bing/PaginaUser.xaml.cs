@@ -105,8 +105,14 @@ namespace bing
         {
             RankingSystem ranking = new RankingSystem();
             ranking.get_AchievementsFromDB();
+            // temp este o lista cu copiii lui canvas2
+            // este folosita pentru a ma intoarce la harta
+            List<UIElement> temp = new List<UIElement>();
+            temp = canvas2.Children.ToList<UIElement>();
+            ////////////////////////////////////////////
             canvas2.Children.Clear();
             canvas2.Children.Add(ranking);
+            ranking.setBackButton(temp, canvas2);
         }
 
         #endregion

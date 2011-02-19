@@ -27,6 +27,9 @@ namespace bing.Forme
         Canvas myChallenges;
         bool achievementSelected = true;
 
+        List<UIElement> goBack = new List<UIElement>();
+        Canvas currentCanvas;
+
         static BasicHttpBinding bind = new BasicHttpBinding();
         static EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Service1.svc");
         bing.testService.Service1Client wcf = new bing.testService.Service1Client(bind, endpoint);
@@ -274,6 +277,33 @@ namespace bing.Forme
                 return value;
             }
             #endregion
+        }
+
+        private void image1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            currentCanvas.Children.Clear();
+            foreach (UIElement elem in goBack)
+            {
+                currentCanvas.Children.Add(elem);
+            }
+        }
+
+        public void setBackButton(List<UIElement> list, Canvas canvas2)
+        {
+            goBack = list;
+            currentCanvas = canvas2;
+        }
+
+        private void image1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ((Image)sender).Width = 30;
+            ((Image)sender).Height = 30;
+        }
+
+        private void image1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ((Image)sender).Width = 25;
+            ((Image)sender).Height = 25;
         }
     }
 }

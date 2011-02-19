@@ -496,6 +496,7 @@
     <Resource Include="Game\Plante\pinul.jpg" />
     <Resource Include="Game\Plante\stejar_pedunculat.jpg" />
     <Resource Include="Game\Plante\gorun.jpg" />
+    <Resource Include="DesignImages\x.png" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
