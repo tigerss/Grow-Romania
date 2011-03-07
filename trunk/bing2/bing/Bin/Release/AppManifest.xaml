@@ -1,0 +1,22 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="bing" EntryPointType="bing.App" RuntimeVersion="4.0.50401.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="bing" Source="bing.dll" />
+    <AssemblyPart x:Name="Microsoft.Maps.MapControl.Common" Source="Microsoft.Maps.MapControl.Common.dll" />
+    <AssemblyPart x:Name="Microsoft.Maps.MapControl" Source="Microsoft.Maps.MapControl.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit.Internals" Source="System.Windows.Controls.Toolkit.Internals.dll" />
+  </Deployment.Parts>
+  <Deployment.ExternalParts>
+    <ExtensionPart Source="System.ComponentModel.DataAnnotations.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Data.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Data.Input.zip" />
+    <ExtensionPart Source="System.Windows.Controls.DataVisualization.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Input.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Layout.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Navigation.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Theming.RainierPurple.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Theming.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Data.zip" />
+  </Deployment.ExternalParts>
+</Deployment>

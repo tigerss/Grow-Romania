@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbsqlModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="dbsqlModelStoreContainer">
+    <EntitySet Name="Achievements" EntityType="dbsqlModel.Store.Achievements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Animale" EntityType="dbsqlModel.Store.Animale" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Camp" EntityType="dbsqlModel.Store.Camp" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Challenges" EntityType="dbsqlModel.Store.Challenges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComentariiDonatii" EntityType="dbsqlModel.Store.ComentariiDonatii" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComentariiReal" EntityType="dbsqlModel.Store.ComentariiReal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Donatii" EntityType="dbsqlModel.Store.Donatii" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Firme" EntityType="dbsqlModel.Store.Firme" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Istoric_Animal_Deces" EntityType="dbsqlModel.Store.Istoric_Animal_Deces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Istoric_Animal_Tranzact" EntityType="dbsqlModel.Store.Istoric_Animal_Tranzact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Istoric_Plante_Deces" EntityType="dbsqlModel.Store.Istoric_Plante_Deces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Istoric_Plante_Tranzact" EntityType="dbsqlModel.Store.Istoric_Plante_Tranzact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ocol_Silvic" EntityType="dbsqlModel.Store.Ocol_Silvic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Padure" EntityType="dbsqlModel.Store.Padure" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Plante" EntityType="dbsqlModel.Store.Plante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Populatie" EntityType="dbsqlModel.Store.Populatie" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Real" EntityType="dbsqlModel.Store.Real" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Real_Judet" EntityType="dbsqlModel.Store.Real_Judet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Real_SubRegiune" EntityType="dbsqlModel.Store.Real_SubRegiune" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Regiune" EntityType="dbsqlModel.Store.Regiune" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatisticaPerAnimal" EntityType="dbsqlModel.Store.StatisticaPerAnimal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statistici_Animale" EntityType="dbsqlModel.Store.Statistici_Animale" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statistici_Plante" EntityType="dbsqlModel.Store.Statistici_Plante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stiri" EntityType="dbsqlModel.Store.Stiri" store:Type="Tables" store:Schema="dbo" store:Name="Stiri">
+      <DefiningQuery>SELECT 
+      [Stiri].[ID] AS [ID], 
+      [Stiri].[Stire] AS [Stire], 
+      [Stiri].[Data] AS [Data], 
+      [Stiri].[Titlu] AS [Titlu]
+      FROM [dbo].[Stiri] AS [Stiri]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SubRegiune" EntityType="dbsqlModel.Store.SubRegiune" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="dbsqlModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TabelaTranzactii" EntityType="dbsqlModel.Store.TabelaTranzactii" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Upgrades" EntityType="dbsqlModel.Store.Upgrades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usr" EntityType="dbsqlModel.Store.Usr" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComentariuView" EntityType="dbsqlModel.Store.ComentariuView" store:Type="Views" store:Schema="dbo" store:Name="ComentariuView">
+      <DefiningQuery>SELECT 
+      [ComentariuView].[Expr1] AS [Expr1], 
+      [ComentariuView].[Usr] AS [Usr], 
+      [ComentariuView].[ID] AS [ID], 
+      [ComentariuView].[TextCampanie] AS [TextCampanie], 
+      [ComentariuView].[FK_Real] AS [FK_Real], 
+      [ComentariuView].[FK_User] AS [FK_User], 
+      [ComentariuView].[Data] AS [Data], 
+      [ComentariuView].[Expr2] AS [Expr2], 
+      [ComentariuView].[Poza] AS [Poza]
+      FROM [dbo].[ComentariuView] AS [ComentariuView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DonatiiView" EntityType="dbsqlModel.Store.DonatiiView" store:Type="Views" store:Schema="dbo" store:Name="DonatiiView">
+      <DefiningQuery>SELECT 
+      [DonatiiView].[ID] AS [ID], 
+      [DonatiiView].[FK_User] AS [FK_User], 
+      [DonatiiView].[FK_Firma] AS [FK_Firma], 
+      [DonatiiView].[IsUser] AS [IsUser], 
+      [DonatiiView].[FK_Real] AS [FK_Real], 
+      [DonatiiView].[FK_Ocol_Silvic] AS [FK_Ocol_Silvic], 
+      [DonatiiView].[IsReal] AS [IsReal], 
+      [DonatiiView].[Data] AS [Data], 
+      [DonatiiView].[SumaBani] AS [SumaBani], 
+      [DonatiiView].[Comentarii] AS [Comentarii], 
+      [DonatiiView].[Expr1] AS [Expr1], 
+      [DonatiiView].[NumeCampanie] AS [NumeCampanie], 
+      [DonatiiView].[NumeZona] AS [NumeZona], 
+      [DonatiiView].[Expr2] AS [Expr2], 
+      [DonatiiView].[Usr] AS [Usr], 
+      [DonatiiView].[Poza] AS [Poza], 
+      [DonatiiView].[Expr3] AS [Expr3], 
+      [DonatiiView].[Nume] AS [Nume], 
+      [DonatiiView].[Expr4] AS [Expr4]
+      FROM [dbo].[DonatiiView] AS [DonatiiView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IstoricAnimalPadureForUserX" EntityType="dbsqlModel.Store.IstoricAnimalPadureForUserX" store:Type="Views" store:Schema="dbo" store:Name="IstoricAnimalPadureForUserX">
+      <DefiningQuery>SELECT 
+      [IstoricAnimalPadureForUserX].[AnimalID] AS [AnimalID], 
+      [IstoricAnimalPadureForUserX].[NumeAnimal] AS [NumeAnimal], 
+      [IstoricAnimalPadureForUserX].[UsrID] AS [UsrID], 
+      [IstoricAnimalPadureForUserX].[Username] AS [Username], 
+      [IstoricAnimalPadureForUserX].[IstoricID] AS [IstoricID], 
+      [IstoricAnimalPadureForUserX].[Text] AS [Text], 
+      [IstoricAnimalPadureForUserX].[DataIst] AS [DataIst], 
+      [IstoricAnimalPadureForUserX].[Foc] AS [Foc], 
+      [IstoricAnimalPadureForUserX].[Inundatie] AS [Inundatie], 
+      [IstoricAnimalPadureForUserX].[Mancat] AS [Mancat], 
+      [IstoricAnimalPadureForUserX].[Braconaj] AS [Braconaj], 
+      [IstoricAnimalPadureForUserX].[Vanat] AS [Vanat], 
+      [IstoricAnimalPadureForUserX].[Numar] AS [Numar], 
+      [IstoricAnimalPadureForUserX].[Diverse] AS [Diverse], 
+      [IstoricAnimalPadureForUserX].[Importanta] AS [Importanta]
+      FROM [dbo].[IstoricAnimalPadureForUserX] AS [IstoricAnimalPadureForUserX]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Real_SubRegiune_CuNivelPoluare" EntityType="dbsqlModel.Store.Real_SubRegiune_CuNivelPoluare" store:Type="Views" store:Schema="dbo" store:Name="Real_SubRegiune_CuNivelPoluare">
+      <DefiningQuery>SELECT 
+      [Real_SubRegiune_CuNivelPoluare].[SRID] AS [SRID], 
+      [Real_SubRegiune_CuNivelPoluare].[NumeSubreg] AS [NumeSubreg], 
+      [Real_SubRegiune_CuNivelPoluare].[NivelPoluareSol] AS [NivelPoluareSol], 
+      [Real_SubRegiune_CuNivelPoluare].[NivelPoluareAer] AS [NivelPoluareAer], 
+      [Real_SubRegiune_CuNivelPoluare].[NivelPoluareApa] AS [NivelPoluareApa]
+      FROM [dbo].[Real_SubRegiune_CuNivelPoluare] AS [Real_SubRegiune_CuNivelPoluare]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tranzactie" EntityType="dbsqlModel.Store.Tranzactie" store:Type="Views" store:Schema="dbo" store:Name="Tranzactie">
+      <DefiningQuery>SELECT 
+      [Tranzactie].[Vanzator] AS [Vanzator], 
+      [Tranzactie].[Cumparator] AS [Cumparator], 
+      [Tranzactie].[Nume] AS [Nume], 
+      [Tranzactie].[Numar] AS [Numar], 
+      [Tranzactie].[Expr1] AS [Expr1]
+      FROM [dbo].[Tranzactie] AS [Tranzactie]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TranzactiiCumparare" EntityType="dbsqlModel.Store.TranzactiiCumparare" store:Type="Views" store:Schema="dbo" store:Name="TranzactiiCumparare">
+      <DefiningQuery>SELECT 
+      [TranzactiiCumparare].[Usr] AS [Usr], 
+      [TranzactiiCumparare].[Nume] AS [Nume], 
+      [TranzactiiCumparare].[Regiune] AS [Regiune], 
+      [TranzactiiCumparare].[Numar] AS [Numar], 
+      [TranzactiiCumparare].[Pret] AS [Pret], 
+      [TranzactiiCumparare].[Cumparare] AS [Cumparare], 
+      [TranzactiiCumparare].[Data] AS [Data], 
+      [TranzactiiCumparare].[Data_Expirarii] AS [Data_Expirarii], 
+      [TranzactiiCumparare].[ID] AS [ID], 
+      [TranzactiiCumparare].[Vanzare] AS [Vanzare]
+      FROM [dbo].[TranzactiiCumparare] AS [TranzactiiCumparare]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View1" EntityType="dbsqlModel.Store.View1" store:Type="Views" store:Schema="dbo" store:Name="View1">
+      <DefiningQuery>SELECT 
+      [View1].[Firma] AS [Firma], 
+      [View1].[NUmar de animale] AS [NUmar de animale], 
+      [View1].[Animalul] AS [Animalul], 
+      [View1].[EU] AS [EU], 
+      [View1].[ID_vanzator] AS [ID_vanzator], 
+      [View1].[ID_cumparator] AS [ID_cumparator]
+      FROM [dbo].[View1] AS [View1]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ComentariiReal_Real" Association="dbsqlModel.Store.FK_ComentariiReal_Real">
+      <End Role="Real" EntitySet="Real" />
+      <End Role="ComentariiReal" EntitySet="ComentariiReal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComentariiReal_User" Association="dbsqlModel.Store.FK_ComentariiReal_User">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="ComentariiReal" EntitySet="ComentariiReal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donatii" Association="dbsqlModel.Store.FK_Donatii">
+      <End Role="Donatii" EntitySet="Donatii" />
+      <End Role="ComentariiDonatii" EntitySet="ComentariiDonatii" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donatii_Firma" Association="dbsqlModel.Store.FK_Donatii_Firma">
+      <End Role="Firme" EntitySet="Firme" />
+      <End Role="Donatii" EntitySet="Donatii" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donatii_Ocol_Silvic" Association="dbsqlModel.Store.FK_Donatii_Ocol_Silvic">
+      <End Role="Ocol_Silvic" EntitySet="Ocol_Silvic" />
+      <End Role="Donatii" EntitySet="Donatii" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donatii_Real" Association="dbsqlModel.Store.FK_Donatii_Real">
+      <End Role="Real" EntitySet="Real" />
+      <End Role="Donatii" EntitySet="Donatii" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donatii_Usr" Association="dbsqlModel.Store.FK_Donatii_Usr">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Donatii" EntitySet="Donatii" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_Usr_ID_Usr" Association="dbsqlModel.Store.FK_ID_Usr_ID_Usr">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="TabelaTranzactii" EntitySet="TabelaTranzactii" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Animal_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Firma">
+      <End Role="Firme" EntitySet="Firme" />
+      <End Role="Istoric_Animal_Tranzact" EntitySet="Istoric_Animal_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Animal_Tranzact_Usr_Cumparator" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Usr_Cumparator">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Istoric_Animal_Tranzact" EntitySet="Istoric_Animal_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Animal_Tranzact_Usr_Vanzator" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Usr_Vanzator">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Istoric_Animal_Tranzact" EntitySet="Istoric_Animal_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Deces_Camp" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Camp">
+      <End Role="Camp" EntitySet="Camp" />
+      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Deces_Padure" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Padure">
+      <End Role="Padure" EntitySet="Padure" />
+      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Deces_Plante" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Plante">
+      <End Role="Plante" EntitySet="Plante" />
+      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Firma">
+      <End Role="Firme" EntitySet="Firme" />
+      <End Role="Istoric_Plante_Tranzact" EntitySet="Istoric_Plante_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Tranzact_Plante" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Plante">
+      <End Role="Plante" EntitySet="Plante" />
+      <End Role="Istoric_Plante_Tranzact" EntitySet="Istoric_Plante_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Tranzact_Usr_Cumparator" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Usr_Cumparator">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Istoric_Plante_Tranzact" EntitySet="Istoric_Plante_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Istoric_Plante_Tranzact_Usr_Vanzator" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Usr_Vanzator">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Istoric_Plante_Tranzact" EntitySet="Istoric_Plante_Tranzact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ocol_Silvic_Real_Judet" Association="dbsqlModel.Store.FK_Ocol_Silvic_Real_Judet">
+      <End Role="Real_Judet" EntitySet="Real_Judet" />
+      <End Role="Ocol_Silvic" EntitySet="Ocol_Silvic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Populatie_Subregiune" Association="dbsqlModel.Store.FK_Populatie_Subregiune">
+      <End Role="SubRegiune" EntitySet="SubRegiune" />
+      <End Role="Populatie" EntitySet="Populatie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Real_Judet_Real_SubRegiune" Association="dbsqlModel.Store.FK_Real_Judet_Real_SubRegiune">
+      <End Role="Real_SubRegiune" EntitySet="Real_SubRegiune" />
+      <End Role="Real_Judet" EntitySet="Real_Judet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Real_Ocol_Silvic" Association="dbsqlModel.Store.FK_Real_Ocol_Silvic">
+      <End Role="Ocol_Silvic" EntitySet="Ocol_Silvic" />
+      <End Role="Real" EntitySet="Real" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Regiune_User" Association="dbsqlModel.Store.FK_Regiune_User">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="Regiune" EntitySet="Regiune" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatisticaPerAnimal_FK_Camp" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Camp">
+      <End Role="Camp" EntitySet="Camp" />
+      <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatisticaPerAnimal_FK_Padure" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Padure">
+      <End Role="Padure" EntitySet="Padure" />
+      <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatisticaPerAnimal_FK_Usr" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Usr">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statistici_Animale_Camp" Association="dbsqlModel.Store.FK_Statistici_Animale_Camp">
+      <End Role="Camp" EntitySet="Camp" />
+      <End Role="Statistici_Animale" EntitySet="Statistici_Animale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statistici_Animale_Padure" Association="dbsqlModel.Store.FK_Statistici_Animale_Padure">
+      <End Role="Padure" EntitySet="Padure" />
+      <End Role="Statistici_Animale" EntitySet="Statistici_Animale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statistici_Plante_Camp" Association="dbsqlModel.Store.FK_Statistici_Plante_Camp">
+      <End Role="Camp" EntitySet="Camp" />
+      <End Role="Statistici_Plante" EntitySet="Statistici_Plante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statistici_Plante_Padure" Association="dbsqlModel.Store.FK_Statistici_Plante_Padure">
+      <End Role="Padure" EntitySet="Padure" />
+      <End Role="Statistici_Plante" EntitySet="Statistici_Plante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statistici_Plante_Plante" Association="dbsqlModel.Store.FK_Statistici_Plante_Plante">
+      <End Role="Plante" EntitySet="Plante" />
+      <End Role="Statistici_Plante" EntitySet="Statistici_Plante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subregiune_Camp" Association="dbsqlModel.Store.FK_Subregiune_Camp">
+      <End Role="SubRegiune" EntitySet="SubRegiune" />
+      <End Role="Camp" EntitySet="Camp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subregiune_Padure" Association="dbsqlModel.Store.FK_Subregiune_Padure">
+      <End Role="SubRegiune" EntitySet="SubRegiune" />
+      <End Role="Padure" EntitySet="Padure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRegiune_Real_SubRegiune" Association="dbsqlModel.Store.FK_SubRegiune_Real_SubRegiune">
+      <End Role="Real_SubRegiune" EntitySet="Real_SubRegiune" />
+      <End Role="SubRegiune" EntitySet="SubRegiune" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRegiune_Regiune" Association="dbsqlModel.Store.FK_SubRegiune_Regiune">
+      <End Role="Regiune" EntitySet="Regiune" />
+      <End Role="SubRegiune" EntitySet="SubRegiune" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User" Association="dbsqlModel.Store.FK_User">
+      <End Role="Usr" EntitySet="Usr" />
+      <End Role="ComentariiDonatii" EntitySet="ComentariiDonatii" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Achievements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Hunger" Type="tinyint" />
+    <Property Name="Education" Type="tinyint" />
+    <Property Name="Equality" Type="tinyint" />
+    <Property Name="Mortality" Type="tinyint" />
+    <Property Name="Maternal_health" Type="tinyint" />
+    <Property Name="Disease" Type="tinyint" />
+    <Property Name="Environment" Type="tinyint" />
+    <Property Name="Partnership" Type="tinyint" />
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_User" Type="int" />
+  </EntityType>
+  <EntityType Name="Animale">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Descriere" Type="varchar(max)" />
+    <Property Name="Imagine1" Type="varchar" MaxLength="50" />
+    <Property Name="Imagine2" Type="varchar" MaxLength="50" />
+    <Property Name="Imagine3" Type="varchar" MaxLength="50" />
+    <Property Name="DataInmultInceput" Type="smalldatetime" Nullable="false" />
+    <Property Name="DataInmultSfarsit" Type="smalldatetime" Nullable="false" />
+    <Property Name="Pui_An" Type="int" Nullable="false" />
+    <Property Name="DataVanatInceput" Type="smalldatetime" Nullable="false" />
+    <Property Name="DataVanatSfarsit" Type="smalldatetime" Nullable="false" />
+    <Property Name="Numar" Type="varchar" MaxLength="50" />
+    <Property Name="IsFromPadure" Type="bit" />
+  </EntityType>
+  <EntityType Name="Camp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_SubRegiune" Type="int" Nullable="false" />
+    <Property Name="Suprafata" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareAer" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareSol" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareApa" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Challenges">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descriere" Type="nvarchar(max)" />
+    <Property Name="Imagine1" Type="nvarchar" MaxLength="50" />
+    <Property Name="isCompleted" Type="bit" />
+    <Property Name="FK_User" Type="int" />
+  </EntityType>
+  <EntityType Name="ComentariiDonatii">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TextComentariu" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="FK_Usr" Type="int" Nullable="false" />
+    <Property Name="FK_Donatie" Type="int" Nullable="false" />
+    <Property Name="Data" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComentariiReal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TextCampanie" Type="varchar" Nullable="false" MaxLength="300" />
+    <Property Name="FK_Real" Type="int" Nullable="false" />
+    <Property Name="FK_User" Type="int" Nullable="false" />
+    <Property Name="Data" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Donatii">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_User" Type="int" />
+    <Property Name="FK_Firma" Type="int" />
+    <Property Name="IsUser" Type="bit" Nullable="false" />
+    <Property Name="FK_Real" Type="int" />
+    <Property Name="FK_Ocol_Silvic" Type="tinyint" />
+    <Property Name="IsReal" Type="bit" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="SumaBani" Type="smallmoney" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Firme">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nume" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Pass" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Descriere" Type="varchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="Adresa" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Mail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Logo" Type="varchar" MaxLength="50" />
+    <Property Name="Rank" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Scor" Type="float" Nullable="false" />
+    <Property Name="IsForTransport" Type="bit" Nullable="false" />
+    <Property Name="BaniDonati" Type="smallmoney" Nullable="false" />
+    <Property Name="NrDonatii" Type="smallint" Nullable="false" />
+    <Property Name="IsForDelete" Type="bit" Nullable="false" />
+    <Property Name="DateForDelete" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Istoric_Animal_Deces">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Animale" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Camp" Type="int" Nullable="false" />
+    <Property Name="FK_User" Type="int" Nullable="false" />
+    <Property Name="FK_Padure" Type="int" Nullable="false" />
+    <Property Name="IsFromPadure" Type="bit" Nullable="false" />
+    <Property Name="Data" Type="smalldatetime" Nullable="false" />
+    <Property Name="Foc" Type="bit" Nullable="false" />
+    <Property Name="Inundatie" Type="bit" Nullable="false" />
+    <Property Name="Mancat" Type="bit" Nullable="false" />
+    <Property Name="FK_Mancat_De" Type="tinyint" />
+    <Property Name="Braconaj" Type="bit" Nullable="false" />
+    <Property Name="Vanat" Type="bit" Nullable="false" />
+    <Property Name="Diverse" Type="bit" Nullable="false" />
+    <Property Name="Numar" Type="smallint" Nullable="false" />
+    <Property Name="Importanta" Type="float" Nullable="false" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Istoric_Animal_Tranzact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_ID_Vanzator" Type="int" Nullable="false" />
+    <Property Name="FK_ID_Cumparator" Type="int" Nullable="false" />
+    <Property Name="FK_Animale" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Firma" Type="int" />
+    <Property Name="MijlocTransport" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Pret" Type="smallmoney" Nullable="false" />
+    <Property Name="Numar" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Istoric_Plante_Deces">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Plante" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Camp" Type="int" Nullable="false" />
+    <Property Name="FK_Padure" Type="int" Nullable="false" />
+    <Property Name="IsFromPadure" Type="bit" Nullable="false" />
+    <Property Name="Data" Type="smalldatetime" Nullable="false" />
+    <Property Name="Foc" Type="bit" Nullable="false" />
+    <Property Name="Taiate" Type="bit" Nullable="false" />
+    <Property Name="Trasnite" Type="bit" Nullable="false" />
+    <Property Name="Numar" Type="smallint" Nullable="false" />
+    <Property Name="FK_User" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Istoric_Plante_Tranzact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_ID_Vanzator" Type="int" Nullable="false" />
+    <Property Name="FK_ID_Cumparator" Type="int" Nullable="false" />
+    <Property Name="FK_Plante" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Firma" Type="int" />
+    <Property Name="MijlocTransport" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Pret" Type="smallmoney" Nullable="false" />
+    <Property Name="Numar" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ocol_Silvic">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Judet" Type="tinyint" Nullable="false" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="Adresa" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Telefon" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="Fax" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="Mail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Longitudine" Type="float" Nullable="false" />
+    <Property Name="Latitudine" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Padure">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_SubRegiune" Type="int" Nullable="false" />
+    <Property Name="Turisti_zi" Type="smallint" Nullable="false" />
+    <Property Name="Exploatare_zi" Type="smallint" Nullable="false" />
+    <Property Name="Vanat_zi" Type="smallint" Nullable="false" />
+    <Property Name="Braconat_zi" Type="smallint" Nullable="false" />
+    <Property Name="Suprafata" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareAer" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareSol" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareApa" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plante">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Descriere" Type="varchar(max)" />
+    <Property Name="Imagine1" Type="varchar" MaxLength="50" />
+    <Property Name="Imagine2" Type="varchar" MaxLength="50" />
+    <Property Name="Imagine3" Type="varchar" MaxLength="50" />
+    <Property Name="alte campuri de bagat" Type="nchar" MaxLength="10" />
+    <Property Name="isFromPadure" Type="bit" />
+  </EntityType>
+  <EntityType Name="Populatie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_SubRegiune" Type="int" Nullable="false" />
+    <Property Name="Oameni_Vii" Type="int" Nullable="false" />
+    <Property Name="Oameni_Morti" Type="int" Nullable="false" />
+    <Property Name="Padurari" Type="smallint" Nullable="false" />
+    <Property Name="Fermieri" Type="smallint" Nullable="false" />
+    <Property Name="Vanatori" Type="smallint" Nullable="false" />
+    <Property Name="Turisti_Zi" Type="smallint" Nullable="false" />
+    <Property Name="Bani_Zi" Type="smallmoney" Nullable="false" />
+    <Property Name="Suprafata" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareAer" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareSol" Type="float" Nullable="false" />
+    <Property Name="NivelPoluareApa" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Real">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NumeCampanie" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NumeZona" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PctLocatie" Type="varchar(max)" Nullable="false" />
+    <Property Name="Descriere" Type="varchar(max)" Nullable="false" />
+    <Property Name="Probleme" Type="varchar(max)" Nullable="false" />
+    <Property Name="NivelProblema" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Ocol_Silvic" Type="tinyint" Nullable="false" />
+    <Property Name="BaniStransi" Type="smallmoney" Nullable="false" />
+    <Property Name="BaniTotal" Type="smallmoney" Nullable="false" />
+    <Property Name="NrUsriDonatori" Type="smallint" Nullable="false" />
+    <Property Name="NrFirmeDonatoare" Type="smallint" Nullable="false" />
+    <Property Name="DataInceperii" Type="smalldatetime" Nullable="false" />
+    <Property Name="DataFinalizarii" Type="smalldatetime" />
+    <Property Name="IsSolved" Type="bit" Nullable="false" />
+    <Property Name="Imag1" Type="varchar" MaxLength="100" />
+    <Property Name="Imag2" Type="varchar" MaxLength="100" />
+    <Property Name="Imag3" Type="varchar" MaxLength="100" />
+    <Property Name="Imag4" Type="varchar" MaxLength="100" />
+    <Property Name="Imag5" Type="varchar" MaxLength="100" />
+    <Property Name="Imag6" Type="varchar" MaxLength="100" />
+    <Property Name="Imag7" Type="varchar" MaxLength="100" />
+    <Property Name="Imag8" Type="varchar" MaxLength="100" />
+    <Property Name="Imag9" Type="varchar" MaxLength="100" />
+    <Property Name="Imag10" Type="varchar" MaxLength="100" />
+    <Property Name="Video1" Type="varchar" MaxLength="100" />
+    <Property Name="Video2" Type="varchar" MaxLength="100" />
+    <Property Name="Latitudine" Type="varchar" MaxLength="50" />
+    <Property Name="Longitudine" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Real_Judet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Real_SubRegiune" Type="tinyint" Nullable="false" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="RezervatiiNaturale" Type="tinyint" Nullable="false" />
+    <Property Name="ProcentPadure" Type="float" Nullable="false" />
+    <Property Name="NrHidrocentrale" Type="int" Nullable="false" />
+    <Property Name="NrOrase" Type="tinyint" Nullable="false" />
+    <Property Name="NrTermocentrale" Type="int" />
+    <Property Name="IndustriaPrelucrativa" Type="int" />
+    <Property Name="IndustriaExtractiva" Type="int" />
+    <Property Name="ParcuriNationale" Type="tinyint" />
+    <Property Name="CalitateAer" Type="float" />
+    <Property Name="PoluareSol" Type="float" />
+  </EntityType>
+  <EntityType Name="Real_SubRegiune">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Temperatura" Type="float" Nullable="false" />
+    <Property Name="Precipitatii" Type="float" Nullable="false" />
+    <Property Name="Clima" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NrJudete" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Regiune">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_User" Type="int" Nullable="false" />
+    <Property Name="Nume" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StatisticaPerAnimal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Usr" Type="int" Nullable="false" />
+    <Property Name="FK_Animale" Type="tinyint" />
+    <Property Name="FK_Padure" Type="int" />
+    <Property Name="FK_Camp" Type="int" />
+    <Property Name="IsFromPadure" Type="bit" Nullable="false" />
+    <Property Name="Foc" Type="int" />
+    <Property Name="Inundatie" Type="int" />
+    <Property Name="Brac" Type="int" />
+    <Property Name="Mancati" Type="int" />
+    <Property Name="Vanati" Type="int" />
+    <Property Name="Vii" Type="int" />
+    <Property Name="Vii_Cumparati" Type="int" />
+    <Property Name="Vii_Vanduti" Type="int" />
+  </EntityType>
+  <EntityType Name="Statistici_Animale">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Usr" Type="int" Nullable="false" />
+    <Property Name="FK_Animale" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Camp" Type="int" Nullable="false" />
+    <Property Name="FK_Padure" Type="int" Nullable="false" />
+    <Property Name="IsFromPadure" Type="bit" Nullable="false" />
+    <Property Name="Vii" Type="int" Nullable="false" />
+    <Property Name="Vii_Vanduti" Type="int" Nullable="false" />
+    <Property Name="Vii_Nascuti" Type="int" Nullable="false" />
+    <Property Name="Vii_Cumparati" Type="int" Nullable="false" />
+    <Property Name="Morti" Type="int" Nullable="false" />
+    <Property Name="Morti_Foc" Type="int" Nullable="false" />
+    <Property Name="Morti_Apa" Type="int" Nullable="false" />
+    <Property Name="Morti_Mancati" Type="int" Nullable="false" />
+    <Property Name="Morti_Brac" Type="int" Nullable="false" />
+    <Property Name="Morti_Vanatoare" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Statistici_Plante">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Plante" Type="tinyint" Nullable="false" />
+    <Property Name="FK_Camp" Type="int" Nullable="false" />
+    <Property Name="FK_Padure" Type="int" Nullable="false" />
+    <Property Name="IsFromPadure" Type="bit" Nullable="false" />
+    <Property Name="Vii" Type="int" Nullable="false" />
+    <Property Name="Vii_Vanduti" Type="int" Nullable="false" />
+    <Property Name="Vii_Nascuti" Type="int" Nullable="false" />
+    <Property Name="Vii_Cumparati" Type="int" Nullable="false" />
+    <Property Name="Morti" Type="int" Nullable="false" />
+    <Property Name="Morti_Foc" Type="int" Nullable="false" />
+    <Property Name="Morti_Taiati" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Stiri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Stiri">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Stire" />
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="Titlu" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Stire" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Titlu" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="SubRegiune">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Regiune" Type="int" Nullable="false" />
+    <Property Name="FK_Real_SubRegiune" Type="tinyint" Nullable="false" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TabelaTranzactii">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_ID_Usr" Type="int" Nullable="false" />
+    <Property Name="FK_ID_Animale" Type="tinyint" Nullable="false" />
+    <Property Name="FK_ID_Firma" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Numar" Type="int" Nullable="false" />
+    <Property Name="Data_Expirarii" Type="datetime" Nullable="false" />
+    <Property Name="Pret" Type="smallmoney" Nullable="false" />
+    <Property Name="Vanzare" Type="nchar" MaxLength="10" />
+    <Property Name="Cumparare" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Upgrades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_user" Type="int" Nullable="false" />
+    <Property Name="Profits" Type="bit" />
+    <Property Name="Tree" Type="bit" />
+    <Property Name="Power" Type="bit" />
+    <Property Name="Bear" Type="bit" />
+    <Property Name="WindMill" Type="bit" />
+    <Property Name="SaveForest" Type="bit" />
+    <Property Name="TakeAction" Type="bit" />
+    <Property Name="AntiBugs" Type="bit" />
+    <Property Name="Flood" Type="bit" />
+    <Property Name="Buy" Type="bit" />
+    <Property Name="H20" Type="bit" />
+    <Property Name="Eco" Type="bit" />
+    <Property Name="Plants" Type="bit" />
+    <Property Name="House" Type="bit" />
+    <Property Name="Earth" Type="bit" />
+  </EntityType>
+  <EntityType Name="Usr">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Usr" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Pass" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Nume" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Prenume" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Mail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Rank" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Scor" Type="float" Nullable="false" />
+    <Property Name="Poza" Type="varchar" MaxLength="50" />
+    <Property Name="BaniDonati" Type="smallmoney" Nullable="false" />
+    <Property Name="NrDonatii" Type="smallint" Nullable="false" />
+    <Property Name="Data_Inreg" Type="datetime" Nullable="false" />
+    <Property Name="Data_LastLogIn" Type="datetime" Nullable="false" />
+    <Property Name="IsForDelete" Type="bit" Nullable="false" />
+    <Property Name="DateForDelete" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.ComentariuView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ComentariuView">
+    <Key>
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Usr" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TextCampanie" />
+      <PropertyRef Name="FK_Real" />
+      <PropertyRef Name="FK_User" />
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="Usr" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TextCampanie" Type="varchar" Nullable="false" MaxLength="300" />
+    <Property Name="FK_Real" Type="int" Nullable="false" />
+    <Property Name="FK_User" Type="int" Nullable="false" />
+    <Property Name="Data" Type="smalldatetime" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Poza" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.DonatiiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="DonatiiView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IsUser" />
+      <PropertyRef Name="IsReal" />
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="SumaBani" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="NumeCampanie" />
+      <PropertyRef Name="NumeZona" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Usr" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="Nume" />
+      <PropertyRef Name="Expr4" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="FK_User" Type="int" />
+    <Property Name="FK_Firma" Type="int" />
+    <Property Name="IsUser" Type="bit" Nullable="false" />
+    <Property Name="FK_Real" Type="int" />
+    <Property Name="FK_Ocol_Silvic" Type="tinyint" />
+    <Property Name="IsReal" Type="bit" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="SumaBani" Type="smallmoney" Nullable="false" />
+    <Property Name="Comentarii" Type="varchar(max)" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="NumeCampanie" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="NumeZona" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Usr" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Poza" Type="varchar" MaxLength="50" />
+    <Property Name="Expr3" Type="int" Nullable="false" />
+    <Property Name="Nume" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Expr4" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.IstoricAnimalPadureForUserX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="IstoricAnimalPadureForUserX">
+    <Key>
+      <PropertyRef Name="AnimalID" />
+      <PropertyRef Name="NumeAnimal" />
+      <PropertyRef Name="UsrID" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="IstoricID" />
+      <PropertyRef Name="Text" />
+      <PropertyRef Name="DataIst" />
+      <PropertyRef Name="Foc" />
+      <PropertyRef Name="Inundatie" />
+      <PropertyRef Name="Mancat" />
+      <PropertyRef Name="Braconaj" />
+      <PropertyRef Name="Vanat" />
+      <PropertyRef Name="Numar" />
+      <PropertyRef Name="Diverse" />
+      <PropertyRef Name="Importanta" />
+    </Key>
+    <Property Name="AnimalID" Type="tinyint" Nullable="false" />
+    <Property Name="NumeAnimal" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="UsrID" Type="int" Nullable="false" />
+    <Property Name="Username" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="IstoricID" Type="bigint" Nullable="false" />
+    <Property Name="Text" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="DataIst" Type="smalldatetime" Nullable="false" />
+    <Property Name="Foc" Type="bit" Nullable="false" />
+    <Property Name="Inundatie" Type="bit" Nullable="false" />
+    <Property Name="Mancat" Type="bit" Nullable="false" />
+    <Property Name="Braconaj" Type="bit" Nullable="false" />
+    <Property Name="Vanat" Type="bit" Nullable="false" />
+    <Property Name="Numar" Type="smallint" Nullable="false" />
+    <Property Name="Diverse" Type="bit" Nullable="false" />
+    <Property Name="Importanta" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Real_SubRegiune_CuNivelPoluare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Real_SubRegiune_CuNivelPoluare">
+    <Key>
+      <PropertyRef Name="SRID" />
+      <PropertyRef Name="NumeSubreg" />
+    </Key>
+    <Property Name="SRID" Type="tinyint" Nullable="false" />
+    <Property Name="NumeSubreg" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="NivelPoluareSol" Type="float" />
+    <Property Name="NivelPoluareAer" Type="float" />
+    <Property Name="NivelPoluareApa" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Tranzactie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Tranzactie">
+    <Key>
+      <PropertyRef Name="Vanzator" />
+      <PropertyRef Name="Cumparator" />
+      <PropertyRef Name="Nume" />
+      <PropertyRef Name="Numar" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="Vanzator" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Cumparator" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Numar" Type="smallint" Nullable="false" />
+    <Property Name="Expr1" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.TranzactiiCumparare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="TranzactiiCumparare">
+    <Key>
+      <PropertyRef Name="Usr" />
+      <PropertyRef Name="Nume" />
+      <PropertyRef Name="Regiune" />
+      <PropertyRef Name="Numar" />
+      <PropertyRef Name="Pret" />
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="Data_Expirarii" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Usr" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Nume" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="Regiune" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Numar" Type="int" Nullable="false" />
+    <Property Name="Pret" Type="smallmoney" Nullable="false" />
+    <Property Name="Cumparare" Type="nchar" MaxLength="10" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Data_Expirarii" Type="datetime" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Vanzare" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\GOGU\DESKTOP\GGG\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.View1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="View1">
+    <Key>
+      <PropertyRef Name="Firma" />
+      <PropertyRef Name="NUmar de animale" />
+      <PropertyRef Name="Animalul" />
+      <PropertyRef Name="EU" />
+      <PropertyRef Name="ID_vanzator" />
+      <PropertyRef Name="ID_cumparator" />
+    </Key>
+    <Property Name="Firma" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NUmar de animale" Type="smallint" Nullable="false" />
+    <Property Name="Animalul" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="EU" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="ID_vanzator" Type="int" Nullable="false" />
+    <Property Name="ID_cumparator" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ComentariiReal_Real">
+    <End Role="Real" Type="dbsqlModel.Store.Real" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComentariiReal" Type="dbsqlModel.Store.ComentariiReal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Real">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ComentariiReal">
+        <PropertyRef Name="FK_Real" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComentariiReal_User">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="ComentariiReal" Type="dbsqlModel.Store.ComentariiReal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ComentariiReal">
+        <PropertyRef Name="FK_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donatii">
+    <End Role="Donatii" Type="dbsqlModel.Store.Donatii" Multiplicity="1" />
+    <End Role="ComentariiDonatii" Type="dbsqlModel.Store.ComentariiDonatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donatii">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ComentariiDonatii">
+        <PropertyRef Name="FK_Donatie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donatii_Firma">
+    <End Role="Firme" Type="dbsqlModel.Store.Firme" Multiplicity="0..1" />
+    <End Role="Donatii" Type="dbsqlModel.Store.Donatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firme">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Donatii">
+        <PropertyRef Name="FK_Firma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donatii_Ocol_Silvic">
+    <End Role="Ocol_Silvic" Type="dbsqlModel.Store.Ocol_Silvic" Multiplicity="0..1" />
+    <End Role="Donatii" Type="dbsqlModel.Store.Donatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ocol_Silvic">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Donatii">
+        <PropertyRef Name="FK_Ocol_Silvic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donatii_Real">
+    <End Role="Real" Type="dbsqlModel.Store.Real" Multiplicity="0..1" />
+    <End Role="Donatii" Type="dbsqlModel.Store.Donatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Real">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Donatii">
+        <PropertyRef Name="FK_Real" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donatii_Usr">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="0..1" />
+    <End Role="Donatii" Type="dbsqlModel.Store.Donatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Donatii">
+        <PropertyRef Name="FK_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_Usr_ID_Usr">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TabelaTranzactii" Type="dbsqlModel.Store.TabelaTranzactii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TabelaTranzactii">
+        <PropertyRef Name="FK_ID_Usr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Animal_Tranzact_Firma">
+    <End Role="Firme" Type="dbsqlModel.Store.Firme" Multiplicity="0..1" />
+    <End Role="Istoric_Animal_Tranzact" Type="dbsqlModel.Store.Istoric_Animal_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firme">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Animal_Tranzact">
+        <PropertyRef Name="FK_Firma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Animal_Tranzact_Usr_Cumparator">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="Istoric_Animal_Tranzact" Type="dbsqlModel.Store.Istoric_Animal_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Animal_Tranzact">
+        <PropertyRef Name="FK_ID_Cumparator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Animal_Tranzact_Usr_Vanzator">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="Istoric_Animal_Tranzact" Type="dbsqlModel.Store.Istoric_Animal_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Animal_Tranzact">
+        <PropertyRef Name="FK_ID_Vanzator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Deces_Camp">
+    <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="1" />
+    <End Role="Istoric_Plante_Deces" Type="dbsqlModel.Store.Istoric_Plante_Deces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Camp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Deces">
+        <PropertyRef Name="FK_Camp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Deces_Padure">
+    <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="1" />
+    <End Role="Istoric_Plante_Deces" Type="dbsqlModel.Store.Istoric_Plante_Deces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padure">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Deces">
+        <PropertyRef Name="FK_Padure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Deces_Plante">
+    <End Role="Plante" Type="dbsqlModel.Store.Plante" Multiplicity="1" />
+    <End Role="Istoric_Plante_Deces" Type="dbsqlModel.Store.Istoric_Plante_Deces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plante">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Deces">
+        <PropertyRef Name="FK_Plante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Tranzact_Firma">
+    <End Role="Firme" Type="dbsqlModel.Store.Firme" Multiplicity="0..1" />
+    <End Role="Istoric_Plante_Tranzact" Type="dbsqlModel.Store.Istoric_Plante_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firme">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Tranzact">
+        <PropertyRef Name="FK_Firma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Tranzact_Plante">
+    <End Role="Plante" Type="dbsqlModel.Store.Plante" Multiplicity="1" />
+    <End Role="Istoric_Plante_Tranzact" Type="dbsqlModel.Store.Istoric_Plante_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plante">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Tranzact">
+        <PropertyRef Name="FK_Plante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Tranzact_Usr_Cumparator">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="Istoric_Plante_Tranzact" Type="dbsqlModel.Store.Istoric_Plante_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Tranzact">
+        <PropertyRef Name="FK_ID_Cumparator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Istoric_Plante_Tranzact_Usr_Vanzator">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="Istoric_Plante_Tranzact" Type="dbsqlModel.Store.Istoric_Plante_Tranzact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Istoric_Plante_Tranzact">
+        <PropertyRef Name="FK_ID_Vanzator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ocol_Silvic_Real_Judet">
+    <End Role="Real_Judet" Type="dbsqlModel.Store.Real_Judet" Multiplicity="1" />
+    <End Role="Ocol_Silvic" Type="dbsqlModel.Store.Ocol_Silvic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Real_Judet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ocol_Silvic">
+        <PropertyRef Name="FK_Judet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Populatie_Subregiune">
+    <End Role="SubRegiune" Type="dbsqlModel.Store.SubRegiune" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Populatie" Type="dbsqlModel.Store.Populatie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRegiune">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Populatie">
+        <PropertyRef Name="FK_SubRegiune" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Real_Judet_Real_SubRegiune">
+    <End Role="Real_SubRegiune" Type="dbsqlModel.Store.Real_SubRegiune" Multiplicity="1" />
+    <End Role="Real_Judet" Type="dbsqlModel.Store.Real_Judet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Real_SubRegiune">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Real_Judet">
+        <PropertyRef Name="FK_Real_SubRegiune" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Real_Ocol_Silvic">
+    <End Role="Ocol_Silvic" Type="dbsqlModel.Store.Ocol_Silvic" Multiplicity="1" />
+    <End Role="Real" Type="dbsqlModel.Store.Real" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ocol_Silvic">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Real">
+        <PropertyRef Name="FK_Ocol_Silvic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Regiune_User">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Regiune" Type="dbsqlModel.Store.Regiune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Regiune">
+        <PropertyRef Name="FK_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatisticaPerAnimal_FK_Camp">
+    <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StatisticaPerAnimal" Type="dbsqlModel.Store.StatisticaPerAnimal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Camp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StatisticaPerAnimal">
+        <PropertyRef Name="FK_Camp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatisticaPerAnimal_FK_Padure">
+    <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="0..1" />
+    <End Role="StatisticaPerAnimal" Type="dbsqlModel.Store.StatisticaPerAnimal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padure">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StatisticaPerAnimal">
+        <PropertyRef Name="FK_Padure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatisticaPerAnimal_FK_Usr">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="StatisticaPerAnimal" Type="dbsqlModel.Store.StatisticaPerAnimal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StatisticaPerAnimal">
+        <PropertyRef Name="FK_Usr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statistici_Animale_Camp">
+    <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="1" />
+    <End Role="Statistici_Animale" Type="dbsqlModel.Store.Statistici_Animale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Camp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Statistici_Animale">
+        <PropertyRef Name="FK_Camp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statistici_Animale_Padure">
+    <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="1" />
+    <End Role="Statistici_Animale" Type="dbsqlModel.Store.Statistici_Animale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padure">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Statistici_Animale">
+        <PropertyRef Name="FK_Padure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statistici_Plante_Camp">
+    <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="1" />
+    <End Role="Statistici_Plante" Type="dbsqlModel.Store.Statistici_Plante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Camp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Statistici_Plante">
+        <PropertyRef Name="FK_Camp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statistici_Plante_Padure">
+    <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="1" />
+    <End Role="Statistici_Plante" Type="dbsqlModel.Store.Statistici_Plante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padure">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Statistici_Plante">
+        <PropertyRef Name="FK_Padure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statistici_Plante_Plante">
+    <End Role="Plante" Type="dbsqlModel.Store.Plante" Multiplicity="1" />
+    <End Role="Statistici_Plante" Type="dbsqlModel.Store.Statistici_Plante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plante">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Statistici_Plante">
+        <PropertyRef Name="FK_Plante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subregiune_Camp">
+    <End Role="SubRegiune" Type="dbsqlModel.Store.SubRegiune" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRegiune">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Camp">
+        <PropertyRef Name="FK_SubRegiune" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subregiune_Padure">
+    <End Role="SubRegiune" Type="dbsqlModel.Store.SubRegiune" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRegiune">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Padure">
+        <PropertyRef Name="FK_SubRegiune" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRegiune_Real_SubRegiune">
+    <End Role="Real_SubRegiune" Type="dbsqlModel.Store.Real_SubRegiune" Multiplicity="1" />
+    <End Role="SubRegiune" Type="dbsqlModel.Store.SubRegiune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Real_SubRegiune">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubRegiune">
+        <PropertyRef Name="FK_Real_SubRegiune" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRegiune_Regiune">
+    <End Role="Regiune" Type="dbsqlModel.Store.Regiune" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubRegiune" Type="dbsqlModel.Store.SubRegiune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regiune">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubRegiune">
+        <PropertyRef Name="FK_Regiune" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User">
+    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
+    <End Role="ComentariiDonatii" Type="dbsqlModel.Store.ComentariiDonatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ComentariiDonatii">
+        <PropertyRef Name="FK_Usr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="BagaLaMyTrades" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numev" Type="char" Mode="In" />
+    <Parameter Name="numec" Type="char" Mode="In" />
+    <Parameter Name="numea" Type="char" Mode="In" />
+    <Parameter Name="numefirma" Type="char" Mode="In" />
+    <Parameter Name="MijlocTransport" Type="char" Mode="In" />
+    <Parameter Name="Data" Type="datetime" Mode="In" />
+    <Parameter Name="Pret" Type="smallmoney" Mode="In" />
+    <Parameter Name="Numar" Type="smallint" Mode="In" />
+    <Parameter Name="IDStergere" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getAchievement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getAnimalStats" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+    <Parameter Name="parameter2" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getChallenges" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPlantHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+    <Parameter Name="parameter2" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getPlants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="HartaCampanii" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="HistoryPadure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="char" Mode="In" />
+    <Parameter Name="parameter2" Type="char" Mode="In" />
+  </Function>
+  <Function Name="ProceduraDeces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+    <Parameter Name="parameter2" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProceduraRealJudet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcedureUpgrades" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Searching" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Regiune" Type="char" Mode="In" />
+    <Parameter Name="Animal" Type="char" Mode="In" />
+    <Parameter Name="AD" Type="int" Mode="In" />
+    <Parameter Name="PQ" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectAnimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectComentarii" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectComentariiDonatii" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="donatieId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectDonatii" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StatisticaAimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+    <Parameter Name="parameter2" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StiriProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="StoredProcedure1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nume" Type="char" Mode="In" />
+    <Parameter Name="numea" Type="char" Mode="In" />
+    <Parameter Name="numefirma" Type="char" Mode="In" />
+    <Parameter Name="Data" Type="datetime" Mode="In" />
+    <Parameter Name="Numar" Type="int" Mode="In" />
+    <Parameter Name="DataExpirarii" Type="datetime" Mode="In" />
+    <Parameter Name="Pret" Type="int" Mode="In" />
+    <Parameter Name="Vanzare" Type="varchar" Mode="In" />
+    <Parameter Name="Cumparare" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="StoredProcedure2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="TryScor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

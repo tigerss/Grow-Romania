@@ -1,0 +1,5 @@
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing.Web\bin\bing.Web.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing.Web\bin\bing.Web.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing.Web\obj\Release\ResolveAssemblyReference.cache
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing.Web\obj\Release\bing.Web.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing.Web\obj\Release\bing.Web.pdb
