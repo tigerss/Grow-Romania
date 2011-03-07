@@ -12,12 +12,22 @@ namespace bing.Web
     public interface ITranzactii
     {
         [OperationContract]
+        List<ProcedureUpgrades_Result> GetProceduraUpgrades(int i);
+        [OperationContract]
+        List<ProceduraRealJudet_Result> GetProceduraReal(int i);
+        [OperationContract]
+        List<HistoryPadure_Result> GetHistoryPadure();
+        [OperationContract]
+        List<StiriProcedure_Result> GetStiri();
+        [OperationContract]
+        List<HartaCampanii_Result> HartaCuCampanii();
+        [OperationContract]
         List<LoginFunction_Result> LoginUser(string nume, string passward);
         [OperationContract]
         List<StatisticaAimal_Result> StatisticaAnimal(int id, int idRegiune);
         
         [OperationContract]
-        List<ProceduraDeces_Result1> PreiaDeces(int ID);
+        List<ProceduraDeces_Result1> PreiaDeces(int IDanimal, int IDuser);
 
          [OperationContract]
           void DoWork();

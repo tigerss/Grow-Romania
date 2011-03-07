@@ -278,7 +278,7 @@ namespace Forme
 
             MeniuAnimal ss;
             if (listAnimalHistory.Count > 0)
-                ss = new MeniuAnimal(MeniuDreapta, "Moldova", "Subregiune1", "Padure", listAnimalHistory);
+                ss = new MeniuAnimal(MeniuDreapta, "Moldova", "Subregiune1", "Padure", listAnimalHistory,parent);
         }
 
         /*

@@ -12,6 +12,13 @@ namespace bing.Web
     public interface IService1
     {
         [OperationContract]
+        void updateAchievements(
+            int userID, int hunger, int education, int equality, int mortality,
+            int maternalHealth, int disease, int environment, int partnership
+            );
+        [OperationContract]
+        void updateChallenge(int challengeID);
+        [OperationContract]
         List<getPlantHistory_Result> getPlantHistoryFromDB(int userID, string imagine1);
         [OperationContract]
         List<getPlants_Result> getPlantsFromDB(int isFromPadure);
@@ -23,7 +30,7 @@ namespace bing.Web
         List<getAnimalStats_Result> getAnimalHistoryFromDB(int user_id, string imagine1);
         [OperationContract]
         List<SelectAnimal_Result> GetAnimalFromDB(int isFromPadure);
-
+      
         [OperationContract]
         Animale GetAnimalByID(int ID);
         [OperationContract]

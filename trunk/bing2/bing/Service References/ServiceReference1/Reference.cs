@@ -17,155 +17,245 @@ namespace bing.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoginFunction_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
-    public partial class LoginFunction_Result : bing.ServiceReference1.ComplexObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProcedureUpgrades_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class ProcedureUpgrades_Result : bing.ServiceReference1.ComplexObject {
         
-        private decimal BaniDonatiField;
+        private System.Nullable<bool> AntiBugsField;
         
-        private short NrDonatiiField;
+        private System.Nullable<bool> BearField;
         
-        private string NumeField;
+        private System.Nullable<bool> BuyField;
         
-        private string PassField;
+        private System.Nullable<bool> EarthField;
         
-        private string PozaField;
+        private System.Nullable<bool> EcoField;
         
-        private string PrenumeField;
+        private int FK_userField;
         
-        private string RankField;
+        private System.Nullable<bool> FloodField;
         
-        private string RegiunenumeField;
+        private System.Nullable<bool> H20Field;
         
-        private double ScorField;
+        private System.Nullable<bool> HouseField;
         
-        private string UsrField;
+        private System.Nullable<bool> PlantsField;
+        
+        private System.Nullable<bool> PowerField;
+        
+        private System.Nullable<bool> ProfitsField;
+        
+        private System.Nullable<bool> SaveForestField;
+        
+        private System.Nullable<bool> TakeActionField;
+        
+        private System.Nullable<bool> TreeField;
+        
+        private System.Nullable<bool> WindMillField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal BaniDonati {
+        public System.Nullable<bool> AntiBugs {
             get {
-                return this.BaniDonatiField;
+                return this.AntiBugsField;
             }
             set {
-                if ((this.BaniDonatiField.Equals(value) != true)) {
-                    this.BaniDonatiField = value;
-                    this.RaisePropertyChanged("BaniDonati");
+                if ((this.AntiBugsField.Equals(value) != true)) {
+                    this.AntiBugsField = value;
+                    this.RaisePropertyChanged("AntiBugs");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public short NrDonatii {
+        public System.Nullable<bool> Bear {
             get {
-                return this.NrDonatiiField;
+                return this.BearField;
             }
             set {
-                if ((this.NrDonatiiField.Equals(value) != true)) {
-                    this.NrDonatiiField = value;
-                    this.RaisePropertyChanged("NrDonatii");
+                if ((this.BearField.Equals(value) != true)) {
+                    this.BearField = value;
+                    this.RaisePropertyChanged("Bear");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nume {
+        public System.Nullable<bool> Buy {
             get {
-                return this.NumeField;
+                return this.BuyField;
             }
             set {
-                if ((object.ReferenceEquals(this.NumeField, value) != true)) {
-                    this.NumeField = value;
-                    this.RaisePropertyChanged("Nume");
+                if ((this.BuyField.Equals(value) != true)) {
+                    this.BuyField = value;
+                    this.RaisePropertyChanged("Buy");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Pass {
+        public System.Nullable<bool> Earth {
             get {
-                return this.PassField;
+                return this.EarthField;
             }
             set {
-                if ((object.ReferenceEquals(this.PassField, value) != true)) {
-                    this.PassField = value;
-                    this.RaisePropertyChanged("Pass");
+                if ((this.EarthField.Equals(value) != true)) {
+                    this.EarthField = value;
+                    this.RaisePropertyChanged("Earth");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Poza {
+        public System.Nullable<bool> Eco {
             get {
-                return this.PozaField;
+                return this.EcoField;
             }
             set {
-                if ((object.ReferenceEquals(this.PozaField, value) != true)) {
-                    this.PozaField = value;
-                    this.RaisePropertyChanged("Poza");
+                if ((this.EcoField.Equals(value) != true)) {
+                    this.EcoField = value;
+                    this.RaisePropertyChanged("Eco");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Prenume {
+        public int FK_user {
             get {
-                return this.PrenumeField;
+                return this.FK_userField;
             }
             set {
-                if ((object.ReferenceEquals(this.PrenumeField, value) != true)) {
-                    this.PrenumeField = value;
-                    this.RaisePropertyChanged("Prenume");
+                if ((this.FK_userField.Equals(value) != true)) {
+                    this.FK_userField = value;
+                    this.RaisePropertyChanged("FK_user");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Rank {
+        public System.Nullable<bool> Flood {
             get {
-                return this.RankField;
+                return this.FloodField;
             }
             set {
-                if ((object.ReferenceEquals(this.RankField, value) != true)) {
-                    this.RankField = value;
-                    this.RaisePropertyChanged("Rank");
+                if ((this.FloodField.Equals(value) != true)) {
+                    this.FloodField = value;
+                    this.RaisePropertyChanged("Flood");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Regiunenume {
+        public System.Nullable<bool> H20 {
             get {
-                return this.RegiunenumeField;
+                return this.H20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.RegiunenumeField, value) != true)) {
-                    this.RegiunenumeField = value;
-                    this.RaisePropertyChanged("Regiunenume");
+                if ((this.H20Field.Equals(value) != true)) {
+                    this.H20Field = value;
+                    this.RaisePropertyChanged("H20");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Scor {
+        public System.Nullable<bool> House {
             get {
-                return this.ScorField;
+                return this.HouseField;
             }
             set {
-                if ((this.ScorField.Equals(value) != true)) {
-                    this.ScorField = value;
-                    this.RaisePropertyChanged("Scor");
+                if ((this.HouseField.Equals(value) != true)) {
+                    this.HouseField = value;
+                    this.RaisePropertyChanged("House");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Usr {
+        public System.Nullable<bool> Plants {
             get {
-                return this.UsrField;
+                return this.PlantsField;
             }
             set {
-                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
-                    this.UsrField = value;
-                    this.RaisePropertyChanged("Usr");
+                if ((this.PlantsField.Equals(value) != true)) {
+                    this.PlantsField = value;
+                    this.RaisePropertyChanged("Plants");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> Power {
+            get {
+                return this.PowerField;
+            }
+            set {
+                if ((this.PowerField.Equals(value) != true)) {
+                    this.PowerField = value;
+                    this.RaisePropertyChanged("Power");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> Profits {
+            get {
+                return this.ProfitsField;
+            }
+            set {
+                if ((this.ProfitsField.Equals(value) != true)) {
+                    this.ProfitsField = value;
+                    this.RaisePropertyChanged("Profits");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SaveForest {
+            get {
+                return this.SaveForestField;
+            }
+            set {
+                if ((this.SaveForestField.Equals(value) != true)) {
+                    this.SaveForestField = value;
+                    this.RaisePropertyChanged("SaveForest");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> TakeAction {
+            get {
+                return this.TakeActionField;
+            }
+            set {
+                if ((this.TakeActionField.Equals(value) != true)) {
+                    this.TakeActionField = value;
+                    this.RaisePropertyChanged("TakeAction");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> Tree {
+            get {
+                return this.TreeField;
+            }
+            set {
+                if ((this.TreeField.Equals(value) != true)) {
+                    this.TreeField = value;
+                    this.RaisePropertyChanged("Tree");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> WindMill {
+            get {
+                return this.WindMillField;
+            }
+            set {
+                if ((this.WindMillField.Equals(value) != true)) {
+                    this.WindMillField = value;
+                    this.RaisePropertyChanged("WindMill");
                 }
             }
         }
@@ -178,9 +268,14 @@ namespace bing.ServiceReference1 {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.Tranzactie))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.TranzactiiCumparare))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ComplexObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraRealJudet_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.HistoryPadure_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StiriProcedure_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.HartaCampanii_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StatisticaAimal_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraDeces_Result1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProcedureUpgrades_Result))]
     public partial class StructuralObject : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -456,10 +551,660 @@ namespace bing.ServiceReference1 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ComplexObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraRealJudet_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.HistoryPadure_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StiriProcedure_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.HartaCampanii_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StatisticaAimal_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraDeces_Result1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProcedureUpgrades_Result))]
     public partial class ComplexObject : bing.ServiceReference1.StructuralObject {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProceduraRealJudet_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class ProceduraRealJudet_Result : bing.ServiceReference1.ComplexObject {
+        
+        private System.Nullable<double> CalitateAerField;
+        
+        private string ClimaField;
+        
+        private string Expr1Field;
+        
+        private byte IDField;
+        
+        private System.Nullable<int> IndustriaExtractivaField;
+        
+        private System.Nullable<int> IndustriaPrelucrativaField;
+        
+        private int NrHidrocentraleField;
+        
+        private byte NrJudeteField;
+        
+        private byte NrOraseField;
+        
+        private System.Nullable<int> NrTermocentraleField;
+        
+        private string NumeField;
+        
+        private System.Nullable<byte> ParcuriNationaleField;
+        
+        private System.Nullable<double> PoluareSolField;
+        
+        private double PrecipitatiiField;
+        
+        private double ProcentPadureField;
+        
+        private byte RezervatiiNaturaleField;
+        
+        private double TemperaturaField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> CalitateAer {
+            get {
+                return this.CalitateAerField;
+            }
+            set {
+                if ((this.CalitateAerField.Equals(value) != true)) {
+                    this.CalitateAerField = value;
+                    this.RaisePropertyChanged("CalitateAer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Clima {
+            get {
+                return this.ClimaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClimaField, value) != true)) {
+                    this.ClimaField = value;
+                    this.RaisePropertyChanged("Clima");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Expr1 {
+            get {
+                return this.Expr1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Expr1Field, value) != true)) {
+                    this.Expr1Field = value;
+                    this.RaisePropertyChanged("Expr1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IndustriaExtractiva {
+            get {
+                return this.IndustriaExtractivaField;
+            }
+            set {
+                if ((this.IndustriaExtractivaField.Equals(value) != true)) {
+                    this.IndustriaExtractivaField = value;
+                    this.RaisePropertyChanged("IndustriaExtractiva");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IndustriaPrelucrativa {
+            get {
+                return this.IndustriaPrelucrativaField;
+            }
+            set {
+                if ((this.IndustriaPrelucrativaField.Equals(value) != true)) {
+                    this.IndustriaPrelucrativaField = value;
+                    this.RaisePropertyChanged("IndustriaPrelucrativa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NrHidrocentrale {
+            get {
+                return this.NrHidrocentraleField;
+            }
+            set {
+                if ((this.NrHidrocentraleField.Equals(value) != true)) {
+                    this.NrHidrocentraleField = value;
+                    this.RaisePropertyChanged("NrHidrocentrale");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte NrJudete {
+            get {
+                return this.NrJudeteField;
+            }
+            set {
+                if ((this.NrJudeteField.Equals(value) != true)) {
+                    this.NrJudeteField = value;
+                    this.RaisePropertyChanged("NrJudete");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte NrOrase {
+            get {
+                return this.NrOraseField;
+            }
+            set {
+                if ((this.NrOraseField.Equals(value) != true)) {
+                    this.NrOraseField = value;
+                    this.RaisePropertyChanged("NrOrase");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> NrTermocentrale {
+            get {
+                return this.NrTermocentraleField;
+            }
+            set {
+                if ((this.NrTermocentraleField.Equals(value) != true)) {
+                    this.NrTermocentraleField = value;
+                    this.RaisePropertyChanged("NrTermocentrale");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nume {
+            get {
+                return this.NumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeField, value) != true)) {
+                    this.NumeField = value;
+                    this.RaisePropertyChanged("Nume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<byte> ParcuriNationale {
+            get {
+                return this.ParcuriNationaleField;
+            }
+            set {
+                if ((this.ParcuriNationaleField.Equals(value) != true)) {
+                    this.ParcuriNationaleField = value;
+                    this.RaisePropertyChanged("ParcuriNationale");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> PoluareSol {
+            get {
+                return this.PoluareSolField;
+            }
+            set {
+                if ((this.PoluareSolField.Equals(value) != true)) {
+                    this.PoluareSolField = value;
+                    this.RaisePropertyChanged("PoluareSol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Precipitatii {
+            get {
+                return this.PrecipitatiiField;
+            }
+            set {
+                if ((this.PrecipitatiiField.Equals(value) != true)) {
+                    this.PrecipitatiiField = value;
+                    this.RaisePropertyChanged("Precipitatii");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ProcentPadure {
+            get {
+                return this.ProcentPadureField;
+            }
+            set {
+                if ((this.ProcentPadureField.Equals(value) != true)) {
+                    this.ProcentPadureField = value;
+                    this.RaisePropertyChanged("ProcentPadure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte RezervatiiNaturale {
+            get {
+                return this.RezervatiiNaturaleField;
+            }
+            set {
+                if ((this.RezervatiiNaturaleField.Equals(value) != true)) {
+                    this.RezervatiiNaturaleField = value;
+                    this.RaisePropertyChanged("RezervatiiNaturale");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Temperatura {
+            get {
+                return this.TemperaturaField;
+            }
+            set {
+                if ((this.TemperaturaField.Equals(value) != true)) {
+                    this.TemperaturaField = value;
+                    this.RaisePropertyChanged("Temperatura");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryPadure_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class HistoryPadure_Result : bing.ServiceReference1.ComplexObject {
+        
+        private string DescriptionField;
+        
+        private long IDField;
+        
+        private string NumeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nume {
+            get {
+                return this.NumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeField, value) != true)) {
+                    this.NumeField = value;
+                    this.RaisePropertyChanged("Nume");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StiriProcedure_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class StiriProcedure_Result : bing.ServiceReference1.ComplexObject {
+        
+        private System.Nullable<System.DateTime> DataField;
+        
+        private int IDField;
+        
+        private string StireField;
+        
+        private string TitluField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((this.DataField.Equals(value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Stire {
+            get {
+                return this.StireField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StireField, value) != true)) {
+                    this.StireField = value;
+                    this.RaisePropertyChanged("Stire");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Titlu {
+            get {
+                return this.TitluField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitluField, value) != true)) {
+                    this.TitluField = value;
+                    this.RaisePropertyChanged("Titlu");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HartaCampanii_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class HartaCampanii_Result : bing.ServiceReference1.ComplexObject {
+        
+        private int IDField;
+        
+        private string LatitudineField;
+        
+        private string LongitudineField;
+        
+        private byte NivelProblemaField;
+        
+        private string NumeCampanieField;
+        
+        private string NumeZonaField;
+        
+        private string PctLocatieField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Latitudine {
+            get {
+                return this.LatitudineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LatitudineField, value) != true)) {
+                    this.LatitudineField = value;
+                    this.RaisePropertyChanged("Latitudine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Longitudine {
+            get {
+                return this.LongitudineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LongitudineField, value) != true)) {
+                    this.LongitudineField = value;
+                    this.RaisePropertyChanged("Longitudine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte NivelProblema {
+            get {
+                return this.NivelProblemaField;
+            }
+            set {
+                if ((this.NivelProblemaField.Equals(value) != true)) {
+                    this.NivelProblemaField = value;
+                    this.RaisePropertyChanged("NivelProblema");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NumeCampanie {
+            get {
+                return this.NumeCampanieField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeCampanieField, value) != true)) {
+                    this.NumeCampanieField = value;
+                    this.RaisePropertyChanged("NumeCampanie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NumeZona {
+            get {
+                return this.NumeZonaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeZonaField, value) != true)) {
+                    this.NumeZonaField = value;
+                    this.RaisePropertyChanged("NumeZona");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PctLocatie {
+            get {
+                return this.PctLocatieField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PctLocatieField, value) != true)) {
+                    this.PctLocatieField = value;
+                    this.RaisePropertyChanged("PctLocatie");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoginFunction_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class LoginFunction_Result : bing.ServiceReference1.ComplexObject {
+        
+        private decimal BaniDonatiField;
+        
+        private short NrDonatiiField;
+        
+        private string NumeField;
+        
+        private string PassField;
+        
+        private string PozaField;
+        
+        private string PrenumeField;
+        
+        private string RankField;
+        
+        private string RegiunenumeField;
+        
+        private double ScorField;
+        
+        private string UsrField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal BaniDonati {
+            get {
+                return this.BaniDonatiField;
+            }
+            set {
+                if ((this.BaniDonatiField.Equals(value) != true)) {
+                    this.BaniDonatiField = value;
+                    this.RaisePropertyChanged("BaniDonati");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public short NrDonatii {
+            get {
+                return this.NrDonatiiField;
+            }
+            set {
+                if ((this.NrDonatiiField.Equals(value) != true)) {
+                    this.NrDonatiiField = value;
+                    this.RaisePropertyChanged("NrDonatii");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nume {
+            get {
+                return this.NumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeField, value) != true)) {
+                    this.NumeField = value;
+                    this.RaisePropertyChanged("Nume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pass {
+            get {
+                return this.PassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PassField, value) != true)) {
+                    this.PassField = value;
+                    this.RaisePropertyChanged("Pass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Poza {
+            get {
+                return this.PozaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PozaField, value) != true)) {
+                    this.PozaField = value;
+                    this.RaisePropertyChanged("Poza");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prenume {
+            get {
+                return this.PrenumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenumeField, value) != true)) {
+                    this.PrenumeField = value;
+                    this.RaisePropertyChanged("Prenume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Rank {
+            get {
+                return this.RankField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RankField, value) != true)) {
+                    this.RankField = value;
+                    this.RaisePropertyChanged("Rank");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Regiunenume {
+            get {
+                return this.RegiunenumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegiunenumeField, value) != true)) {
+                    this.RegiunenumeField = value;
+                    this.RaisePropertyChanged("Regiunenume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Scor {
+            get {
+                return this.ScorField;
+            }
+            set {
+                if ((this.ScorField.Equals(value) != true)) {
+                    this.ScorField = value;
+                    this.RaisePropertyChanged("Scor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Usr {
+            get {
+                return this.UsrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
+                    this.UsrField = value;
+                    this.RaisePropertyChanged("Usr");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -975,6 +1720,16 @@ namespace bing.ServiceReference1 {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.EntityKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.EntityKeyMember>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProcedureUpgrades_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraRealJudet_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.HistoryPadure_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StiriProcedure_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.HartaCampanii_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StatisticaAimal_Result>))]
@@ -1034,6 +1789,31 @@ namespace bing.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ITranzactii")]
     public interface ITranzactii {
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/GetProceduraUpgrades", ReplyAction="http://tempuri.org/ITranzactii/GetProceduraUpgradesResponse")]
+        System.IAsyncResult BeginGetProceduraUpgrades(int i, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result> EndGetProceduraUpgrades(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/GetProceduraReal", ReplyAction="http://tempuri.org/ITranzactii/GetProceduraRealResponse")]
+        System.IAsyncResult BeginGetProceduraReal(int i, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result> EndGetProceduraReal(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/GetHistoryPadure", ReplyAction="http://tempuri.org/ITranzactii/GetHistoryPadureResponse")]
+        System.IAsyncResult BeginGetHistoryPadure(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result> EndGetHistoryPadure(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/GetStiri", ReplyAction="http://tempuri.org/ITranzactii/GetStiriResponse")]
+        System.IAsyncResult BeginGetStiri(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result> EndGetStiri(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/HartaCuCampanii", ReplyAction="http://tempuri.org/ITranzactii/HartaCuCampaniiResponse")]
+        System.IAsyncResult BeginHartaCuCampanii(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result> EndHartaCuCampanii(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/LoginUser", ReplyAction="http://tempuri.org/ITranzactii/LoginUserResponse")]
         System.IAsyncResult BeginLoginUser(string nume, string passward, System.AsyncCallback callback, object asyncState);
         
@@ -1045,7 +1825,7 @@ namespace bing.ServiceReference1 {
         System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StatisticaAimal_Result> EndStatisticaAnimal(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/PreiaDeces", ReplyAction="http://tempuri.org/ITranzactii/PreiaDecesResponse")]
-        System.IAsyncResult BeginPreiaDeces(int ID, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginPreiaDeces(int IDanimal, int IDuser, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraDeces_Result1> EndPreiaDeces(System.IAsyncResult result);
         
@@ -1092,6 +1872,101 @@ namespace bing.ServiceReference1 {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ITranzactiiChannel : bing.ServiceReference1.ITranzactii, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetProceduraUpgradesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetProceduraUpgradesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetProceduraRealCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetProceduraRealCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetHistoryPadureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetHistoryPadureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetStiriCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetStiriCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class HartaCuCampaniiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public HartaCuCampaniiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result>)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1250,6 +2125,36 @@ namespace bing.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class TranzactiiClient : System.ServiceModel.ClientBase<bing.ServiceReference1.ITranzactii>, bing.ServiceReference1.ITranzactii {
         
+        private BeginOperationDelegate onBeginGetProceduraUpgradesDelegate;
+        
+        private EndOperationDelegate onEndGetProceduraUpgradesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetProceduraUpgradesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetProceduraRealDelegate;
+        
+        private EndOperationDelegate onEndGetProceduraRealDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetProceduraRealCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetHistoryPadureDelegate;
+        
+        private EndOperationDelegate onEndGetHistoryPadureDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetHistoryPadureCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetStiriDelegate;
+        
+        private EndOperationDelegate onEndGetStiriDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetStiriCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginHartaCuCampaniiDelegate;
+        
+        private EndOperationDelegate onEndHartaCuCampaniiDelegate;
+        
+        private System.Threading.SendOrPostCallback onHartaCuCampaniiCompletedDelegate;
+        
         private BeginOperationDelegate onBeginLoginUserDelegate;
         
         private EndOperationDelegate onEndLoginUserDelegate;
@@ -1369,6 +2274,16 @@ namespace bing.ServiceReference1 {
             }
         }
         
+        public event System.EventHandler<GetProceduraUpgradesCompletedEventArgs> GetProceduraUpgradesCompleted;
+        
+        public event System.EventHandler<GetProceduraRealCompletedEventArgs> GetProceduraRealCompleted;
+        
+        public event System.EventHandler<GetHistoryPadureCompletedEventArgs> GetHistoryPadureCompleted;
+        
+        public event System.EventHandler<GetStiriCompletedEventArgs> GetStiriCompleted;
+        
+        public event System.EventHandler<HartaCuCampaniiCompletedEventArgs> HartaCuCampaniiCompleted;
+        
         public event System.EventHandler<LoginUserCompletedEventArgs> LoginUserCompleted;
         
         public event System.EventHandler<StatisticaAnimalCompletedEventArgs> StatisticaAnimalCompleted;
@@ -1394,6 +2309,230 @@ namespace bing.ServiceReference1 {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginGetProceduraUpgrades(int i, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetProceduraUpgrades(i, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result> bing.ServiceReference1.ITranzactii.EndGetProceduraUpgrades(System.IAsyncResult result) {
+            return base.Channel.EndGetProceduraUpgrades(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetProceduraUpgrades(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int i = ((int)(inValues[0]));
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginGetProceduraUpgrades(i, callback, asyncState);
+        }
+        
+        private object[] OnEndGetProceduraUpgrades(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result> retVal = ((bing.ServiceReference1.ITranzactii)(this)).EndGetProceduraUpgrades(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetProceduraUpgradesCompleted(object state) {
+            if ((this.GetProceduraUpgradesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetProceduraUpgradesCompleted(this, new GetProceduraUpgradesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetProceduraUpgradesAsync(int i) {
+            this.GetProceduraUpgradesAsync(i, null);
+        }
+        
+        public void GetProceduraUpgradesAsync(int i, object userState) {
+            if ((this.onBeginGetProceduraUpgradesDelegate == null)) {
+                this.onBeginGetProceduraUpgradesDelegate = new BeginOperationDelegate(this.OnBeginGetProceduraUpgrades);
+            }
+            if ((this.onEndGetProceduraUpgradesDelegate == null)) {
+                this.onEndGetProceduraUpgradesDelegate = new EndOperationDelegate(this.OnEndGetProceduraUpgrades);
+            }
+            if ((this.onGetProceduraUpgradesCompletedDelegate == null)) {
+                this.onGetProceduraUpgradesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetProceduraUpgradesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetProceduraUpgradesDelegate, new object[] {
+                        i}, this.onEndGetProceduraUpgradesDelegate, this.onGetProceduraUpgradesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginGetProceduraReal(int i, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetProceduraReal(i, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result> bing.ServiceReference1.ITranzactii.EndGetProceduraReal(System.IAsyncResult result) {
+            return base.Channel.EndGetProceduraReal(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetProceduraReal(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int i = ((int)(inValues[0]));
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginGetProceduraReal(i, callback, asyncState);
+        }
+        
+        private object[] OnEndGetProceduraReal(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result> retVal = ((bing.ServiceReference1.ITranzactii)(this)).EndGetProceduraReal(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetProceduraRealCompleted(object state) {
+            if ((this.GetProceduraRealCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetProceduraRealCompleted(this, new GetProceduraRealCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetProceduraRealAsync(int i) {
+            this.GetProceduraRealAsync(i, null);
+        }
+        
+        public void GetProceduraRealAsync(int i, object userState) {
+            if ((this.onBeginGetProceduraRealDelegate == null)) {
+                this.onBeginGetProceduraRealDelegate = new BeginOperationDelegate(this.OnBeginGetProceduraReal);
+            }
+            if ((this.onEndGetProceduraRealDelegate == null)) {
+                this.onEndGetProceduraRealDelegate = new EndOperationDelegate(this.OnEndGetProceduraReal);
+            }
+            if ((this.onGetProceduraRealCompletedDelegate == null)) {
+                this.onGetProceduraRealCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetProceduraRealCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetProceduraRealDelegate, new object[] {
+                        i}, this.onEndGetProceduraRealDelegate, this.onGetProceduraRealCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginGetHistoryPadure(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetHistoryPadure(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result> bing.ServiceReference1.ITranzactii.EndGetHistoryPadure(System.IAsyncResult result) {
+            return base.Channel.EndGetHistoryPadure(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetHistoryPadure(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginGetHistoryPadure(callback, asyncState);
+        }
+        
+        private object[] OnEndGetHistoryPadure(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result> retVal = ((bing.ServiceReference1.ITranzactii)(this)).EndGetHistoryPadure(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetHistoryPadureCompleted(object state) {
+            if ((this.GetHistoryPadureCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetHistoryPadureCompleted(this, new GetHistoryPadureCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetHistoryPadureAsync() {
+            this.GetHistoryPadureAsync(null);
+        }
+        
+        public void GetHistoryPadureAsync(object userState) {
+            if ((this.onBeginGetHistoryPadureDelegate == null)) {
+                this.onBeginGetHistoryPadureDelegate = new BeginOperationDelegate(this.OnBeginGetHistoryPadure);
+            }
+            if ((this.onEndGetHistoryPadureDelegate == null)) {
+                this.onEndGetHistoryPadureDelegate = new EndOperationDelegate(this.OnEndGetHistoryPadure);
+            }
+            if ((this.onGetHistoryPadureCompletedDelegate == null)) {
+                this.onGetHistoryPadureCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetHistoryPadureCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetHistoryPadureDelegate, null, this.onEndGetHistoryPadureDelegate, this.onGetHistoryPadureCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginGetStiri(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetStiri(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result> bing.ServiceReference1.ITranzactii.EndGetStiri(System.IAsyncResult result) {
+            return base.Channel.EndGetStiri(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetStiri(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginGetStiri(callback, asyncState);
+        }
+        
+        private object[] OnEndGetStiri(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result> retVal = ((bing.ServiceReference1.ITranzactii)(this)).EndGetStiri(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetStiriCompleted(object state) {
+            if ((this.GetStiriCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetStiriCompleted(this, new GetStiriCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetStiriAsync() {
+            this.GetStiriAsync(null);
+        }
+        
+        public void GetStiriAsync(object userState) {
+            if ((this.onBeginGetStiriDelegate == null)) {
+                this.onBeginGetStiriDelegate = new BeginOperationDelegate(this.OnBeginGetStiri);
+            }
+            if ((this.onEndGetStiriDelegate == null)) {
+                this.onEndGetStiriDelegate = new EndOperationDelegate(this.OnEndGetStiri);
+            }
+            if ((this.onGetStiriCompletedDelegate == null)) {
+                this.onGetStiriCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetStiriCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetStiriDelegate, null, this.onEndGetStiriDelegate, this.onGetStiriCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginHartaCuCampanii(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHartaCuCampanii(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result> bing.ServiceReference1.ITranzactii.EndHartaCuCampanii(System.IAsyncResult result) {
+            return base.Channel.EndHartaCuCampanii(result);
+        }
+        
+        private System.IAsyncResult OnBeginHartaCuCampanii(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginHartaCuCampanii(callback, asyncState);
+        }
+        
+        private object[] OnEndHartaCuCampanii(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result> retVal = ((bing.ServiceReference1.ITranzactii)(this)).EndHartaCuCampanii(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnHartaCuCampaniiCompleted(object state) {
+            if ((this.HartaCuCampaniiCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.HartaCuCampaniiCompleted(this, new HartaCuCampaniiCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void HartaCuCampaniiAsync() {
+            this.HartaCuCampaniiAsync(null);
+        }
+        
+        public void HartaCuCampaniiAsync(object userState) {
+            if ((this.onBeginHartaCuCampaniiDelegate == null)) {
+                this.onBeginHartaCuCampaniiDelegate = new BeginOperationDelegate(this.OnBeginHartaCuCampanii);
+            }
+            if ((this.onEndHartaCuCampaniiDelegate == null)) {
+                this.onEndHartaCuCampaniiDelegate = new EndOperationDelegate(this.OnEndHartaCuCampanii);
+            }
+            if ((this.onHartaCuCampaniiCompletedDelegate == null)) {
+                this.onHartaCuCampaniiCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHartaCuCampaniiCompleted);
+            }
+            base.InvokeAsync(this.onBeginHartaCuCampaniiDelegate, null, this.onEndHartaCuCampaniiDelegate, this.onHartaCuCampaniiCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginLoginUser(string nume, string passward, System.AsyncCallback callback, object asyncState) {
@@ -1492,8 +2631,8 @@ namespace bing.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginPreiaDeces(int ID, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginPreiaDeces(ID, callback, asyncState);
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginPreiaDeces(int IDanimal, int IDuser, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginPreiaDeces(IDanimal, IDuser, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1502,8 +2641,9 @@ namespace bing.ServiceReference1 {
         }
         
         private System.IAsyncResult OnBeginPreiaDeces(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int ID = ((int)(inValues[0]));
-            return ((bing.ServiceReference1.ITranzactii)(this)).BeginPreiaDeces(ID, callback, asyncState);
+            int IDanimal = ((int)(inValues[0]));
+            int IDuser = ((int)(inValues[1]));
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginPreiaDeces(IDanimal, IDuser, callback, asyncState);
         }
         
         private object[] OnEndPreiaDeces(System.IAsyncResult result) {
@@ -1519,11 +2659,11 @@ namespace bing.ServiceReference1 {
             }
         }
         
-        public void PreiaDecesAsync(int ID) {
-            this.PreiaDecesAsync(ID, null);
+        public void PreiaDecesAsync(int IDanimal, int IDuser) {
+            this.PreiaDecesAsync(IDanimal, IDuser, null);
         }
         
-        public void PreiaDecesAsync(int ID, object userState) {
+        public void PreiaDecesAsync(int IDanimal, int IDuser, object userState) {
             if ((this.onBeginPreiaDecesDelegate == null)) {
                 this.onBeginPreiaDecesDelegate = new BeginOperationDelegate(this.OnBeginPreiaDeces);
             }
@@ -1534,7 +2674,8 @@ namespace bing.ServiceReference1 {
                 this.onPreiaDecesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnPreiaDecesCompleted);
             }
             base.InvokeAsync(this.onBeginPreiaDecesDelegate, new object[] {
-                        ID}, this.onEndPreiaDecesDelegate, this.onPreiaDecesCompletedDelegate, userState);
+                        IDanimal,
+                        IDuser}, this.onEndPreiaDecesDelegate, this.onPreiaDecesCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2004,6 +3145,68 @@ namespace bing.ServiceReference1 {
                     base(client) {
             }
             
+            public System.IAsyncResult BeginGetProceduraUpgrades(int i, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = i;
+                System.IAsyncResult _result = base.BeginInvoke("GetProceduraUpgrades", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result> EndGetProceduraUpgrades(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProcedureUpgrades_Result>)(base.EndInvoke("GetProceduraUpgrades", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetProceduraReal(int i, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = i;
+                System.IAsyncResult _result = base.BeginInvoke("GetProceduraReal", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result> EndGetProceduraReal(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraRealJudet_Result>)(base.EndInvoke("GetProceduraReal", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetHistoryPadure(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetHistoryPadure", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result> EndGetHistoryPadure(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HistoryPadure_Result>)(base.EndInvoke("GetHistoryPadure", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetStiri(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetStiri", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result> EndGetStiri(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StiriProcedure_Result>)(base.EndInvoke("GetStiri", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginHartaCuCampanii(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("HartaCuCampanii", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result> EndHartaCuCampanii(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.HartaCampanii_Result>)(base.EndInvoke("HartaCuCampanii", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BeginLoginUser(string nume, string passward, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[2];
                 _args[0] = nume;
@@ -2032,9 +3235,10 @@ namespace bing.ServiceReference1 {
                 return _result;
             }
             
-            public System.IAsyncResult BeginPreiaDeces(int ID, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = ID;
+            public System.IAsyncResult BeginPreiaDeces(int IDanimal, int IDuser, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = IDanimal;
+                _args[1] = IDuser;
                 System.IAsyncResult _result = base.BeginInvoke("PreiaDeces", _args, callback, asyncState);
                 return _result;
             }

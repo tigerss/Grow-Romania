@@ -24,13 +24,16 @@ namespace Forme
     public class MeniuAnimal : UserControl
     {
         Canvas pan, canvas;
+        Canvas canvas2;
         List<getAnimalStats_Result> lista;
-        public MeniuAnimal(Canvas can, string Regiune, string Subregiune, string Locatie, List<getAnimalStats_Result> lista)
+        public MeniuAnimal(Canvas can, string Regiune, string Subregiune, string Locatie, List<getAnimalStats_Result> lista,Canvas canvas2)
         {
             canvas = can;
             this.lista = lista;
+            
+            this.canvas2 = canvas2;
             canvas.Children.Clear();
-
+           
             #region Adresa + Nume animal
             ControlCuColturiRotunde adresscur = new ControlCuColturiRotunde(can, 230, 74, 0, 7, true, 1);
             adresscur.Colturi(13, 13, new Rect(0, 0, 230, 74));
@@ -194,7 +197,8 @@ namespace Forme
 
         void more2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+         //   canvas2.Children.Clear();
+            stat s = new stat(canvas2,lista[0].Expr1);
         }
 
         void more1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

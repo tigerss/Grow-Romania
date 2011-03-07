@@ -10,6 +10,13 @@ namespace bing.Web
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Tranzactii" in code, svc and config file together.
     public class Tranzactii : ITranzactii
     {
+        public List<LoginFunction_Result> LoginUser(string nume, string passward)
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                return e.LoginFunction(nume, passward).ToList<LoginFunction_Result>();
+            }
+        }
         public List<StatisticaAimal_Result> StatisticaAnimal(int id, int idRegiune)
         {
             using (dbEntities e = new dbEntities())

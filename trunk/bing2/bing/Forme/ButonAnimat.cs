@@ -29,12 +29,14 @@ namespace bing.Forme
         DoubleAnimation da = new DoubleAnimation();
         DoubleAnimation da1 = new DoubleAnimation();
         DoubleAnimation da2 = new DoubleAnimation();
+
         Storyboard sb = new Storyboard();
         Storyboard sb1 = new Storyboard();
+        Storyboard sb2 = new Storyboard();
+
         DoubleAnimation dai = new DoubleAnimation();
         DoubleAnimation dai1 = new DoubleAnimation();
         DoubleAnimation dai2 = new DoubleAnimation();
-        Storyboard sb2 = new Storyboard();
         #endregion
 
         MeniuPicks m_meniuPicks;
@@ -113,10 +115,12 @@ namespace bing.Forme
             if (m_selectAnimals == true)
             {
                 m_meniuPicks.showAnimals();
+                Animalule.getInstance().setNaturalSelection("Animals");
             }
             else
             {
                 m_meniuPicks.showPlants();
+                Animalule.getInstance().setNaturalSelection("Plants");
             }
         }
 
@@ -132,6 +136,10 @@ namespace bing.Forme
             Storyboard.SetTarget(da, m_canvas);
             Storyboard.SetTargetProperty(da, new PropertyPath(Canvas.WidthProperty));
             Storyboard.SetTarget(da1, m_popup);
+            //asta ce e? Horzionatl Offset
+            // el se mareste in dreapta si ca sa se vada bine trebuie mutat cu totul 
+            // in stanga
+            //ok
             Storyboard.SetTargetProperty(da1, new PropertyPath(Popup.HorizontalOffsetProperty));
             Storyboard.SetTarget(da2, m_popup);
             Storyboard.SetTargetProperty(da2, new PropertyPath(Popup.WidthProperty));

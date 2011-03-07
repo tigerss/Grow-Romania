@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbsqlModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="dbsqlModelStoreContainer">
+    <EntitySet Name="Achievements" EntityType="dbsqlModel.Store.Achievements" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Animale" EntityType="dbsqlModel.Store.Animale" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Camp" EntityType="dbsqlModel.Store.Camp" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Challenges" EntityType="dbsqlModel.Store.Challenges" store:Type="Tables" Schema="dbo" />
@@ -23,9 +24,18 @@
     <EntitySet Name="StatisticaPerAnimal" EntityType="dbsqlModel.Store.StatisticaPerAnimal" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Statistici_Animale" EntityType="dbsqlModel.Store.Statistici_Animale" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Statistici_Plante" EntityType="dbsqlModel.Store.Statistici_Plante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stiri" EntityType="dbsqlModel.Store.Stiri" store:Type="Tables" store:Schema="dbo" store:Name="Stiri">
+      <DefiningQuery>SELECT 
+      [Stiri].[ID] AS [ID], 
+      [Stiri].[Stire] AS [Stire], 
+      [Stiri].[Data] AS [Data], 
+      [Stiri].[Titlu] AS [Titlu]
+      FROM [dbo].[Stiri] AS [Stiri]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="SubRegiune" EntityType="dbsqlModel.Store.SubRegiune" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="dbsqlModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TabelaTranzactii" EntityType="dbsqlModel.Store.TabelaTranzactii" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Upgrades" EntityType="dbsqlModel.Store.Upgrades" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Usr" EntityType="dbsqlModel.Store.Usr" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ComentariuView" EntityType="dbsqlModel.Store.ComentariuView" store:Type="Views" store:Schema="dbo" store:Name="ComentariuView">
       <DefiningQuery>SELECT 
@@ -152,33 +162,9 @@
       <End Role="Usr" EntitySet="Usr" />
       <End Role="Donatii" EntitySet="Donatii" />
     </AssociationSet>
-    <AssociationSet Name="FK_ID_Animale_ID_Animale" Association="dbsqlModel.Store.FK_ID_Animale_ID_Animale">
-      <End Role="Animale" EntitySet="Animale" />
-      <End Role="TabelaTranzactii" EntitySet="TabelaTranzactii" />
-    </AssociationSet>
     <AssociationSet Name="FK_ID_Usr_ID_Usr" Association="dbsqlModel.Store.FK_ID_Usr_ID_Usr">
       <End Role="Usr" EntitySet="Usr" />
       <End Role="TabelaTranzactii" EntitySet="TabelaTranzactii" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Istoric_Animal_Deces_Animale" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Animale">
-      <End Role="Animale" EntitySet="Animale" />
-      <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Istoric_Animal_Deces_Camp" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Camp">
-      <End Role="Camp" EntitySet="Camp" />
-      <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Istoric_Animal_Deces_Mancat_De_Animale" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Mancat_De_Animale">
-      <End Role="Animale" EntitySet="Animale" />
-      <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Istoric_Animal_Deces_Padure" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Padure">
-      <End Role="Padure" EntitySet="Padure" />
-      <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Istoric_Animal_Tranzact_Animale" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Animale">
-      <End Role="Animale" EntitySet="Animale" />
-      <End Role="Istoric_Animal_Tranzact" EntitySet="Istoric_Animal_Tranzact" />
     </AssociationSet>
     <AssociationSet Name="FK_Istoric_Animal_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Firma">
       <End Role="Firme" EntitySet="Firme" />
@@ -202,10 +188,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_Istoric_Plante_Deces_Plante" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Plante">
       <End Role="Plante" EntitySet="Plante" />
-      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Istoric_Plante_Deces_Usr" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Usr">
-      <End Role="Usr" EntitySet="Usr" />
       <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
     </AssociationSet>
     <AssociationSet Name="FK_Istoric_Plante_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Firma">
@@ -244,10 +226,6 @@
       <End Role="Usr" EntitySet="Usr" />
       <End Role="Regiune" EntitySet="Regiune" />
     </AssociationSet>
-    <AssociationSet Name="FK_StatisticaPerAnimal_FK_Animal" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Animal">
-      <End Role="Animale" EntitySet="Animale" />
-      <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
-    </AssociationSet>
     <AssociationSet Name="FK_StatisticaPerAnimal_FK_Camp" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Camp">
       <End Role="Camp" EntitySet="Camp" />
       <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
@@ -259,10 +237,6 @@
     <AssociationSet Name="FK_StatisticaPerAnimal_FK_Usr" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Usr">
       <End Role="Usr" EntitySet="Usr" />
       <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Statistici_Animale_Animale" Association="dbsqlModel.Store.FK_Statistici_Animale_Animale">
-      <End Role="Animale" EntitySet="Animale" />
-      <End Role="Statistici_Animale" EntitySet="Statistici_Animale" />
     </AssociationSet>
     <AssociationSet Name="FK_Statistici_Animale_Camp" Association="dbsqlModel.Store.FK_Statistici_Animale_Camp">
       <End Role="Camp" EntitySet="Camp" />
@@ -305,6 +279,21 @@
       <End Role="ComentariiDonatii" EntitySet="ComentariiDonatii" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Achievements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Hunger" Type="tinyint" />
+    <Property Name="Education" Type="tinyint" />
+    <Property Name="Equality" Type="tinyint" />
+    <Property Name="Mortality" Type="tinyint" />
+    <Property Name="Maternal_health" Type="tinyint" />
+    <Property Name="Disease" Type="tinyint" />
+    <Property Name="Environment" Type="tinyint" />
+    <Property Name="Partnership" Type="tinyint" />
+    <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_User" Type="int" />
+  </EntityType>
   <EntityType Name="Animale">
     <Key>
       <PropertyRef Name="ID" />
@@ -338,10 +327,10 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Nume" Type="char" MaxLength="20" />
-    <Property Name="Descriere" Type="varchar(max)" />
-    <Property Name="Imagine1" Type="varchar" MaxLength="50" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descriere" Type="nvarchar(max)" />
+    <Property Name="Imagine1" Type="nvarchar" MaxLength="50" />
     <Property Name="isCompleted" Type="bit" />
     <Property Name="FK_User" Type="int" />
   </EntityType>
@@ -450,7 +439,7 @@
     <Property Name="Trasnite" Type="bit" Nullable="false" />
     <Property Name="Numar" Type="smallint" Nullable="false" />
     <Property Name="FK_User" Type="int" Nullable="false" />
-    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Istoric_Plante_Tranzact">
     <Key>
@@ -531,8 +520,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="NumeCampanie" Type="char" Nullable="false" MaxLength="30" />
-    <Property Name="NumeZona" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="NumeCampanie" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NumeZona" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="PctLocatie" Type="varchar(max)" Nullable="false" />
     <Property Name="Descriere" Type="varchar(max)" Nullable="false" />
     <Property Name="Probleme" Type="varchar(max)" Nullable="false" />
@@ -557,6 +546,8 @@
     <Property Name="Imag10" Type="varchar" MaxLength="100" />
     <Property Name="Video1" Type="varchar" MaxLength="100" />
     <Property Name="Video2" Type="varchar" MaxLength="100" />
+    <Property Name="Latitudine" Type="varchar" MaxLength="50" />
+    <Property Name="Longitudine" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Real_Judet">
     <Key>
@@ -652,6 +643,21 @@
     <Property Name="Morti_Foc" Type="int" Nullable="false" />
     <Property Name="Morti_Taiati" Type="int" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Stiri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Stiri">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Stire" />
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="Titlu" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Stire" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Titlu" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
   <EntityType Name="SubRegiune">
     <Key>
       <PropertyRef Name="ID" />
@@ -686,6 +692,28 @@
     <Property Name="Vanzare" Type="nchar" MaxLength="10" />
     <Property Name="Cumparare" Type="nchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="Upgrades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FK_user" Type="int" Nullable="false" />
+    <Property Name="Profits" Type="bit" />
+    <Property Name="Tree" Type="bit" />
+    <Property Name="Power" Type="bit" />
+    <Property Name="Bear" Type="bit" />
+    <Property Name="WindMill" Type="bit" />
+    <Property Name="SaveForest" Type="bit" />
+    <Property Name="TakeAction" Type="bit" />
+    <Property Name="AntiBugs" Type="bit" />
+    <Property Name="Flood" Type="bit" />
+    <Property Name="Buy" Type="bit" />
+    <Property Name="H20" Type="bit" />
+    <Property Name="Eco" Type="bit" />
+    <Property Name="Plants" Type="bit" />
+    <Property Name="House" Type="bit" />
+    <Property Name="Earth" Type="bit" />
+  </EntityType>
   <EntityType Name="Usr">
     <Key>
       <PropertyRef Name="ID" />
@@ -707,7 +735,7 @@
     <Property Name="DateForDelete" Type="smalldatetime" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.ComentariuView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.ComentariuView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="ComentariuView">
     <Key>
@@ -731,7 +759,7 @@
     <Property Name="Poza" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.DonatiiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.DonatiiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="DonatiiView">
     <Key>
@@ -770,7 +798,7 @@
     <Property Name="Expr4" Type="tinyint" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.IstoricAnimalPadureForUserX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.IstoricAnimalPadureForUserX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="IstoricAnimalPadureForUserX">
     <Key>
@@ -807,7 +835,7 @@
     <Property Name="Importanta" Type="float" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Real_SubRegiune_CuNivelPoluare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Real_SubRegiune_CuNivelPoluare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="Real_SubRegiune_CuNivelPoluare">
     <Key>
@@ -821,7 +849,7 @@
     <Property Name="NivelPoluareApa" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Tranzactie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Tranzactie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="Tranzactie">
     <Key>
@@ -838,7 +866,7 @@
     <Property Name="Expr1" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.TranzactiiCumparare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.TranzactiiCumparare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="TranzactiiCumparare">
     <Key>
@@ -863,7 +891,7 @@
     <Property Name="Vanzare" Type="nchar" MaxLength="10" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.View1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.View1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="View1">
     <Key>
@@ -967,18 +995,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ID_Animale_ID_Animale">
-    <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-    <End Role="TabelaTranzactii" Type="dbsqlModel.Store.TabelaTranzactii" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Animale">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="TabelaTranzactii">
-        <PropertyRef Name="FK_ID_Animale" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ID_Usr_ID_Usr">
     <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -990,66 +1006,6 @@
       </Principal>
       <Dependent Role="TabelaTranzactii">
         <PropertyRef Name="FK_ID_Usr" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Istoric_Animal_Deces_Animale">
-    <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-    <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Animale">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Animal_Deces">
-        <PropertyRef Name="FK_Animale" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Istoric_Animal_Deces_Camp">
-    <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="1" />
-    <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Camp">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Animal_Deces">
-        <PropertyRef Name="FK_Camp" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Istoric_Animal_Deces_Mancat_De_Animale">
-    <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="0..1" />
-    <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Animale">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Animal_Deces">
-        <PropertyRef Name="FK_Mancat_De" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Istoric_Animal_Deces_Padure">
-    <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="1" />
-    <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Padure">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Animal_Deces">
-        <PropertyRef Name="FK_Padure" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Istoric_Animal_Tranzact_Animale">
-    <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-    <End Role="Istoric_Animal_Tranzact" Type="dbsqlModel.Store.Istoric_Animal_Tranzact" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Animale">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Animal_Tranzact">
-        <PropertyRef Name="FK_Animale" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1122,18 +1078,6 @@
       </Principal>
       <Dependent Role="Istoric_Plante_Deces">
         <PropertyRef Name="FK_Plante" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Istoric_Plante_Deces_Usr">
-    <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
-    <End Role="Istoric_Plante_Deces" Type="dbsqlModel.Store.Istoric_Plante_Deces" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usr">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Plante_Deces">
-        <PropertyRef Name="FK_User" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1249,20 +1193,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_StatisticaPerAnimal_FK_Animal">
-    <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="StatisticaPerAnimal" Type="dbsqlModel.Store.StatisticaPerAnimal" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Animale">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="StatisticaPerAnimal">
-        <PropertyRef Name="FK_Animale" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_StatisticaPerAnimal_FK_Camp">
     <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -1298,18 +1228,6 @@
       </Principal>
       <Dependent Role="StatisticaPerAnimal">
         <PropertyRef Name="FK_Usr" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Statistici_Animale_Animale">
-    <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-    <End Role="Statistici_Animale" Type="dbsqlModel.Store.Statistici_Animale" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Animale">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Statistici_Animale">
-        <PropertyRef Name="FK_Animale" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1467,6 +1385,8 @@
   <Function Name="getPlants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parameter1" Type="int" Mode="In" />
   </Function>
+  <Function Name="HartaCampanii" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="HistoryPadure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parameter1" Type="char" Mode="In" />
     <Parameter Name="parameter2" Type="char" Mode="In" />
@@ -1474,6 +1394,12 @@
   <Function Name="ProceduraDeces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parameter1" Type="int" Mode="In" />
     <Parameter Name="parameter2" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProceduraRealJudet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcedureUpgrades" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
   </Function>
   <Function Name="Searching" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Regiune" Type="char" Mode="In" />
@@ -1497,6 +1423,7 @@
     <Parameter Name="parameter1" Type="int" Mode="In" />
     <Parameter Name="parameter2" Type="int" Mode="In" />
   </Function>
+  <Function Name="StiriProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="StoredProcedure1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Nume" Type="char" Mode="In" />
     <Parameter Name="numea" Type="char" Mode="In" />
@@ -1509,4 +1436,19 @@
     <Parameter Name="Cumparare" Type="varchar" Mode="In" />
   </Function>
   <Function Name="StoredProcedure2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="TryScor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="updateAchievements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+    <Parameter Name="hunger" Type="int" Mode="In" />
+    <Parameter Name="education" Type="int" Mode="In" />
+    <Parameter Name="equality" Type="int" Mode="In" />
+    <Parameter Name="mortality" Type="int" Mode="In" />
+    <Parameter Name="maternalHealth" Type="int" Mode="In" />
+    <Parameter Name="disease" Type="int" Mode="In" />
+    <Parameter Name="environment" Type="int" Mode="In" />
+    <Parameter Name="partnership" Type="int" Mode="In" />
+  </Function>
+  <Function Name="updateChallenge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parameter1" Type="int" Mode="In" />
+  </Function>
 </Schema>

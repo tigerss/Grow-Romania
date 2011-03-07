@@ -20,12 +20,20 @@ namespace bing
 {
     public static class AtributeGlobale
     {
-        public enum EnumRegiuni { Niciuna = 0, Transilvania, Moldova, Baragan, Banat };
-        public enum EnumSubRegiuni { Niciuna = 0, SubRegiunea1, SubRegiunea2, SubRegiunea3, SubRegiunea4 };
-        public static EnumRegiuni RegiuneaCurenta=EnumRegiuni.Niciuna;
-        public static EnumSubRegiuni SubRegiuneaCurenta = EnumSubRegiuni.Niciuna;
+        public enum EnumRegiuni { NoRegionSelected = 0, Transilvania, Moldova, Baragan, Banat };
+        public enum EnumSubRegiuni { NoSubRegionSelected = 0, SubRegion1, SubRegion2, SubRegion3, SubRegion4 };
+        public enum EnumZone { NoZoneSelected = 0, Fields, Forest };
+        public static EnumRegiuni RegiuneaCurenta=EnumRegiuni.NoRegionSelected;
+        public static EnumSubRegiuni SubRegiuneaCurenta = EnumSubRegiuni.NoSubRegionSelected;
+        public static EnumZone ZonaCurenta = EnumZone.NoZoneSelected;
         public static bool UserIsRegistering = false;
+        public static int i = 0;
+        public static bool achiv = false;
+        public static bool tranz = false;
+        public static bool upgrades = false;
+       public static bool news = false;
     }
+   
     public partial class MainPage : UserControl
     {
         
@@ -37,6 +45,12 @@ namespace bing
         internal static bool bZoomEnable = false;
         public bool bIsZoomOut = false;
         static DispatcherTimer timer=new DispatcherTimer();
+
+        /// <summary>
+        /// Store the current instance for globally use
+        /// </summary>
+        private static MainPage instance;
+
         #region ButonPeste
         static DispatcherTimer dt = new DispatcherTimer();
         double width=707;
@@ -44,7 +58,13 @@ namespace bing
         Canvas pop;
         Image img;
         bool BRegion=false;
+
+        // Back Button 2 Martie
+        CBackButton backButton;
         #endregion
+
+        public MainPage(int r)
+        { }
         public MainPage()
         {
             //ServiceReference3.ServiceDecesClient wcf = new ServiceReference3.ServiceDecesClient(bind, endpoint);
@@ -54,7 +74,7 @@ namespace bing
             //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             InitializeComponent();
-          
+        
             //trimit canvasul de deasupra hartii
             maplayer = new MapLayers(map, canvas2, MeniuDreapa);
             map.SetView(new Location(maplayer.latitudine, maplayer.longitudine), maplayer.zoom);
@@ -64,15 +84,19 @@ namespace bing
             map.Children.Add(maplayer.PoligonBaragan());
             map.Children.Add(maplayer.PoligonBanat());
             ArrangePage();
+
+            // End of the constructor
+            // Store the current instance
+            instance = this;
         }
-        //List<ServiceReference3.Istoric_Animal_Deces> lista2;
-        //void wcf_PreiaDecesCompleted(object sender, ServiceReference3.PreiaDecesCompletedEventArgs e)
-        //{
-        //    lista2 = new List<ServiceReference3.Istoric_Animal_Deces>();
-        //    foreach (var c in e.Result)
-        //    lista2.Add(c);
-        //}
-        List<ServiceReference1.StatisticaAimal_Result> listaAnimalHistory;
+       // List<ServiceReference1.Istoric_Animal_Deces> lista2;
+       // void wcf_PreiaDecesCompleted(object sender, ServiceReference3.PreiaDecesCompletedEventArgs e)
+       // {
+       ////     lista2 = new List<ServiceReference3.Istoric_Animal_Deces>();
+       //     foreach (var c in e.Result)
+       //     lista2.Add(c);
+       // }
+      
 
   
         private void ArrangePage()
@@ -81,37 +105,34 @@ namespace bing
             canvas.Width = double.Parse(HtmlPage.Window.Eval("screen.width").ToString());
             canvas.Height = double.Parse(HtmlPage.Window.Eval("screen.height").ToString());
             HtmlDocument d = HtmlPage.Document;
-            
             string c = d.QueryString.Count.ToString() ;
             //canvasu de sus
             btn2.Width = canvas.Width;
             // aranjenz in pagina gridu
             Canvas.SetLeft(LayoutRoot, canvas.Width / 2 - 500);
             Canvas.SetTop(LayoutRoot, 75);
-            LoginForm add = new LoginForm(MeniuDreapa, canvas2, maplayer);
+            LoginForm add = new LoginForm(MeniuDreapa,canvas2,maplayer,map);
             
             MeniuSus m = new MeniuSus(btn2, canvas.Width,canvas2);
-            
+           
        #region Tranzactii Sergiu
 
           //  Tranzactii
        //     map.Visibility = Visibility.Collapsed;
-         //  canvas2.Children.Clear();
-          //  canvas2.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
+        //   canvas2.Children.Clear();
+      //      canvas2.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
            //// Forme.t = new Forme.Tranzactii(canvas2);
        //  Forme.MyTranzactii t = new Forme.MyTranzactii(canvas2);
-       //   bing_maps.Forme.MyTranzactii t = new bing_maps.Forme.MyTranzactii(canvas2);
+     //    bing_maps.Forme.MyTranzactii t = new bing_maps.Forme.MyTranzactii(canvas2);
             #endregion
         #region History
          //  Thread.Sleep(new TimeSpan(0, 0, 0,5));
-                
-          
-      //   stat  s= new stat(canvas2);
-          //   canvas2.Children.Add(s);
-          //  History cs = new History();
-       //     canvas2.Children.Add(s);
+          //  stat s = new stat(canvas2);
+          //  canvas2.Children.Add(s);
+            //History cs = new History();
+            //canvas2.Children.Add(s);
             #endregion
-            //#region Holban
+            #region Holban
             //BasicHttpBinding bind = new BasicHttpBinding();
             //EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Service1.svc");
             //bing.testService.Service1Client wcf = new bing.testService.Service1Client(bind, endpoint);
@@ -126,10 +147,10 @@ namespace bing
             //{
             //    MessageBox.Show(ex.Message);
             //}
-           
-            //#endregion
+
+            #endregion
         }
-        //#region Holban
+        #region Holban
         //Animale temp;
         //List<IstoricAnimalPadureForUserX> templ;
         //void wcf_GetAnimalByIDCompleted(object sender, bing.testService.GetAnimalByIDCompletedEventArgs e)
@@ -151,38 +172,45 @@ namespace bing
         //    if (temp != null)
         //        add = new MeniuAnimal(MeniuDreapa, "Moldova", "Moldova2", "Padure", temp, templ);
         //}
-        //#endregion
+        #endregion
 
+        // Unused. Can be deleted
         private void SelectRegionButton()
         {
-            pop = new Canvas()
+            if (Popup.Child == null)
             {
-                Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xcc, 0xdf, 0xf5)),
-                Opacity = .46,
-                Width = 50,
-                Height = 50,
-                Clip = new RectangleGeometry()
+                pop = new Canvas()
                 {
-                    RadiusX = 10,
-                    RadiusY = 10,
-                    Rect = new Rect(0, 0, 100, 40)
-                },
+                    Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xcc, 0xdf, 0xf5)),
+                    Opacity = .46,
+                    Width = 50,
+                    Height = 50,
+                    Clip = new RectangleGeometry()
+                    {
+                        RadiusX = 10,
+                        RadiusY = 10,
+                        Rect = new Rect(0, 0, 100, 40)
+                    },
 
-            };
-            pop.MouseEnter += new MouseEventHandler(pop_MouseEnter);
-            pop.MouseLeave += new MouseEventHandler(pop_MouseLeave);
-            img = new Image() { Source = new BitmapImage(new Uri("DesignImages/avion.png", UriKind.Relative)), Width = 38, Height = 21 };
+                };
+                //pop.MouseEnter += new MouseEventHandler(pop_MouseEnter);
+                //pop.MouseLeave += new MouseEventHandler(pop_MouseLeave);
+                img = new Image() { Source = new BitmapImage(new Uri("DesignImages/avion.png", UriKind.Relative)), Width = 38, Height = 21 };
 
-            pop.Children.Add(img);
-            Canvas.SetLeft(img, 6);
-            Canvas.SetTop(img, 10);
-            Popup.Child = pop;
-            dt.Interval = new TimeSpan(0, 0, 0, 0, 20);
-            dt.Tick += new EventHandler(dt_Tick);
-
-
+                pop.Children.Add(img);
+                Canvas.SetLeft(img, 6);
+                Canvas.SetTop(img, 10);
+                Popup.Child = pop;
+                dt.Interval = new TimeSpan(0, 0, 0, 0, 20);
+                dt.Tick += new EventHandler(dt_Tick);
+            }
+            else
+            {
+                Popup.IsOpen = true;
+            }
         }
 
+        // Can be deleted
         void pop_MouseLeave(object sender, MouseEventArgs e)
         {
             if (BRegion == true)
@@ -193,6 +221,7 @@ namespace bing
             }
         }
 
+        // Can be deleted
         void pop_MouseEnter(object sender, MouseEventArgs e)
         {
             if (BRegion == false)
@@ -201,6 +230,8 @@ namespace bing
                 BRegion = true;
             }
         }
+
+        // Can be deleted
         void dt_Tick(object sender, EventArgs e)
         {
             if (width < 600 && BRegion == true)
@@ -243,6 +274,7 @@ namespace bing
             Popup.Child = pop;
             Canvas.SetLeft(Popup, width);
         }
+
         private void map_MouseWrong(object sender, MouseEventArgs e)
         {
             //if (!maplayer.bIsMousePressedBanat && !maplayer.bIsMousePressedBaragan && !maplayer.bIsMousePressedMoldova && !maplayer.bIsMousePressedTransilvania)
@@ -266,9 +298,18 @@ namespace bing
                 if (maplayer.bIsMousePressedMoldova || maplayer.bIsMousePressedBaragan || maplayer.bIsMousePressedBanat || maplayer.bIsMousePressedTransilvania)
                 {
                     bZoomDisable = true;
-                    Popup.IsOpen = true;
-                    SelectRegionButton();
-                    //ButonAnimat selectRegion = new ButonAnimat(canvas2, "DesignImages/avion.png", 10, 707);
+                    // ------------------
+                    // Unusable
+                    //Popup.IsOpen = true;
+                    //SelectRegionButton();
+                    //----------------------
+
+                    // Add Back Button
+                    backButton = CBackButton.getInstance();
+
+                    // Verify Visibility
+                    if (backButton.isButtonVisible() == false)
+                        backButton.setVisibility(true);
 
                 }
                 if (maplayer.Z > 7.0)
@@ -296,7 +337,7 @@ namespace bing
             {
                 timer.Stop();
                 maplayer.bIsMousePressedMoldova = false;
-                Moldova m = new Moldova(map, canvas,MeniuDreapa);
+         //       Moldova m = new Moldova(map, canvas,MeniuDreapa,maplayer,lista);
 
                 maplayer.poligonBanat.Visibility = maplayer.poligonBaragan.Visibility = maplayer.poligonMoldova.Visibility = maplayer.poligonTransilvania.Visibility = Visibility.Visible;
             }
@@ -307,6 +348,44 @@ namespace bing
         private void Path_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Return the current Instance for global use
+        /// </summary>
+        /// <returns></returns>
+        public static MainPage getInstance()
+        {
+            if (instance == null)
+                return null;
+            return instance;
+        }
+
+        /// <summary>
+        /// Getter for MapLayers
+        /// </summary>
+        /// <returns></returns>
+        public MapLayers getMapLayer()
+        {
+            return maplayer;
+        }
+
+        /// <summary>
+        /// Getter for bZoomEnable
+        /// </summary>
+        /// <returns></returns>
+        public bool getBZoomEnable()
+        {
+            return bZoomEnable;
+        }
+
+        /// <summary>
+        /// Setter for bZoomEnable
+        /// </summary>
+        /// <param name="bEnableZoom"></param>
+        public void setBZoomEnable(bool bEnableZoom)
+        {
+            bZoomEnable = bEnableZoom;
         }
     }
 }

@@ -414,6 +414,8 @@
     <EntitySetMapping Name="Reals">
       <EntityTypeMapping TypeName="dbsqlModel.Real">
         <MappingFragment StoreEntitySet="Real">
+          <ScalarProperty Name="Longitudine" ColumnName="Longitudine" />
+          <ScalarProperty Name="Latitudine" ColumnName="Latitudine" />
           <ScalarProperty Name="Video2" ColumnName="Video2" />
           <ScalarProperty Name="Video1" ColumnName="Video1" />
           <ScalarProperty Name="Imag10" ColumnName="Imag10" />
@@ -616,11 +618,172 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SelectAnimal" FunctionName="dbsqlModel.Store.SelectAnimal">
+    <FunctionImportMapping FunctionImportName="LoginFunction" FunctionName="dbsqlModel.Store.Login">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="dbsqlModel.SelectAnimal_Result">
+        <ComplexTypeMapping TypeName="dbsqlModel.LoginFunction_Result">
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Scor" ColumnName="Scor" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
+          <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
+          <ScalarProperty Name="Regiunenume" ColumnName="Regiunenume" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HartaCampanii" FunctionName="dbsqlModel.Store.HartaCampanii">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.HartaCampanii_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumeCampanie" ColumnName="NumeCampanie" />
+          <ScalarProperty Name="NumeZona" ColumnName="NumeZona" />
+          <ScalarProperty Name="PctLocatie" ColumnName="PctLocatie" />
+          <ScalarProperty Name="NivelProblema" ColumnName="NivelProblema" />
+          <ScalarProperty Name="Latitudine" ColumnName="Latitudine" />
+          <ScalarProperty Name="Longitudine" ColumnName="Longitudine" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StiriProcedure" FunctionName="dbsqlModel.Store.StiriProcedure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.StiriProcedure_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Stire" ColumnName="Stire" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Stiris">
+      <EntityTypeMapping TypeName="dbsqlModel.Stiri">
+        <MappingFragment StoreEntitySet="Stiri">
+          <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Stire" ColumnName="Stire" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="HistoryPadure" FunctionName="dbsqlModel.Store.HistoryPadure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.HistoryPadure_Result">
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProceduraRealJudet" FunctionName="dbsqlModel.Store.ProceduraRealJudet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.ProceduraRealJudet_Result">
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="RezervatiiNaturale" ColumnName="RezervatiiNaturale" />
+          <ScalarProperty Name="ProcentPadure" ColumnName="ProcentPadure" />
+          <ScalarProperty Name="NrHidrocentrale" ColumnName="NrHidrocentrale" />
+          <ScalarProperty Name="NrOrase" ColumnName="NrOrase" />
+          <ScalarProperty Name="NrTermocentrale" ColumnName="NrTermocentrale" />
+          <ScalarProperty Name="IndustriaPrelucrativa" ColumnName="IndustriaPrelucrativa" />
+          <ScalarProperty Name="IndustriaExtractiva" ColumnName="IndustriaExtractiva" />
+          <ScalarProperty Name="ParcuriNationale" ColumnName="ParcuriNationale" />
+          <ScalarProperty Name="CalitateAer" ColumnName="CalitateAer" />
+          <ScalarProperty Name="PoluareSol" ColumnName="PoluareSol" />
+          <ScalarProperty Name="Precipitatii" ColumnName="Precipitatii" />
+          <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+          <ScalarProperty Name="Clima" ColumnName="Clima" />
+          <ScalarProperty Name="NrJudete" ColumnName="NrJudete" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Upgrades">
+      <EntityTypeMapping TypeName="dbsqlModel.Upgrade">
+        <MappingFragment StoreEntitySet="Upgrades">
+          <ScalarProperty Name="Earth" ColumnName="Earth" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="Plants" ColumnName="Plants" />
+          <ScalarProperty Name="Eco" ColumnName="Eco" />
+          <ScalarProperty Name="H20" ColumnName="H20" />
+          <ScalarProperty Name="Buy" ColumnName="Buy" />
+          <ScalarProperty Name="Flood" ColumnName="Flood" />
+          <ScalarProperty Name="AntiBugs" ColumnName="AntiBugs" />
+          <ScalarProperty Name="TakeAction" ColumnName="TakeAction" />
+          <ScalarProperty Name="SaveForest" ColumnName="SaveForest" />
+          <ScalarProperty Name="WindMill" ColumnName="WindMill" />
+          <ScalarProperty Name="Bear" ColumnName="Bear" />
+          <ScalarProperty Name="Power" ColumnName="Power" />
+          <ScalarProperty Name="Tree" ColumnName="Tree" />
+          <ScalarProperty Name="Profits" ColumnName="Profits" />
+          <ScalarProperty Name="FK_user" ColumnName="FK_user" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ProcedureUpgrades" FunctionName="dbsqlModel.Store.ProcedureUpgrades">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.ProcedureUpgrades_Result">
+          <ScalarProperty Name="Profits" ColumnName="Profits" />
+          <ScalarProperty Name="Tree" ColumnName="Tree" />
+          <ScalarProperty Name="Power" ColumnName="Power" />
+          <ScalarProperty Name="Bear" ColumnName="Bear" />
+          <ScalarProperty Name="WindMill" ColumnName="WindMill" />
+          <ScalarProperty Name="TakeAction" ColumnName="TakeAction" />
+          <ScalarProperty Name="SaveForest" ColumnName="SaveForest" />
+          <ScalarProperty Name="AntiBugs" ColumnName="AntiBugs" />
+          <ScalarProperty Name="H20" ColumnName="H20" />
+          <ScalarProperty Name="Flood" ColumnName="Flood" />
+          <ScalarProperty Name="Buy" ColumnName="Buy" />
+          <ScalarProperty Name="Eco" ColumnName="Eco" />
+          <ScalarProperty Name="Plants" ColumnName="Plants" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="Earth" ColumnName="Earth" />
+          <ScalarProperty Name="FK_user" ColumnName="FK_user" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Achievements">
+      <EntityTypeMapping TypeName="dbsqlModel.Achievement">
+        <MappingFragment StoreEntitySet="Achievements">
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Partnership" ColumnName="Partnership" />
+          <ScalarProperty Name="Environment" ColumnName="Environment" />
+          <ScalarProperty Name="Disease" ColumnName="Disease" />
+          <ScalarProperty Name="Maternal_health" ColumnName="Maternal_health" />
+          <ScalarProperty Name="Mortality" ColumnName="Mortality" />
+          <ScalarProperty Name="Equality" ColumnName="Equality" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Hunger" ColumnName="Hunger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Challenges">
+      <EntityTypeMapping TypeName="dbsqlModel.Challenge">
+        <MappingFragment StoreEntitySet="Challenges">
+          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
           <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
-          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getAchievement" FunctionName="dbsqlModel.Store.getAchievement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getAchievement_Result">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -654,49 +817,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="LoginFunction" FunctionName="dbsqlModel.Store.Login">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbsqlModel.LoginFunction_Result">
-          <ScalarProperty Name="Usr" ColumnName="Usr" />
-          <ScalarProperty Name="Nume" ColumnName="Nume" />
-          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
-          <ScalarProperty Name="Rank" ColumnName="Rank" />
-          <ScalarProperty Name="Scor" ColumnName="Scor" />
-          <ScalarProperty Name="Poza" ColumnName="Poza" />
-          <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
-          <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
-          <ScalarProperty Name="Regiunenume" ColumnName="Regiunenume" />
-          <ScalarProperty Name="Pass" ColumnName="Pass" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="getAchievement" FunctionName="dbsqlModel.Store.getAchievement">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbsqlModel.getAchievement_Result">
-          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
-          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
-          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
-          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
-          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
-          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
-          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
-          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <EntitySetMapping Name="Challenges">
-      <EntityTypeMapping TypeName="dbsqlModel.Challenge">
-        <MappingFragment StoreEntitySet="Challenges">
-          <ScalarProperty Name="FK_User" ColumnName="FK_User" />
-          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
-          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
-          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
-          <ScalarProperty Name="Nume" ColumnName="Nume" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="getChallenges" FunctionName="dbsqlModel.Store.getChallenges">
       <ResultMapping>
         <ComplexTypeMapping TypeName="dbsqlModel.getChallenges_Result">
@@ -705,14 +825,6 @@
           <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
           <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
           <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="getPlants" FunctionName="dbsqlModel.Store.getPlants">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbsqlModel.getPlants_Result">
-          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
-          <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -734,5 +846,24 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlants" FunctionName="dbsqlModel.Store.getPlants">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.getPlants_Result">
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAnimal" FunctionName="dbsqlModel.Store.SelectAnimal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbsqlModel.SelectAnimal_Result">
+          <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+          <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TryScor" FunctionName="dbsqlModel.Store.TryScor" />
+    <FunctionImportMapping FunctionImportName="updateAchievements" FunctionName="dbsqlModel.Store.updateAchievements" />
+    <FunctionImportMapping FunctionImportName="updateChallenge" FunctionName="dbsqlModel.Store.updateChallenge" />
   </EntityContainerMapping>
 </Mapping>

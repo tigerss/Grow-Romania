@@ -1,246 +1,512 @@
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bing.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bing.pdb
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\AppManifest.xaml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.ComponentModel.DataAnnotations.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.Input.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Navigation.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Data.zip
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bing.xap
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bingTestPage.html
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.ComponentModel.DataAnnotations.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.Input.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Navigation.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Data.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.Internals.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.ComponentModel.DataAnnotations.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.Input.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.pdb
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.pdb
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Navigation.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.pdb
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\System.Windows.Data.xml
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ar\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bg\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ca\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\cs\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\da\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\de\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\el\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\es\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\et\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\eu\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fi\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fr\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\he\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hr\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hu\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\id\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\it\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ja\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ko\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lt\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lv\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ms\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\nl\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\no\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pl\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt-BR\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ro\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ru\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sk\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sl\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sv\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\th\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\tr\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\uk\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\vi\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hans\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ar\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bg\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ca\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\cs\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\da\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\el\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\et\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\eu\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fi\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\he\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hr\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hu\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\id\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lt\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lv\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ms\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\nl\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\no\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pl\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt-BR\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ro\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sk\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sl\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sv\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\th\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\tr\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\uk\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\vi\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ar\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bg\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ca\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\cs\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\da\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\el\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\et\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\eu\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fi\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\he\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hr\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hu\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\id\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lt\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lv\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ms\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\nl\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\no\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pl\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt-BR\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ro\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sk\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sl\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sv\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\th\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\tr\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\uk\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\vi\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ar\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\bg\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ca\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\cs\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\da\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\el\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\et\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\eu\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fi\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\he\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hr\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\hu\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\id\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lt\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\lv\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ms\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\nl\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\no\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pl\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\pt-BR\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ro\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sk\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sl\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\sv\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\th\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\tr\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\uk\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\vi\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Data.Input.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\de\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\es\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\it\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Data.resources.dll
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\ResolveAssemblyReference.cache
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\App.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\AddCommentControl.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\campanii.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\CampaniiPage.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Comentariu.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Donatie.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\DonatieDetalii.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\DonatiiPage.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Forme\AnimaleTot.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Forme\Animalule.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Forme\Meniu_Donations.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\FotografiiCampanii.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\History.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Istoric\HistoryAnimal.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\MainPage.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\SilverlightControl1.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Istoric\stat.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\UnitTranzactii.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\bing.g.resources
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\bing.dll
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\bing.pdb
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\XapCacheFile.xml
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\ExtendedDescription.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\PaginaUser.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Forme\LoadingBar.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Forme\RankingSystem.g.i.cs
-D:\Proiecte\IC\trunk\bing2\bing\obj\Debug\Challenges.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bing.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bing.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\AppManifest.xaml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Navigation.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bing.xap
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bingTestPage.html
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\Microsoft.Maps.MapControl.Common.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\Microsoft.Maps.MapControl.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Navigation.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Navigation.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ar\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bg\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ca\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\cs\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\da\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\el\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\et\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\eu\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fi\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\he\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hr\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hu\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\id\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lt\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lv\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ms\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\nl\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\no\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pl\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt-BR\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ro\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sk\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sl\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sv\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\th\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\tr\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\uk\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\vi\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\bing.g.resources
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\bing.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\bing.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\XapCacheFile.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.ComponentModel.DataAnnotations.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.Input.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Data.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.Input.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Data.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.Internals.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.ComponentModel.DataAnnotations.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Data.Input.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Toolkit.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Data.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ar\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bg\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ca\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\cs\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\da\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\de\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\el\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\es\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\et\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\eu\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fi\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fr\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\he\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hr\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hu\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\id\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\it\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ja\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ko\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lt\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lv\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ms\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\nl\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\no\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pl\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt-BR\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ro\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ru\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sk\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sl\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sv\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\th\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\tr\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\uk\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\vi\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hans\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ar\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bg\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ca\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\cs\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\da\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\el\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\et\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\eu\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fi\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\he\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hr\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hu\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\id\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lt\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lv\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ms\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\nl\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\no\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pl\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt-BR\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ro\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sk\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sl\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sv\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\th\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\tr\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\uk\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\vi\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ar\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\bg\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ca\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\cs\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\da\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\de\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\el\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\es\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\et\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\eu\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fi\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\he\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hr\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\hu\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\id\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\it\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lt\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\lv\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ms\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\nl\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\no\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pl\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\pt-BR\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ro\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sk\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sl\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\sv\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\th\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\tr\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\uk\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\vi\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\de\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\es\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\fr\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\it\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ja\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ko\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\ru\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hans\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\zh-Hant\System.Windows.Data.resources.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.RainierPurple.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.zip
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.RainierPurple.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.dll
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.RainierPurple.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.pdb
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.xml
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\App.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\AddCommentControl.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\campanii.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\CampaniiPage.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Comentariu.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Donatie.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\DonatieDetalii.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\DonatiiPage.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Forme\Animalule.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Forme\Meniu_Donations.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\FotografiiCampanii.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\History.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Istoric\HistoryAnimal.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\MainPage.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\PaginaUser.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Istoric\stat.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\UnitTranzactii.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\SilverlightControl2.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\StiriDesign.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Upgrades.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Info.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\ExtendedDescription.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Forme\LoadingBar.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Forme\RankingSystem.g.i.cs
+C:\Users\gogu\Desktop\ggg\trunk\bing2\bing\obj\Debug\Challenges.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bing.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bing.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\AppManifest.xaml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.ComponentModel.DataAnnotations.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Data.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Data.Input.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Navigation.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.RainierPurple.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Toolkit.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Data.zip
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bing.xap
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bingTestPage.html
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.ComponentModel.DataAnnotations.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Data.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Data.Input.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Navigation.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.RainierPurple.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Toolkit.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Data.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Toolkit.Internals.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.ComponentModel.DataAnnotations.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Data.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Data.Input.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Input.Toolkit.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Layout.Toolkit.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Navigation.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.RainierPurple.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Theming.Toolkit.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Toolkit.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Controls.Toolkit.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\System.Windows.Data.xml
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ar\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bg\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ca\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\cs\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\da\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\de\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\el\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\es\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\et\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\eu\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fi\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fr\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\he\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hr\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hu\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\id\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\it\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ja\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ko\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lt\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lv\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ms\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\nl\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\no\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pl\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt-BR\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ro\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ru\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sk\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sl\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Cyrl-CS\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Latn-CS\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sv\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\th\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\tr\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\uk\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\vi\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hans\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ar\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bg\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ca\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\cs\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\da\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\de\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\el\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\es\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\et\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\eu\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fi\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fr\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\he\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hr\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hu\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\id\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\it\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ja\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ko\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lt\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lv\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ms\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\nl\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\no\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pl\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt-BR\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ro\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ru\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sk\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sl\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sv\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\th\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\tr\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\uk\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\vi\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hans\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hant\System.Windows.Controls.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ar\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bg\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ca\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\cs\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\da\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\de\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\el\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\es\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\et\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\eu\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fi\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fr\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\he\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hr\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hu\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\id\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\it\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ja\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ko\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lt\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lv\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ms\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\nl\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\no\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pl\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt-BR\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ro\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ru\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sk\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sl\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sv\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\th\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\tr\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\uk\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\vi\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ar\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\bg\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ca\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\cs\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\da\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\de\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\el\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\es\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\et\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\eu\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fi\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fr\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\he\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hr\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\hu\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\id\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\it\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ja\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ko\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lt\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\lv\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ms\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\nl\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\no\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pl\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\pt-BR\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ro\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ru\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sk\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sl\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Cyrl-CS\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sr-Latn-CS\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\sv\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\th\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\tr\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\uk\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\vi\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Data.Input.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\de\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\es\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fr\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\it\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ja\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ko\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\de\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\es\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\fr\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\it\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ja\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ko\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\ru\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hans\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\Bin\Debug\zh-Hant\System.Windows.Data.resources.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\ResolveAssemblyReference.cache
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\App.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\AddCommentControl.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\campanii.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\CampaniiPage.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Challenges.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Comentariu.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Donatie.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\DonatieDetalii.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\DonatiiPage.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\ExtendedDescription.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Forme\Animalule.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Forme\LoadingBar.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Forme\Meniu_Donations.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Forme\RankingSystem.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\FotografiiCampanii.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\History.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Info.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Istoric\HistoryAnimal.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\MainPage.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\PaginaUser.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Istoric\stat.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\SilverlightControl2.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\StiriDesign.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\UnitTranzactii.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\Upgrades.g.i.cs
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\bing.g.resources
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\bing.dll
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\bing.pdb
+D:\Proiecte\Imagine Cup\bing2Martie1\bing\obj\Debug\XapCacheFile.xml

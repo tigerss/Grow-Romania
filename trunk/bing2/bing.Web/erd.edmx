@@ -6,6 +6,7 @@
     <edmx:StorageModels>
     <Schema Namespace="dbsqlModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="dbsqlModelStoreContainer">
+          <EntitySet Name="Achievements" EntityType="dbsqlModel.Store.Achievements" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Animale" EntityType="dbsqlModel.Store.Animale" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Camp" EntityType="dbsqlModel.Store.Camp" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Challenges" EntityType="dbsqlModel.Store.Challenges" store:Type="Tables" Schema="dbo" />
@@ -28,9 +29,18 @@
           <EntitySet Name="StatisticaPerAnimal" EntityType="dbsqlModel.Store.StatisticaPerAnimal" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Statistici_Animale" EntityType="dbsqlModel.Store.Statistici_Animale" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Statistici_Plante" EntityType="dbsqlModel.Store.Statistici_Plante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Stiri" EntityType="dbsqlModel.Store.Stiri" store:Type="Tables" store:Schema="dbo" store:Name="Stiri">
+            <DefiningQuery>SELECT 
+      [Stiri].[ID] AS [ID], 
+      [Stiri].[Stire] AS [Stire], 
+      [Stiri].[Data] AS [Data], 
+      [Stiri].[Titlu] AS [Titlu]
+      FROM [dbo].[Stiri] AS [Stiri]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="SubRegiune" EntityType="dbsqlModel.Store.SubRegiune" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="dbsqlModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TabelaTranzactii" EntityType="dbsqlModel.Store.TabelaTranzactii" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Upgrades" EntityType="dbsqlModel.Store.Upgrades" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Usr" EntityType="dbsqlModel.Store.Usr" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ComentariuView" EntityType="dbsqlModel.Store.ComentariuView" store:Type="Views" store:Schema="dbo" store:Name="ComentariuView">
             <DefiningQuery>SELECT 
@@ -157,33 +167,9 @@
             <End Role="Usr" EntitySet="Usr" />
             <End Role="Donatii" EntitySet="Donatii" />
           </AssociationSet>
-          <AssociationSet Name="FK_ID_Animale_ID_Animale" Association="dbsqlModel.Store.FK_ID_Animale_ID_Animale">
-            <End Role="Animale" EntitySet="Animale" />
-            <End Role="TabelaTranzactii" EntitySet="TabelaTranzactii" />
-          </AssociationSet>
           <AssociationSet Name="FK_ID_Usr_ID_Usr" Association="dbsqlModel.Store.FK_ID_Usr_ID_Usr">
             <End Role="Usr" EntitySet="Usr" />
             <End Role="TabelaTranzactii" EntitySet="TabelaTranzactii" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Istoric_Animal_Deces_Animale" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Animale">
-            <End Role="Animale" EntitySet="Animale" />
-            <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Istoric_Animal_Deces_Camp" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Camp">
-            <End Role="Camp" EntitySet="Camp" />
-            <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Istoric_Animal_Deces_Mancat_De_Animale" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Mancat_De_Animale">
-            <End Role="Animale" EntitySet="Animale" />
-            <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Istoric_Animal_Deces_Padure" Association="dbsqlModel.Store.FK_Istoric_Animal_Deces_Padure">
-            <End Role="Padure" EntitySet="Padure" />
-            <End Role="Istoric_Animal_Deces" EntitySet="Istoric_Animal_Deces" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Istoric_Animal_Tranzact_Animale" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Animale">
-            <End Role="Animale" EntitySet="Animale" />
-            <End Role="Istoric_Animal_Tranzact" EntitySet="Istoric_Animal_Tranzact" />
           </AssociationSet>
           <AssociationSet Name="FK_Istoric_Animal_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Animal_Tranzact_Firma">
             <End Role="Firme" EntitySet="Firme" />
@@ -207,10 +193,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Istoric_Plante_Deces_Plante" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Plante">
             <End Role="Plante" EntitySet="Plante" />
-            <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Istoric_Plante_Deces_Usr" Association="dbsqlModel.Store.FK_Istoric_Plante_Deces_Usr">
-            <End Role="Usr" EntitySet="Usr" />
             <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
           </AssociationSet>
           <AssociationSet Name="FK_Istoric_Plante_Tranzact_Firma" Association="dbsqlModel.Store.FK_Istoric_Plante_Tranzact_Firma">
@@ -249,10 +231,6 @@
             <End Role="Usr" EntitySet="Usr" />
             <End Role="Regiune" EntitySet="Regiune" />
           </AssociationSet>
-          <AssociationSet Name="FK_StatisticaPerAnimal_FK_Animal" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Animal">
-            <End Role="Animale" EntitySet="Animale" />
-            <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
-          </AssociationSet>
           <AssociationSet Name="FK_StatisticaPerAnimal_FK_Camp" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Camp">
             <End Role="Camp" EntitySet="Camp" />
             <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
@@ -264,10 +242,6 @@
           <AssociationSet Name="FK_StatisticaPerAnimal_FK_Usr" Association="dbsqlModel.Store.FK_StatisticaPerAnimal_FK_Usr">
             <End Role="Usr" EntitySet="Usr" />
             <End Role="StatisticaPerAnimal" EntitySet="StatisticaPerAnimal" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Statistici_Animale_Animale" Association="dbsqlModel.Store.FK_Statistici_Animale_Animale">
-            <End Role="Animale" EntitySet="Animale" />
-            <End Role="Statistici_Animale" EntitySet="Statistici_Animale" />
           </AssociationSet>
           <AssociationSet Name="FK_Statistici_Animale_Camp" Association="dbsqlModel.Store.FK_Statistici_Animale_Camp">
             <End Role="Camp" EntitySet="Camp" />
@@ -310,6 +284,21 @@
             <End Role="ComentariiDonatii" EntitySet="ComentariiDonatii" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Achievements">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Hunger" Type="tinyint" />
+          <Property Name="Education" Type="tinyint" />
+          <Property Name="Equality" Type="tinyint" />
+          <Property Name="Mortality" Type="tinyint" />
+          <Property Name="Maternal_health" Type="tinyint" />
+          <Property Name="Disease" Type="tinyint" />
+          <Property Name="Environment" Type="tinyint" />
+          <Property Name="Partnership" Type="tinyint" />
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FK_User" Type="int" />
+        </EntityType>
         <EntityType Name="Animale">
           <Key>
             <PropertyRef Name="ID" />
@@ -343,10 +332,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Nume" Type="char" MaxLength="20" />
-          <Property Name="Descriere" Type="varchar(max)" />
-          <Property Name="Imagine1" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descriere" Type="nvarchar(max)" />
+          <Property Name="Imagine1" Type="nvarchar" MaxLength="50" />
           <Property Name="isCompleted" Type="bit" />
           <Property Name="FK_User" Type="int" />
         </EntityType>
@@ -455,7 +444,7 @@
           <Property Name="Trasnite" Type="bit" Nullable="false" />
           <Property Name="Numar" Type="smallint" Nullable="false" />
           <Property Name="FK_User" Type="int" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Istoric_Plante_Tranzact">
           <Key>
@@ -536,8 +525,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="NumeCampanie" Type="char" Nullable="false" MaxLength="30" />
-          <Property Name="NumeZona" Type="char" Nullable="false" MaxLength="30" />
+          <Property Name="NumeCampanie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NumeZona" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="PctLocatie" Type="varchar(max)" Nullable="false" />
           <Property Name="Descriere" Type="varchar(max)" Nullable="false" />
           <Property Name="Probleme" Type="varchar(max)" Nullable="false" />
@@ -562,6 +551,8 @@
           <Property Name="Imag10" Type="varchar" MaxLength="100" />
           <Property Name="Video1" Type="varchar" MaxLength="100" />
           <Property Name="Video2" Type="varchar" MaxLength="100" />
+          <Property Name="Latitudine" Type="varchar" MaxLength="50" />
+          <Property Name="Longitudine" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Real_Judet">
           <Key>
@@ -657,6 +648,21 @@
           <Property Name="Morti_Foc" Type="int" Nullable="false" />
           <Property Name="Morti_Taiati" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Stiri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Stiri">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Stire" />
+            <PropertyRef Name="Data" />
+            <PropertyRef Name="Titlu" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Stire" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+          <Property Name="Titlu" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
         <EntityType Name="SubRegiune">
           <Key>
             <PropertyRef Name="ID" />
@@ -691,6 +697,28 @@
           <Property Name="Vanzare" Type="nchar" MaxLength="10" />
           <Property Name="Cumparare" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Upgrades">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FK_user" Type="int" Nullable="false" />
+          <Property Name="Profits" Type="bit" />
+          <Property Name="Tree" Type="bit" />
+          <Property Name="Power" Type="bit" />
+          <Property Name="Bear" Type="bit" />
+          <Property Name="WindMill" Type="bit" />
+          <Property Name="SaveForest" Type="bit" />
+          <Property Name="TakeAction" Type="bit" />
+          <Property Name="AntiBugs" Type="bit" />
+          <Property Name="Flood" Type="bit" />
+          <Property Name="Buy" Type="bit" />
+          <Property Name="H20" Type="bit" />
+          <Property Name="Eco" Type="bit" />
+          <Property Name="Plants" Type="bit" />
+          <Property Name="House" Type="bit" />
+          <Property Name="Earth" Type="bit" />
+        </EntityType>
         <EntityType Name="Usr">
           <Key>
             <PropertyRef Name="ID" />
@@ -712,7 +740,7 @@
           <Property Name="DateForDelete" Type="smalldatetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.ComentariuView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.ComentariuView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ComentariuView">
           <Key>
@@ -736,7 +764,7 @@
           <Property Name="Poza" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.DonatiiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.DonatiiView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="DonatiiView">
           <Key>
@@ -775,7 +803,7 @@
           <Property Name="Expr4" Type="tinyint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.IstoricAnimalPadureForUserX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.IstoricAnimalPadureForUserX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="IstoricAnimalPadureForUserX">
           <Key>
@@ -812,7 +840,7 @@
           <Property Name="Importanta" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Real_SubRegiune_CuNivelPoluare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Real_SubRegiune_CuNivelPoluare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Real_SubRegiune_CuNivelPoluare">
           <Key>
@@ -826,7 +854,7 @@
           <Property Name="NivelPoluareApa" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Tranzactie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.Tranzactie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Tranzactie">
           <Key>
@@ -843,7 +871,7 @@
           <Property Name="Expr1" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.TranzactiiCumparare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.TranzactiiCumparare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="TranzactiiCumparare">
           <Key>
@@ -868,7 +896,7 @@
           <Property Name="Vanzare" Type="nchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'D:\PROIECTE\IC\TRUNK\BING2\BING.WEB\APP_DATA\DBSQL.MDF.dbo.View1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'D:\PROIECTE\IMAGINE CUP\BING2MARTIE1\BING.WEB\APP_DATA\DBSQL.MDF.dbo.View1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="View1">
           <Key>
@@ -972,18 +1000,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ID_Animale_ID_Animale">
-          <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-          <End Role="TabelaTranzactii" Type="dbsqlModel.Store.TabelaTranzactii" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animale">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TabelaTranzactii">
-              <PropertyRef Name="FK_ID_Animale" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ID_Usr_ID_Usr">
           <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -995,66 +1011,6 @@
             </Principal>
             <Dependent Role="TabelaTranzactii">
               <PropertyRef Name="FK_ID_Usr" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Istoric_Animal_Deces_Animale">
-          <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-          <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animale">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Animal_Deces">
-              <PropertyRef Name="FK_Animale" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Istoric_Animal_Deces_Camp">
-          <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="1" />
-          <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Camp">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Animal_Deces">
-              <PropertyRef Name="FK_Camp" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Istoric_Animal_Deces_Mancat_De_Animale">
-          <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="0..1" />
-          <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animale">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Animal_Deces">
-              <PropertyRef Name="FK_Mancat_De" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Istoric_Animal_Deces_Padure">
-          <End Role="Padure" Type="dbsqlModel.Store.Padure" Multiplicity="1" />
-          <End Role="Istoric_Animal_Deces" Type="dbsqlModel.Store.Istoric_Animal_Deces" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Padure">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Animal_Deces">
-              <PropertyRef Name="FK_Padure" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Istoric_Animal_Tranzact_Animale">
-          <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-          <End Role="Istoric_Animal_Tranzact" Type="dbsqlModel.Store.Istoric_Animal_Tranzact" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animale">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Animal_Tranzact">
-              <PropertyRef Name="FK_Animale" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1127,18 +1083,6 @@
             </Principal>
             <Dependent Role="Istoric_Plante_Deces">
               <PropertyRef Name="FK_Plante" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Istoric_Plante_Deces_Usr">
-          <End Role="Usr" Type="dbsqlModel.Store.Usr" Multiplicity="1" />
-          <End Role="Istoric_Plante_Deces" Type="dbsqlModel.Store.Istoric_Plante_Deces" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usr">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Plante_Deces">
-              <PropertyRef Name="FK_User" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1254,20 +1198,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_StatisticaPerAnimal_FK_Animal">
-          <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="StatisticaPerAnimal" Type="dbsqlModel.Store.StatisticaPerAnimal" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animale">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StatisticaPerAnimal">
-              <PropertyRef Name="FK_Animale" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_StatisticaPerAnimal_FK_Camp">
           <End Role="Camp" Type="dbsqlModel.Store.Camp" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -1303,18 +1233,6 @@
             </Principal>
             <Dependent Role="StatisticaPerAnimal">
               <PropertyRef Name="FK_Usr" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Statistici_Animale_Animale">
-          <End Role="Animale" Type="dbsqlModel.Store.Animale" Multiplicity="1" />
-          <End Role="Statistici_Animale" Type="dbsqlModel.Store.Statistici_Animale" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animale">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Statistici_Animale">
-              <PropertyRef Name="FK_Animale" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1472,6 +1390,8 @@
         <Function Name="getPlants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parameter1" Type="int" Mode="In" />
         </Function>
+        <Function Name="HartaCampanii" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HistoryPadure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parameter1" Type="char" Mode="In" />
           <Parameter Name="parameter2" Type="char" Mode="In" />
@@ -1479,6 +1399,12 @@
         <Function Name="ProceduraDeces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parameter1" Type="int" Mode="In" />
           <Parameter Name="parameter2" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProceduraRealJudet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parameter1" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProcedureUpgrades" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parameter1" Type="int" Mode="In" />
         </Function>
         <Function Name="Searching" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Regiune" Type="char" Mode="In" />
@@ -1502,6 +1428,7 @@
           <Parameter Name="parameter1" Type="int" Mode="In" />
           <Parameter Name="parameter2" Type="int" Mode="In" />
         </Function>
+        <Function Name="StiriProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="StoredProcedure1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Nume" Type="char" Mode="In" />
           <Parameter Name="numea" Type="char" Mode="In" />
@@ -1514,6 +1441,21 @@
           <Parameter Name="Cumparare" Type="varchar" Mode="In" />
         </Function>
         <Function Name="StoredProcedure2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TryScor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="updateAchievements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="int" Mode="In" />
+          <Parameter Name="hunger" Type="int" Mode="In" />
+          <Parameter Name="education" Type="int" Mode="In" />
+          <Parameter Name="equality" Type="int" Mode="In" />
+          <Parameter Name="mortality" Type="int" Mode="In" />
+          <Parameter Name="maternalHealth" Type="int" Mode="In" />
+          <Parameter Name="disease" Type="int" Mode="In" />
+          <Parameter Name="environment" Type="int" Mode="In" />
+          <Parameter Name="partnership" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateChallenge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parameter1" Type="int" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1772,34 +1714,57 @@
             <Parameter Name="parameter1" Mode="In" Type="Int32" />
             <Parameter Name="parameter2" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SelectAnimal" ReturnType="Collection(dbsqlModel.SelectAnimal_Result)">
+          <FunctionImport Name="LoginFunction" ReturnType="Collection(dbsqlModel.LoginFunction_Result)">
+            <Parameter Name="parameter1" Mode="In" Type="String" />
+            <Parameter Name="parameter2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="HartaCampanii" ReturnType="Collection(dbsqlModel.HartaCampanii_Result)" />
+          <FunctionImport Name="StiriProcedure" ReturnType="Collection(dbsqlModel.StiriProcedure_Result)" />
+          <EntitySet Name="Stiris" EntityType="dbsqlModel.Stiri" />
+          <FunctionImport Name="HistoryPadure" ReturnType="Collection(dbsqlModel.HistoryPadure_Result)" />
+          <FunctionImport Name="ProceduraRealJudet" ReturnType="Collection(dbsqlModel.ProceduraRealJudet_Result)">
+          <Parameter Name="parameter1" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Upgrades" EntityType="dbsqlModel.Upgrade" />
+          <FunctionImport Name="ProcedureUpgrades" ReturnType="Collection(dbsqlModel.ProcedureUpgrades_Result)">
+          <Parameter Name="parameter1" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Achievements" EntityType="dbsqlModel.Achievement" />
+          <EntitySet Name="Challenges" EntityType="dbsqlModel.Challenge" />
+          <FunctionImport Name="getAchievement" ReturnType="Collection(dbsqlModel.getAchievement_Result)">
           <Parameter Name="parameter1" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getAnimalStats" ReturnType="Collection(dbsqlModel.getAnimalStats_Result)">
             <Parameter Name="parameter1" Mode="In" Type="Int32" />
             <Parameter Name="parameter2" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="LoginFunction" ReturnType="Collection(dbsqlModel.LoginFunction_Result)">
-            <Parameter Name="parameter1" Mode="In" Type="String" />
-            <Parameter Name="parameter2" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="getAchievement" ReturnType="Collection(dbsqlModel.getAchievement_Result)">
-          <Parameter Name="parameter1" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <EntitySet Name="Challenges" EntityType="dbsqlModel.Challenge" />
           <FunctionImport Name="getChallenges" ReturnType="Collection(dbsqlModel.getChallenges_Result)">
           <Parameter Name="parameter1" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getPlants" ReturnType="Collection(dbsqlModel.getPlants_Result)" >
-          <Parameter Name="parameter1" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <AssociationSet Name="FK_Istoric_Plante_Deces_Usr" Association="dbsqlModel.FK_Istoric_Plante_Deces_Usr">
-            <End Role="Usr" EntitySet="Usrs" />
-            <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
-          </AssociationSet>
           <FunctionImport Name="getPlantHistory" ReturnType="Collection(dbsqlModel.getPlantHistory_Result)">
             <Parameter Name="parameter1" Mode="In" Type="Int32" />
             <Parameter Name="parameter2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getPlants" ReturnType="Collection(dbsqlModel.getPlants_Result)">
+          <Parameter Name="parameter1" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAnimal" ReturnType="Collection(dbsqlModel.SelectAnimal_Result)">
+          <Parameter Name="parameter1" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TryScor" />
+          <FunctionImport Name="updateAchievements">
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+            <Parameter Name="hunger" Mode="In" Type="Int32" />
+            <Parameter Name="education" Mode="In" Type="Int32" />
+            <Parameter Name="equality" Mode="In" Type="Int32" />
+            <Parameter Name="mortality" Mode="In" Type="Int32" />
+            <Parameter Name="maternalHealth" Mode="In" Type="Int32" />
+            <Parameter Name="disease" Mode="In" Type="Int32" />
+            <Parameter Name="environment" Mode="In" Type="Int32" />
+            <Parameter Name="partnership" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateChallenge">
+            <Parameter Name="parameter1" Mode="In" Type="Int32" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="Animale">
@@ -1940,8 +1905,7 @@
           <NavigationProperty Name="Padure" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Padure" FromRole="Istoric_Plante_Deces" ToRole="Padure" />
           <NavigationProperty Name="Plante" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Plante" FromRole="Istoric_Plante_Deces" ToRole="Plante" />
           <Property Type="Int32" Name="FK_User" Nullable="false" />
-          <NavigationProperty Name="Usr" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Istoric_Plante_Deces" ToRole="Usr" />
-          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Istoric_Plante_Tranzact">
           <Key>
@@ -2191,7 +2155,6 @@
           <NavigationProperty Name="ComentariiDonatiis" Relationship="dbsqlModel.FK_User" FromRole="Usr" ToRole="ComentariiDonatii" />
           <NavigationProperty Name="Donatiis" Relationship="dbsqlModel.FK_Donatii_Usr" FromRole="Usr" ToRole="Donatii" />
           <NavigationProperty Name="StatisticaPerAnimals" Relationship="dbsqlModel.FK_StatisticaPerAnimal_FK_Usr" FromRole="Usr" ToRole="StatisticaPerAnimal" />
-          <NavigationProperty Name="Istoric_Plante_Deces" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Usr" ToRole="Istoric_Plante_Deces" />
         </EntityType>
         <EntityType Name="IstoricAnimalPadureForUserX">
           <Key>
@@ -2708,6 +2671,8 @@
           <NavigationProperty Name="ComentariiReals" Relationship="dbsqlModel.FK_ComentariiReal_Real" FromRole="Real" ToRole="ComentariiReal" />
           <NavigationProperty Name="Ocol_Silvic" Relationship="dbsqlModel.FK_Real_Ocol_Silvic" FromRole="Real" ToRole="Ocol_Silvic" />
           <NavigationProperty Name="Donatiis" Relationship="dbsqlModel.FK_Donatii_Real" FromRole="Real" ToRole="Donatii" />
+          <Property Type="String" Name="Latitudine" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Longitudine" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_ComentariiReal_Real">
           <End Type="dbsqlModel.Real" Role="Real" Multiplicity="1" />
@@ -3062,9 +3027,145 @@
           <Property Type="Int32" Name="FK_Usr" Nullable="false" />
           <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="SelectAnimal_Result">
-          <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
-          <Property Type="Boolean" Name="IsFromPadure" Nullable="true" />
+        <ComplexType Name="LoginFunction_Result">
+          <Property Type="String" Name="Usr" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nume" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Prenume" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Rank" Nullable="false" MaxLength="20" />
+          <Property Type="Double" Name="Scor" Nullable="false" />
+          <Property Type="String" Name="Poza" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="BaniDonati" Nullable="false" Precision="10" />
+          <Property Type="Int16" Name="NrDonatii" Nullable="false" />
+          <Property Type="String" Name="Regiunenume" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Pass" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="HartaCampanii_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NumeCampanie" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="NumeZona" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="PctLocatie" Nullable="false" />
+          <Property Type="Byte" Name="NivelProblema" Nullable="false" />
+          <Property Type="String" Name="Latitudine" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Longitudine" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="StiriProcedure_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Stire" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="Data" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Titlu" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <EntityType Name="Stiri">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Stire" />
+            <PropertyRef Name="Data" />
+            <PropertyRef Name="Titlu" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Stire" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Data" Nullable="false" />
+          <Property Type="String" Name="Titlu" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="HistoryPadure_Result">
+          <Property Type="String" Name="Nume" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="200" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ProceduraRealJudet_Result">
+          <Property Type="String" Name="Nume" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Expr1" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="RezervatiiNaturale" Nullable="false" />
+          <Property Type="Double" Name="ProcentPadure" Nullable="false" />
+          <Property Type="Int32" Name="NrHidrocentrale" Nullable="false" />
+          <Property Type="Byte" Name="NrOrase" Nullable="false" />
+          <Property Type="Int32" Name="NrTermocentrale" Nullable="true" />
+          <Property Type="Int32" Name="IndustriaPrelucrativa" Nullable="true" />
+          <Property Type="Int32" Name="IndustriaExtractiva" Nullable="true" />
+          <Property Type="Byte" Name="ParcuriNationale" Nullable="true" />
+          <Property Type="Double" Name="CalitateAer" Nullable="true" />
+          <Property Type="Double" Name="PoluareSol" Nullable="true" />
+          <Property Type="Double" Name="Precipitatii" Nullable="false" />
+          <Property Type="Double" Name="Temperatura" Nullable="false" />
+          <Property Type="String" Name="Clima" Nullable="false" MaxLength="50" />
+          <Property Type="Byte" Name="NrJudete" Nullable="false" />
+          <Property Type="Byte" Name="ID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Upgrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FK_user" Nullable="false" />
+          <Property Type="Boolean" Name="Profits" />
+          <Property Type="Boolean" Name="Tree" />
+          <Property Type="Boolean" Name="Power" />
+          <Property Type="Boolean" Name="Bear" />
+          <Property Type="Boolean" Name="WindMill" />
+          <Property Type="Boolean" Name="SaveForest" />
+          <Property Type="Boolean" Name="TakeAction" />
+          <Property Type="Boolean" Name="AntiBugs" />
+          <Property Type="Boolean" Name="Flood" />
+          <Property Type="Boolean" Name="Buy" />
+          <Property Type="Boolean" Name="H20" />
+          <Property Type="Boolean" Name="Eco" />
+          <Property Type="Boolean" Name="Plants" />
+          <Property Type="Boolean" Name="House" />
+          <Property Type="Boolean" Name="Earth" />
+        </EntityType>
+        <ComplexType Name="ProcedureUpgrades_Result">
+          <Property Type="Boolean" Name="Profits" Nullable="true" />
+          <Property Type="Boolean" Name="Tree" Nullable="true" />
+          <Property Type="Boolean" Name="Power" Nullable="true" />
+          <Property Type="Boolean" Name="Bear" Nullable="true" />
+          <Property Type="Boolean" Name="WindMill" Nullable="true" />
+          <Property Type="Boolean" Name="TakeAction" Nullable="true" />
+          <Property Type="Boolean" Name="SaveForest" Nullable="true" />
+          <Property Type="Boolean" Name="AntiBugs" Nullable="true" />
+          <Property Type="Boolean" Name="H20" Nullable="true" />
+          <Property Type="Boolean" Name="Flood" Nullable="true" />
+          <Property Type="Boolean" Name="Buy" Nullable="true" />
+          <Property Type="Boolean" Name="Eco" Nullable="true" />
+          <Property Type="Boolean" Name="Plants" Nullable="true" />
+          <Property Type="Boolean" Name="House" Nullable="true" />
+          <Property Type="Boolean" Name="Earth" Nullable="true" />
+          <Property Type="Int32" Name="FK_user" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="Hunger" />
+          <Property Type="Byte" Name="Education" />
+          <Property Type="Byte" Name="Equality" />
+          <Property Type="Byte" Name="Mortality" />
+          <Property Type="Byte" Name="Maternal_health" />
+          <Property Type="Byte" Name="Disease" />
+          <Property Type="Byte" Name="Environment" />
+          <Property Type="Byte" Name="Partnership" />
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FK_User" />
+        </EntityType>
+        <EntityType Name="Challenge">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nume" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descriere" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Imagine1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isCompleted" />
+          <Property Type="Int32" Name="FK_User" />
+        </EntityType>
+        <ComplexType Name="getAchievement_Result">
+          <Property Type="Byte" Name="Expr1" Nullable="true" />
+          <Property Type="Byte" Name="Expr2" Nullable="true" />
+          <Property Type="Byte" Name="Expr3" Nullable="true" />
+          <Property Type="Byte" Name="Expr4" Nullable="true" />
+          <Property Type="Byte" Name="Expr5" Nullable="true" />
+          <Property Type="Byte" Name="Expr6" Nullable="true" />
+          <Property Type="Byte" Name="Expr7" Nullable="true" />
+          <Property Type="Byte" Name="Expr8" Nullable="true" />
+          <Property Type="Int32" Name="Expr9" Nullable="false" />
         </ComplexType>
         <ComplexType Name="getAnimalStats_Result">
           <Property Type="Byte" Name="Expr1" Nullable="false" />
@@ -3092,63 +3193,13 @@
           <Property Type="DateTime" Name="DataVanatSfarsit" Nullable="false" Precision="16" />
           <Property Type="String" Name="Expr2" Nullable="true" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="LoginFunction_Result">
-          <Property Type="String" Name="Usr" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="Nume" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Prenume" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Rank" Nullable="false" MaxLength="20" />
-          <Property Type="Double" Name="Scor" Nullable="false" />
-          <Property Type="String" Name="Poza" Nullable="true" MaxLength="50" />
-          <Property Type="Decimal" Name="BaniDonati" Nullable="false" Precision="10" />
-          <Property Type="Int16" Name="NrDonatii" Nullable="false" />
-          <Property Type="String" Name="Regiunenume" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Pass" Nullable="false" MaxLength="20" />
-        </ComplexType>
-        <ComplexType Name="getAchievement_Result">
-          <Property Type="Byte" Name="Expr1" Nullable="true" />
-          <Property Type="Byte" Name="Expr2" Nullable="true" />
-          <Property Type="Byte" Name="Expr3" Nullable="true" />
-          <Property Type="Byte" Name="Expr4" Nullable="true" />
-          <Property Type="Byte" Name="Expr5" Nullable="true" />
-          <Property Type="Byte" Name="Expr6" Nullable="true" />
-          <Property Type="Byte" Name="Expr7" Nullable="true" />
-          <Property Type="Byte" Name="Expr8" Nullable="true" />
-          <Property Type="Int32" Name="Expr9" Nullable="false" />
-        </ComplexType>
-        <EntityType Name="Challenge">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Nume" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Type="String" Name="Descriere" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Imagine1" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="isCompleted" />
-          <Property Type="Int32" Name="FK_User" />
-        </EntityType>
         <ComplexType Name="getChallenges_Result">
-          <Property Type="String" Name="Nume" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Nume" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Descriere" Nullable="true" />
           <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="isCompleted" Nullable="true" />
           <Property Type="Int32" Name="Expr1" Nullable="false" />
         </ComplexType>
-        <ComplexType Name="getPlants_Result">
-          <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
-          <Property Type="Boolean" Name="isFromPadure" Nullable="true" />
-        </ComplexType>
-        <Association Name="FK_Istoric_Plante_Deces_Usr">
-          <End Type="dbsqlModel.Usr" Role="Usr" Multiplicity="1" />
-          <End Type="dbsqlModel.Istoric_Plante_Deces" Role="Istoric_Plante_Deces" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usr">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Istoric_Plante_Deces">
-              <PropertyRef Name="FK_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <ComplexType Name="getPlantHistory_Result">
           <Property Type="String" Name="Descriere" Nullable="true" />
           <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
@@ -3162,6 +3213,14 @@
           <Property Type="Boolean" Name="Trasnite" Nullable="false" />
           <Property Type="Int16" Name="Numar" Nullable="false" />
           <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="getPlants_Result">
+          <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="isFromPadure" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAnimal_Result">
+          <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsFromPadure" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -3582,6 +3641,8 @@
           <EntitySetMapping Name="Reals">
             <EntityTypeMapping TypeName="dbsqlModel.Real">
               <MappingFragment StoreEntitySet="Real">
+                <ScalarProperty Name="Longitudine" ColumnName="Longitudine" />
+                <ScalarProperty Name="Latitudine" ColumnName="Latitudine" />
                 <ScalarProperty Name="Video2" ColumnName="Video2" />
                 <ScalarProperty Name="Video1" ColumnName="Video1" />
                 <ScalarProperty Name="Imag10" ColumnName="Imag10" />
@@ -3784,11 +3845,172 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SelectAnimal" FunctionName="dbsqlModel.Store.SelectAnimal">
+          <FunctionImportMapping FunctionImportName="LoginFunction" FunctionName="dbsqlModel.Store.Login">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="dbsqlModel.SelectAnimal_Result">
+              <ComplexTypeMapping TypeName="dbsqlModel.LoginFunction_Result">
+                <ScalarProperty Name="Usr" ColumnName="Usr" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Scor" ColumnName="Scor" />
+                <ScalarProperty Name="Poza" ColumnName="Poza" />
+                <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
+                <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
+                <ScalarProperty Name="Regiunenume" ColumnName="Regiunenume" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HartaCampanii" FunctionName="dbsqlModel.Store.HartaCampanii">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.HartaCampanii_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NumeCampanie" ColumnName="NumeCampanie" />
+                <ScalarProperty Name="NumeZona" ColumnName="NumeZona" />
+                <ScalarProperty Name="PctLocatie" ColumnName="PctLocatie" />
+                <ScalarProperty Name="NivelProblema" ColumnName="NivelProblema" />
+                <ScalarProperty Name="Latitudine" ColumnName="Latitudine" />
+                <ScalarProperty Name="Longitudine" ColumnName="Longitudine" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StiriProcedure" FunctionName="dbsqlModel.Store.StiriProcedure">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.StiriProcedure_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Stire" ColumnName="Stire" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Stiris">
+            <EntityTypeMapping TypeName="dbsqlModel.Stiri">
+              <MappingFragment StoreEntitySet="Stiri">
+                <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Stire" ColumnName="Stire" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="HistoryPadure" FunctionName="dbsqlModel.Store.HistoryPadure">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.HistoryPadure_Result">
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProceduraRealJudet" FunctionName="dbsqlModel.Store.ProceduraRealJudet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.ProceduraRealJudet_Result">
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="RezervatiiNaturale" ColumnName="RezervatiiNaturale" />
+                <ScalarProperty Name="ProcentPadure" ColumnName="ProcentPadure" />
+                <ScalarProperty Name="NrHidrocentrale" ColumnName="NrHidrocentrale" />
+                <ScalarProperty Name="NrOrase" ColumnName="NrOrase" />
+                <ScalarProperty Name="NrTermocentrale" ColumnName="NrTermocentrale" />
+                <ScalarProperty Name="IndustriaPrelucrativa" ColumnName="IndustriaPrelucrativa" />
+                <ScalarProperty Name="IndustriaExtractiva" ColumnName="IndustriaExtractiva" />
+                <ScalarProperty Name="ParcuriNationale" ColumnName="ParcuriNationale" />
+                <ScalarProperty Name="CalitateAer" ColumnName="CalitateAer" />
+                <ScalarProperty Name="PoluareSol" ColumnName="PoluareSol" />
+                <ScalarProperty Name="Precipitatii" ColumnName="Precipitatii" />
+                <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+                <ScalarProperty Name="Clima" ColumnName="Clima" />
+                <ScalarProperty Name="NrJudete" ColumnName="NrJudete" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Upgrades">
+            <EntityTypeMapping TypeName="dbsqlModel.Upgrade">
+              <MappingFragment StoreEntitySet="Upgrades">
+                <ScalarProperty Name="Earth" ColumnName="Earth" />
+                <ScalarProperty Name="House" ColumnName="House" />
+                <ScalarProperty Name="Plants" ColumnName="Plants" />
+                <ScalarProperty Name="Eco" ColumnName="Eco" />
+                <ScalarProperty Name="H20" ColumnName="H20" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="Flood" ColumnName="Flood" />
+                <ScalarProperty Name="AntiBugs" ColumnName="AntiBugs" />
+                <ScalarProperty Name="TakeAction" ColumnName="TakeAction" />
+                <ScalarProperty Name="SaveForest" ColumnName="SaveForest" />
+                <ScalarProperty Name="WindMill" ColumnName="WindMill" />
+                <ScalarProperty Name="Bear" ColumnName="Bear" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="Tree" ColumnName="Tree" />
+                <ScalarProperty Name="Profits" ColumnName="Profits" />
+                <ScalarProperty Name="FK_user" ColumnName="FK_user" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ProcedureUpgrades" FunctionName="dbsqlModel.Store.ProcedureUpgrades">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.ProcedureUpgrades_Result">
+                <ScalarProperty Name="Profits" ColumnName="Profits" />
+                <ScalarProperty Name="Tree" ColumnName="Tree" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="Bear" ColumnName="Bear" />
+                <ScalarProperty Name="WindMill" ColumnName="WindMill" />
+                <ScalarProperty Name="TakeAction" ColumnName="TakeAction" />
+                <ScalarProperty Name="SaveForest" ColumnName="SaveForest" />
+                <ScalarProperty Name="AntiBugs" ColumnName="AntiBugs" />
+                <ScalarProperty Name="H20" ColumnName="H20" />
+                <ScalarProperty Name="Flood" ColumnName="Flood" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="Eco" ColumnName="Eco" />
+                <ScalarProperty Name="Plants" ColumnName="Plants" />
+                <ScalarProperty Name="House" ColumnName="House" />
+                <ScalarProperty Name="Earth" ColumnName="Earth" />
+                <ScalarProperty Name="FK_user" ColumnName="FK_user" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Achievements">
+            <EntityTypeMapping TypeName="dbsqlModel.Achievement">
+              <MappingFragment StoreEntitySet="Achievements">
+                <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Partnership" ColumnName="Partnership" />
+                <ScalarProperty Name="Environment" ColumnName="Environment" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Maternal_health" ColumnName="Maternal_health" />
+                <ScalarProperty Name="Mortality" ColumnName="Mortality" />
+                <ScalarProperty Name="Equality" ColumnName="Equality" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Hunger" ColumnName="Hunger" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Challenges">
+            <EntityTypeMapping TypeName="dbsqlModel.Challenge">
+              <MappingFragment StoreEntitySet="Challenges">
+                <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+                <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
                 <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
-                <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+                <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getAchievement" FunctionName="dbsqlModel.Store.getAchievement">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.getAchievement_Result">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+                <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+                <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+                <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+                <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+                <ScalarProperty Name="Expr9" ColumnName="Expr9" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -3822,49 +4044,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="LoginFunction" FunctionName="dbsqlModel.Store.Login">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbsqlModel.LoginFunction_Result">
-                <ScalarProperty Name="Usr" ColumnName="Usr" />
-                <ScalarProperty Name="Nume" ColumnName="Nume" />
-                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
-                <ScalarProperty Name="Rank" ColumnName="Rank" />
-                <ScalarProperty Name="Scor" ColumnName="Scor" />
-                <ScalarProperty Name="Poza" ColumnName="Poza" />
-                <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
-                <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
-                <ScalarProperty Name="Regiunenume" ColumnName="Regiunenume" />
-                <ScalarProperty Name="Pass" ColumnName="Pass" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="getAchievement" FunctionName="dbsqlModel.Store.getAchievement">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbsqlModel.getAchievement_Result">
-                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
-                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
-                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
-                <ScalarProperty Name="Expr5" ColumnName="Expr5" />
-                <ScalarProperty Name="Expr6" ColumnName="Expr6" />
-                <ScalarProperty Name="Expr7" ColumnName="Expr7" />
-                <ScalarProperty Name="Expr8" ColumnName="Expr8" />
-                <ScalarProperty Name="Expr9" ColumnName="Expr9" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <EntitySetMapping Name="Challenges">
-            <EntityTypeMapping TypeName="dbsqlModel.Challenge">
-              <MappingFragment StoreEntitySet="Challenges">
-                <ScalarProperty Name="FK_User" ColumnName="FK_User" />
-                <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
-                <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
-                <ScalarProperty Name="Descriere" ColumnName="Descriere" />
-                <ScalarProperty Name="Nume" ColumnName="Nume" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="getChallenges" FunctionName="dbsqlModel.Store.getChallenges">
             <ResultMapping>
               <ComplexTypeMapping TypeName="dbsqlModel.getChallenges_Result">
@@ -3873,14 +4052,6 @@
                 <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
                 <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
                 <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="getPlants" FunctionName="dbsqlModel.Store.getPlants">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbsqlModel.getPlants_Result">
-                <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
-                <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -3902,6 +4073,25 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getPlants" FunctionName="dbsqlModel.Store.getPlants">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.getPlants_Result">
+                <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+                <ScalarProperty Name="isFromPadure" ColumnName="isFromPadure" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAnimal" FunctionName="dbsqlModel.Store.SelectAnimal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.SelectAnimal_Result">
+                <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+                <ScalarProperty Name="IsFromPadure" ColumnName="IsFromPadure" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TryScor" FunctionName="dbsqlModel.Store.TryScor" />
+          <FunctionImportMapping FunctionImportName="updateAchievements" FunctionName="dbsqlModel.Store.updateAchievements" />
+          <FunctionImportMapping FunctionImportName="updateChallenge" FunctionName="dbsqlModel.Store.updateChallenge" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3922,7 +4112,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="erd">
+      <Diagram Name="erd" ZoomLevel="86">
         <EntityTypeShape EntityType="dbsqlModel.Animale" Width="1.5" PointX="3.75" PointY="16.375" Height="4.0956022135416674" />
         <EntityTypeShape EntityType="dbsqlModel.Camp" Width="1.5" PointX="6.75" PointY="37.125" Height="3.1340950520833388" />
         <EntityTypeShape EntityType="dbsqlModel.ComentariiReal" Width="1.5" PointX="3" PointY="26.25" Height="2.3648893229166674" />
@@ -3955,67 +4145,71 @@
           <ConnectorPoint PointX="6.75" PointY="20.75" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Deces_Animale" >
-          <ConnectorPoint PointX="5.06445390625" PointY="21.047506510416667" />
-          <ConnectorPoint PointX="5.06445390625" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="5.885416666666667" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="6.052083333333333" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="10.416666666666666" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="10.583333333333334" PointY="41.324849207687393" />
-          <ConnectorPoint PointX="10.875" PointY="41.324849207687393" />
+          <ConnectorPoint PointX="5.06445390625" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="5.06445390625" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="7.8697896666666667" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="8.0364563333333336" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="10.416666666666666" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="10.583333333333334" PointY="41.294854304707854" />
+          <ConnectorPoint PointX="10.875" PointY="41.294854304707854" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Deces_Mancat_De_Animale" >
-          <ConnectorPoint PointX="4.8441165136718745" PointY="21.047506510416667" />
-          <ConnectorPoint PointX="4.8441165136718745" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="4.8580744791666666" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="5.1477872395833328" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="5.885416666666667" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="6.052083333333333" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="10.416666666666666" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="10.583333333333334" PointY="40.8881203460312" />
-          <ConnectorPoint PointX="10.875" PointY="40.8881203460312" />
+          <ConnectorPoint PointX="4.8441165136718745" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="4.8441165136718745" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="4.8580744791666666" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="7.8697896666666667" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="8.0364563333333336" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="10.416666666666666" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="10.583333333333334" PointY="40.995849131520593" />
+          <ConnectorPoint PointX="10.875" PointY="40.995849131520593" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Tranzact_Animale" >
           <ConnectorPoint PointX="4.125" PointY="20.855205078125003" />
           <ConnectorPoint PointX="4.125" PointY="21.625" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Statistici_Animale_Animale" >
-          <ConnectorPoint PointX="4.8109088574218744" PointY="21.047506510416667" />
-          <ConnectorPoint PointX="4.8109088574218744" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="4.8580744791666666" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="5.1477872395833328" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="8.0104166666666661" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="8.1770833333333339" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="36.695487647427129" />
-          <ConnectorPoint PointX="12.90624625" PointY="36.695487647427129" />
+          <ConnectorPoint PointX="4.6546626074218747" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="4.6546626074218747" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="4.6634918815104163" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="8.0104166666666661" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="36.678171692907476" />
+          <ConnectorPoint PointX="12.75" PointY="36.678171692907476" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Deces_Camp" >
           <ConnectorPoint PointX="8.25" PointY="40.038198242187505" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="40.038198242187505" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="40.038198242187505" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="40.038198242187505" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="40.038198242187505" />
-          <ConnectorPoint PointX="10.541666666666666" PointY="40.038198242187505" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="40.038198242187505" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="40.038198242187505" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="40.038198242187505" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="40.038198242187505" />
+          <ConnectorPoint PointX="10.479166666666666" PointY="40.038198242187505" />
           <ConnectorPoint PointX="10.708333333333334" PointY="40.038198242187505" />
           <ConnectorPoint PointX="10.875" PointY="40.038198242187505" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Deces_Camp" >
-          <ConnectorPoint PointX="8.25" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="13.447912916666667" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="13.614579583333335" PointY="39.148753255208334" />
-          <ConnectorPoint PointX="13.625" PointY="39.148753255208334" />
+          <ConnectorPoint PointX="8.25" PointY="39.0625" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="39.0625" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="39.0625" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="39.0625" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="39.0625" />
+          <ConnectorPoint PointX="13.291666666666666" PointY="39.0625" />
+          <ConnectorPoint PointX="13.458333333333334" PointY="39.0625" />
+          <ConnectorPoint PointX="13.625" PointY="39.0625" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Statistici_Animale_Camp" >
           <ConnectorPoint PointX="8.25" PointY="37.898753255208334" />
@@ -4026,27 +4220,27 @@
           <ConnectorPoint PointX="12.75" PointY="37.898753255208334" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Statistici_Plante_Camp" >
-          <ConnectorPoint PointX="8.40624625" PointY="38.522658284505212" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="38.522658284505212" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="38.522658284505212" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="38.522658284505212" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="38.522658284505212" />
-          <ConnectorPoint PointX="12.65624625" PointY="38.522658284505212" />
-          <ConnectorPoint PointX="12.65624625" PointY="38.922506510416667" />
-          <ConnectorPoint PointX="13.53124625" PointY="38.922506510416667" />
-          <ConnectorPoint PointX="13.53124625" PointY="42.643697916666667" />
-          <ConnectorPoint PointX="13.5" PointY="42.643697916666667" />
-          <ConnectorPoint PointX="13.5" PointY="44.375" />
+          <ConnectorPoint PointX="8.25" PointY="38.480626627604167" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="38.480626627604167" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="38.480626627604167" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="38.480626627604167" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="38.480626627604167" />
+          <ConnectorPoint PointX="12.5" PointY="38.480626627604167" />
+          <ConnectorPoint PointX="12.5" PointY="38.922506510416667" />
+          <ConnectorPoint PointX="13.375" PointY="38.922506510416667" />
+          <ConnectorPoint PointX="13.375" PointY="42.643697916666667" />
+          <ConnectorPoint PointX="13.093748" PointY="42.643697916666667" />
+          <ConnectorPoint PointX="13.093748" PointY="44.375" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Subregiune_Camp" >
-          <ConnectorPoint PointX="5.96875" PointY="42.125" />
-          <ConnectorPoint PointX="5.96875" PointY="38.788198242187505" />
-          <ConnectorPoint PointX="6.75" PointY="38.788198242187505" />
+          <ConnectorPoint PointX="5.875" PointY="42.125" />
+          <ConnectorPoint PointX="5.875" PointY="38.722257234375" />
+          <ConnectorPoint PointX="6.75" PointY="38.722257234375" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_ComentariiReal_User" >
           <ConnectorPoint PointX="2" PointY="27.432444661458334" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="27.432444661458334" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="27.432444661458334" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="27.432444661458334" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="27.432444661458334" />
           <ConnectorPoint PointX="3" PointY="27.432444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Tranzact_Firma" >
@@ -4055,8 +4249,8 @@
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Tranzact_Firma" >
           <ConnectorPoint PointX="2.15625" PointY="23.60520507812501" />
-          <ConnectorPoint PointX="2.31249625" PointY="32.005116206537473" />
-          <ConnectorPoint PointX="3.15624625" PointY="32.005116206537473" />
+          <ConnectorPoint PointX="2.15625" PointY="31.905683652343747" />
+          <ConnectorPoint PointX="3" PointY="31.905683652343747" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Deces_Padure" >
           <ConnectorPoint PointX="8.875" PointY="43.2160546875" />
@@ -4065,84 +4259,90 @@
           <ConnectorPoint PointX="10.875" PointY="43.2160546875" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Tranzact_Usr_Cumparator" >
-          <ConnectorPoint PointX="0.59375375" PointY="24.875" />
-          <ConnectorPoint PointX="0.59375375" PointY="24.388843983036686" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="24.388843983036686" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="24.388843983036686" />
-          <ConnectorPoint PointX="3" PointY="24.388843983036686" />
+          <ConnectorPoint PointX="0.62500625" PointY="24.875" />
+          <ConnectorPoint PointX="0.62500625" PointY="24.407010499420178" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="24.407010499420178" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="24.407010499420178" />
+          <ConnectorPoint PointX="3" PointY="24.407010499420178" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Animal_Tranzact_Usr_Vanzator" >
-          <ConnectorPoint PointX="0.62500625" PointY="24.875" />
-          <ConnectorPoint PointX="0.62500625" PointY="23.997022030580847" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="23.997022030580847" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="23.997022030580847" />
-          <ConnectorPoint PointX="3" PointY="23.997022030580847" />
+          <ConnectorPoint PointX="0.59375375" PointY="24.875" />
+          <ConnectorPoint PointX="0.59375375" PointY="24.006105288772595" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="24.006105288772595" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="24.006105288772595" />
+          <ConnectorPoint PointX="3" PointY="24.006105288772595" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Deces_Padure" >
-          <ConnectorPoint PointX="8.875" PointY="44.105334531249994" />
-          <ConnectorPoint PointX="10.416666666666666" PointY="44.105334531249994" />
-          <ConnectorPoint PointX="10.583333333333334" PointY="44.105334531249994" />
-          <ConnectorPoint PointX="10.625" PointY="44.105334531249994" />
-          <ConnectorPoint PointX="10.625" PointY="45.057109374999996" />
-          <ConnectorPoint PointX="12.5" PointY="45.057109374999996" />
-          <ConnectorPoint PointX="12.5" PointY="44.125" />
-          <ConnectorPoint PointX="13.416666666666666" PointY="44.125" />
-          <ConnectorPoint PointX="13.583333333333334" PointY="44.125" />
-          <ConnectorPoint PointX="14.375" PointY="44.125" />
-          <ConnectorPoint PointX="14.375" PointY="42.778300781249996" />
+          <ConnectorPoint PointX="7.953123" PointY="41.75" />
+          <ConnectorPoint PointX="7.953123" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="10.416666666666666" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="10.583333333333334" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="10.625" PointY="40.634348958333334" />
+          <ConnectorPoint PointX="10.625" PointY="39.37890625" />
+          <ConnectorPoint PointX="13.25" PointY="39.37890625" />
+          <ConnectorPoint PointX="13.25" PointY="40.345919875651042" />
+          <ConnectorPoint PointX="13.291666666666666" PointY="40.345919875651042" />
+          <ConnectorPoint PointX="13.458333333333334" PointY="40.345919875651042" />
+          <ConnectorPoint PointX="13.625" PointY="40.345919875651042" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Deces_Plante" >
-          <ConnectorPoint PointX="1.5" PointY="42.009095052083332" />
-          <ConnectorPoint PointX="1.5" PointY="42.259095052083325" />
-          <ConnectorPoint PointX="2.5" PointY="42.259095052083325" />
-          <ConnectorPoint PointX="2.5" PointY="40.576650390625" />
-          <ConnectorPoint PointX="2.6354166666666665" PointY="40.576650390625" />
-          <ConnectorPoint PointX="2.8020833333333335" PointY="40.576650390625" />
-          <ConnectorPoint PointX="4.6634918815104163" PointY="40.576650390625" />
-          <ConnectorPoint PointX="5.1477872395833328" PointY="40.576650390625" />
-          <ConnectorPoint PointX="5.885416666666667" PointY="40.576650390625" />
-          <ConnectorPoint PointX="6.052083333333333" PointY="40.576650390625" />
-          <ConnectorPoint PointX="6.5729129166666667" PointY="40.576650390625" />
-          <ConnectorPoint PointX="6.7395795833333327" PointY="40.576650390625" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="40.576650390625" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="40.576650390625" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="40.576650390625" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="40.576650390625" />
-          <ConnectorPoint PointX="10.625" PointY="40.576650390625" />
-          <ConnectorPoint PointX="10.625" PointY="39.375" />
-          <ConnectorPoint PointX="13.25" PointY="39.375" />
-          <ConnectorPoint PointX="13.25" PointY="40.9274780859375" />
-          <ConnectorPoint PointX="13.447912916666667" PointY="40.9274780859375" />
-          <ConnectorPoint PointX="13.614579583333335" PointY="40.9274780859375" />
-          <ConnectorPoint PointX="13.625" PointY="40.9274780859375" />
+          <ConnectorPoint PointX="1.5" PointY="41.816793619791667" />
+          <ConnectorPoint PointX="1.5" PointY="42.066793619791667" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="42.066793619791667" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="42.066793619791667" />
+          <ConnectorPoint PointX="2.5625" PointY="42.066793619791667" />
+          <ConnectorPoint PointX="2.5625" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="4.6634918815104163" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="7.8697896666666667" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="8.0364563333333336" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="10.5625" PointY="40.759348958333334" />
+          <ConnectorPoint PointX="10.5625" PointY="39.375" />
+          <ConnectorPoint PointX="13.125" PointY="39.375" />
+          <ConnectorPoint PointX="13.125" PointY="41.629339751302084" />
+          <ConnectorPoint PointX="13.291666666666666" PointY="41.629339751302084" />
+          <ConnectorPoint PointX="13.458333333333334" PointY="41.629339751302084" />
+          <ConnectorPoint PointX="13.625" PointY="41.629339751302084" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Tranzact_Plante" >
-          <ConnectorPoint PointX="2.35937125" PointY="32.605659561602067" />
-          <ConnectorPoint PointX="2.203125" PointY="32.605659561602067" />
-          <ConnectorPoint PointX="3" PointY="32.605659561602067" />
+          <ConnectorPoint PointX="2.25" PointY="39.817174979166666" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="39.817174979166666" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="39.817174979166666" />
+          <ConnectorPoint PointX="3.75" PointY="39.817174979166666" />
+          <ConnectorPoint PointX="3.75" PointY="33.143697916666667" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Tranzact_Usr_Cumparator" >
-          <ConnectorPoint PointX="2" PointY="30.478780988454822" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="30.478780988454822" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="30.478780988454822" />
-          <ConnectorPoint PointX="3" PointY="30.478780988454822" />
+          <ConnectorPoint PointX="2" PointY="30.3589333152771" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="30.3589333152771" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="30.3589333152771" />
+          <ConnectorPoint PointX="3" PointY="30.3589333152771" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Tranzact_Usr_Vanzator" >
-          <ConnectorPoint PointX="2" PointY="29.989390494227411" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="29.989390494227411" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="29.989390494227411" />
-          <ConnectorPoint PointX="3" PointY="29.989390494227411" />
+          <ConnectorPoint PointX="2" PointY="29.92946665763855" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="29.92946665763855" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="29.92946665763855" />
+          <ConnectorPoint PointX="3" PointY="29.92946665763855" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Ocol_Silvic_Real_Judet" >
           <ConnectorPoint PointX="2.25" PointY="50.5" />
           <ConnectorPoint PointX="2.25" PointY="49.076396484375" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Statistici_Animale_Padure" >
-          <ConnectorPoint PointX="8.50781125" PointY="41.75" />
-          <ConnectorPoint PointX="8.50781125" PointY="36.862168465640643" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="36.862168465640643" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="36.862168465640643" />
-          <ConnectorPoint PointX="12.75" PointY="36.862168465640643" />
+          <ConnectorPoint PointX="8.59375" PointY="41.75" />
+          <ConnectorPoint PointX="8.59375" PointY="36.901588346453735" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="36.901588346453735" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="36.901588346453735" />
+          <ConnectorPoint PointX="12.75" PointY="36.901588346453735" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Statistici_Plante_Padure" >
           <ConnectorPoint PointX="8.875" PointY="45.451355794270832" />
@@ -4153,27 +4353,27 @@
           <ConnectorPoint PointX="7.375" PointY="43.499746093749991" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Statistici_Plante_Plante" >
-          <ConnectorPoint PointX="2.40624625" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="2.6354166666666665" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="2.8020833333333335" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="4.6634918815104163" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="5.1477872395833328" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="5.885416666666667" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="6.052083333333333" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="6.65624625" PointY="39.788198742187504" />
-          <ConnectorPoint PointX="6.65624625" PointY="40.76389648437501" />
-          <ConnectorPoint PointX="8.4244779166666657" PointY="40.76389648437501" />
-          <ConnectorPoint PointX="8.5911445833333335" PointY="40.76389648437501" />
-          <ConnectorPoint PointX="8.6393247916666649" PointY="40.76389648437501" />
-          <ConnectorPoint PointX="8.8059914583333327" PointY="40.76389648437501" />
-          <ConnectorPoint PointX="10.5" PointY="40.76389648437501" />
+          <ConnectorPoint PointX="2.25" PointY="40.31951446875" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="40.31951446875" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="40.31951446875" />
+          <ConnectorPoint PointX="4.6634918815104163" PointY="40.31951446875" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="40.31951446875" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="40.31951446875" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="40.31951446875" />
+          <ConnectorPoint PointX="6.5" PointY="40.31951446875" />
+          <ConnectorPoint PointX="6.5" PointY="40.509095052083339" />
+          <ConnectorPoint PointX="8.5104166666666661" PointY="40.509095052083339" />
+          <ConnectorPoint PointX="8.6770833333333339" PointY="40.509095052083339" />
+          <ConnectorPoint PointX="8.6822941666666669" PointY="40.509095052083339" />
+          <ConnectorPoint PointX="8.8489608333333347" PointY="40.509095052083339" />
+          <ConnectorPoint PointX="10.5" PointY="40.509095052083339" />
           <ConnectorPoint PointX="10.5" PointY="44.932109374999996" />
-          <ConnectorPoint PointX="10.546954935865294" PointY="44.914533567533944" />
-          <ConnectorPoint PointX="10.703045064134706" PointY="44.856107121170872" />
-          <ConnectorPoint PointX="12.65624625" PointY="44.125" />
+          <ConnectorPoint PointX="12.5" PointY="44.932109374999996" />
           <ConnectorPoint PointX="12.5" PointY="44.125" />
-          <ConnectorPoint PointX="13.093748" PointY="44.125" />
-          <ConnectorPoint PointX="13.093748" PointY="44.375" />
+          <ConnectorPoint PointX="13.010414666666666" PointY="44.125" />
+          <ConnectorPoint PointX="13.177081333333334" PointY="44.125" />
+          <ConnectorPoint PointX="13.5" PointY="44.125" />
+          <ConnectorPoint PointX="13.5" PointY="44.375" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Populatie_Subregiune" >
           <ConnectorPoint PointX="6.03125" PointY="44.874492187499982" />
@@ -4190,10 +4390,10 @@
           <ConnectorPoint PointX="5.6406225" PointY="44.874492187499982" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Regiune_User" >
-          <ConnectorPoint PointX="0.59375" PointY="30.893616536458335" />
+          <ConnectorPoint PointX="0.59375" PointY="30.701315104166667" />
           <ConnectorPoint PointX="0.59375" PointY="43.490143229166662" />
-          <ConnectorPoint PointX="2.6354166666666665" PointY="43.490143229166662" />
-          <ConnectorPoint PointX="2.8020833333333335" PointY="43.490143229166662" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="43.490143229166662" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="43.490143229166662" />
           <ConnectorPoint PointX="3" PointY="43.490143229166662" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_SubRegiune_Regiune" >
@@ -4205,14 +4405,16 @@
           <ConnectorPoint PointX="5.25" PointY="43.490143229166662" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_ID_Usr_ID_Usr" >
-          <ConnectorPoint PointX="2" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="4.9274498470052084" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="4.9811205729166668" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="5.1477872395833328" PointY="25.485324036509251" />
-          <ConnectorPoint PointX="6.5625" PointY="25.485324036509251" />
+          <ConnectorPoint PointX="2" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="4.9274498470052075" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="4.9811205729166668" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="25.696848958333334" />
+          <ConnectorPoint PointX="6.5625" PointY="25.696848958333334" />
           <ConnectorPoint PointX="6.5625" PointY="24.076396484374982" />
         </AssociationConnector>
         <EntityTypeShape EntityType="dbsqlModel.Real" Width="1.5" PointX="3.75" PointY="46" Height="6.78782226562501" />
@@ -4220,7 +4422,9 @@
           <ConnectorPoint PointX="4.9414078125" PointY="46" />
           <ConnectorPoint PointX="4.9414078125" PointY="27.432444661458334" />
           <ConnectorPoint PointX="4.9274498470052075" PointY="27.432444661458334" />
-          <ConnectorPoint PointX="4.7275755240885422" PointY="27.432444661458334" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="27.432444661458334" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="27.432444661458334" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="27.432444661458334" />
           <ConnectorPoint PointX="4.5" PointY="27.432444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Real_Ocol_Silvic" >
@@ -4232,10 +4436,12 @@
         <EntityTypeShape EntityType="dbsqlModel.ComentariiDonatii" Width="1.5" PointX="8.25" PointY="26.25" Height="2.3648893229166674" />
         <AssociationConnector Association="dbsqlModel.FK_User" >
           <ConnectorPoint PointX="2" PointY="29.088695161458332" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="29.088695161458332" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="29.088695161458332" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="29.088695161458332" />
-          <ConnectorPoint PointX="5.147787239583332" PointY="29.088695161458332" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="29.088695161458332" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="29.088695161458332" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="29.088695161458332" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="29.088695161458332" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="29.088695161458332" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="29.088695161458332" />
           <ConnectorPoint PointX="7.041666666666667" PointY="29.088695161458332" />
           <ConnectorPoint PointX="7.208333333333333" PointY="29.088695161458332" />
           <ConnectorPoint PointX="8.90625" PointY="29.088695161458332" />
@@ -4248,20 +4454,26 @@
           <ConnectorPoint PointX="8.25" PointY="27.432444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Donatii_Firma" >
-          <ConnectorPoint PointX="2.1249975" PointY="23.60520507812501" />
-          <ConnectorPoint PointX="2.1249975" PointY="34.775837700620023" />
-          <ConnectorPoint PointX="2.2760379166666667" PointY="34.775837700620023" />
-          <ConnectorPoint PointX="2.4427045833333336" PointY="34.775837700620023" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="34.775837700620023" />
-          <ConnectorPoint PointX="5.147787239583332" PointY="34.775837700620023" />
-          <ConnectorPoint PointX="6.375" PointY="34.775837700620023" />
+          <ConnectorPoint PointX="2.1875025" PointY="23.60520507812501" />
+          <ConnectorPoint PointX="2.1875025" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="34.391318252024341" />
+          <ConnectorPoint PointX="6.375" PointY="34.391318252024341" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Donatii_Ocol_Silvic" >
-          <ConnectorPoint PointX="2.71875" PointY="45.75" />
-          <ConnectorPoint PointX="2.71875" PointY="35.280003758757275" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="35.280003758757275" />
-          <ConnectorPoint PointX="5.147787239583332" PointY="35.280003758757275" />
-          <ConnectorPoint PointX="6.375" PointY="35.280003758757275" />
+          <ConnectorPoint PointX="2.46875" PointY="45.75" />
+          <ConnectorPoint PointX="2.46875" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="35.044836284830737" />
+          <ConnectorPoint PointX="6.375" PointY="35.044836284830737" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Donatii_Real" >
           <ConnectorPoint PointX="4.7468252148437493" PointY="46" />
@@ -4271,21 +4483,23 @@
           <ConnectorPoint PointX="6.375" PointY="35.784169816894533" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_Donatii_Usr" >
-          <ConnectorPoint PointX="1.3281275" PointY="30.893616536458335" />
-          <ConnectorPoint PointX="1.3281275" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="2.2083308333333336" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="2.2760379166666667" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="2.4427045833333336" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="5.147787239583332" PointY="33.959765308643355" />
-          <ConnectorPoint PointX="6.375" PointY="33.959765308643355" />
+          <ConnectorPoint PointX="1.3281275" PointY="30.701315104166667" />
+          <ConnectorPoint PointX="1.3281275" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="2.1041691666666664" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="33.767505584345514" />
+          <ConnectorPoint PointX="6.375" PointY="33.767505584345514" />
         </AssociationConnector>
         <EntityTypeShape EntityType="dbsqlModel.StatisticaPerAnimal" Width="1.5" PointX="9.625" PointY="29.875" Height="4.480205078124996" />
         <AssociationConnector Association="dbsqlModel.FK_StatisticaPerAnimal_FK_Animal" >
-          <ConnectorPoint PointX="5.25" PointY="17.703121562499998" />
-          <ConnectorPoint PointX="10.64843875" PointY="17.703121562499998" />
-          <ConnectorPoint PointX="10.64843875" PointY="29.875" />
+          <ConnectorPoint PointX="5.25" PointY="17.43749725" />
+          <ConnectorPoint PointX="10.46875" PointY="17.43749725" />
+          <ConnectorPoint PointX="10.46875" PointY="29.875" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_StatisticaPerAnimal_FK_Camp" >
           <ConnectorPoint PointX="8.09375" PointY="37.125" />
@@ -4293,37 +4507,27 @@
           <ConnectorPoint PointX="9.625" PointY="31.28125" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_StatisticaPerAnimal_FK_Padure" >
-          <ConnectorPoint PointX="8.7226581249999988" PointY="41.75" />
-          <ConnectorPoint PointX="8.7226581249999988" PointY="32.015627499999994" />
+          <ConnectorPoint PointX="8.7656275" PointY="41.75" />
+          <ConnectorPoint PointX="8.7656275" PointY="32.015627499999994" />
           <ConnectorPoint PointX="9.625" PointY="32.015627499999994" />
         </AssociationConnector>
         <AssociationConnector Association="dbsqlModel.FK_StatisticaPerAnimal_FK_Usr" >
-          <ConnectorPoint PointX="2" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="4.9274498470052084" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="4.9811205729166668" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="5.1477872395833328" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="10.199216875000001" PointY="25.867664518254621" />
-          <ConnectorPoint PointX="10.199216875000001" PointY="29.875" />
+          <ConnectorPoint PointX="2" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="2.0729166666666665" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="2.2708358333333334" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="4.5713292740885416" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="4.7379959407552077" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="4.7607831803385414" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="4.9274498470052075" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="4.9811205729166668" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="5.1477872395833328" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="10.1093725" PointY="25.973426979166661" />
+          <ConnectorPoint PointX="10.1093725" PointY="29.875" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="dbsqlModel.Challenge" Width="1.5" PointX="7.5" PointY="3.75" Height="2.1725878906250102" />
-        <AssociationConnector Association="dbsqlModel.FK_Istoric_Plante_Deces_Usr" >
-          <ConnectorPoint PointX="2" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="2.0416641666666666" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="2.2395833333333335" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="4.7275755240885413" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="5.147787239583332" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="7.041666666666667" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="7.208333333333333" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="10.115883541666667" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="10.282550208333335" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="10.565105416666667" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="10.731772083333334" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="14.71875" PointY="29.35685008072916" />
-          <ConnectorPoint PointX="14.71875" PointY="38.875" />
-        </AssociationConnector>
+        <EntityTypeShape EntityType="dbsqlModel.Stiri" Width="1.5" PointX="7.5" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbsqlModel.Upgrade" Width="1.5" PointX="7.5" PointY="6.75" Height="4.2879036458333246" />
+        <EntityTypeShape EntityType="dbsqlModel.Achievement" Width="1.5" PointX="0.75" PointY="9.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="dbsqlModel.Challenge" Width="1.5" PointX="9.75" PointY="0.75" Height="2.1725878906250102" />
         </Diagram>
     </Diagrams>
   </Designer>

@@ -13,11 +13,19 @@ using System.Windows.Threading;
 using System.Windows.Media.Imaging;
 using Forme;
 using bing;
+using System.ServiceModel;
+using System.Collections.Generic;
+using System.Windows.Controls.Primitives;
+using bing.Forme;
 
 namespace Regiuni
 {
     public class Moldova
     {
+        BasicHttpBinding bind = new BasicHttpBinding();
+       EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Service1.svc");
+        
+        bool i = false;
         private static MapPolygon MPMoldovaRegiune1;
         private static MapPolygon MPMoldovaRegiune2;
         private static MapPolygon MPMoldovaRegiune3;
@@ -27,12 +35,44 @@ namespace Regiuni
         Canvas can = new Canvas();
         DispatcherTimer dt;
         Canvas md;
-       private static double grade=0;
-       private PlaneProjection p = new PlaneProjection();
-        public Moldova(Map m,Canvas c,Canvas md)
+        MapLayers mapl;
+        Map m;
+        List<bing.ServiceReference1.ProceduraRealJudet_Result> lista;
+        private static double grade=0;
+        private PlaneProjection p = new PlaneProjection();
+        int reg1lista;
+        int reg2lista;
+        int reg3lista;
+        int reg4lista;
+
+        private static Moldova instance;
+
+        public Moldova(Map m,Canvas c,Canvas md,MapLayers mapl,List<bing.ServiceReference1.ProceduraRealJudet_Result> lista,bool login)
         {
+            i = login;
             this.md = md;
-         
+            this.m = m;
+            this.mapl = mapl;
+            this.lista = lista;
+            for (int j = 0; j < lista.Count; j++)
+            {
+                if (lista[j].ID == 6)
+                {
+                    reg1lista = j;
+                }
+                if (lista[j].ID ==7)
+                {
+                    reg2lista = j;
+                }
+                if (lista[j].ID == 8)
+                {
+                    reg3lista = j;
+                }
+                if (lista[j].ID == 9)
+                {
+                    reg4lista = j;
+                }
+            }
             dt = new DispatcherTimer();
             MPMoldovaRegiune1 = new MapPolygon();
             MPMoldovaRegiune2 = new MapPolygon();
@@ -55,6 +95,7 @@ namespace Regiuni
             can = c;
             dt.Interval = new TimeSpan(0, 0, 0, 0, 10);
             dt.Tick += new EventHandler(dt_Tick);
+            instance = this;
         }
 
         public bing.pesteHarta PestePoza
@@ -74,17 +115,25 @@ namespace Regiuni
             if (grade == 180)
             {
                 dt.Stop();
-               
             }
             else grade = grade + 2;
             if (grade == 90)
-            {//intorc imaginea
+            {
+                //intorc imaginea
                 #region Adaug imagine scap de harta
                 PlaneProjection planeproj = new PlaneProjection();
                 planeproj.RotationY = 180;
-                //terg harta
+
+                //sterg harta
                 map.Visibility = Visibility.Collapsed;
-                can.Children.Remove(map);
+                //can.Children.Remove(map);
+
+                //remove children
+                can.Children.Clear();
+
+                // Add the Back Button
+                CBackButton.getInstance().addButtonToCanvas();
+
                 //iau imaginea
                 img = new Image();
                 img.Projection = planeproj;
@@ -92,23 +141,18 @@ namespace Regiuni
                 img.Height = can.Height;
                 img.Stretch = Stretch.Fill;
                 img.Source = new BitmapImage(new Uri("Game/testcupod.jpg", UriKind.Relative));
-         
-              
-             
-               
-#endregion
+                #endregion
                 
                 can.Children.Add(img);
                 Canvas.SetLeft(img, 0);
                //adaug strop
-                pesteHarta pp = new pesteHarta(can,p,img,md);
-                pp.AdaugCampie();
+                pesteHarta pp = new pesteHarta(can,p,img,md,mapl,m);
+                //pp.AdaugCampie();
                 can = pp.Intoarce();
             }
             p.RotationY = grade;
             p.CenterOfRotationY = 0.5;
             can.Projection = p;
-          
         }
     
         private void Intoarce()
@@ -367,55 +411,143 @@ namespace Regiuni
 
             return MPMoldovaRegiune4;
         }
+         
         void MPMoldovaRegiune1_MouseEnter(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune1.StrokeThickness = 3;
+         
+                mapl.ADDInfoCanvas(lista[reg1lista].Clima,lista[reg1lista].Temperatura.ToString(),lista[reg1lista].Precipitatii.ToString(),48,27);
+     
         }
         void MPMoldovaRegiune1_MouseLeave(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune1.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPMoldovaRegiune1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            // Check if the user has logged in
+            if (LoginForm.getInstance().userLoggedIn() ==true)
+            {
+                Intoarce();
+            }
+            else
+            {
+                can.Children.Add(new Info(lista, 6, m, can));
+            }
 
-            Intoarce();
+            // Set the current SubRegion
+            AtributeGlobale.SubRegiuneaCurenta = AtributeGlobale.EnumSubRegiuni.SubRegion1;
         }
         void MPMoldovaRegiune2_MouseEnter(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune2.StrokeThickness = 3;
+            if ( reg2lista < lista.Count )
+                mapl.ADDInfoCanvas(lista[reg2lista].Clima, lista[reg2lista].Temperatura.ToString(), lista[reg2lista].Precipitatii.ToString(),47,26);
+     
         }
         void MPMoldovaRegiune2_MouseLeave(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune2.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPMoldovaRegiune2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            // Check if the user has logged in
+            if (LoginForm.getInstance().userLoggedIn() == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Add(new Info(lista, 7,m,can));
+            }
+
+            // Set the current SubRegion
+            AtributeGlobale.SubRegiuneaCurenta = AtributeGlobale.EnumSubRegiuni.SubRegion2;
         }
         void MPMoldovaRegiune3_MouseEnter(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune3.StrokeThickness = 3;
+            mapl.ADDInfoCanvas(lista[reg3lista].Clima, lista[reg3lista].Temperatura.ToString(), lista[reg3lista].Precipitatii.ToString(),47.23,25);
+    
         }
         void MPMoldovaRegiune3_MouseLeave(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune3.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPMoldovaRegiune3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            // Check if the user has logged in
+            if (LoginForm.getInstance().userLoggedIn() == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Add(new Info(lista, 8, m, can));
+            }
+
+            // Set the current SubRegion
+            AtributeGlobale.SubRegiuneaCurenta = AtributeGlobale.EnumSubRegiuni.SubRegion3;
         }
         void MPMoldovaRegiune4_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg4lista].Clima, lista[reg4lista].Temperatura.ToString(), lista[reg4lista].Precipitatii.ToString(),46,25);
+    
             MPMoldovaRegiune4.StrokeThickness = 3;
         }
         void MPMoldovaRegiune4_MouseLeave(object sender, MouseEventArgs e)
         {
             MPMoldovaRegiune4.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPMoldovaRegiune4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            // Check if the user has logged in
+            if (LoginForm.getInstance().userLoggedIn() == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Add(new Info(lista, 9, m, can));
+            }
+
+            // Set the current SubRegion
+            AtributeGlobale.SubRegiuneaCurenta = AtributeGlobale.EnumSubRegiuni.SubRegion4;
         }
 
+        /// <summary>
+        /// Setter for the projection degrees
+        /// </summary>
+        /// <param name="degrees"></param>
+        public static void setGrade(double degrees)
+        {
+            grade = degrees;
+        }
+
+        /// <summary>
+        /// Returns the current instance
+        /// </summary>
+        /// <returns></returns>
+        public static Moldova getInstance()
+        {
+            if (instance != null)
+                return instance;
+            return null;
+        }
+
+        /// <summary>
+        /// Call Intoarce() to go from other regions in Moldova
+        /// </summary>
+        public void goToMoldova()
+        {
+            Intoarce();
+        }
     }
 }

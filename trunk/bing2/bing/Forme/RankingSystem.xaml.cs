@@ -14,6 +14,7 @@ using System.ServiceModel;
 using Forme;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls.Primitives;
+using Microsoft.Maps.MapControl;
 
 namespace bing.Forme
 {
@@ -33,11 +34,12 @@ namespace bing.Forme
         static BasicHttpBinding bind = new BasicHttpBinding();
         static EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Service1.svc");
         bing.testService.Service1Client wcf = new bing.testService.Service1Client(bind, endpoint);
-
+      
         public RankingSystem()
         {
             InitializeComponent();
-
+          
+            AtributeGlobale.i++;
             resetTabs();
             achievements.AddTextBlock(new TextBlock(), "Achievements", 23, 10, 10, "#FFFFFFFF");
             achievements.Border(new CornerRadius(0, 0, 0, 0), "#FF696c6e", new Thickness(1), 182, 61);
@@ -279,15 +281,6 @@ namespace bing.Forme
             #endregion
         }
 
-        private void image1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            currentCanvas.Children.Clear();
-            foreach (UIElement elem in goBack)
-            {
-                currentCanvas.Children.Add(elem);
-            }
-        }
-
         public void setBackButton(List<UIElement> list, Canvas canvas2)
         {
             goBack = list;
@@ -296,14 +289,46 @@ namespace bing.Forme
 
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
-            ((Image)sender).Width = 30;
-            ((Image)sender).Height = 30;
+            image1.Width = 30;
+            image1.Height = 30;
         }
 
         private void image1_MouseLeave(object sender, MouseEventArgs e)
         {
-            ((Image)sender).Width = 25;
-            ((Image)sender).Height = 25;
+            image1.Width = 25;
+            image1.Height = 25;
+        }
+
+        private void image1_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
+        }
+
+        private void image1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //cod sergiu
+            PlaneProjection p = (PlaneProjection)currentCanvas.Projection;
+            if (p != null)
+            {
+                if (p.RotationY == 0)
+                {
+                    if (AtributeGlobale.i == 1)
+                    {
+                        p.RotationY = 180;
+                        AtributeGlobale.i = 0;
+                    }
+                    else { p.RotationY = 0; AtributeGlobale.i--; }
+
+                    currentCanvas.Projection = p;
+                }
+            }
+            //
+            AtributeGlobale.achiv = false;
+            currentCanvas.Children.Clear();
+            foreach (UIElement elem in goBack)
+            {
+                currentCanvas.Children.Add(elem);
+            }
         }
     }
 }

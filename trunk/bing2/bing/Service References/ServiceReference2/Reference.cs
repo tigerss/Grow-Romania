@@ -60,6 +60,10 @@ namespace bing.ServiceReference2 {
         
         private bool IsSolvedField;
         
+        private string LatitudineField;
+        
+        private string LongitudineField;
+        
         private byte NivelProblemaField;
         
         private short NrFirmeDonatoareField;
@@ -338,6 +342,32 @@ namespace bing.ServiceReference2 {
                 if ((this.IsSolvedField.Equals(value) != true)) {
                     this.IsSolvedField = value;
                     this.RaisePropertyChanged("IsSolved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Latitudine {
+            get {
+                return this.LatitudineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LatitudineField, value) != true)) {
+                    this.LatitudineField = value;
+                    this.RaisePropertyChanged("Latitudine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Longitudine {
+            get {
+                return this.LongitudineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LongitudineField, value) != true)) {
+                    this.LongitudineField = value;
+                    this.RaisePropertyChanged("Longitudine");
                 }
             }
         }
@@ -1175,8 +1205,6 @@ namespace bing.ServiceReference2 {
         
         private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Animal_Tranzact> Istoric_Animal_Tranzact1Field;
         
-        private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Deces> Istoric_Plante_DecesField;
-        
         private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Tranzact> Istoric_Plante_TranzactField;
         
         private System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Tranzact> Istoric_Plante_Tranzact1Field;
@@ -1344,19 +1372,6 @@ namespace bing.ServiceReference2 {
                 if ((object.ReferenceEquals(this.Istoric_Animal_Tranzact1Field, value) != true)) {
                     this.Istoric_Animal_Tranzact1Field = value;
                     this.RaisePropertyChanged("Istoric_Animal_Tranzact1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference2.Istoric_Plante_Deces> Istoric_Plante_Deces {
-            get {
-                return this.Istoric_Plante_DecesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Istoric_Plante_DecesField, value) != true)) {
-                    this.Istoric_Plante_DecesField = value;
-                    this.RaisePropertyChanged("Istoric_Plante_Deces");
                 }
             }
         }
@@ -3412,10 +3427,6 @@ namespace bing.ServiceReference2 {
         
         private bool TrasniteField;
         
-        private bing.ServiceReference2.Usr UsrField;
-        
-        private bing.ServiceReference2.EntityReferenceOfUsrKvZjy4f9 UsrReferenceField;
-        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bing.ServiceReference2.Camp Camp {
             get {
@@ -3646,32 +3657,6 @@ namespace bing.ServiceReference2 {
                 if ((this.TrasniteField.Equals(value) != true)) {
                     this.TrasniteField = value;
                     this.RaisePropertyChanged("Trasnite");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bing.ServiceReference2.Usr Usr {
-            get {
-                return this.UsrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
-                    this.UsrField = value;
-                    this.RaisePropertyChanged("Usr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bing.ServiceReference2.EntityReferenceOfUsrKvZjy4f9 UsrReference {
-            get {
-                return this.UsrReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsrReferenceField, value) != true)) {
-                    this.UsrReferenceField = value;
-                    this.RaisePropertyChanged("UsrReference");
                 }
             }
         }

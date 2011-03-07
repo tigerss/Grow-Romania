@@ -11,11 +11,14 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using bing.ServiceReference1;
 using bing_maps.Forme;
+using System.ServiceModel;
 
 namespace bing
 {
     public partial class UnitTranzactii : UserControl
     {
+        BasicHttpBinding bind = new BasicHttpBinding();
+        EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
         public int ID;
         public bool BuySell;
         public UnitTranzactii()
@@ -55,7 +58,7 @@ namespace bing
                 var a = MessageBox.Show("Do you want to buy it?", "Buy", MessageBoxButton.OKCancel);
                 if (a == MessageBoxResult.OK)
                 {
-                    TranzactiiClient tc = new TranzactiiClient();
+                    TranzactiiClient tc = new TranzactiiClient(bind,endpoint);
                     tc.AddCumparareAsync(Username.Text, "test", NumeAnimal.Text, "bla", int.Parse(Price.Text), short.Parse(Quantity.Text), ID);
                     tc.AddCumparareCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(tc_AddCumparareCompleted);
                 }
@@ -67,7 +70,7 @@ namespace bing
                 var a = MessageBox.Show("Do you want to sell it?", "Sell", MessageBoxButton.OKCancel);
                 if (a == MessageBoxResult.OK)
                 {
-                    TranzactiiClient tc = new TranzactiiClient();
+                    TranzactiiClient tc = new TranzactiiClient(bind, endpoint);
                     tc.AddCumparareAsync("test", Username.Text, NumeAnimal.Text, "bla", int.Parse(Price.Text), short.Parse(Quantity.Text), ID);
                     tc.AddCumparareCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(tc_AddCumparareCompleted);
                 }

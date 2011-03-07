@@ -10,12 +10,49 @@ namespace bing.Web
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Tranzactii" in code, svc and config file together.
     public class Tranzactii : ITranzactii
     {
-        /// <summary>
-        /// Login in Tranzactii
-        /// </summary>
-        /// <param name="nume"></param>
-        /// <param name="passward"></param>
-        /// <returns></returns>
+        public void Test(int i)
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                
+                e.TryScor();
+            }
+        }
+        public List<ProcedureUpgrades_Result> GetProceduraUpgrades(int i)
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                return e.ProcedureUpgrades(i).ToList<ProcedureUpgrades_Result>();
+            }
+        }
+        public List<ProceduraRealJudet_Result> GetProceduraReal(int i)
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                return e.ProceduraRealJudet(i).ToList<ProceduraRealJudet_Result>();
+            }
+        }
+        public List<HistoryPadure_Result> GetHistoryPadure()
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                return e.HistoryPadure().ToList<HistoryPadure_Result>();
+            }
+        }
+        public List<StiriProcedure_Result> GetStiri()
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                return e.StiriProcedure().ToList<StiriProcedure_Result>();
+            }
+        }
+        public List<HartaCampanii_Result> HartaCuCampanii()
+        {
+            using (dbEntities e = new dbEntities())
+            {
+                return e.HartaCampanii().ToList<HartaCampanii_Result>();
+            }
+        }
         public List<LoginFunction_Result> LoginUser(string nume, string passward)
         {
             using (dbEntities e = new dbEntities())
@@ -27,15 +64,16 @@ namespace bing.Web
         {
             using (dbEntities e = new dbEntities())
             {
-                return e.StatisticaAimal(id, idRegiune).ToList<StatisticaAimal_Result>();
+                List<StatisticaAimal_Result> lista= e.StatisticaAimal(id, idRegiune).ToList<StatisticaAimal_Result>();
+                return lista;
             }
         }
-        public List<ProceduraDeces_Result1> PreiaDeces(int ID)
+        public List<ProceduraDeces_Result1> PreiaDeces(int IDanimal,int IDuser)
         {
             using (dbEntities e = new dbEntities())
             {
 
-                return e.ProceduraDeces2(ID, 1).ToList<ProceduraDeces_Result1>();
+                return e.ProceduraDeces2(IDanimal, IDuser).ToList<ProceduraDeces_Result1>();
             }
             
         }
@@ -58,7 +96,8 @@ namespace bing.Web
         }
         public List<TranzactiiCumparare> GetTranzactieCumparare()
         {
-          return new dbEntities().TranzactiiCumparares.Take<TranzactiiCumparare>(30).ToList<TranzactiiCumparare>();
+         List<TranzactiiCumparare> lista= new dbEntities().TranzactiiCumparares.Take<TranzactiiCumparare>(30).ToList<TranzactiiCumparare>();
+         return lista;
         }
         public void AddTranzactie(string Nume,string animal,int numar,string numefirma,int pret,string vinde,string cumpara)
         {

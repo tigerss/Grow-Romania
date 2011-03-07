@@ -1,14 +1,14 @@
 10
 
 dir
-81
+77
 https://delphi.microsoft-lab.pub.ro/svn/proba1/trunk/bing2/bing.Web/App_GlobalResources
 https://delphi.microsoft-lab.pub.ro/svn/proba1
 
 
 
-2010-12-11T21:36:20.970971Z
-80
+2010-10-31T14:26:10.555520Z
+41
 sergiu
 
 
@@ -28,11 +28,11 @@ fb1ed953-3f21-9143-8249-4e701e350f53
 
 Service1.svc.cs
 file
+80
 
 
 
-
-2010-12-11T22:41:35.544000Z
+2010-12-04T08:57:35.008142Z
 664d663c1741b2188b7c8626bbbaab03
 2010-12-11T21:36:20.970971Z
 80
@@ -62,11 +62,11 @@ sergiu
 
 ITranzactii.cs
 file
+78
 
 
 
-
-2010-12-11T22:41:35.546000Z
+2010-12-08T08:58:41.252493Z
 63e5299292a6cb2a5527ca345d6a73b8
 2010-12-11T21:24:15.564873Z
 78
@@ -96,11 +96,11 @@ sergiu
 
 IService1.cs
 file
+78
 
 
 
-
-2010-12-11T22:41:35.549000Z
+2010-12-08T08:58:41.267493Z
 18ba218e02bcdc79a66f58f899b75c2f
 2010-12-11T21:24:15.564873Z
 78

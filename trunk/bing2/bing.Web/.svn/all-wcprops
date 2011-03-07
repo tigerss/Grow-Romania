@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 44
-/svn/proba1/!svn/ver/80/trunk/bing2/bing.Web
+/svn/proba1/!svn/ver/77/trunk/bing2/bing.Web
 END
 ICampaigns.cs
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/proba1/!svn/ver/62/trunk/bing2/bing.Web/ICampaigns.cs
-END
-IServiceDeces.cs
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/IServiceDeces.cs
 END
 Campanie.cs
 K 25
@@ -27,6 +21,12 @@ svn:wc:ra_dav:version-url
 V 55
 /svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/Web.config
 END
+IServiceDeces.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/IServiceDeces.cs
+END
 bing.Web.csproj
 K 25
 svn:wc:ra_dav:version-url
@@ -39,17 +39,17 @@ svn:wc:ra_dav:version-url
 V 58
 /svn/proba1/!svn/ver/27/trunk/bing2/bing.Web/Campaigns.svc
 END
-ServiceDeces.svc
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/ServiceDeces.svc
-END
 Default.aspx
 K 25
 svn:wc:ra_dav:version-url
 V 57
 /svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/Default.aspx
+END
+ServiceDeces.svc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/ServiceDeces.svc
 END
 Campaigns.svc.cs
 K 25
@@ -63,29 +63,29 @@ svn:wc:ra_dav:version-url
 V 62
 /svn/proba1/!svn/ver/8/trunk/bing2/bing.Web/Web.Release.config
 END
-ServiceDeces.svc.cs
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/ServiceDeces.svc.cs
-END
 Tranzactii.svc
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/proba1/!svn/ver/8/trunk/bing2/bing.Web/Tranzactii.svc
 END
+ServiceDeces.svc.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/ServiceDeces.svc.cs
+END
 erd.edmx
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/erd.edmx
+/svn/proba1/!svn/ver/85/trunk/bing2/bing.Web/erd.edmx
 END
 Tranzactii.svc.cs
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/Tranzactii.svc.cs
+/svn/proba1/!svn/ver/87/trunk/bing2/bing.Web/Tranzactii.svc.cs
 END
 Web.Debug.config
 K 25
@@ -93,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 60
 /svn/proba1/!svn/ver/8/trunk/bing2/bing.Web/Web.Debug.config
 END
-Silverlight.js
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/svn/proba1/!svn/ver/8/trunk/bing2/bing.Web/Silverlight.js
-END
 bing.Web.csproj.user
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/proba1/!svn/ver/33/trunk/bing2/bing.Web/bing.Web.csproj.user
+END
+Silverlight.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/proba1/!svn/ver/8/trunk/bing2/bing.Web/Silverlight.js
 END
 Service1.svc
 K 25
@@ -121,7 +121,7 @@ erd.Designer.cs
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/svn/proba1/!svn/ver/78/trunk/bing2/bing.Web/erd.Designer.cs
+/svn/proba1/!svn/ver/85/trunk/bing2/bing.Web/erd.Designer.cs
 END
 1366.jpg
 K 25

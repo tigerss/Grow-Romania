@@ -39,6 +39,8 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Routing" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -80,6 +82,7 @@
     <Content Include="ClientBin\Imagini\hover_07.png" />
     <Content Include="ClientBin\Imagini\hover_09.png" />
     <Content Include="ClientBin\Imagini\hover_11.png" />
+    <Content Include="Facebook2.aspx" />
     <Content Include="LA.jpg" />
     <Content Include="Service1.svc" />
     <Content Include="ServiceDeces.svc" />
@@ -94,6 +97,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="xd_receiver.htm" />
+    <Content Include="clientaccesspolicy.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_GlobalResources\IService1.cs" />
@@ -107,6 +112,10 @@
       <DependentUpon>erd.edmx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Facebook2.aspx.cs">
+      <DependentUpon>Facebook2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ICampaigns.cs" />
     <Compile Include="IServiceDeces.cs" />
@@ -135,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\System.Windows.Controls.Layout.Toolkit.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.Theming.RainierPurple.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.Theming.Toolkit.zip" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

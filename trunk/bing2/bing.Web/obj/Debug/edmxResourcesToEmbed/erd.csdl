@@ -254,34 +254,57 @@
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
       <Parameter Name="parameter2" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="SelectAnimal" ReturnType="Collection(dbsqlModel.SelectAnimal_Result)">
+    <FunctionImport Name="LoginFunction" ReturnType="Collection(dbsqlModel.LoginFunction_Result)">
+      <Parameter Name="parameter1" Mode="In" Type="String" />
+      <Parameter Name="parameter2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HartaCampanii" ReturnType="Collection(dbsqlModel.HartaCampanii_Result)" />
+    <FunctionImport Name="StiriProcedure" ReturnType="Collection(dbsqlModel.StiriProcedure_Result)" />
+    <EntitySet Name="Stiris" EntityType="dbsqlModel.Stiri" />
+    <FunctionImport Name="HistoryPadure" ReturnType="Collection(dbsqlModel.HistoryPadure_Result)" />
+    <FunctionImport Name="ProceduraRealJudet" ReturnType="Collection(dbsqlModel.ProceduraRealJudet_Result)">
+      <Parameter Name="parameter1" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Upgrades" EntityType="dbsqlModel.Upgrade" />
+    <FunctionImport Name="ProcedureUpgrades" ReturnType="Collection(dbsqlModel.ProcedureUpgrades_Result)">
+      <Parameter Name="parameter1" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Achievements" EntityType="dbsqlModel.Achievement" />
+    <EntitySet Name="Challenges" EntityType="dbsqlModel.Challenge" />
+    <FunctionImport Name="getAchievement" ReturnType="Collection(dbsqlModel.getAchievement_Result)">
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="getAnimalStats" ReturnType="Collection(dbsqlModel.getAnimalStats_Result)">
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
       <Parameter Name="parameter2" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="LoginFunction" ReturnType="Collection(dbsqlModel.LoginFunction_Result)">
-      <Parameter Name="parameter1" Mode="In" Type="String" />
-      <Parameter Name="parameter2" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="getAchievement" ReturnType="Collection(dbsqlModel.getAchievement_Result)">
-      <Parameter Name="parameter1" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <EntitySet Name="Challenges" EntityType="dbsqlModel.Challenge" />
     <FunctionImport Name="getChallenges" ReturnType="Collection(dbsqlModel.getChallenges_Result)">
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPlantHistory" ReturnType="Collection(dbsqlModel.getPlantHistory_Result)">
+      <Parameter Name="parameter1" Mode="In" Type="Int32" />
+      <Parameter Name="parameter2" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="getPlants" ReturnType="Collection(dbsqlModel.getPlants_Result)">
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
     </FunctionImport>
-    <AssociationSet Name="FK_Istoric_Plante_Deces_Usr" Association="dbsqlModel.FK_Istoric_Plante_Deces_Usr">
-      <End Role="Usr" EntitySet="Usrs" />
-      <End Role="Istoric_Plante_Deces" EntitySet="Istoric_Plante_Deces" />
-    </AssociationSet>
-    <FunctionImport Name="getPlantHistory" ReturnType="Collection(dbsqlModel.getPlantHistory_Result)">
+    <FunctionImport Name="SelectAnimal" ReturnType="Collection(dbsqlModel.SelectAnimal_Result)">
       <Parameter Name="parameter1" Mode="In" Type="Int32" />
-      <Parameter Name="parameter2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TryScor" />
+    <FunctionImport Name="updateAchievements">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+      <Parameter Name="hunger" Mode="In" Type="Int32" />
+      <Parameter Name="education" Mode="In" Type="Int32" />
+      <Parameter Name="equality" Mode="In" Type="Int32" />
+      <Parameter Name="mortality" Mode="In" Type="Int32" />
+      <Parameter Name="maternalHealth" Mode="In" Type="Int32" />
+      <Parameter Name="disease" Mode="In" Type="Int32" />
+      <Parameter Name="environment" Mode="In" Type="Int32" />
+      <Parameter Name="partnership" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updateChallenge">
+      <Parameter Name="parameter1" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <EntityType Name="Animale">
@@ -422,8 +445,7 @@
     <NavigationProperty Name="Padure" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Padure" FromRole="Istoric_Plante_Deces" ToRole="Padure" />
     <NavigationProperty Name="Plante" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Plante" FromRole="Istoric_Plante_Deces" ToRole="Plante" />
     <Property Type="Int32" Name="FK_User" Nullable="false" />
-    <NavigationProperty Name="Usr" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Istoric_Plante_Deces" ToRole="Usr" />
-    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Istoric_Plante_Tranzact">
     <Key>
@@ -673,7 +695,6 @@
     <NavigationProperty Name="ComentariiDonatiis" Relationship="dbsqlModel.FK_User" FromRole="Usr" ToRole="ComentariiDonatii" />
     <NavigationProperty Name="Donatiis" Relationship="dbsqlModel.FK_Donatii_Usr" FromRole="Usr" ToRole="Donatii" />
     <NavigationProperty Name="StatisticaPerAnimals" Relationship="dbsqlModel.FK_StatisticaPerAnimal_FK_Usr" FromRole="Usr" ToRole="StatisticaPerAnimal" />
-    <NavigationProperty Name="Istoric_Plante_Deces" Relationship="dbsqlModel.FK_Istoric_Plante_Deces_Usr" FromRole="Usr" ToRole="Istoric_Plante_Deces" />
   </EntityType>
   <EntityType Name="IstoricAnimalPadureForUserX">
     <Key>
@@ -1190,6 +1211,8 @@
     <NavigationProperty Name="ComentariiReals" Relationship="dbsqlModel.FK_ComentariiReal_Real" FromRole="Real" ToRole="ComentariiReal" />
     <NavigationProperty Name="Ocol_Silvic" Relationship="dbsqlModel.FK_Real_Ocol_Silvic" FromRole="Real" ToRole="Ocol_Silvic" />
     <NavigationProperty Name="Donatiis" Relationship="dbsqlModel.FK_Donatii_Real" FromRole="Real" ToRole="Donatii" />
+    <Property Type="String" Name="Latitudine" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Longitudine" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_ComentariiReal_Real">
     <End Type="dbsqlModel.Real" Role="Real" Multiplicity="1" />
@@ -1544,9 +1567,145 @@
     <Property Type="Int32" Name="FK_Usr" Nullable="false" />
     <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <ComplexType Name="SelectAnimal_Result">
-    <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
-    <Property Type="Boolean" Name="IsFromPadure" Nullable="true" />
+  <ComplexType Name="LoginFunction_Result">
+    <Property Type="String" Name="Usr" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nume" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Prenume" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Rank" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Scor" Nullable="false" />
+    <Property Type="String" Name="Poza" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="BaniDonati" Nullable="false" Precision="10" />
+    <Property Type="Int16" Name="NrDonatii" Nullable="false" />
+    <Property Type="String" Name="Regiunenume" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Pass" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="HartaCampanii_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NumeCampanie" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NumeZona" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="PctLocatie" Nullable="false" />
+    <Property Type="Byte" Name="NivelProblema" Nullable="false" />
+    <Property Type="String" Name="Latitudine" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitudine" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="StiriProcedure_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Stire" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="Data" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Titlu" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <EntityType Name="Stiri">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Stire" />
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="Titlu" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Stire" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Data" Nullable="false" />
+    <Property Type="String" Name="Titlu" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="HistoryPadure_Result">
+    <Property Type="String" Name="Nume" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ProceduraRealJudet_Result">
+    <Property Type="String" Name="Nume" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Expr1" Nullable="false" MaxLength="20" />
+    <Property Type="Byte" Name="RezervatiiNaturale" Nullable="false" />
+    <Property Type="Double" Name="ProcentPadure" Nullable="false" />
+    <Property Type="Int32" Name="NrHidrocentrale" Nullable="false" />
+    <Property Type="Byte" Name="NrOrase" Nullable="false" />
+    <Property Type="Int32" Name="NrTermocentrale" Nullable="true" />
+    <Property Type="Int32" Name="IndustriaPrelucrativa" Nullable="true" />
+    <Property Type="Int32" Name="IndustriaExtractiva" Nullable="true" />
+    <Property Type="Byte" Name="ParcuriNationale" Nullable="true" />
+    <Property Type="Double" Name="CalitateAer" Nullable="true" />
+    <Property Type="Double" Name="PoluareSol" Nullable="true" />
+    <Property Type="Double" Name="Precipitatii" Nullable="false" />
+    <Property Type="Double" Name="Temperatura" Nullable="false" />
+    <Property Type="String" Name="Clima" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="NrJudete" Nullable="false" />
+    <Property Type="Byte" Name="ID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Upgrade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FK_user" Nullable="false" />
+    <Property Type="Boolean" Name="Profits" />
+    <Property Type="Boolean" Name="Tree" />
+    <Property Type="Boolean" Name="Power" />
+    <Property Type="Boolean" Name="Bear" />
+    <Property Type="Boolean" Name="WindMill" />
+    <Property Type="Boolean" Name="SaveForest" />
+    <Property Type="Boolean" Name="TakeAction" />
+    <Property Type="Boolean" Name="AntiBugs" />
+    <Property Type="Boolean" Name="Flood" />
+    <Property Type="Boolean" Name="Buy" />
+    <Property Type="Boolean" Name="H20" />
+    <Property Type="Boolean" Name="Eco" />
+    <Property Type="Boolean" Name="Plants" />
+    <Property Type="Boolean" Name="House" />
+    <Property Type="Boolean" Name="Earth" />
+  </EntityType>
+  <ComplexType Name="ProcedureUpgrades_Result">
+    <Property Type="Boolean" Name="Profits" Nullable="true" />
+    <Property Type="Boolean" Name="Tree" Nullable="true" />
+    <Property Type="Boolean" Name="Power" Nullable="true" />
+    <Property Type="Boolean" Name="Bear" Nullable="true" />
+    <Property Type="Boolean" Name="WindMill" Nullable="true" />
+    <Property Type="Boolean" Name="TakeAction" Nullable="true" />
+    <Property Type="Boolean" Name="SaveForest" Nullable="true" />
+    <Property Type="Boolean" Name="AntiBugs" Nullable="true" />
+    <Property Type="Boolean" Name="H20" Nullable="true" />
+    <Property Type="Boolean" Name="Flood" Nullable="true" />
+    <Property Type="Boolean" Name="Buy" Nullable="true" />
+    <Property Type="Boolean" Name="Eco" Nullable="true" />
+    <Property Type="Boolean" Name="Plants" Nullable="true" />
+    <Property Type="Boolean" Name="House" Nullable="true" />
+    <Property Type="Boolean" Name="Earth" Nullable="true" />
+    <Property Type="Int32" Name="FK_user" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Achievement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Byte" Name="Hunger" />
+    <Property Type="Byte" Name="Education" />
+    <Property Type="Byte" Name="Equality" />
+    <Property Type="Byte" Name="Mortality" />
+    <Property Type="Byte" Name="Maternal_health" />
+    <Property Type="Byte" Name="Disease" />
+    <Property Type="Byte" Name="Environment" />
+    <Property Type="Byte" Name="Partnership" />
+    <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FK_User" />
+  </EntityType>
+  <EntityType Name="Challenge">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nume" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Descriere" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Imagine1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isCompleted" />
+    <Property Type="Int32" Name="FK_User" />
+  </EntityType>
+  <ComplexType Name="getAchievement_Result">
+    <Property Type="Byte" Name="Expr1" Nullable="true" />
+    <Property Type="Byte" Name="Expr2" Nullable="true" />
+    <Property Type="Byte" Name="Expr3" Nullable="true" />
+    <Property Type="Byte" Name="Expr4" Nullable="true" />
+    <Property Type="Byte" Name="Expr5" Nullable="true" />
+    <Property Type="Byte" Name="Expr6" Nullable="true" />
+    <Property Type="Byte" Name="Expr7" Nullable="true" />
+    <Property Type="Byte" Name="Expr8" Nullable="true" />
+    <Property Type="Int32" Name="Expr9" Nullable="false" />
   </ComplexType>
   <ComplexType Name="getAnimalStats_Result">
     <Property Type="Byte" Name="Expr1" Nullable="false" />
@@ -1574,63 +1733,13 @@
     <Property Type="DateTime" Name="DataVanatSfarsit" Nullable="false" Precision="16" />
     <Property Type="String" Name="Expr2" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <ComplexType Name="LoginFunction_Result">
-    <Property Type="String" Name="Usr" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="Nume" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="Prenume" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="Rank" Nullable="false" MaxLength="20" />
-    <Property Type="Double" Name="Scor" Nullable="false" />
-    <Property Type="String" Name="Poza" Nullable="true" MaxLength="50" />
-    <Property Type="Decimal" Name="BaniDonati" Nullable="false" Precision="10" />
-    <Property Type="Int16" Name="NrDonatii" Nullable="false" />
-    <Property Type="String" Name="Regiunenume" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="Pass" Nullable="false" MaxLength="20" />
-  </ComplexType>
-  <ComplexType Name="getAchievement_Result">
-    <Property Type="Byte" Name="Expr1" Nullable="true" />
-    <Property Type="Byte" Name="Expr2" Nullable="true" />
-    <Property Type="Byte" Name="Expr3" Nullable="true" />
-    <Property Type="Byte" Name="Expr4" Nullable="true" />
-    <Property Type="Byte" Name="Expr5" Nullable="true" />
-    <Property Type="Byte" Name="Expr6" Nullable="true" />
-    <Property Type="Byte" Name="Expr7" Nullable="true" />
-    <Property Type="Byte" Name="Expr8" Nullable="true" />
-    <Property Type="Int32" Name="Expr9" Nullable="false" />
-  </ComplexType>
-  <EntityType Name="Challenge">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Nume" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Type="String" Name="Descriere" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Imagine1" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="isCompleted" />
-    <Property Type="Int32" Name="FK_User" />
-  </EntityType>
   <ComplexType Name="getChallenges_Result">
-    <Property Type="String" Name="Nume" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Nume" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Descriere" Nullable="true" />
     <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
     <Property Type="Boolean" Name="isCompleted" Nullable="true" />
     <Property Type="Int32" Name="Expr1" Nullable="false" />
   </ComplexType>
-  <ComplexType Name="getPlants_Result">
-    <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
-    <Property Type="Boolean" Name="isFromPadure" Nullable="true" />
-  </ComplexType>
-  <Association Name="FK_Istoric_Plante_Deces_Usr">
-    <End Type="dbsqlModel.Usr" Role="Usr" Multiplicity="1" />
-    <End Type="dbsqlModel.Istoric_Plante_Deces" Role="Istoric_Plante_Deces" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usr">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Istoric_Plante_Deces">
-        <PropertyRef Name="FK_User" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <ComplexType Name="getPlantHistory_Result">
     <Property Type="String" Name="Descriere" Nullable="true" />
     <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
@@ -1644,5 +1753,13 @@
     <Property Type="Boolean" Name="Trasnite" Nullable="false" />
     <Property Type="Int16" Name="Numar" Nullable="false" />
     <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="getPlants_Result">
+    <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="isFromPadure" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SelectAnimal_Result">
+    <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsFromPadure" Nullable="true" />
   </ComplexType>
 </Schema>

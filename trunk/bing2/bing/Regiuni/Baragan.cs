@@ -12,21 +12,54 @@ using Microsoft.Maps.MapControl;
 using System.Windows.Threading;
 using bing;
 using System.Windows.Media.Imaging;
+using System.Collections.Generic;
 
 namespace Regiuni
 {
     public class Baragan
     {
-        private static MapPolygon MPMoldovaRegiune4;
+        bool i = false;
         Map map = new Map();
         private static Image img;
         Canvas can = new Canvas();
         DispatcherTimer dt;
-
-        private static double grade = 0;
+        Canvas md;
+        MapLayers mapl;
+        Map m;
+        List<bing.ServiceReference1.ProceduraRealJudet_Result> lista;
         private PlaneProjection p = new PlaneProjection();
-        public Baragan(Map m, Canvas c)
+        private static double grade = 0;
+        int reg1lista;
+        int reg2lista;
+        int reg3lista;
+        int reg4lista;
+        public Baragan(Map m, Canvas c, Canvas md, MapLayers mapl, List<bing.ServiceReference1.ProceduraRealJudet_Result> lista, bool login)
         {
+            i = login;
+            this.md = md;
+            this.m = m;
+            this.mapl = mapl;
+            this.lista = lista;
+            for (int j = 0; j < lista.Count; j++)
+            {
+                if (lista[j].ID == 10)
+                {
+                    reg1lista = j;
+                }
+                if (lista[j].ID == 11)
+                {
+                    reg2lista = j;
+                }
+                if (lista[j].ID == 12)
+                {
+                    reg3lista = j;
+                }
+                if (lista[j].ID == 13)
+                {
+                    reg4lista = j;
+                }
+            }
+            dt = new DispatcherTimer();
             MPBaraganRegiune1 = new MapPolygon();
             MPBaraganRegiune2 = new MapPolygon();
             MPBaraganRegiune3 = new MapPolygon();
@@ -53,22 +86,62 @@ namespace Regiuni
 
         void MPBaraganRegiune4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 13, m, can));
+            }
         }
 
         void MPBaraganRegiune3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 12, m, can));
+            }
         }
 
         void MPBaraganRegiune2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 11, m, can));
+            }
         }
 
         void MPBaraganRegiune1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Intoarce();
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 10, m, can));
+            }
         }
         void dt_Tick(object sender, EventArgs e)
         {
@@ -93,17 +166,19 @@ namespace Regiuni
                 img.Width = can.Width;
                 img.Height = can.Height;
                 img.Stretch = Stretch.Fill;
-                img.Source = new BitmapImage(new Uri("Game/cupod.jpg", UriKind.Relative));
+                img.Source = new BitmapImage(new Uri("Game/testcupod.jpg", UriKind.Relative));
 
 
 
 
                 #endregion
+
                 can.Children.Add(img);
                 Canvas.SetLeft(img, 0);
                 //adaug strop
-              //  pesteHarta pp = new pesteHarta(can,p,img,men);
-              //  can = pp.Intoarce();
+                pesteHarta pp = new pesteHarta(can, p, img, md, mapl, m);
+                pp.AdaugCampie();
+                can = pp.Intoarce();
             }
             p.RotationY = grade;
             p.CenterOfRotationY = 0.5;
@@ -685,40 +760,52 @@ namespace Regiuni
         #region Evenimente
         void MPBaraganRegiune1_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg1lista].Clima, lista[reg1lista].Temperatura.ToString(), lista[reg1lista].Precipitatii.ToString(),44.2,28);
+     
             MPBaraganRegiune1.StrokeThickness = 3;
         }
         void MPBaraganRegiune1_MouseLeave(object sender, MouseEventArgs e)
         {
             MPBaraganRegiune1.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
 
        
         void MPBaraganRegiune2_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg2lista].Clima, lista[reg2lista].Temperatura.ToString(), lista[reg2lista].Precipitatii.ToString(),45,27);
+     
             MPBaraganRegiune2.StrokeThickness = 3;
         }
         void MPBaraganRegiune2_MouseLeave(object sender, MouseEventArgs e)
         {
             MPBaraganRegiune2.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
 
    
         void MPBaraganRegiune3_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg3lista].Clima, lista[reg3lista].Temperatura.ToString(), lista[reg3lista].Precipitatii.ToString(),45,25);
+     
             MPBaraganRegiune3.StrokeThickness = 3;
         }
         void MPBaraganRegiune3_MouseLeave(object sender, MouseEventArgs e)
         {
+            mapl.RemoveinfoCanvas();
             MPBaraganRegiune3.StrokeThickness = 0;
         }
 
         void MPBaraganRegiune4_MouseLeave(object sender, MouseEventArgs e)
         {
+            mapl.RemoveinfoCanvas();
             MPBaraganRegiune4.StrokeThickness = 0;
         }
 
         void MPBaraganRegiune4_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg4lista].Clima, lista[reg4lista].Temperatura.ToString(), lista[reg4lista].Precipitatii.ToString(), 44.5, 25.5);
+          
             MPBaraganRegiune4.StrokeThickness = 3;
         }
         #endregion

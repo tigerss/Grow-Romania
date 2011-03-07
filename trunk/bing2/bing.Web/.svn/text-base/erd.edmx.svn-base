@@ -1423,6 +1423,10 @@
           <Parameter Name="Numar" Type="smallint" Mode="In" />
           <Parameter Name="IDStergere" Type="int" Mode="In" />
         </Function>
+        <Function Name="Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parameter1" Type="char" Mode="In" />
+          <Parameter Name="parameter2" Type="char" Mode="In" />
+        </Function>
         <Function Name="ProceduraDeces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parameter1" Type="int" Mode="In" />
           <Parameter Name="parameter2" Type="int" Mode="In" />
@@ -1715,6 +1719,10 @@
           <FunctionImport Name="StatisticaAimal" ReturnType="Collection(dbsqlModel.StatisticaAimal_Result)">
             <Parameter Name="parameter1" Mode="In" Type="Int32" />
             <Parameter Name="parameter2" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LoginFunction" ReturnType="Collection(dbsqlModel.LoginFunction_Result)">
+            <Parameter Name="parameter1" Mode="In" Type="String" />
+            <Parameter Name="parameter2" Mode="In" Type="String" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="Animale">
@@ -2971,6 +2979,18 @@
           <Property Type="Int32" Name="FK_Usr" Nullable="false" />
           <Property Type="String" Name="Imagine1" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="LoginFunction_Result">
+          <Property Type="String" Name="Usr" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nume" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Prenume" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Rank" Nullable="false" MaxLength="20" />
+          <Property Type="Double" Name="Scor" Nullable="false" />
+          <Property Type="String" Name="Poza" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="BaniDonati" Nullable="false" Precision="10" />
+          <Property Type="Int16" Name="NrDonatii" Nullable="false" />
+          <Property Type="String" Name="Regiunenume" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Pass" Nullable="false" MaxLength="20" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3585,6 +3605,22 @@
                 <ScalarProperty Name="Nume" ColumnName="Nume" />
                 <ScalarProperty Name="FK_Usr" ColumnName="FK_Usr" />
                 <ScalarProperty Name="Imagine1" ColumnName="Imagine1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LoginFunction" FunctionName="dbsqlModel.Store.Login">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbsqlModel.LoginFunction_Result">
+                <ScalarProperty Name="Usr" ColumnName="Usr" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Scor" ColumnName="Scor" />
+                <ScalarProperty Name="Poza" ColumnName="Poza" />
+                <ScalarProperty Name="BaniDonati" ColumnName="BaniDonati" />
+                <ScalarProperty Name="NrDonatii" ColumnName="NrDonatii" />
+                <ScalarProperty Name="Regiunenume" ColumnName="Regiunenume" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

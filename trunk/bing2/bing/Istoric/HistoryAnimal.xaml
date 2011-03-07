@@ -5,27 +5,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
       xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"      
-    d:DesignHeight="415" d:DesignWidth="718">
-   <Grid x:Name="LayoutRoot" Background="White" Height="388" Width="718">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="385*" />
-            <RowDefinition Height="3*" />
-        </Grid.RowDefinitions>
-        <sdk:DataGrid AutoGenerateColumns="False" Height="532" AlternatingRowBackground="Black" RowBackground="Black" x:Name="dataGrid1" HeadersVisibility="None" Background="Black"  Width="718" Margin="-38,-14,-38,-130" Grid.RowSpan="2">
-            <sdk:DataGrid.Columns >
-                <sdk:DataGridTemplateColumn  Width="763">
-                    <sdk:DataGridTemplateColumn.CellTemplate >
-                       <DataTemplate >
+    d:DesignHeight="415" d:DesignWidth="718" Background="Black">
+   <Canvas x:Name="LayoutRoot" Background="Black" Height="408" Width="718">
+
+        <ScrollViewer Width="718" Height="411" Background="Black"  BorderThickness="0" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource ScrollViewerStyle1}"  VerticalScrollBarVisibility="Visible" Canvas.Top="0" Canvas.Left="0" >
+        <sdk:DataGrid AutoGenerateColumns="False" Height="405" AlternatingRowBackground="Black" RowBackground="Black" x:Name="dataGrid1" HeadersVisibility="None" Background="Black" Width="700" SelectionChanged="dataGrid1_SelectionChanged"  HorizontalScrollBarVisibility="Disabled">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTemplateColumn Width="718">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
                             <Grid Height="38">
-                                <TextBlock  Foreground="White"  FontStyle="Normal" Text="{Binding Text}" FontSize="16" Margin="2,12,-2,-12"></TextBlock>
-                                <Line X1="0" X2="763" Y1="48" Y2="48" Stretch="Fill" Width="763" Stroke="White" StrokeThickness="1" Margin="0,36,0,0"></Line>
+                                <TextBlock Foreground="White" TextWrapping="Wrap" Width="718" FontStyle="Normal" Text="{Binding Text}" FontSize="16" Margin="8"></TextBlock>
+                         
                             </Grid>
                         </DataTemplate>
-                        
                     </sdk:DataGridTemplateColumn.CellTemplate>
                 </sdk:DataGridTemplateColumn>
             </sdk:DataGrid.Columns>
-            
         </sdk:DataGrid>
-       </Grid>
+        </ScrollViewer>
+    </Canvas>
 </UserControl>

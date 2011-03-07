@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 40
-/svn/proba1/!svn/ver/81/trunk/bing2/bing
+/svn/proba1/!svn/ver/76/trunk/bing2/bing
 END
 DonatieDetalii.xaml
 K 25
@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 60
 /svn/proba1/!svn/ver/62/trunk/bing2/bing/DonatieDetalii.xaml
 END
-AddCommentControl.xaml.cs
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/svn/proba1/!svn/ver/62/trunk/bing2/bing/AddCommentControl.xaml.cs
-END
 App.xaml
 K 25
 svn:wc:ra_dav:version-url
 V 48
 /svn/proba1/!svn/ver/8/trunk/bing2/bing/App.xaml
+END
+AddCommentControl.xaml.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/proba1/!svn/ver/62/trunk/bing2/bing/AddCommentControl.xaml.cs
 END
 campanii.xaml
 K 25
@@ -37,7 +37,7 @@ MainPage.xaml.cs
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/svn/proba1/!svn/ver/78/trunk/bing2/bing/MainPage.xaml.cs
+/svn/proba1/!svn/ver/82/trunk/bing2/bing/MainPage.xaml.cs
 END
 Donatie.xaml.cs
 K 25
@@ -93,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 53
 /svn/proba1/!svn/ver/72/trunk/bing2/bing/stat.xaml.cs
 END
-HHEffect.cs
-K 25
-svn:wc:ra_dav:version-url
-V 52
-/svn/proba1/!svn/ver/72/trunk/bing2/bing/HHEffect.cs
-END
 HH.ps
 K 25
 svn:wc:ra_dav:version-url
 V 45
 /svn/proba1/!svn/ver/8/trunk/bing2/bing/HH.ps
+END
+HHEffect.cs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/proba1/!svn/ver/72/trunk/bing2/bing/HHEffect.cs
 END
 MainPage.xaml
 K 25
@@ -165,23 +165,35 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/proba1/!svn/ver/20/trunk/bing2/bing/bing.csproj.user
 END
+PaginaUser.xaml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/proba1/!svn/ver/84/trunk/bing2/bing/PaginaUser.xaml
+END
 FotografiiCampanii.xaml.cs
 K 25
 svn:wc:ra_dav:version-url
 V 67
 /svn/proba1/!svn/ver/49/trunk/bing2/bing/FotografiiCampanii.xaml.cs
 END
-ServiceReferences.ClientConfig
+PaginaUser.xaml.cs
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/proba1/!svn/ver/81/trunk/bing2/bing/ServiceReferences.ClientConfig
+V 59
+/svn/proba1/!svn/ver/84/trunk/bing2/bing/PaginaUser.xaml.cs
 END
 History.xaml.cs
 K 25
 svn:wc:ra_dav:version-url
 V 56
 /svn/proba1/!svn/ver/79/trunk/bing2/bing/History.xaml.cs
+END
+ServiceReferences.ClientConfig
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/proba1/!svn/ver/81/trunk/bing2/bing/ServiceReferences.ClientConfig
 END
 Comentariu.xaml
 K 25

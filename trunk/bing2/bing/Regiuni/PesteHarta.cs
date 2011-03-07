@@ -12,11 +12,18 @@ using Forme;
 using System.Windows.Threading;
 using System.Windows.Media.Imaging;
 using bing.Forme;
+using Microsoft.Maps.MapControl;
+using Regiuni;
+using System.Collections.Generic;
+using System.ServiceModel;
+using bing.ServiceReference1;
 
 namespace bing
 {
     public class pesteHarta
     {
+        BasicHttpBinding bind = new BasicHttpBinding();
+        EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
         Path Padure;//regiunea padurii
         Path Campie;//regiunea campiei
         Path mijloc;
@@ -29,14 +36,55 @@ namespace bing
         PlaneProjection p;
         Image img;
         Canvas md;//canasu din
-       
-        public pesteHarta(Canvas can, PlaneProjection p,Image img, Canvas md)
+      public static PaginaUser Rember;
+        MapLayers mapLayer;
+        Map map;
+        List<HistoryPadure_Result> lista = new List<HistoryPadure_Result>();
+        public pesteHarta(Canvas can, PlaneProjection p,Image img, Canvas md,MapLayers mapLayer,Map map)
         {
+            ServiceReference1.TranzactiiClient tc = new ServiceReference1.TranzactiiClient(bind, endpoint);
+            tc.GetHistoryPadureCompleted += new EventHandler<ServiceReference1.GetHistoryPadureCompletedEventArgs>(tc_GetHistoryPadureCompleted);
+            tc.GetHistoryPadureAsync();
            // retine = md;
-          
+            this.mapLayer = mapLayer;
+            this.map = map;
             this.md = md;
             this.p = p;
             this.img = img;
+
+            // Alex code
+            // Preia meniul de login din LoginForm
+            // La intoarcerea din padure sau campie Meniu Dreapta contine MeniuAnimal sau MeniuPlanta
+            // iar la intoarcere este necesar ca in Meniu Dreapta sa se afle PaginaUser
+
+            // Nu mai e nevoie de toata partea asta
+            /*UIElement[] array = LoginForm.getInstance().getMeniuDreapta();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].GetType() == typeof(PaginaUser))
+                {
+                    Rember = (PaginaUser)array[i];
+                    break;
+                }
+            }*/
+            
+            md.Children.Clear();
+
+            // Preia instanta PaginaUser
+            // Actualizeaza regiunea curenta
+            Rember = PaginaUser.getInstance();
+            Rember.updateCurrentRegion();
+
+            // Adaug manual PaginaUser, altfel apare un bug in care nu am nici un
+            // meniu in partea stanga
+            // Verific daca are deja parinte sa nu dea eroare
+            if (Rember.Parent == null)
+            {
+                this.md.Children.Add(Rember);
+            }
+            
+            // End of Alex code
+
             verifica = null;
             tmr.Interval = new TimeSpan(0, 0, 0, 0, 200);
             tmr.Tick += new EventHandler(tmr_Tick);
@@ -121,6 +169,8 @@ namespace bing
             mijloc.Data = j;
             canv.Children.Add(mijloc);
             #endregion
+
+            AdaugCampie();
         }
 
         public void AdaugCampie()
@@ -163,43 +213,6 @@ namespace bing
             Campie.MouseLeftButtonDown += new MouseButtonEventHandler(Campie_MouseLeftButtonDown);
         }
 
-        void Campie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            verifica = true;
-            tmr.Interval = new TimeSpan(0, 0, 0, 0, 20);
-        }
-
-        void Campie_MouseLeave(object sender, MouseEventArgs e)
-        {
-            md.Children.Clear();
-            ab.Stop();
-            ab.Children.Clear();
-
-            DoubleAnimation da = new DoubleAnimation() { From = 0.5, To = 0, Duration = TimeSpan.FromMilliseconds(1) };
-            Storyboard.SetTarget(da, Campie);
-            Storyboard.SetTargetProperty(da, new PropertyPath(Path.OpacityProperty));
-
-            ab.Children.Add(da);
-            Campie.Fill = new SolidColorBrush(Colors.Transparent);
-            ab.Begin();
-        }
-
-        void Campie_MouseEnter(object sender, MouseEventArgs e)
-        {
-            md.Children.Clear();
-            Animalule l = new Animalule();
-            Animalule.setRegion("Campie");
-            md.Children.Add(l);
-            l.Aranjeaza();
-            ab.Stop();
-            ab.Children.Clear();
-            DoubleAnimation da = new DoubleAnimation() { From = 0, To = 0.5, Duration = TimeSpan.FromMilliseconds(1) };
-            Storyboard.SetTarget(da, Campie);
-            Storyboard.SetTargetProperty(da, new PropertyPath(Path.OpacityProperty));
-            ab.Children.Add(da);
-            Campie.Fill = new SolidColorBrush(Color.FromArgb(0xFF, 0x65, 0x70, 0x74));
-            ab.Begin();
-        }
         void tmr_Tick(object sender, EventArgs e)
         {
             if (verifica == null)
@@ -229,16 +242,20 @@ namespace bing
                     if (Animalule.getRegion() == "Padure")
                     {
                         img.Source = new BitmapImage(new Uri("Game/munte.jpg", UriKind.Relative));
+                        AtributeGlobale.ZonaCurenta = AtributeGlobale.EnumZone.Forest;
                     }
                     else
                         if (Animalule.getRegion() == "Campie")
                         {
-                            img.Source = new BitmapImage(new Uri("Game/campie.jpg",UriKind.Relative));
-                        }
+                            img.Source = new BitmapImage(new Uri("Game/campie.jpg", UriKind.Relative));
+                            AtributeGlobale.ZonaCurenta = AtributeGlobale.EnumZone.Fields;
+                        } 
                     img.Projection = planeproj;
-
-                    Regiuni.Vizualizare pad = new Regiuni.Vizualizare(canv, md);
+                   // Regiuni.Padure pad = new Regiuni.Padure(canv,md);
                     
+                  // pad.Peste();
+                    Regiuni.Vizualizare pad = new Regiuni.Vizualizare(canv, md,lista);
+
                     pad.Peste();
                 }
                 p.RotationY = grade;
@@ -247,13 +264,61 @@ namespace bing
             }
         }
         Storyboard ab = new Storyboard();
-        void Padure_MouseLeave(object sender, MouseEventArgs e)
+        void Campie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            verifica = true;
+            tmr.Interval = new TimeSpan(0, 0, 0, 0, 20);
+        }
+        void Campie_MouseLeave(object sender, MouseEventArgs e)
+        {
+            AtributeGlobale.ZonaCurenta = AtributeGlobale.EnumZone.NoZoneSelected;
             md.Children.Clear();
-            //md.Children.Add();
+            md.Children.Add(Rember);
             ab.Stop();
             ab.Children.Clear();
-           
+
+            DoubleAnimation da = new DoubleAnimation() { From = 0.5, To = 0, Duration = TimeSpan.FromMilliseconds(1) };
+            Storyboard.SetTarget(da, Campie);
+            Storyboard.SetTargetProperty(da, new PropertyPath(Path.OpacityProperty));
+
+            ab.Children.Add(da);
+            Campie.Fill = new SolidColorBrush(Colors.Transparent);
+            ab.Begin();
+        }
+        void Campie_MouseEnter(object sender, MouseEventArgs e)
+        {
+            md.Children.Clear();
+            Animalule l = new Animalule();
+            Animalule.setRegion("Campie");
+            AtributeGlobale.ZonaCurenta = AtributeGlobale.EnumZone.Fields;
+            md.Children.Add(l);
+            l.Aranjeaza(lista);
+            ab.Stop();
+            ab.Children.Clear();
+            DoubleAnimation da = new DoubleAnimation() { From = 0, To = 0.5, Duration = TimeSpan.FromMilliseconds(1) };
+            Storyboard.SetTarget(da, Campie);
+            Storyboard.SetTargetProperty(da, new PropertyPath(Path.OpacityProperty));
+            ab.Children.Add(da);
+            Campie.Fill = new SolidColorBrush(Color.FromArgb(0xFF, 0x65, 0x70, 0x74));
+            ab.Begin();
+        }
+        void tc_GetHistoryPadureCompleted(object sender, ServiceReference1.GetHistoryPadureCompletedEventArgs e)
+        {
+            
+            foreach (var c in e.Result)
+            {
+                lista.Add(c);
+            }
+          
+        }
+        void Padure_MouseLeave(object sender, MouseEventArgs e)
+        {
+            AtributeGlobale.ZonaCurenta = AtributeGlobale.EnumZone.NoZoneSelected;
+            md.Children.Clear();
+            md.Children.Add(Rember);
+            ab.Stop();
+            ab.Children.Clear();
+          
             DoubleAnimation da = new DoubleAnimation() { From = 0.5, To = 0, Duration = TimeSpan.FromMilliseconds(1) };
             Storyboard.SetTarget(da, Padure);
             Storyboard.SetTargetProperty(da, new PropertyPath(Path.OpacityProperty));
@@ -262,14 +327,15 @@ namespace bing
             Padure.Fill = new SolidColorBrush(Colors.Transparent);
             ab.Begin();
         }
-
         void Padure_MouseEnter(object sender, MouseEventArgs e)
         {
             md.Children.Clear();
             Animalule l = new Animalule();
             Animalule.setRegion("Padure");
+            AtributeGlobale.ZonaCurenta = AtributeGlobale.EnumZone.Forest;
             md.Children.Add(l);
-            l.Aranjeaza();
+        
+            l.Aranjeaza(lista);
             ab.Stop();
             ab.Children.Clear();
             DoubleAnimation da = new DoubleAnimation() { From = 0, To = 0.5, Duration = TimeSpan.FromMilliseconds(1) };
@@ -285,8 +351,6 @@ namespace bing
         {
             verifica = true;
              tmr.Interval = new TimeSpan(0, 0, 0, 0,20);
-            //practic aici trebuie sa iti chemi serviceul
-            //si trimiti la MeniuPicks Lista de parametrii
            /* #region BackgroundCanvas
             Canvas background = new Canvas()
             {
@@ -306,6 +370,11 @@ namespace bing
         public Canvas Intoarce()
         {
             return canv;
+        }
+
+        public static void setGrade(double degrees)
+        {
+            grade = degrees;
         }
     }
 }

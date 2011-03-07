@@ -14,14 +14,17 @@ using bing;
 using System.ComponentModel;
 using System.Collections.Generic;
 using Regiuni;
+using Microsoft.Maps.MapControl;
+using System.Windows.Browser;
+using System.Windows.Controls.Primitives;
 
 namespace Forme
 {
-    public class LoginForm
+    public class LoginForm  
     {
         BasicHttpBinding bind = new BasicHttpBinding();
         EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
-        // private DispatcherTimer t;
+       // private DispatcherTimer t;
         private PasswordBox Passordbox;
         private TextBox username;
         private Canvas butonlogin;
@@ -36,20 +39,44 @@ namespace Forme
         private string GetPass = "";
         private Canvas Meniu;
         private Canvas canvas2;
+        
         //double timp = 0;
-        BusyIndicator bIndic = new BusyIndicator();
-        MapLayers mymap;
-        public LoginForm(Canvas can, Canvas canvas2, MapLayers map)
-        {
-            mymap = map;
+         BusyIndicator bIndic=new BusyIndicator();
+         MapLayers mymap;
+         Map mapMare;
+
+        // Alex
+        /// <summary>
+        /// Login status for the user
+        /// </summary>
+        private bool loggedIn;
+
+        /// <summary>
+        /// O copie pentru PaginaUser
+        /// !Nu mai e nevoie
+        /// </summary>
+        private UIElement[] MeniuDreaptaCopy;
+
+        /// <summary>
+        /// Current instance for global use
+        /// </summary>
+        private static LoginForm instance;
+        // End Alex
+
+        public LoginForm(Canvas can,Canvas canvas2,MapLayers map,Map mapmare)
+         {
+            Uri httpAddress = new Uri("http://localhost:11201/Tranzactii.svc");
+           // System.ServiceModel.ServiceHost
+             mymap = map;
+             this.mapMare = mapmare;
             bIndic.Width = 152;
             bIndic.Height = 56;
-            this.canvas2 = canvas2;
+            this.canvas2=canvas2;
             canvas2.Children.Add(bIndic);
-            bIndic.IsBusy = false;
-            Canvas.SetLeft(bIndic, canvas2.Width / 2 - 78);
+            bIndic.IsBusy=false;
+            Canvas.SetLeft(bIndic, canvas2.Width / 2 -78);
             Canvas.SetTop(bIndic, canvas2.Height / 2);
-
+                
             #region Info+Welcome user
             ControlCuColturiRotunde iws = new ControlCuColturiRotunde(can, 205, 200, 0, 10, true, 1);
             iws.AddTextBlockMultiple(new TextBlock()
@@ -127,10 +154,28 @@ namespace Forme
             ConnectwithFacebook.AddTextBlock(new TextBlock(), "Connect with Facebook", 15, 30, 5, "#FF5a748d");
             Connect = ConnectwithFacebook.intoarce();
             Connect.Cursor = Cursors.Hand;
+            Connect.MouseLeftButtonDown += new MouseButtonEventHandler(Connect_MouseLeftButtonDown);
             #endregion
             Line l1 = new Line() { X1 = 0, X2 = 205, Y1 = 440, Y2 = 440, Stroke = new SolidColorBrush(Colors.White), StrokeThickness = 1 };
             can.Children.Add(l1);
             Meniu = can;
+            loggedIn = false;
+
+            // Alex
+            // Store the current instance for global use
+            instance = this;
+        }
+
+        void Connect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+          if (HtmlPage.IsPopupWindowAllowed)
+       {
+           HtmlPopupWindowOptions options = new                   
+          HtmlPopupWindowOptions();
+              options.Resizeable = true;
+              HtmlPage.PopupWindow(new Uri("http://localhost:11201/Facebook2.aspx"), null, options);
+      }
+
         }
 
         public bing.MainPage MainPage
@@ -159,8 +204,8 @@ namespace Forme
         {
             //Meniu.Visibility = Visibility.Collapsed;
             Register register;
-            if (AtributeGlobale.UserIsRegistering == false)
-                register = new Register(Meniu, "Moldova");
+            if(AtributeGlobale.UserIsRegistering==false)
+                register= new Register(Meniu,"Moldova");
         }
         void howtobutton_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -198,34 +243,75 @@ namespace Forme
         {
             canvasforbutton.Colors("#FF7a7d04", "#FFe2e810", new Point(0.5, 1), new Point(0.5, 0), null);
         }
-
+        
         void butonlogin_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             GetPass = Passordbox.Password;
             string login = username.Text;
             bIndic.IsBusy = true;
             Meniu.Children.Clear();
-            bing.ServiceReference1.TranzactiiClient c = new bing.ServiceReference1.TranzactiiClient(bind, endpoint);
+            bing.ServiceReference1.TranzactiiClient c = new bing.ServiceReference1.TranzactiiClient(bind,endpoint);
             c.LoginUserCompleted += new EventHandler<bing.ServiceReference1.LoginUserCompletedEventArgs>(c_LoginUserCompleted);
-
+         
             c.LoginUserAsync("test", "testtest");
         }
 
         void c_LoginUserCompleted(object sender, bing.ServiceReference1.LoginUserCompletedEventArgs e)
         {
-            List<bing.ServiceReference1.LoginFunction_Result> lista = new List<bing.ServiceReference1.LoginFunction_Result>();
+            List<bing.ServiceReference1.LoginFunction_Result> lista= new List<bing.ServiceReference1.LoginFunction_Result>();
             foreach (var c in e.Result)
-                lista.Add(c);
-            Meniu.Children.Add(new PaginaUser(bIndic, lista, mymap,canvas2));
+                  lista.Add(c);
+            Meniu.Children.Add(new PaginaUser(bIndic,lista,mymap,mapMare,canvas2));
+
+            // Alex
+            // Nu mai e nevoie de partea asta
+            // Copiez elementele meniului pentru a putea afisa meniul mai tarziu
+            // Meniul este stricat cand intra in campie sau padure si e nevoie de copie
+
+            //MeniuDreaptaCopy = new UIElement[Meniu.Children.Count];
+            //Meniu.Children.CopyTo(MeniuDreaptaCopy, 0);
+
+            // User logat
+            loggedIn = true;
+
+            // End Alex
         }
+
         void pb_PasswordChanged(object sender, RoutedEventArgs e)
         {
 
-
+           
         }
 
+        /// <summary>
+        /// Returneaza PaginaUser
+        /// !!!Nu mai e nevoie
+        /// </summary>
+        /// <returns></returns>
+        public UIElement[] getMeniuDreapta()
+        {
+            return MeniuDreaptaCopy;
+        }
 
+        /// <summary>
+        /// Return the current instance for global use
+        /// </summary>
+        /// <returns></returns>
+        public static LoginForm getInstance()
+        {
+            if (instance == null)
+                return null;
+            return instance;
+        }
 
-
+        /// <summary>
+        /// Return if the user has logged in
+        /// </summary>
+        /// <returns></returns>
+        public bool userLoggedIn()
+        {
+            return loggedIn;
+        }
+       
     }
 }

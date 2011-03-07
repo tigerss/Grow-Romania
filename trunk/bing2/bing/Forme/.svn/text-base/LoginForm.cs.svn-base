@@ -11,11 +11,16 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.ServiceModel;
 using bing;
+using System.ComponentModel;
+using System.Collections.Generic;
+using Regiuni;
 
 namespace Forme
 {
-    public class LoginForm
+    public class LoginForm  
     {
+        BasicHttpBinding bind = new BasicHttpBinding();
+        EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
        // private DispatcherTimer t;
         private PasswordBox Passordbox;
         private TextBox username;
@@ -30,12 +35,21 @@ namespace Forme
         private Canvas Connect;
         private string GetPass = "";
         private Canvas Meniu;
-
+        private Canvas canvas2;
         //double timp = 0;
-
-        public LoginForm(Canvas can)
-        {
-
+         BusyIndicator bIndic=new BusyIndicator();
+         MapLayers mymap;
+        public LoginForm(Canvas can,Canvas canvas2,MapLayers map)
+         {
+             mymap = map;
+            bIndic.Width = 152;
+            bIndic.Height = 56;
+            this.canvas2=canvas2;
+            canvas2.Children.Add(bIndic);
+            bIndic.IsBusy=false;
+            Canvas.SetLeft(bIndic, canvas2.Width / 2 -78);
+            Canvas.SetTop(bIndic, canvas2.Height / 2);
+                
             #region Info+Welcome user
             ControlCuColturiRotunde iws = new ControlCuColturiRotunde(can, 205, 200, 0, 10, true, 1);
             iws.AddTextBlockMultiple(new TextBlock()
@@ -184,16 +198,34 @@ namespace Forme
         {
             canvasforbutton.Colors("#FF7a7d04", "#FFe2e810", new Point(0.5, 1), new Point(0.5, 0), null);
         }
+        
         void butonlogin_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+            GetPass = Passordbox.Password;
+            string login = username.Text;
+            bIndic.IsBusy = true;
+            Meniu.Children.Clear();
+            bing.ServiceReference1.TranzactiiClient c = new bing.ServiceReference1.TranzactiiClient(bind,endpoint);
+            c.LoginUserCompleted += new EventHandler<bing.ServiceReference1.LoginUserCompletedEventArgs>(c_LoginUserCompleted);
+         
+            c.LoginUserAsync("test", "testtest");
+        }
+
+        void c_LoginUserCompleted(object sender, bing.ServiceReference1.LoginUserCompletedEventArgs e)
+        {
+            List<bing.ServiceReference1.LoginFunction_Result> lista= new List<bing.ServiceReference1.LoginFunction_Result>();
+            foreach (var c in e.Result)
+                  lista.Add(c);
+            Meniu.Children.Add(new PaginaUser(bIndic,lista,mymap));
         }
         void pb_PasswordChanged(object sender, RoutedEventArgs e)
         {
 
-            GetPass = Passordbox.Password;
+           
         }
 
 
+
+       
     }
 }

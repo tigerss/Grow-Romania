@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 68
 /svn/proba1/!svn/ver/64/trunk/bing2/bing/DesignImages/buttons_11.png
 END
-buttons_03.png
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/svn/proba1/!svn/ver/64/trunk/bing2/bing/DesignImages/buttons_03.png
-END
 1.png
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/proba1/!svn/ver/8/trunk/bing2/bing/DesignImages/1.png
+END
+buttons_03.png
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/proba1/!svn/ver/64/trunk/bing2/bing/DesignImages/buttons_03.png
 END
 lupa.png
 K 25

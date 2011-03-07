@@ -31,6 +31,8 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <LinkedServerProject>
     </LinkedServerProject>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
   </PropertyGroup>
   <!-- This property group is only here to support building this project using the 
        MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
@@ -81,6 +83,8 @@
     <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Theming.RainierPurple, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Theming.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Xml" />
@@ -100,6 +104,10 @@
     <Compile Include="CampaniiPage.xaml.cs">
       <DependentUpon>CampaniiPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Challenges.xaml.cs">
+      <DependentUpon>Challenges.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CNavigationSystem.cs" />
     <Compile Include="Comentariu.xaml.cs">
       <DependentUpon>Comentariu.xaml</DependentUpon>
     </Compile>
@@ -117,17 +125,14 @@
     </Compile>
     <Compile Include="Forme\ADDPoza.cs" />
     <Compile Include="Forme\ADDPozaCuBorder.cs" />
-    <Compile Include="Forme\AnimaleTot.xaml.cs">
-      <DependentUpon>AnimaleTot.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forme\Animalule.xaml.cs">
       <DependentUpon>Animalule.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forme\ApasaDonatii.cs" />
     <Compile Include="Forme\ButonAnimat.cs" />
+    <Compile Include="Forme\CBackButton.cs" />
     <Compile Include="Forme\ControlCuColturi.cs" />
     <Compile Include="Forme\ControlCucolturiRotunde.cs" />
-    <Compile Include="Forme\MeniuPlanta.cs" />
+    <Compile Include="Forme\ApasaDonatii.cs" />
     <Compile Include="Forme\Linie.cs" />
     <Compile Include="Forme\LoadingBar.xaml.cs">
       <DependentUpon>LoadingBar.xaml</DependentUpon>
@@ -135,6 +140,7 @@
     <Compile Include="Forme\LoginForm.cs" />
     <Compile Include="Forme\MeniuAnimal.cs" />
     <Compile Include="Forme\MeniuPicks.cs" />
+    <Compile Include="Forme\MeniuPlanta.cs" />
     <Compile Include="Forme\MeniuSus.cs" />
     <Compile Include="Forme\Meniu_Donations.xaml.cs">
       <DependentUpon>Meniu_Donations.xaml</DependentUpon>
@@ -151,24 +157,27 @@
     <Compile Include="History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Istoric\HistoryAnimal.xaml.cs">
       <DependentUpon>HistoryAnimal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListaReal.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PaginaUser.xaml.cs">
       <DependentUpon>PaginaUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regiuni\Padure.cs" />
+    <Compile Include="Regiuni\PesteHarta.cs" />
     <Compile Include="Regiuni\Banat.cs" />
     <Compile Include="Regiuni\Baragan.cs" />
     <Compile Include="Regiuni\MapLayers.cs" />
     <Compile Include="Regiuni\Moldova.cs" />
-    <Compile Include="Regiuni\Padure.cs" />
-    <Compile Include="Regiuni\PesteHarta.cs" />
-    <Compile Include="Regiuni\PestePoza.cs" />
     <Compile Include="Regiuni\Transilvania.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regiuni\Vizualizare.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -190,17 +199,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SilverlightControl1.xaml.cs">
-      <DependentUpon>SilverlightControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Istoric\stat.xaml.cs">
       <DependentUpon>stat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SilverlightControl2.xaml.cs">
+      <DependentUpon>SilverlightControl2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stire.cs" />
+    <Compile Include="StiriDesign.xaml.cs">
+      <DependentUpon>StiriDesign.xaml</DependentUpon>
     </Compile>
     <Compile Include="UnitTranzactii.xaml.cs">
       <DependentUpon>UnitTranzactii.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Challenges.xaml.cs">
-      <DependentUpon>Challenges.xaml</DependentUpon>
+    <Compile Include="Upgrades.xaml.cs">
+      <DependentUpon>Upgrades.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +234,10 @@
       <SubType>Designer</SubType>
     </Page>
     <!--<<<<<<< .mine-->
+    <Page Include="Challenges.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Comentariu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -239,26 +256,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExtendedDescription.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <!-->>>>>>> .r46-->
-    <Page Include="Forme\AnimaleTot.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Forme\Animalule.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forme\LoadingBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Forme\Meniu_Donations.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
+    <!-->>>>>>> .r46-->
     <Page Include="Forme\RankingSystem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -271,6 +284,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Istoric\HistoryAnimal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -280,10 +297,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PaginaUser.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SilverlightControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -291,24 +304,64 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SilverlightControl2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StiriDesign.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UnitTranzactii.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Challenges.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Upgrades.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Upgrades\Analyst-Upgradesluat.jpg" />
+    <Resource Include="Upgrades\667.jpg" />
+    <Resource Include="Upgrades\granary.jpg" />
+    <Resource Include="Upgrades\medal-icon.png" />
+    <Resource Include="Upgrades\agronomy_icon.jpg" />
+    <Resource Include="Upgrades\gg.jpg" />
+    <Resource Include="Upgrades\h20.jpg" />
+    <Resource Include="Upgrades\grocery.jpg" />
+    <Resource Include="Upgrades\flood.jpg" />
+    <Resource Include="Upgrades\bug.jpg" />
+    <Resource Include="Upgrades\forest2.jpg" />
+    <Resource Include="Upgrades\Petition_icon2.jpg" />
+    <Resource Include="Upgrades\bear.jpg" />
+    <Resource Include="Upgrades\wind.jpg" />
+    <Resource Include="Upgrades\forest.jpg" />
+    <Resource Include="Upgrades\power.jpg" />
+    <Resource Include="Upgrades\Analyst-Upgrades.jpg" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\ServiceReference1\bing.ServiceReference1.HartaCampanii_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\bing.ServiceReference1.HistoryPadure_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\bing.ServiceReference1.LoginFunction_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\bing.ServiceReference1.ProceduraDeces_Result1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\bing.ServiceReference1.ProceduraRealJudet_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\bing.ServiceReference1.ProcedureUpgrades_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\bing.ServiceReference1.StatisticaAimal_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\bing.ServiceReference1.StiriProcedure_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\bing.ServiceReference1.Tranzactie.datasource">
@@ -411,11 +464,15 @@
     <None Include="Service References\testService\Service14.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Resource Include="Forme\ar.JPG" />
+    <Resource Include="Forme\deer.jpg" />
     <Resource Include="HH.ps" />
     <None Include="Properties\AppManifest.xml" />
     <Resource Include="DesignImages\1.png" />
     <Resource Include="DesignImages\avion.png" />
-    <Resource Include="Game\arici.JPG" />
+    <Resource Include="Game\arici.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Game\bear.jpg" />
     <Resource Include="Game\boar.jpg" />
     <Resource Include="Game\deer.jpg" />
@@ -459,6 +516,7 @@
     <Resource Include="DesignImages\hover_09.png" />
     <Resource Include="DesignImages\hover_11.png" />
     <Resource Include="Game\munti2.jpg" />
+    <Resource Include="Forme\arici.JPG" />
     <Resource Include="Game\munte.jpg" />
     <None Include="Service References\ServiceReference3\ServiceDeces.disco" />
     <None Include="Service References\ServiceReference3\configuration91.svcinfo" />
@@ -475,9 +533,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Resource Include="DesignImages\tree.png" />
-    <Resource Include="DesignImages\paw.jpg" />
-    <Resource Include="Game\campie.jpg" />
     <Resource Include="Game\Achievements\disease.png" />
     <Resource Include="Game\Achievements\education.png" />
     <Resource Include="Game\Achievements\environment.png" />
@@ -487,16 +542,21 @@
     <Resource Include="Game\Achievements\mortality.png" />
     <Resource Include="Game\Achievements\partnership.png" />
     <Resource Include="Game\Challenges\question.jpg" />
-    <Resource Include="Game\Plante\molid.JPG" />
     <Resource Include="Game\Plante\anin_negru.jpg" />
     <Resource Include="Game\Plante\brad.JPG" />
     <Resource Include="Game\Plante\fag.jpg" />
+    <Resource Include="Game\Plante\gorun.jpg" />
     <Resource Include="Game\Plante\larice.jpg" />
     <Resource Include="Game\Plante\mesteacan.jpg" />
+    <Resource Include="Game\Plante\molid.JPG" />
     <Resource Include="Game\Plante\pinul.jpg" />
     <Resource Include="Game\Plante\stejar_pedunculat.jpg" />
-    <Resource Include="Game\Plante\gorun.jpg" />
+    <Resource Include="DesignImages\tree.png" />
+    <Resource Include="DesignImages\paw.jpg" />
     <Resource Include="DesignImages\x.png" />
+    <Resource Include="Game\campie.jpg" />
+    <Resource Include="DesignImages\logo.png" />
+    <Resource Include="Game\Challenges\animalGrowerLv1.png" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>

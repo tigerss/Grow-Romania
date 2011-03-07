@@ -16,6 +16,8 @@ using bing.ServiceReference1;
 using bing;
 using System.Windows.Media.Imaging;
 using System.ServiceModel;
+using Regiuni;
+using Microsoft.Maps.MapControl;
 
 
 namespace bing_maps.Forme
@@ -26,6 +28,7 @@ namespace bing_maps.Forme
     /// </summary>
     public class MyTranzactii
     {
+        Image imgInchide = new Image();
         BasicHttpBinding bind = new BasicHttpBinding();
         EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
         #region ButoaneSearch
@@ -59,6 +62,7 @@ namespace bing_maps.Forme
         ComboBox cbSortPQ = new ComboBox();
         ComboBox cbSortAD = new ComboBox();
         TextBox numar = new TextBox();
+        BusyIndicator b = new BusyIndicator();
         TextBox pret = new TextBox();
         private Canvas adaugaoferta;
         #endregion
@@ -74,13 +78,24 @@ namespace bing_maps.Forme
         Canvas Sell;
         ControlCuColturiRotunde CSell;
         #endregion
+        List<UIElement> listaElemente = new List<UIElement>();
+        private static int VerifyBuying = 0;//e folosit si la selling
         public MyTranzactii(Canvas canvas2)
         {
+            AtributeGlobale.i++;
+            
             Search = new Canvas();
             CreateOffer = new Canvas();
             this.canvas2 = canvas2;
             canvas2.Children.Clear();
-
+            //b e busyIndicator
+            b.Width = 152;
+            b.Height = 56;
+            b.IsBusy = false;
+   
+            canvas2.Children.Add(b);
+            Canvas.SetLeft(b, canvas2.Width/2-152);
+            Canvas.SetTop(b, canvas2.Height / 2);
             ControlCuColturiRotunde sus = new ControlCuColturiRotunde(canvas2, canvas2.Width - 2, 60, 0, 0, false, 1);
             sus.Colors("#FF252525", "#FF000000", new Point(0.5, 1), new Point(0.5, 0), 1);
             sus.Border(new CornerRadius(0, 0, 0, 0), "#FF696c6e", new Thickness(1), canvas2.Width, 62);
@@ -115,21 +130,28 @@ namespace bing_maps.Forme
             try
             {
                 bing.ServiceReference1.TranzactiiClient tc = new bing.ServiceReference1.TranzactiiClient(bind,endpoint);
-                tc.GetToateAnimaleleAsync();
-                tc.GetToateAnimaleleCompleted += new EventHandler<bing.ServiceReference1.GetToateAnimaleleCompletedEventArgs>(tc_GetToateAnimaleleCompleted);
-                Toateanimalele = new List<string>();
+                //tc.GetToateAnimaleleAsync();
+                //tc.GetToateAnimaleleCompleted += new EventHandler<bing.ServiceReference1.GetToateAnimaleleCompletedEventArgs>(tc_GetToateAnimaleleCompleted);
+                   Toateanimalele = new List<string>();
                 tc.gettranzAsync("test");
                 tc.gettranzCompleted += new EventHandler<bing.ServiceReference1.gettranzCompletedEventArgs>(tc_gettranzCompleted);
-                tc.GetTranzactieCumparareAsync();
-                tc.GetTranzactieCumparareCompleted += new EventHandler<GetTranzactieCumparareCompletedEventArgs>(tc_GetTranzactieCumparareCompleted);
-                tc.GetToateFirmeleAsync();
-                tc.GetToateFirmeleCompleted += new EventHandler<GetToateFirmeleCompletedEventArgs>(tc_GetToateFirmeleCompleted);
-            }
+                         }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
             #endregion
+            #region Imagine
+            imgInchide.Source = new BitmapImage(new Uri("DesignImages/x.png", UriKind.Relative));
+            imgInchide.Height = 25;
+            imgInchide.Width = 25;
+            imgInchide.MouseEnter += new MouseEventHandler(imgInchide_MouseEnter);
+            imgInchide.MouseLeave += new MouseEventHandler(imgInchide_MouseLeave);
+            imgInchide.MouseLeftButtonDown += new MouseButtonEventHandler(imgInchide_MouseLeftButtonDown);
+            canvas2.Children.Add(imgInchide);
+            Canvas.SetTop(imgInchide, 12);
+            Canvas.SetLeft(imgInchide, 728);
+#endregion
             adaugaSearch();
             CRCuvant.Ascunde();
             CRRegiune.Ascunde();
@@ -141,6 +163,43 @@ namespace bing_maps.Forme
             lupa.Visibility = Visibility.Collapsed;
             Canvas.SetLeft(lupa, 10);
             Canvas.SetTop(lupa, 80);
+        }
+
+        void imgInchide_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            canvas2.Children.Clear();
+     
+            PlaneProjection p = (PlaneProjection)canvas2.Projection;
+            if (p != null)
+            {
+                if (p.RotationY ==0)
+                {
+                    if (AtributeGlobale.i == 1)
+                    {
+                        p.RotationY = 180;
+                        AtributeGlobale.i = 0;
+                    }
+                    else { p.RotationY = 0; AtributeGlobale.i--; }
+                    canvas2.Projection = p;
+                }
+            }
+            foreach (UIElement c in listaElemente)
+            {
+                canvas2.Children.Add(c);
+            }
+            AtributeGlobale.tranz = false;
+        }
+
+        void imgInchide_MouseLeave(object sender, MouseEventArgs e)
+        {
+            imgInchide.Width = 25;
+            imgInchide.Height = 25;
+        }
+
+        void imgInchide_MouseEnter(object sender, MouseEventArgs e)
+        {
+            imgInchide.Width = 30;
+            imgInchide.Height = 30;
         }
 
         public bing.UnitTranzactii UnitTranzactii
@@ -159,60 +218,10 @@ namespace bing_maps.Forme
             ltranzactie = new List<Tranzactie>(30);
             foreach (var v in e.Result)
                 ltranzactie.Add(v);
-        
-        }
-        void tc_GetToateFirmeleCompleted(object sender, GetToateFirmeleCompletedEventArgs e)
-        {
-          
-            foreach (var v in e.Result)
-                ListaFrime.Add(v);
-         
-        }
-
-        void tc_GetToateAnimaleleCompleted(object sender, bing.ServiceReference1.GetToateAnimaleleCompletedEventArgs e)
-        {
-            foreach (var gv in e.Result)
-                Toateanimalele.Add(gv);
             
         }
-        void tc_GetTranzactieCumparareCompleted(object sender, GetTranzactieCumparareCompletedEventArgs e)
-        {
-            lTranzactiecumparare = new List<TranzactiiCumparare>(30);
-           
-           
-            foreach (var v in e.Result)
-                lTranzactiecumparare.Add(v);
-            int n = 0;
-            int m = 0;
-            for (int j = 0; j < lTranzactiecumparare.Count;j++ )
-            {
-                if (lTranzactiecumparare[j].Cumparare.Substring(0,1) == "1") n++;
-                else m++;
-            }
-             sells = new Selling[n];
-             Buying = new Selling[m];
-             n = m = 0;
-            for (int i = 0; i < lTranzactiecumparare.Count; i++)
-            {
-                if (lTranzactiecumparare[i].Cumparare.Substring(0, 1) == "1")
-                {
-                    sells[n] = new Selling(lTranzactiecumparare[i].Nume + "\nFrom: " + lTranzactiecumparare[i].Regiune + " By: " + lTranzactiecumparare[i].Usr,
-                                          lTranzactiecumparare[i].Numar.ToString(), lTranzactiecumparare[i].Pret.ToString(),
-                                          lTranzactiecumparare[i].Usr, lTranzactiecumparare[i].Regiune,lTranzactiecumparare[i].ID,lTranzactiecumparare[i].Nume);
-                    n++;
-                }
-                else
-                {
-                    Buying[m] = new Selling(lTranzactiecumparare[i].Nume + "\nFrom: " + lTranzactiecumparare[i].Regiune + " By: " + lTranzactiecumparare[i].Usr,
-                                      lTranzactiecumparare[i].Numar.ToString(), lTranzactiecumparare[i].Pret.ToString(),
-                                       lTranzactiecumparare[i].Usr, lTranzactiecumparare[i].Regiune, lTranzactiecumparare[i].ID,lTranzactiecumparare[i].Nume);
-                    m++;
-                }
-            }
-
-        
-            
-        }
+      
+       
         #endregion
         #region Apaspebutoanele de sus
         void adaugaSearch()
@@ -223,7 +232,7 @@ namespace bing_maps.Forme
             CRCuvant.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
             CRCuvant.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 288, 40);
             CRCuvant.Colturi(10, 10, new Rect(0, 0, 286, 38));
-            
+
             CRCuvant.AddTextBlock(new TextBlock(), "Keywords:", 15, 5, 10, null);
             CRCuvant.AddTextBox(KeyWords, "", 170, 30, 0, 15, "#FF000000", "#FF000000", "#FF581818", "#FFBE4141", null, true, 90, 5);
             #endregion Keywords
@@ -254,7 +263,7 @@ namespace bing_maps.Forme
 
             #endregion Regiune
             #region Buton Search
-             search = new ControlCuColturiRotunde(canvas2, 126, 39, 580, 73, false, 1);
+            search = new ControlCuColturiRotunde(canvas2, 126, 39, 580, 73, false, 1);
             search.Colors("#FF969a07", "#FF7a7d04", new Point(0.5, 1), new Point(0.5, 0), null);
             search.Border(new CornerRadius(10, 10, 10, 10), "#FF9fa13a", new Thickness(1), 128, 40);
             search.Colturi(10, 10, new Rect(0, 0, 126, 38));
@@ -264,14 +273,14 @@ namespace bing_maps.Forme
             Search.MouseLeftButtonDown += new MouseButtonEventHandler(Search_MouseLeftButtonDown);
             #endregion Buton Search
             #region SearchDAQA
-             lol = new ControlCuColturiRotunde(canvas2, 26, 29, 10, 130, false, 1);
+            lol = new ControlCuColturiRotunde(canvas2, 26, 29, 10, 130, false, 1);
             lol.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
             lol.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 28, 30);
             lol.Colturi(10, 10, new Rect(0, 0, 26, 28));
             chceck = lol.intoarce();
             chceck.MouseLeftButtonDown += new MouseButtonEventHandler(chceck_MouseLeftButtonDown);
 
-             CRQA = new ControlCuColturiRotunde(canvas2, 326, 39, 50, 123, false, 1);
+            CRQA = new ControlCuColturiRotunde(canvas2, 326, 39, 50, 123, false, 1);
             CRQA.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
             CRQA.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 328, 40);
             CRQA.Colturi(10, 10, new Rect(0, 0, 326, 38));
@@ -304,11 +313,34 @@ namespace bing_maps.Forme
             CRQA.AddDropDown(cbSortAD, "#FF000000", "#00000000", 15, 175, 7);
             #endregion
         }
-        void MyTrades_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        #region MyTrades
+        int VerifyHistory = 0;
+        //cand ajunge la 2 intra in IncarcaAnimale indiferent din firma sau animal
+        int Checked = 0;
+        void tc_GetToateFirmeleCompleted(object sender, GetToateFirmeleCompletedEventArgs e)
         {
-            System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 3,0));
+            Checked++;
+            foreach (var v in e.Result)
+                ListaFrime.Add(v);
+            if (Checked == 2)
+            {
+                IncarcaAnimale();
+            }
+        }
+        void tc_GetToateAnimaleleCompleted(object sender, bing.ServiceReference1.GetToateAnimaleleCompletedEventArgs e)
+        {
+            Checked++;
+            foreach (var gv in e.Result)
+                Toateanimalele.Add(gv);
+            if (Checked == 2)
+            {
+                IncarcaAnimale();
+            }
+        }
+        void IncarcaAnimale()
+        {
             lupa.Visibility = Visibility.Collapsed;
-           
+            
             CRCuvant.Ascunde();
             CRRegiune.Ascunde();
             CRQA.Ascunde();
@@ -328,207 +360,197 @@ namespace bing_maps.Forme
             mousepresstrades = true;
             mousepressbuy = mousepresssell = false;
 
-                try
+            try
+            {
+                if (adauga == true)
                 {
-                    if (adauga == true)
+                    #region Canvasu din Stanga
+
+
+                    CreateOffer.Background = new SolidColorBrush(Colors.Transparent);
+                    CreateOffer.Width = 200;
+                    CreateOffer.Height = 400;
+                    canvas2.Children.Add(CreateOffer);
+                    Canvas.SetLeft(CreateOffer, 15);
+                    Canvas.SetTop(CreateOffer, 100);
+                    TextBlock t = new TextBlock() { Text = "Create an offer", FontSize = 17, FontFamily = new FontFamily("Tahoma"), Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x7d, 0x91, 0x96)) };
+                    CreateOffer.Children.Add(t);
+                    Canvas.SetLeft(t, 5);
+                    Canvas.SetTop(t, 0);
+                    #endregion Canvasu din stanga
+                    #region SellBuy
+                    ControlCuColturiRotunde CRBuySell = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 40, false, 1);
+                    CRBuySell.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+                    CRBuySell.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+                    CRBuySell.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    CRBuySell.AddTextBlock(new TextBlock(), "I want to:", 15, 5, 10, null);
+
+
+                    ComboBoxItem cbiBuySell = new ComboBoxItem();
+                    cbiBuySell.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
+                    cbiBuySell.Content = "Buy";
+
+                    cbiBuySell.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
+                    cbBuySell.Width = 120;
+                    cbBuySell.Items.Add(cbiBuySell);
+                    cbiBuySell = new ComboBoxItem();
+                    cbiBuySell.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
+                    cbiBuySell.Content = "Sell";
+                    cbBuySell.Items.Add(cbiBuySell);
+
+                    cbBuySell.SelectedIndex = 0;
+                    cbBuySell.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
+
+                    CRBuySell.AddDropDown(cbBuySell, "#FF000000", "#00000000", 15, 85, 7);
+
+                    cbBuySell.MouseEnter += new MouseEventHandler(cb_MouseEnter);
+                    cbBuySell.MouseLeave += new MouseEventHandler(cb_MouseLeave);
+
+                    #endregion BuySell
+                    #region Type
+                    ControlCuColturiRotunde CRType = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 90, false, 1);
+                    CRType.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+                    CRType.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+                    CRType.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    CRType.AddTextBlock(new TextBlock(), "Type:", 15, 5, 10, null);
+
+
+
+
+                    ComboBoxItem cbiType = new ComboBoxItem();
+                    cbiType.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
+                    cbiType.Content = "Fauna";
+                    cbiType.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
+
+                    cbType.Items.Add(cbiType);
+
+                    cbiType = new ComboBoxItem();
+                    cbiType.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
+                    cbiType.Content = "Vegetation";
+
+                    cbType.Items.Add(cbiType);
+
+                    CRType.AddDropDown(cbType, "#FF000000", "#00000000", 15, 55, 7);
+                    cbType.Width = 150;
+                    cbType.SelectedIndex = 0;
+                    cbType.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
+                    cbType.MouseEnter += new MouseEventHandler(cbType_MouseEnter);
+                    cbType.MouseLeave += new MouseEventHandler(cbType_MouseLeave);
+                    #endregion Type
+                    #region Species
+                    ControlCuColturiRotunde CRSpecies = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 140, false, 1);
+                    CRSpecies.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+                    CRSpecies.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+                    CRSpecies.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    CRSpecies.AddTextBlock(new TextBlock(), "Species:", 15, 5, 10, null);
+
+                    //string[] ss = new string[] {"sorici","ursulet","cocolino","petrescu","kek","donici","motorga","guster","petarde","ursulet 2","jjj","rexona","for men" };
+                    ComboBoxItem cbiSpecies;
+                    for (int i = 0; i < Toateanimalele.Count; i++)
                     {
-                        #region Canvasu din Stanga
+                        cbiSpecies = new ComboBoxItem();
+                        cbiSpecies.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
+                        cbiSpecies.Content = Toateanimalele[i];
+                        cbiSpecies.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
 
-
-                        CreateOffer.Background = new SolidColorBrush(Colors.Transparent);
-                        CreateOffer.Width = 200;
-                        CreateOffer.Height = 400;
-                        canvas2.Children.Add(CreateOffer);
-                        Canvas.SetLeft(CreateOffer, 15);
-                        Canvas.SetTop(CreateOffer, 100);
-                        TextBlock t = new TextBlock() { Text = "Create an offer", FontSize = 17, FontFamily = new FontFamily("Tahoma"), Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x7d, 0x91, 0x96)) };
-                        CreateOffer.Children.Add(t);
-                        Canvas.SetLeft(t, 5);
-                        Canvas.SetTop(t, 0);
-                        #endregion Canvasu din stanga
-                        #region SellBuy
-                        ControlCuColturiRotunde CRBuySell = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 40, false, 1);
-                        CRBuySell.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
-                        CRBuySell.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
-                        CRBuySell.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        CRBuySell.AddTextBlock(new TextBlock(), "I want to:", 15, 5, 10, null);
-
-
-                        ComboBoxItem cbiBuySell = new ComboBoxItem();
-                        cbiBuySell.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
-                        cbiBuySell.Content = "Buy";
-
-                        cbiBuySell.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
-                        cbBuySell.Width = 120;
-                        cbBuySell.Items.Add(cbiBuySell);
-                        cbiBuySell = new ComboBoxItem();
-                        cbiBuySell.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
-                        cbiBuySell.Content = "Sell";
-                        cbBuySell.Items.Add(cbiBuySell);
-
-                        cbBuySell.SelectedIndex = 0;
-                        cbBuySell.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
-
-                        CRBuySell.AddDropDown(cbBuySell, "#FF000000", "#00000000", 15, 85, 7);
-
-                        cbBuySell.MouseEnter += new MouseEventHandler(cb_MouseEnter);
-                        cbBuySell.MouseLeave += new MouseEventHandler(cb_MouseLeave);
-
-                        #endregion BuySell
-                        #region Type
-                        ControlCuColturiRotunde CRType = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 90, false, 1);
-                        CRType.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
-                        CRType.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
-                        CRType.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        CRType.AddTextBlock(new TextBlock(), "Type:", 15, 5, 10, null);
-
-
-
-
-                        ComboBoxItem cbiType = new ComboBoxItem();
-                        cbiType.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
-                        cbiType.Content = "Fauna";
-                        cbiType.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
-
-                        cbType.Items.Add(cbiType);
-
-                        cbiType = new ComboBoxItem();
-                        cbiType.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
-                        cbiType.Content = "Vegetation";
-
-                        cbType.Items.Add(cbiType);
-
-                        CRType.AddDropDown(cbType, "#FF000000", "#00000000", 15, 55, 7);
-                        cbType.Width = 150;
-                        cbType.SelectedIndex = 0;
-                        cbType.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
-                        cbType.MouseEnter += new MouseEventHandler(cbType_MouseEnter);
-                        cbType.MouseLeave += new MouseEventHandler(cbType_MouseLeave);
-                        #endregion Type
-                        #region Species
-                        ControlCuColturiRotunde CRSpecies = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 140, false, 1);
-                        CRSpecies.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
-                        CRSpecies.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
-                        CRSpecies.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        CRSpecies.AddTextBlock(new TextBlock(), "Species:", 15, 5, 10, null);
-
-                        //string[] ss = new string[] {"sorici","ursulet","cocolino","petrescu","kek","donici","motorga","guster","petarde","ursulet 2","jjj","rexona","for men" };
-                        ComboBoxItem cbiSpecies;
-                        for (int i = 0; i < Toateanimalele.Count; i++)
-                        {
-                            cbiSpecies = new ComboBoxItem();
-                            cbiSpecies.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
-                            cbiSpecies.Content = Toateanimalele[i];
-                            cbiSpecies.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
-
-                            cbSpecies.Items.Add(cbiSpecies);
-                        }
-
-
-                        CRSpecies.AddDropDown(cbSpecies, "#FF000000", "#00000000", 15, 75, 7);
-                        cbSpecies.Width = 130;
-                        //   cbSpecies.SelectedIndex = 0;
-                        cbSpecies.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
-                        cbSpecies.MouseEnter += new MouseEventHandler(cbSpecies_MouseEnter);
-                        cbSpecies.MouseLeave += new MouseEventHandler(cbSpecies_MouseLeave);
-                        #endregion Species
-                        #region Quantity
-                        ControlCuColturiRotunde CRQuantity = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 190, false, 1);
-                        CRQuantity.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
-                        CRQuantity.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
-                        CRQuantity.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        CRQuantity.AddTextBlock(new TextBlock(), "Quantity:", 15, 5, 10, null);
-                        CRQuantity.AddTextBox(numar, "", 100, 30, 0, 15, "#FF000000", "#FF000000", "#FF581818", "#FFBE4141", null, true, 90, 5);
-                        #endregion Quantity
-                        #region Price
-                        ControlCuColturiRotunde CRPrice = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 240, false, 1);
-                        CRPrice.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
-                        CRPrice.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
-                        CRPrice.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        CRPrice.AddTextBlock(new TextBlock(), "Price:", 15, 5, 10, null);
-                        CRPrice.AddTextBox(pret, "", 110, 30, 0, 15, "#FF000000", "#FF000000", "#FF581818", "#FFBE4141", null, true, 50, 5);
-                        #endregion Price
-                        #region Shipping
-
-                        ControlCuColturiRotunde CRShipping = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 290, false, 1);
-                        CRShipping.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
-                        CRShipping.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
-                        CRShipping.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        CRShipping.AddTextBlock(new TextBlock(), "Shipping", 15, 5, 10, null);
-
-
-                        cbShipping.Width = 120;
-                        for (int i = 0; i < ListaFrime.Count; i++)
-                        {
-                            ComboBoxItem cbiShipping = new ComboBoxItem();
-                            cbiShipping.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
-                            cbiShipping.Content = ListaFrime[i];
-                            cbiShipping.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
-                            cbShipping.Items.Add(cbiShipping);
-
-                        }
-                        cbShipping.SelectedIndex = 0;
-                        cbShipping.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
-
-                        CRShipping.AddDropDown(cbShipping, "#FF000000", "#00000000", 15, 85, 7);
-
-                        cbShipping.MouseEnter += new MouseEventHandler(cbShipping_MouseEnter);
-                        cbShipping.MouseLeave += new MouseEventHandler(cbShipping_MouseLeave);
-                        #endregion Shipping
-                        #region Grid
-
-                        //DonationsDataGrid.Height = 420;
-                        //DonationsDataGrid.Width = 490;
-                        //DonationsDataGrid.Background = new SolidColorBrush(Colors.Black);
-                        //DonationsDataGrid.RowBackground = new SolidColorBrush(Colors.Black);
-                        //DonationsDataGrid.AlternatingRowBackground = new SolidColorBrush(Color.FromArgb(0xFF, 0x1a, 0x1c, 0x1e));
-                        //DonationsDataGrid.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
-                        //DonationsDataGrid.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
-
-                        //DonationsDataGrid.AutoGenerateColumns = false;
-
-                        //Customer[] c = new Customer[ltranzactie.Count];
-
-                        //for (int i = 0; i < ltranzactie.Count; i++)
-                        //{
-                        //    c[i] = new Customer("Traded " + ltranzactie[i].Numar + " " + ltranzactie[i].Nume + " with " + ltranzactie[i].Vanzator);
-                        //}
-                        //DonationsDataGrid.ItemsSource = c;
-                        //Binding b = new Binding("FirstName");
-                        //DataGridTextColumn tg = new DataGridTextColumn();
-                        //tg.Width = new DataGridLength(480);
-                        //tg.FontSize = 14;
-                        //tg.Foreground = new SolidColorBrush(Colors.White);
-                        //tg.Binding = b;
-
-                        //DonationsDataGrid.Columns.Add(tg);
-
-                        //canvas2.Children.Add(DonationsDataGrid);
-                        //Canvas.SetLeft(DonationsDataGrid, 250);
-                        //Canvas.SetTop(DonationsDataGrid, 80);
-
-                        #endregion Grid
-                        #region Buton
-                        ControlCuColturiRotunde ccr = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 340, false, 1);
-                        ccr.Colors("#FF969a07", "#FF7a7d04", new Point(0.5, 1), new Point(0.5, 0), null);
-                        ccr.Border(new CornerRadius(10, 10, 10, 10), "#FF9fa13a", new Thickness(1), 208, 40);
-                        ccr.Colturi(10, 10, new Rect(0, 0, 206, 38));
-                        ccr.AddTextBlock(new TextBlock(), "Post offer", 17, 70, 5, "#ffe0e1c0");
-                        ccr.Cursor = Cursors.Hand;
-                        adaugaoferta = ccr.intoarce();
-                        adaugaoferta.MouseLeftButtonDown += new MouseButtonEventHandler(adaugaoferta_MouseLeftButtonDown);
-                        #endregion
-                        adauga = false;
+                        cbSpecies.Items.Add(cbiSpecies);
                     }
-                    else
+
+
+                    CRSpecies.AddDropDown(cbSpecies, "#FF000000", "#00000000", 15, 75, 7);
+                    cbSpecies.Width = 130;
+                    //   cbSpecies.SelectedIndex = 0;
+                    cbSpecies.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
+                    cbSpecies.MouseEnter += new MouseEventHandler(cbSpecies_MouseEnter);
+                    cbSpecies.MouseLeave += new MouseEventHandler(cbSpecies_MouseLeave);
+                    #endregion Species
+                    #region Quantity
+                    ControlCuColturiRotunde CRQuantity = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 190, false, 1);
+                    CRQuantity.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+                    CRQuantity.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+                    CRQuantity.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    CRQuantity.AddTextBlock(new TextBlock(), "Quantity:", 15, 5, 10, null);
+                    CRQuantity.AddTextBox(numar, "", 100, 30, 0, 15, "#FF000000", "#FF000000", "#FF581818", "#FFBE4141", null, true, 90, 5);
+                    #endregion Quantity
+                    #region Price
+                    ControlCuColturiRotunde CRPrice = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 240, false, 1);
+                    CRPrice.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+                    CRPrice.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+                    CRPrice.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    CRPrice.AddTextBlock(new TextBlock(), "Price:", 15, 5, 10, null);
+                    CRPrice.AddTextBox(pret, "", 110, 30, 0, 15, "#FF000000", "#FF000000", "#FF581818", "#FFBE4141", null, true, 50, 5);
+                    #endregion Price
+                    #region Shipping
+
+                    ControlCuColturiRotunde CRShipping = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 290, false, 1);
+                    CRShipping.Colors("#FF465d6a", "#FF5c7084", new Point(0.5, 1), new Point(0.5, 0), null);
+                    CRShipping.Border(new CornerRadius(10, 9, 9, 9), "#FF88B4BB", new Thickness(1), 208, 40);
+                    CRShipping.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    CRShipping.AddTextBlock(new TextBlock(), "Shipping", 15, 5, 10, null);
+
+
+                    cbShipping.Width = 120;
+                    for (int i = 0; i < ListaFrime.Count; i++)
                     {
-                        canvas2.Children.Add(CreateOffer);
+                        ComboBoxItem cbiShipping = new ComboBoxItem();
+                        cbiShipping.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
+                        cbiShipping.Content = ListaFrime[i];
+                        cbiShipping.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
+                        cbShipping.Items.Add(cbiShipping);
+
                     }
+                    cbShipping.SelectedIndex = 0;
+                    cbShipping.Style = (Style)Application.Current.Resources["ComboBoxStyle1"];
+
+                    CRShipping.AddDropDown(cbShipping, "#FF000000", "#00000000", 15, 85, 7);
+
+                    cbShipping.MouseEnter += new MouseEventHandler(cbShipping_MouseEnter);
+                    cbShipping.MouseLeave += new MouseEventHandler(cbShipping_MouseLeave);
+                    #endregion Shipping
+                 
+                    #region Buton
+                    ControlCuColturiRotunde ccr = new ControlCuColturiRotunde(CreateOffer, 206, 39, 0, 340, false, 1);
+                    ccr.Colors("#FF969a07", "#FF7a7d04", new Point(0.5, 1), new Point(0.5, 0), null);
+                    ccr.Border(new CornerRadius(10, 10, 10, 10), "#FF9fa13a", new Thickness(1), 208, 40);
+                    ccr.Colturi(10, 10, new Rect(0, 0, 206, 38));
+                    ccr.AddTextBlock(new TextBlock(), "Post offer", 17, 70, 5, "#ffe0e1c0");
+                    ccr.Cursor = Cursors.Hand;
+                    adaugaoferta = ccr.intoarce();
+                    adaugaoferta.MouseLeftButtonDown += new MouseButtonEventHandler(adaugaoferta_MouseLeftButtonDown);
+                    #endregion
+                    adauga = false;
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    canvas2.Children.Add(CreateOffer);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            b.IsBusy = false;
+        }
+        void MyTrades_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (VerifyHistory == 0)
+            {
+                bing.ServiceReference1.TranzactiiClient tc = new bing.ServiceReference1.TranzactiiClient(bind, endpoint);
+                tc.GetToateAnimaleleAsync();
+                tc.GetToateAnimaleleCompleted += new EventHandler<bing.ServiceReference1.GetToateAnimaleleCompletedEventArgs>(tc_GetToateAnimaleleCompleted);
+                tc.GetToateFirmeleAsync();
+                tc.GetToateFirmeleCompleted += new EventHandler<GetToateFirmeleCompletedEventArgs>(tc_GetToateFirmeleCompleted);
+       
+                b.IsBusy = true;
+                VerifyHistory = 1;
+            }
+            else
+            {
+                b.IsBusy = true;
+                IncarcaAnimale();
+            }
               
           }
-        void Buy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        #endregion
+        #region Buying
+        void adaugaBuys()
         {
             lupa.Visibility = Visibility.Visible;
             canvas2.Children.Remove(sv);
@@ -548,24 +570,142 @@ namespace bing_maps.Forme
             CSell.AddTextBlock(new TextBlock(), "Sell", 23, 20, 10, "#FF959906");
             CSell.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 80, 60);
             Sell.Height = 59;
-            
-            
-            
-           #region BazaDeDate
-            sp = new StackPanel() {VerticalAlignment=VerticalAlignment.Top };
-            sv = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, Height=380, BorderThickness=new Thickness(0)};
+
+
+
+            #region BazaDeDate
+            sp = new StackPanel() { VerticalAlignment = VerticalAlignment.Top };
+            sv = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, Height = 380, BorderThickness = new Thickness(0) };
             sv.Content = sp;
             for (int i = 0; i < Buying.Length; i++)
             {
-                sp.Children.Add(new UnitTranzactii(Buying[i].numea, Buying[i].NumeRegiune, Buying[i].NumeUser.Trim(), "Airline", short.Parse(Buying[i].numar), float.Parse(Buying[i].price),Buying[i].ID,true));
+                sp.Children.Add(new UnitTranzactii(Buying[i].numea, Buying[i].NumeRegiune, Buying[i].NumeUser.Trim(), "Airline", short.Parse(Buying[i].numar), float.Parse(Buying[i].price), Buying[i].ID, true));
             }
             canvas2.Children.Add(sv);
             #endregion BazadeDate
-           
+
             Canvas.SetLeft(sv, 10);
             Canvas.SetTop(sv, 170);
             MyTrades.Height = 59;
+            b.IsBusy = false;
         }
+        void tc_GetTranzactieCumparareCompleted(object sender, GetTranzactieCumparareCompletedEventArgs e)
+        {
+            lTranzactiecumparare = new List<TranzactiiCumparare>(30);
+
+            foreach (var v in e.Result)
+                lTranzactiecumparare.Add(v);
+            int n = 0;
+            int m = 0;
+            for (int j = 0; j < lTranzactiecumparare.Count; j++)
+            {
+                if (lTranzactiecumparare[j].Cumparare.Substring(0, 1) == "1") n++;
+                else m++;
+            }
+            sells = new Selling[n];
+            Buying = new Selling[m];
+            n = m = 0;
+            for (int i = 0; i < lTranzactiecumparare.Count; i++)
+            {
+                if (lTranzactiecumparare[i].Cumparare.Substring(0, 1) == "1")
+                {
+                    sells[n] = new Selling(lTranzactiecumparare[i].Nume + "\nFrom: " + lTranzactiecumparare[i].Regiune + " By: " + lTranzactiecumparare[i].Usr,
+                                          lTranzactiecumparare[i].Numar.ToString(), lTranzactiecumparare[i].Pret.ToString(),
+                                          lTranzactiecumparare[i].Usr, lTranzactiecumparare[i].Regiune, lTranzactiecumparare[i].ID, lTranzactiecumparare[i].Nume);
+                    n++;
+                }
+                else
+                {
+                    Buying[m] = new Selling(lTranzactiecumparare[i].Nume + "\nFrom: " + lTranzactiecumparare[i].Regiune + " By: " + lTranzactiecumparare[i].Usr,
+                                      lTranzactiecumparare[i].Numar.ToString(), lTranzactiecumparare[i].Pret.ToString(),
+                                       lTranzactiecumparare[i].Usr, lTranzactiecumparare[i].Regiune, lTranzactiecumparare[i].ID, lTranzactiecumparare[i].Nume);
+                    m++;
+                }
+            }
+
+            adaugaBuys();
+            Selling();
+
+        }
+     
+        void Buy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (VerifyBuying == 0)
+            {
+
+                bing.ServiceReference1.TranzactiiClient tc = new bing.ServiceReference1.TranzactiiClient(bind, endpoint);
+                tc.GetTranzactieCumparareAsync();
+                tc.GetTranzactieCumparareCompleted += new EventHandler<GetTranzactieCumparareCompletedEventArgs>(tc_GetTranzactieCumparareCompleted);
+                b.IsBusy = true;
+                VerifyBuying = 1;
+            }
+            else
+            {
+                b.IsBusy = true;
+                adaugaBuys();
+            }
+        }
+        #endregion
+        #region Selling
+       
+        void Selling() 
+        {
+            lupa.Visibility = Visibility.Visible;
+            CRCuvant.Arata();
+            CRRegiune.Arata();
+            CRQA.Arata();
+            search.Arata();
+            lol.Arata();
+            #region Schimbari design
+            canvas2.Children.Remove(CreateOffer);
+            //    canvas2.Children.Remove(DonationsDataGrid);
+            canvas2.Children.Remove(sv);
+            mousepresssell = true;
+            mousepressbuy = mousepresstrades = false;
+            Trades.Children.Clear();
+            Trades.AddTextBlock(new TextBlock(), "My Trades", 23, 20, 10, "#FF959906");
+            Trades.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 160, 60);
+            MyTrades.Height = 59;
+            CBuy.Children.Clear();
+            CBuy.AddTextBlock(new TextBlock(), "Buy", 23, 20, 10, "#FF959906");
+            CBuy.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 80, 60);
+            Buy.Height = 59;
+            #endregion
+            #region BazaDeDate
+            sp = new StackPanel() { VerticalAlignment = VerticalAlignment.Top };
+            sv = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, Height = 380, BorderThickness = new Thickness(0) };
+            sv.Content = sp;
+            for (int i = 0; i < sells.Length; i++)
+            {
+                sp.Children.Add(new UnitTranzactii(sells[i].numea, sells[i].NumeRegiune, sells[i].NumeUser.Trim(), "Airline", short.Parse(sells[i].numar), float.Parse(sells[i].price), sells[i].ID, false));
+            }
+            canvas2.Children.Add(sv);
+            #endregion BazadeDate
+
+            Canvas.SetLeft(sv, 10);
+            Canvas.SetTop(sv, 170);
+            MyTrades.Height = 59;
+            b.IsBusy = false;
+        }
+        void Sell_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (VerifyBuying == 0)
+            {
+                bing.ServiceReference1.TranzactiiClient tc = new bing.ServiceReference1.TranzactiiClient(bind, endpoint);
+                tc.GetTranzactieCumparareAsync();
+                tc.GetTranzactieCumparareCompleted += new EventHandler<GetTranzactieCumparareCompletedEventArgs>(tc_GetTranzactieCumparareCompleted);
+                b.IsBusy = true;
+                VerifyBuying = 1;
+                       
+            }
+            else
+            {
+               
+                b.IsBusy = true;
+                Selling();
+            }
+        }
+        #endregion
         void chceck_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             check = true;
@@ -614,44 +754,7 @@ namespace bing_maps.Forme
 
             }
         }
-        void Sell_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            lupa.Visibility = Visibility.Visible;
-            CRCuvant.Arata();
-            CRRegiune.Arata();
-            CRQA.Arata();
-            search.Arata();
-            lol.Arata();
-            #region Schimbari design
-            canvas2.Children.Remove(CreateOffer);
-        //    canvas2.Children.Remove(DonationsDataGrid);
-            canvas2.Children.Remove(sv);
-            mousepresssell = true;
-            mousepressbuy = mousepresstrades = false;
-            Trades.Children.Clear();
-            Trades.AddTextBlock(new TextBlock(), "My Trades", 23, 20, 10, "#FF959906");
-            Trades.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 160, 60);
-            MyTrades.Height = 59;
-            CBuy.Children.Clear();
-            CBuy.AddTextBlock(new TextBlock(), "Buy", 23, 20, 10, "#FF959906");
-            CBuy.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 80, 60);
-            Buy.Height = 59;
-            #endregion
-             #region BazaDeDate
-            sp = new StackPanel() { VerticalAlignment = VerticalAlignment.Top };
-            sv = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, Height = 380, BorderThickness = new Thickness(0) };
-            sv.Content = sp;
-            for (int i = 0; i < sells.Length; i++)
-            {
-                sp.Children.Add(new UnitTranzactii(sells[i].numea, sells[i].NumeRegiune, sells[i].NumeUser.Trim(), "Airline", short.Parse(sells[i].numar), float.Parse(sells[i].price), sells[i].ID, false));
-            }
-            canvas2.Children.Add(sv);
-            #endregion BazadeDate
-            
-            Canvas.SetLeft(sv, 10);
-            Canvas.SetTop(sv, 170);
-            MyTrades.Height = 59;
-        }
+       
         #endregion
         #region Evenimente ComboBoxuri
         void cbShipping_MouseLeave(object sender, MouseEventArgs e)
@@ -687,7 +790,7 @@ namespace bing_maps.Forme
             cbBuySell.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x95, 0x99, 0x06));
         }
         #endregion
-        #region Evenimente  trades cbuy sell
+        #region Mouse enter/leave  trades cbuy sell
 
         void Sell_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -746,7 +849,7 @@ namespace bing_maps.Forme
         #endregion
         void adaugaoferta_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            TranzactiiClient tc = new TranzactiiClient();
+            TranzactiiClient tc = new TranzactiiClient(bind,endpoint);
             ComboBoxItem cSpecii = (ComboBoxItem)cbSpecies.SelectedItem;
             ComboBoxItem cBuySell = (ComboBoxItem)cbBuySell.SelectedItem;
             ComboBoxItem cFirma = (ComboBoxItem)cbShipping.SelectedItem;
@@ -759,11 +862,17 @@ namespace bing_maps.Forme
                 tc.AddTranzactieAsync("test", cSpecii.Content.ToString(), int.Parse(numar.Text), cFirma.Content.ToString(), int.Parse(pret.Text), "NULL", "1");
             }
             tc.AddTranzactieCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(tc_AddTranzactieCompleted);
-           
+            b.IsBusy = true;
         }
         void tc_AddTranzactieCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("au fost adaugate");
+            b.IsBusy = false;
+          
+        }
+       public void Back(List<UIElement> lista)
+       {
+           listaElemente = lista;
+
         }
     }
     public  class Customer

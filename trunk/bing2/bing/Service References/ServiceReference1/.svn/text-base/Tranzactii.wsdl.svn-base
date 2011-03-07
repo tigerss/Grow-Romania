@@ -10,6 +10,12 @@
       <xsd:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ITranzactii_LoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUser" />
+  </wsdl:message>
+  <wsdl:message name="ITranzactii_LoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserResponse" />
+  </wsdl:message>
   <wsdl:message name="ITranzactii_StatisticaAnimal_InputMessage">
     <wsdl:part name="parameters" element="tns:StatisticaAnimal" />
   </wsdl:message>
@@ -71,6 +77,10 @@
     <wsdl:part name="parameters" element="tns:CautaResponse" />
   </wsdl:message>
   <wsdl:portType name="ITranzactii">
+    <wsdl:operation name="LoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/LoginUser" message="tns:ITranzactii_LoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/LoginUserResponse" message="tns:ITranzactii_LoginUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="StatisticaAnimal">
       <wsdl:input wsaw:Action="http://tempuri.org/ITranzactii/StatisticaAnimal" message="tns:ITranzactii_StatisticaAnimal_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITranzactii/StatisticaAnimalResponse" message="tns:ITranzactii_StatisticaAnimal_OutputMessage" />
@@ -114,6 +124,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITranzactii" type="tns:ITranzactii">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginUser">
+      <soap:operation soapAction="http://tempuri.org/ITranzactii/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="StatisticaAnimal">
       <soap:operation soapAction="http://tempuri.org/ITranzactii/StatisticaAnimal" style="document" />
       <wsdl:input>

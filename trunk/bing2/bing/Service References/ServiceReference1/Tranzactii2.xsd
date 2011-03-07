@@ -1,6 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/bing.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/bing.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOfProcedureUpgrades_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcedureUpgrades_Result" nillable="true" type="tns:ProcedureUpgrades_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcedureUpgrades_Result" nillable="true" type="tns:ArrayOfProcedureUpgrades_Result" />
+  <xs:complexType name="ProcedureUpgrades_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AntiBugs" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Bear" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Buy" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Earth" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Eco" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FK_user" type="xs:int" />
+          <xs:element minOccurs="0" name="Flood" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="H20" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="House" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Plants" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Power" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Profits" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SaveForest" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TakeAction" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Tree" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WindMill" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcedureUpgrades_Result" nillable="true" type="tns:ProcedureUpgrades_Result" />
+  <xs:complexType name="ArrayOfProceduraRealJudet_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProceduraRealJudet_Result" nillable="true" type="tns:ProceduraRealJudet_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProceduraRealJudet_Result" nillable="true" type="tns:ArrayOfProceduraRealJudet_Result" />
+  <xs:complexType name="ProceduraRealJudet_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalitateAer" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Clima" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Expr1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="IndustriaExtractiva" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IndustriaPrelucrativa" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NrHidrocentrale" type="xs:int" />
+          <xs:element minOccurs="0" name="NrJudete" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="NrOrase" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="NrTermocentrale" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParcuriNationale" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="PoluareSol" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Precipitatii" type="xs:double" />
+          <xs:element minOccurs="0" name="ProcentPadure" type="xs:double" />
+          <xs:element minOccurs="0" name="RezervatiiNaturale" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Temperatura" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProceduraRealJudet_Result" nillable="true" type="tns:ProceduraRealJudet_Result" />
+  <xs:complexType name="ArrayOfHistoryPadure_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryPadure_Result" nillable="true" type="tns:HistoryPadure_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoryPadure_Result" nillable="true" type="tns:ArrayOfHistoryPadure_Result" />
+  <xs:complexType name="HistoryPadure_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:long" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryPadure_Result" nillable="true" type="tns:HistoryPadure_Result" />
+  <xs:complexType name="ArrayOfStiriProcedure_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StiriProcedure_Result" nillable="true" type="tns:StiriProcedure_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStiriProcedure_Result" nillable="true" type="tns:ArrayOfStiriProcedure_Result" />
+  <xs:complexType name="StiriProcedure_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Stire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Titlu" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StiriProcedure_Result" nillable="true" type="tns:StiriProcedure_Result" />
+  <xs:complexType name="ArrayOfHartaCampanii_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HartaCampanii_Result" nillable="true" type="tns:HartaCampanii_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHartaCampanii_Result" nillable="true" type="tns:ArrayOfHartaCampanii_Result" />
+  <xs:complexType name="HartaCampanii_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitudine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitudine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NivelProblema" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="NumeCampanie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeZona" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PctLocatie" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HartaCampanii_Result" nillable="true" type="tns:HartaCampanii_Result" />
   <xs:complexType name="ArrayOfLoginFunction_Result">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="LoginFunction_Result" nillable="true" type="tns:LoginFunction_Result" />
@@ -9,7 +131,7 @@
   <xs:element name="ArrayOfLoginFunction_Result" nillable="true" type="tns:ArrayOfLoginFunction_Result" />
   <xs:complexType name="LoginFunction_Result">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:ComplexObject">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:ComplexObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="BaniDonati" type="xs:decimal" />
           <xs:element minOccurs="0" name="NrDonatii" type="xs:short" />
@@ -34,7 +156,7 @@
   <xs:element name="ArrayOfStatisticaAimal_Result" nillable="true" type="tns:ArrayOfStatisticaAimal_Result" />
   <xs:complexType name="StatisticaAimal_Result">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:ComplexObject">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:ComplexObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="Brac" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="FK_Usr" type="xs:int" />
@@ -60,7 +182,7 @@
   <xs:element name="ArrayOfProceduraDeces_Result1" nillable="true" type="tns:ArrayOfProceduraDeces_Result1" />
   <xs:complexType name="ProceduraDeces_Result1">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:ComplexObject">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:ComplexObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="Braconaj" type="xs:boolean" />
           <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
@@ -93,7 +215,7 @@
   <xs:element name="ArrayOfTranzactie" nillable="true" type="tns:ArrayOfTranzactie" />
   <xs:complexType name="Tranzactie">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="Cumparator" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Expr1" nillable="true" type="xs:string" />
@@ -113,7 +235,7 @@
   <xs:element name="ArrayOfTranzactiiCumparare" nillable="true" type="tns:ArrayOfTranzactiiCumparare" />
   <xs:complexType name="TranzactiiCumparare">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="Cumparare" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Data" type="xs:dateTime" />

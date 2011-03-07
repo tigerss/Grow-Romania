@@ -4,10 +4,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="500" d:DesignWidth="760" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    d:DesignHeight="500" d:DesignWidth="760" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
     <Canvas x:Name="LayoutRoot" Background="Black">
-        <ScrollViewer Height="415" HorizontalAlignment="Left" Margin="14,12,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="737" Canvas.Left="-2" Canvas.Top="61">
-           
-        </ScrollViewer>
+            <toolkit:BusyIndicator Height="56" x:Name="b" Width="152" IsBusy="False" />
+        
     </Canvas>
 </UserControl>

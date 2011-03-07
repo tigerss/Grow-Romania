@@ -21,23 +21,23 @@ svn:wc:ra_dav:version-url
 V 59
 /svn/proba1/!svn/ver/63/trunk/bing2/bing/Bin/Debug/bing.pdb
 END
-System.Windows.Controls.Data.Input.xml
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Controls.Data.Input.xml
-END
 System.Windows.Data.xml
 K 25
 svn:wc:ra_dav:version-url
 V 74
 /svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Data.xml
 END
-System.Windows.Controls.Data.xml
+System.Windows.Controls.Data.Input.xml
 K 25
 svn:wc:ra_dav:version-url
-V 83
-/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Controls.Data.xml
+V 89
+/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Controls.Data.Input.xml
+END
+System.Windows.Data.zip
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Data.zip
 END
 System.Windows.Controls.Data.Input.zip
 K 25
@@ -45,11 +45,11 @@ svn:wc:ra_dav:version-url
 V 89
 /svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Controls.Data.Input.zip
 END
-System.Windows.Data.zip
+System.Windows.Controls.Data.xml
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Data.zip
+V 83
+/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.Windows.Controls.Data.xml
 END
 System.Windows.Controls.Navigation.dll
 K 25
@@ -69,17 +69,17 @@ svn:wc:ra_dav:version-url
 V 59
 /svn/proba1/!svn/ver/63/trunk/bing2/bing/Bin/Debug/bing.dll
 END
-System.ComponentModel.DataAnnotations.xml
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.ComponentModel.DataAnnotations.xml
-END
 Microsoft.Maps.MapControl.dll
 K 25
 svn:wc:ra_dav:version-url
 V 80
 /svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/Microsoft.Maps.MapControl.dll
+END
+System.ComponentModel.DataAnnotations.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/proba1/!svn/ver/20/trunk/bing2/bing/Bin/Debug/System.ComponentModel.DataAnnotations.xml
 END
 System.ComponentModel.DataAnnotations.zip
 K 25

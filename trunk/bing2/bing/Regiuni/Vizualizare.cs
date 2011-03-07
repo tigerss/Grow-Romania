@@ -13,6 +13,8 @@ using bing.Forme;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.Collections.Generic;
+using bing.ServiceReference1;
 
 namespace bing.Regiuni
 {
@@ -20,15 +22,15 @@ namespace bing.Regiuni
     {
         Canvas c;
         Canvas md;
- 
-        public Vizualizare(Canvas canv,Canvas md)
+
+        public Vizualizare(Canvas canv, Canvas md, List<HistoryPadure_Result> lista)
         {
             c = canv;
             this.md = md;
             
             md.Children.Clear();
             Animalule an = new Animalule();
-            an.Aranjeaza();
+            an.Aranjeaza(lista);
             md.Children.Add(an);
         }
        public void Peste()

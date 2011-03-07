@@ -2,6 +2,21 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bing.Web" />
   <xs:import schemaLocation="http://localhost:11201/Tranzactii.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="LoginUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nume" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passward" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="LoginUserResult" nillable="true" type="q1:ArrayOfLoginFunction_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="StatisticaAnimal">
     <xs:complexType>
       <xs:sequence>
@@ -13,7 +28,7 @@
   <xs:element name="StatisticaAnimalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="StatisticaAnimalResult" nillable="true" type="q1:ArrayOfStatisticaAimal_Result" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="StatisticaAnimalResult" nillable="true" type="q2:ArrayOfStatisticaAimal_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -27,7 +42,7 @@
   <xs:element name="PreiaDecesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="PreiaDecesResult" nillable="true" type="q2:ArrayOfProceduraDeces_Result1" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="PreiaDecesResult" nillable="true" type="q3:ArrayOfProceduraDeces_Result1" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +64,7 @@
   <xs:element name="GetToateAnimaleleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetToateAnimaleleResult" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetToateAnimaleleResult" nillable="true" type="q4:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -61,7 +76,7 @@
   <xs:element name="GetToateFirmeleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetToateFirmeleResult" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetToateFirmeleResult" nillable="true" type="q5:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -75,7 +90,7 @@
   <xs:element name="gettranzResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="gettranzResult" nillable="true" type="q5:ArrayOfTranzactie" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="gettranzResult" nillable="true" type="q6:ArrayOfTranzactie" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -87,7 +102,7 @@
   <xs:element name="GetTranzactieCumparareResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="GetTranzactieCumparareResult" nillable="true" type="q6:ArrayOfTranzactiiCumparare" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="GetTranzactieCumparareResult" nillable="true" type="q7:ArrayOfTranzactiiCumparare" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -142,7 +157,7 @@
   <xs:element name="CautaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="CautaResult" nillable="true" type="q7:ArrayOfTranzactiiCumparare" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/bing.Web" minOccurs="0" name="CautaResult" nillable="true" type="q8:ArrayOfTranzactiiCumparare" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

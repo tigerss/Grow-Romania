@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svn/proba1/!svn/ver/80/trunk/bing2/bing/Service%20References/ServiceReference1
+/svn/proba1/!svn/ver/72/trunk/bing2/bing/Service%20References/ServiceReference1
 END
 bing.ServiceReference1.StatisticaAimal_Result.datasource
 K 25
@@ -13,13 +13,13 @@ Tranzactii.wsdl
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svn/proba1/!svn/ver/80/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii.wsdl
+/svn/proba1/!svn/ver/88/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii.wsdl
 END
-Tranzactii1.xsd
+bing.ServiceReference1.LoginFunction_Result.datasource
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svn/proba1/!svn/ver/72/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii1.xsd
+V 134
+/svn/proba1/!svn/ver/88/trunk/bing2/bing/Service%20References/ServiceReference1/bing.ServiceReference1.LoginFunction_Result.datasource
 END
 Reference.svcmap
 K 25
@@ -27,17 +27,23 @@ svn:wc:ra_dav:version-url
 V 96
 /svn/proba1/!svn/ver/35/trunk/bing2/bing/Service%20References/ServiceReference1/Reference.svcmap
 END
-configuration91.svcinfo
+Tranzactii1.xsd
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svn/proba1/!svn/ver/37/trunk/bing2/bing/Service%20References/ServiceReference1/configuration91.svcinfo
+V 95
+/svn/proba1/!svn/ver/72/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii1.xsd
 END
 Tranzactii2.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svn/proba1/!svn/ver/80/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii2.xsd
+/svn/proba1/!svn/ver/88/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii2.xsd
+END
+configuration91.svcinfo
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/proba1/!svn/ver/37/trunk/bing2/bing/Service%20References/ServiceReference1/configuration91.svcinfo
 END
 Tranzactii3.xsd
 K 25
@@ -49,7 +55,7 @@ Tranzactii4.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svn/proba1/!svn/ver/80/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii4.xsd
+/svn/proba1/!svn/ver/88/trunk/bing2/bing/Service%20References/ServiceReference1/Tranzactii4.xsd
 END
 Tranzactii5.xsd
 K 25
@@ -61,7 +67,7 @@ Reference.cs
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svn/proba1/!svn/ver/80/trunk/bing2/bing/Service%20References/ServiceReference1/Reference.cs
+/svn/proba1/!svn/ver/88/trunk/bing2/bing/Service%20References/ServiceReference1/Reference.cs
 END
 Tranzactii.xsd
 K 25

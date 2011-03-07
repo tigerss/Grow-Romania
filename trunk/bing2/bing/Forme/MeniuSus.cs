@@ -73,13 +73,20 @@ namespace Forme
             donatii.MouseLeftButtonDown += new MouseButtonEventHandler(donatii_MouseLeftButtonDown);
             #endregion
             #region Nume
-            TextBlock t = new TextBlock();
-            t.Text = "GrowRomania";
-            t.Foreground = new SolidColorBrush(Colors.White);
-            t.FontSize = 22;
-            can.Children.Add(t);
-            Canvas.SetLeft(t, ScreenWidth / 2 - 470);
-            Canvas.SetTop(t, 32);
+            //TextBlock t = new TextBlock();
+            //t.Text = "GrowRomania";
+            //t.Foreground = new SolidColorBrush(Colors.White);
+            //t.FontSize = 22;
+            //can.Children.Add(t);
+            //Canvas.SetLeft(t, ScreenWidth / 2 - 470);
+            //Canvas.SetTop(t, 32);
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri("DesignImages/logo.png", UriKind.Relative));
+            img.Width = 188;
+            img.Height = 43;
+            can.Children.Add(img);
+            Canvas.SetLeft(img, ScreenWidth / 2 - 470);
+            Canvas.SetTop(img, 23);
            #endregion
        }
 
@@ -90,7 +97,18 @@ namespace Forme
         Canvas Campaigns;
         ControlCuColturiRotunde CCampaigns;
         #endregion
-
+        public MeniuSus(Canvas ch)
+        {
+            ch.Children.Clear();
+            AfisareSubmeniuDonatii();
+            // MessageBox.Show("ok");
+            //campanii C = new campanii("sfgh");
+            CampaniiPage CP = new CampaniiPage();
+            CP.Width = ch.Width;
+            Canvas.SetLeft(CP, 0);
+            Canvas.SetTop(CP, 0);
+            ch.Children.Add(CP);
+        }
         void donatii_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {//ce s cu liniile astea?stai putin...e conturul ala de la pagina
             ch.Children.Clear();

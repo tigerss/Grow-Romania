@@ -263,8 +263,6 @@
           <xs:element minOccurs="0" name="PlanteReference" nillable="true" type="q10:EntityReferenceOfPlanteKvZjy4f9" />
           <xs:element minOccurs="0" name="Taiate" type="xs:boolean" />
           <xs:element minOccurs="0" name="Trasnite" type="xs:boolean" />
-          <xs:element minOccurs="0" name="Usr" nillable="true" type="tns:Usr" />
-          <xs:element minOccurs="0" name="UsrReference" nillable="true" type="q10:EntityReferenceOfUsrKvZjy4f9" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -348,7 +346,6 @@
           <xs:element minOccurs="0" name="IsForDelete" type="xs:boolean" />
           <xs:element minOccurs="0" name="Istoric_Animal_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
           <xs:element minOccurs="0" name="Istoric_Animal_Tranzact1" nillable="true" type="tns:ArrayOfIstoric_Animal_Tranzact" />
-          <xs:element minOccurs="0" name="Istoric_Plante_Deces" nillable="true" type="tns:ArrayOfIstoric_Plante_Deces" />
           <xs:element minOccurs="0" name="Istoric_Plante_Tranzact" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
           <xs:element minOccurs="0" name="Istoric_Plante_Tranzact1" nillable="true" type="tns:ArrayOfIstoric_Plante_Tranzact" />
           <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
@@ -758,6 +755,8 @@
           <xs:element minOccurs="0" name="Imag8" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Imag9" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsSolved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Latitudine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitudine" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="NivelProblema" type="xs:unsignedByte" />
           <xs:element minOccurs="0" name="NrFirmeDonatoare" type="xs:short" />
           <xs:element minOccurs="0" name="NrUsriDonatori" type="xs:short" />

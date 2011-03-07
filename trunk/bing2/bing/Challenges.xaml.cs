@@ -14,6 +14,7 @@ using System.Windows.Threading;
 using System.ServiceModel;
 using bing.testService;
 using System.Windows.Media.Imaging;
+using System.Windows.Controls.Primitives;
 
 namespace bing
 {
@@ -33,29 +34,9 @@ namespace bing
 
             border6.Opacity = border7.Opacity = border8.Opacity = border9.Opacity=border10.Opacity = 0;
             border11.Opacity = border12.Opacity = border13.Opacity = border14.Opacity = border15.Opacity = 0;
-            //sb1.Begin();
-            //t.Interval = new TimeSpan(0, 0, 0, 0, 10);
-            //t.Tick += new EventHandler(t_Tick);
-            //t.Start();
-            //sb1.Completed += new EventHandler(sb1_Completed);
             LayoutRoot.Children.Clear();
 
             get_ChallengesFromDB();
-        }
-
-        void t_Tick(object sender, EventArgs e)
-        {
-            if (i == 25)
-                sb2.Begin();
-            if (i == 50)
-            { sb3.Begin(); t.Stop(); }
-            i++;
-        }
-
-        void sb1_Completed(object sender, EventArgs e)
-        {
-            sb1.Stop();
-          
         }
 
         private void Image_MouseEnter(object sender, MouseEventArgs e)
@@ -137,6 +118,27 @@ namespace bing
             DynamicTextBoxName.Visibility = Visibility.Collapsed;
         }
 
+        public void updateChallenges()
+        {
+            wcf.updateChallengeCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(wcf_updateChallengeCompleted);
+            try
+            {
+                wcf.updateChallengeAsync(1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void wcf_updateChallengeCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            get_ChallengesFromDB();
+        }
+
+        /// <summary>
+        /// Get challenges from database
+        /// </summary>
         public void get_ChallengesFromDB()
         {
             wcf.getChallengesFromDBCompleted += new EventHandler<testService.getChallengesFromDBCompletedEventArgs>(wcf_getChallengesFromDBCompleted);
@@ -149,7 +151,12 @@ namespace bing
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
+        /// <summary>
+        /// Call showImages() after the Challenges are received from database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void wcf_getChallengesFromDBCompleted(object sender, testService.getChallengesFromDBCompletedEventArgs e)
         {
             #region Build Challenges List
@@ -162,7 +169,9 @@ namespace bing
             showImages();
         }
 
-        // Url-ul imaginilor este luat din baza de date
+        /// <summary>
+        /// Afiseaza challenge-urile
+        /// </summary>
         void showImages()
         {
             int startLeft = 70;
@@ -193,6 +202,13 @@ namespace bing
             }
         }
 
+        /// <summary>
+        /// Seteaza Challenge-ul
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="left"></param>
+        /// <param name="top"></param>
+        /// <param name="isCompleted"></param>
         void newImage(string path, int left, int top, bool isCompleted)
         {
             double opacity;
@@ -207,7 +223,38 @@ namespace bing
             Image img = new Image() { Source = new BitmapImage(new Uri(path, UriKind.Relative)), Width = 50, Height = 50, Margin = new Thickness(left, top, 0, 0), Opacity = opacity };
             img.MouseEnter += new MouseEventHandler(img_MouseEnter);
             img.MouseLeave += new MouseEventHandler(img_MouseLeave);
+            img.MouseLeftButtonUp += new MouseButtonEventHandler(img_MouseLeftButtonUp);
             LayoutRoot.Children.Add(img);
+        }
+
+        /// <summary>
+        /// Afiseaza descrierea Challenge-ului
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void img_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // Get the original URI string
+            BitmapImage bi = (BitmapImage)((Image)sender).Source;
+            Uri uri = bi.UriSource;
+            string path = uri.OriginalString;
+
+            // Find the challenge where the image URI equals the database URI
+            foreach (getChallenges_Result challenge in challengesList)
+            {
+                if (challenge.Imagine1 == path)
+                {
+                    Popup popup = new Popup();
+                    ExtendedDescription moreInfo = new ExtendedDescription(popup, challenge.Nume, challenge.Descriere);
+                    popup.Child = moreInfo;
+                    popup.VerticalOffset = 25;
+                    popup.HorizontalOffset = 150;
+                    popup.IsOpen = true;
+                    LayoutRoot.Children.Add(popup);
+                    break;
+                }
+            }
+
         }
 
         void img_MouseLeave(object sender, MouseEventArgs e)

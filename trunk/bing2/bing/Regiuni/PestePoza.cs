@@ -148,9 +148,9 @@ namespace bing
             canv.Children.Add(background);
             Canvas.SetTop(background, 370);
             Canvas.SetLeft(background, 50);
-            //MeniuPicks p = new MeniuPicks(canv, 663, 100, "", 1, 50, 370, );
+            MeniuPicks p = new MeniuPicks(canv, 663, 100, "", 1, 50, 370);
 
-            //canv.Children.Add(p);
+            canv.Children.Add(p);
         }
         public Canvas Intoarce()
         {

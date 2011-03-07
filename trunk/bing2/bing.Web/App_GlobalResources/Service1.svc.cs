@@ -10,13 +10,37 @@ namespace bing.Web
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     public class Service1 : IService1
     {
+        // Update Achievements where ID == userID
+        public void updateAchievements(
+            int userID, int hunger, int education, int equality, int mortality,
+            int maternalHealth, int disease, int environment, int partnership
+            )
+        {
+            using (dbEntities update = new dbEntities())
+            {
+                update.updateAchievements(
+                    userID, hunger, education, equality, mortality,
+                    maternalHealth, disease, environment, partnership
+                    );
+            }
+        }
+
+        // Update Challenge where ID == challengeID
+        public void updateChallenge(int challengeID)
+        {
+            using (dbEntities update = new dbEntities())
+            {
+                update.updateChallenge(challengeID);
+            }
+        }
+
         // Retrieve plant history from database
         public List<getPlantHistory_Result> getPlantHistoryFromDB(int userID, string imagine1)
         {
             using (dbEntities select = new dbEntities())
             {
                 return select.getPlantHistory(userID, imagine1).ToList<getPlantHistory_Result>();
-            } 
+            }
         }
 
         // Retrieve all plants images from the database
@@ -52,7 +76,7 @@ namespace bing.Web
             using (dbEntities select = new dbEntities())
             {
                 return select.getAnimalStats(user_id, imagine1).ToList<getAnimalStats_Result>();
-            } 
+            }
         }
 
         // Retrieve all animal images
@@ -60,10 +84,10 @@ namespace bing.Web
         {
             using (dbEntities select = new dbEntities())
             {
+                select.Connection.Open();
                 return select.SelectAnimal(isFromPadure).ToList<SelectAnimal_Result>();
             }
         }
-      
         /// <summary>
         /// Returneaza Animalul cu un anumit ID
         /// </summary>

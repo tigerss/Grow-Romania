@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Forme;
 using System.ServiceModel;
 using System.Threading;
+using System.Windows.Controls.Primitives;
 
 namespace bing
 {
@@ -23,24 +24,22 @@ namespace bing
         EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
         Canvas canvas2;
         Canvas Buy;
+        Popup p = new Popup();
         private bool mousepresstrades = false;
         private bool mousepressbuy = false;
         private bool mousepresssell = false;
         ControlCuColturiRotunde CBuy;
         Canvas Sell;
         ControlCuColturiRotunde CSell;
-        public stat(Canvas canvas2)
+        int ID;
+        public stat(Canvas canvas2,int id)
         {
-            ServiceReference1.TranzactiiClient wcf = new ServiceReference1.TranzactiiClient(bind, endpoint);
-            wcf.PreiaDecesCompleted += new EventHandler<ServiceReference1.PreiaDecesCompletedEventArgs>(wcf_PreiaDecesCompleted);
-            wcf.StatisticaAnimalCompleted += new EventHandler<ServiceReference1.StatisticaAnimalCompletedEventArgs>(wcf_StatisticaAnimalCompleted);
-        
+            this.ID = id;
             canvas2.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
             canvas2.Children.Clear();
-       
             InitializeComponent();
-            scrollViewer1.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
-            scrollViewer1.BorderThickness = new Thickness(0);
+          //  scrollViewer1.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            //scrollViewer1.BorderThickness = new Thickness(0);
             this.canvas2 = canvas2;
             ControlCuColturiRotunde sus = new ControlCuColturiRotunde(canvas2, canvas2.Width - 2, 60, 0, 0, false, 1);
             sus.Colors("#FF252525", "#FF000000", new Point(0.5, 1), new Point(0.5, 0), 1);
@@ -73,49 +72,33 @@ namespace bing
             Sell.MouseLeave += new MouseEventHandler(Sell_MouseLeave);
             Sell.MouseLeftButtonDown += new MouseButtonEventHandler(Sell_MouseLeftButtonDown);
             #endregion
-              wcf.PreiaDecesAsync(15);
-              wcf.StatisticaAnimalAsync(11, 0);
+            
+            
                    }
-        List<ServiceReference1.StatisticaAimal_Result> stat2 = new List<ServiceReference1.StatisticaAimal_Result>();
-        void wcf_StatisticaAnimalCompleted(object sender, ServiceReference1.StatisticaAnimalCompletedEventArgs e)
-        {
-            foreach (var c in e.Result)
-                stat2.Add(c);
-            MessageBox.Show("SI eu am ajuns");
-        }
-        List<ServiceReference1.ProceduraDeces_Result1> lista2;
-        void wcf_PreiaDecesCompleted(object sender, ServiceReference1.PreiaDecesCompletedEventArgs e)
-        {
-            lista2 = new List<ServiceReference1.ProceduraDeces_Result1>();
-            foreach (var c in e.Result)
-                lista2.Add(c);
-            MessageBox.Show("am ajuns");
-        }
-
         string AI(int i)
         {
-            string c="";
+            string c = "";
             if (lista2[i].Numar.ToString() != "0")
             {
                 c = lista2[i].Numar.ToString();
-                if (lista2[i].Inundatie==true)
+                if (lista2[i].Inundatie == true)
                 {
-                    c = c+" de "+lista2[i].Nume + " s-au inecat in Inundatie";
+                    c = c + " de " + lista2[i].Nume + " s-au inecat in Inundatie";
                 }
                 else
-                    if (lista2[i].Vanat==true)
+                    if (lista2[i].Vanat == true)
                     {
                         c = c + " au fost vanate";
                     }
-                    else if (lista2[i].Foc==true)
+                    else if (lista2[i].Foc == true)
                     {
                         c = c + " au murit in foc";
                     }
-                    else if (lista2[i].Braconaj==true)
+                    else if (lista2[i].Braconaj == true)
                     {
                         c = c + " au fost braconate";
                     }
-                    else if (lista2[i].Mancat==true)
+                    else if (lista2[i].Mancat == true)
                     {
                         c = c + " au fost mancate";
                     }
@@ -125,9 +108,28 @@ namespace bing
 
             return c;
         }
-        void MyTrades_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        List<ServiceReference1.StatisticaAimal_Result> stat2 = new List<ServiceReference1.StatisticaAimal_Result>();
+        void wcf_StatisticaAnimalCompleted(object sender, ServiceReference1.StatisticaAnimalCompletedEventArgs e)
         {
-
+            foreach (var c in e.Result)
+                stat2.Add(c);
+                Statistics();
+        }
+        List<ServiceReference1.ProceduraDeces_Result1> lista2;
+        void wcf_PreiaDecesCompleted(object sender, ServiceReference1.PreiaDecesCompletedEventArgs e)
+        {
+            lista2 = new List<ServiceReference1.ProceduraDeces_Result1>();
+            foreach (var c in e.Result)
+                lista2.Add(c);
+       
+            History();
+        }
+        bool VerifyHistory = false;
+        HistoryAnimal hAnimal;
+        History hist;
+        void History() 
+        {
+           
             #region ButoanDesSusNormal
             CBuy.Children.Clear();
             CBuy.AddTextBlock(new TextBlock(), "Overall", 23, 20, 10, "#FF959906");
@@ -137,30 +139,71 @@ namespace bing
             CSell.AddTextBlock(new TextBlock(), "Statistics", 23, 20, 10, "#FF959906");
             CSell.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 80, 60);
             Sell.Height = 59;
-           
+
             mousepresstrades = true;
             mousepressbuy = mousepresssell = false;
             #endregion
             // map.Visibility = Visibility.Collapsed;
             try
             {
-
-              
-                
-            
-                scrollViewer1.Content = null;
+                b.IsBusy = false;
+                //scrollViewer1.Content = null;
                 List<string> list = new List<string>();
 
                 for (int i = 0; i < lista2.Count; i++)
                 {
                     list.Add(AI(i));
                 }
-                scrollViewer1.Content = new HistoryAnimal(list);
+                if (hist != null)
+                {
+                    canvas2.Children.Remove(hist);
+                }
+                hAnimal= new HistoryAnimal(list);
+                canvas2.Children.Add(hAnimal);
+                Canvas.SetLeft(hAnimal,40);
+               Canvas.SetTop(hAnimal, 80);
+             // scrollViewer1.Content =hs;
+               // scrollViewer1.Visibility = Visibility.Visible; 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+           
+        }
+        bool VerifyStatistic = false;
+        void Statistics()
+        {
+           
+            b.IsBusy = false;
+            if (hAnimal != null)
+            {
+                canvas2.Children.Remove(hAnimal);
+            }
+            hist = new bing.History(stat2);
+            canvas2.Children.Add(hist);
+            Canvas.SetLeft(hist, 40);
+            Canvas.SetTop(hist, 80);
+        }
+        void MyTrades_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            //scrollViewer1.Content = b;
+            if (VerifyHistory == false)
+            {
+                ServiceReference1.TranzactiiClient wcf = new ServiceReference1.TranzactiiClient(bind, endpoint);
+                wcf.PreiaDecesCompleted += new EventHandler<ServiceReference1.PreiaDecesCompletedEventArgs>(wcf_PreiaDecesCompleted);
+                wcf.PreiaDecesAsync(ID,11);
+                b.IsBusy = true;
+                VerifyHistory = true;
+            }
+            else
+            {
+                History();
+                b.IsBusy = true;
+            }
+           
+           
         }
         void MyTrades_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -201,7 +244,23 @@ namespace bing
         }
         void Buy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+           
+            //scrollViewer1.Content = b;
+            if (VerifyStatistic == false)
+            {
+                ServiceReference1.TranzactiiClient wcf = new ServiceReference1.TranzactiiClient(bind, endpoint);
+                wcf.StatisticaAnimalCompleted += new EventHandler<ServiceReference1.StatisticaAnimalCompletedEventArgs>(wcf_StatisticaAnimalCompleted);
+                wcf.StatisticaAnimalAsync(11, 0);
+                VerifyStatistic = true;
+                b.IsBusy = true;
+            }
+            else
+            {
+                b.IsBusy = true;
+                Statistics();
+            }
             #region Aranjeaza
+
             mousepressbuy = true;
             mousepresssell = mousepresstrades = false;
             Buton.Children.Clear();
@@ -213,8 +272,7 @@ namespace bing
             CSell.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 80, 60);
             Sell.Height = 59;
             #endregion
-            scrollViewer1.Content = null;
-            scrollViewer1.Content = new History(stat2);
+         
         }
         void Sell_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -248,7 +306,7 @@ namespace bing
             Buton.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 160, 60);
             MyTrades.Height = 59;
             CBuy.Children.Clear();
-            CBuy.AddTextBlock(new TextBlock(), "Statistics", 23, 20, 10, "#FF959906");
+            CBuy.AddTextBlock(new TextBlock(), "Overall", 23, 20, 10, "#FF959906");
             CBuy.Border(new CornerRadius(0, 0, 0, 0), "#00000000", new Thickness(1), 80, 60);
             Buy.Height = 59;
             #endregion

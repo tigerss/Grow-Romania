@@ -14,6 +14,8 @@
     <ExtensionPart Source="System.Windows.Controls.Input.Toolkit.zip" />
     <ExtensionPart Source="System.Windows.Controls.Layout.Toolkit.zip" />
     <ExtensionPart Source="System.Windows.Controls.Navigation.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Theming.RainierPurple.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Theming.Toolkit.zip" />
     <ExtensionPart Source="System.Windows.Controls.Toolkit.zip" />
     <ExtensionPart Source="System.Windows.Data.zip" />
   </Deployment.ExternalParts>

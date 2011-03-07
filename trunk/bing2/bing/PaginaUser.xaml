@@ -9,7 +9,7 @@
       
            
     </UserControl.Resources>
-        <Canvas x:Name="LayoutRoot" Background="Transparent">
+        <Canvas x:Name="LayoutRoot" Background="Black">
         <TextBlock Canvas.Left="8" Canvas.Top="109" Foreground="White" Height="59" >
             <Run Text="Rank:200" FontSize="13" x:Name="Rank"/>
              <LineBreak/>
@@ -24,26 +24,26 @@
                 </RectangleGeometry>
             </Image.Clip>
         </Image>
-        <Line X1="0" X2="205" Height="10" Width="205" StrokeThickness="1" Stroke="White" Canvas.Left="0" Canvas.Top="198"></Line>
-        <TextBlock Canvas.Left="8" Canvas.Top="206" Height="42" Foreground="White">
+        <Line X1="0" X2="205" Height="10" Width="205" StrokeThickness="1" Stroke="White" Canvas.Left="0" Canvas.Top="191"></Line>
+        <TextBlock Canvas.Left="8" Canvas.Top="199" Height="42" Foreground="White">
             <Run  FontSize="13" x:Name="Donatii" Text="5 donations" />
             <LineBreak />
             <Run x:Name="Banidonati" FontSize="13" Text="4356 donated" />
         </TextBlock>
-        <Line Canvas.Left="0" Canvas.Top="248" Height="10" Stroke="White" StrokeThickness="1" Width="205" X1="0" X2="205" />
+        <Line Canvas.Left="0" Canvas.Top="248" Height="10" Stroke="White" StrokeThickness="1" Width="222" X1="0" X2="205" />
         <TextBlock Canvas.Left="1" Canvas.Top="247" Height="32" FontSize="23" Name="textBlock1" Text="Game zone" Width="132" Foreground="White" />
         <TextBlock Canvas.Left="8" Canvas.Top="281" Height="58" Text="Achivments" Foreground="#69710b" MouseEnter="Achivments_MouseEnter"  MouseLeave="Achivments_MouseLeave" MouseLeftButtonDown="Achivments_MouseLeftButtonDown" x:Name="Achivments"  FontSize="13"  Width="91"/>
-         <TextBlock Canvas.Left="8" Canvas.Top="296" Height="19" Text="Chalanges" Foreground="#69710b" MouseEnter="Challanges_MouseEnter" MouseLeave="Challanges_MouseLeave"  x:Name="Challanges"  FontSize="13"  Width="91"/>
-         <TextBlock Canvas.Left="8" Canvas.Top="312" Height="30" Text="Upgredes" Foreground="#69710b" MouseEnter="Upgrades_MouseEnter" MouseLeave="Upgrades_MouseLeave"  x:Name="Upgrades"  FontSize="13"  Width="91"/>
-        <Line Canvas.Left="1" Canvas.Top="345" Height="18" Stroke="White" StrokeThickness="1" Width="205" X1="0" X2="205" />
-        <TextBlock Canvas.Left="1" Canvas.Top="352" FontSize="23" Height="32" Name="textBlock3" Text="Real zone" Width="132" Foreground="White" />
-        <TextBlock Canvas.Left="8" Canvas.Top="390" Height="58" Text="News" Name="News" FontSize="13" Foreground="#69710b" Width="91">
+         <TextBlock Canvas.Left="8" Canvas.Top="296" Height="19" Text="Transactions" Foreground="#69710b" MouseEnter="Challanges_MouseEnter" MouseLeftButtonDown="Challanges_MouseLeftButtonDown" MouseLeave="Challanges_MouseLeave"  x:Name="Challanges"  FontSize="13"  Width="91"/>
+         <TextBlock Canvas.Left="8" Canvas.Top="312" Height="30" Text="Upgredes" Foreground="#69710b" MouseLeftButtonDown="Upgrades_MouseLeftButtonDown" MouseEnter="Upgrades_MouseEnter" MouseLeave="Upgrades_MouseLeave"  x:Name="Upgrades"  FontSize="13"  Width="91"/>
+        <Line Canvas.Left="1" Canvas.Top="345" Height="18" Stroke="White" StrokeThickness="1" Width="221" X1="0" X2="205" />
+        <TextBlock Canvas.Left="1" Canvas.Top="345" FontSize="23" Height="32" Name="textBlock3" Text="Real zone" Width="132" Foreground="White" />
+        <TextBlock Canvas.Left="8" Canvas.Top="383" Height="23" Text="News" Name="News" FontSize="13" Foreground="#69710b" Width="91" MouseLeftButtonDown="News_MouseLeftButtonDown">
            
          </TextBlock>
-        <TextBlock Canvas.Left="8" Canvas.Top="404" Height="28" Text="Donations" Name="Donations" FontSize="13" Foreground="#69710b" Width="91">
+        <TextBlock Canvas.Left="8" Canvas.Top="404" Height="28" Text="Donations" Name="Donations" FontSize="13" Foreground="#69710b" Width="91" MouseLeftButtonDown="Donations_MouseLeftButtonDown">
 
         </TextBlock>
-        <Line Canvas.Left="0" Canvas.Top="438" Height="18" Stroke="White" StrokeThickness="1" Width="205" X1="0" X2="205" />
+        <Line Canvas.Left="0" Canvas.Top="427" Height="18" Stroke="White" StrokeThickness="1" Width="222" X1="0" X2="205" />
         <TextBlock Canvas.Left="8" Canvas.Top="442" Height="58" Name="textBlock5" Width="91">
             <Run FontSize="13" Foreground="#69710b" Text="My account" /><LineBreak />
             <Run FontSize="13" Foreground="#69710b" Text="Top Users" /><LineBreak /></TextBlock>

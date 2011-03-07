@@ -9,6 +9,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Maps.MapControl;
+using System.Windows.Threading;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
+using bing;
 
 namespace Regiuni
 {
@@ -17,22 +21,150 @@ namespace Regiuni
         private static MapPolygon MPBanatRegiune1;
         private static MapPolygon MPBanatRegiune2;
         private static MapPolygon MPBanatRegiune3;
-        public Banat()
+        bool i = false;
+        Map map = new Map();
+        private static Image img;
+        Canvas can = new Canvas();
+        DispatcherTimer dt;
+        Canvas md;
+        MapLayers mapl;
+        Map m;
+        List<bing.ServiceReference1.ProceduraRealJudet_Result> lista;
+        private static double grade = 0;
+        int reg1lista;
+        int reg2lista;
+        int reg3lista;
+       
+        private PlaneProjection p = new PlaneProjection();
+        public Banat(Map m, Canvas c, Canvas md, MapLayers mapl, List<bing.ServiceReference1.ProceduraRealJudet_Result> lista, bool login)
         {
+            i = login;
+            this.md = md;
+            this.m = m;
+            this.mapl = mapl;
+            this.lista = lista;
+            for (int j = 0; j < lista.Count; j++)
+            {
+                if (lista[j].ID == 14)
+                {
+                    reg1lista = j;
+                }
+                if (lista[j].ID == 15)
+                {
+                    reg2lista = j;
+                }
+                if (lista[j].ID == 16)
+                {
+                    reg3lista = j;
+                }
+             }
+            dt = new DispatcherTimer();
             MPBanatRegiune1 = new MapPolygon();
             MPBanatRegiune2 = new MapPolygon();
             MPBanatRegiune3 = new MapPolygon();
 
             MPBanatRegiune1.MouseEnter += new MouseEventHandler(MPBanatRegiune1_MouseEnter);
             MPBanatRegiune1.MouseLeave += new MouseEventHandler(MPBanatRegiune1_MouseLeave);
-
+            MPBanatRegiune1.MouseLeftButtonDown += new MouseButtonEventHandler(MPBanatRegiune1_MouseLeftButtonDown);
             MPBanatRegiune2.MouseEnter += new MouseEventHandler(MPBanatRegiune2_MouseEnter);
             MPBanatRegiune2.MouseLeave += new MouseEventHandler(MPBanatRegiune2_MouseLeave);
-
+            MPBanatRegiune2.MouseLeftButtonDown += new MouseButtonEventHandler(MPBanatRegiune2_MouseLeftButtonDown);
             MPBanatRegiune3.MouseEnter += new MouseEventHandler(MPBanatRegiune3_MouseEnter);
             MPBanatRegiune3.MouseLeave += new MouseEventHandler(MPBanatRegiune3_MouseLeave);
+            MPBanatRegiune3.MouseLeftButtonDown += new MouseButtonEventHandler(MPBanatRegiune3_MouseLeftButtonDown);
+            map = m;
+            can = c;
+            dt.Interval = new TimeSpan(0, 0, 0, 0, 10);
+            dt.Tick += new EventHandler(dt_Tick);
+        }
+        private void Intoarce()
+        {
+            can.Background = new SolidColorBrush(Colors.Black);
+            dt.Start();
+        }
+        void MPBanatRegiune3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+                can.Children.Add(new Info(lista, 16, m, can));
+            }
         }
 
+        void MPBanatRegiune2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+                can.Children.Add(new Info(lista, 15, m, can));
+            }
+        }
+
+        void MPBanatRegiune1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+                can.Children.Add(new Info(lista, 14, m, can));
+            }
+        }
+        void dt_Tick(object sender, EventArgs e)
+        {
+
+            if (grade == 180)
+            {
+                dt.Stop();
+
+            }
+            else grade = grade + 2;
+            if (grade == 90)
+            {//intorc imaginea
+                #region Adaug imagine scap de harta
+                PlaneProjection planeproj = new PlaneProjection();
+                planeproj.RotationY = 180;
+                //terg harta
+                map.Visibility = Visibility.Collapsed;
+                can.Children.Remove(map);
+                //iau imaginea
+                img = new Image();
+                img.Projection = planeproj;
+                img.Width = can.Width;
+                img.Height = can.Height;
+                img.Stretch = Stretch.Fill;
+                img.Source = new BitmapImage(new Uri("Game/testcupod.jpg", UriKind.Relative));
+
+
+
+
+                #endregion
+
+                can.Children.Add(img);
+                Canvas.SetLeft(img, 0);
+                //adaug strop
+                pesteHarta pp = new pesteHarta(can, p, img, md, mapl, m);
+                pp.AdaugCampie();
+                can = pp.Intoarce();
+            }
+            p.RotationY = grade;
+            p.CenterOfRotationY = 0.5;
+            can.Projection = p;
+
+        }
         public bing.pesteHarta nueterm
         {
             get
@@ -379,28 +511,37 @@ namespace Regiuni
         void MPBanatRegiune1_MouseLeave(object sender, MouseEventArgs e)
         {
             MPBanatRegiune1.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPBanatRegiune1_MouseEnter(object sender, MouseEventArgs e)
         {
             MPBanatRegiune1.StrokeThickness = 3;
+            mapl.ADDInfoCanvas(lista[reg1lista].Clima, lista[reg1lista].Temperatura.ToString(), lista[reg1lista].Precipitatii.ToString(), 46, 22);
+     
         }
 
         void MPBanatRegiune2_MouseLeave(object sender, MouseEventArgs e)
         {
             MPBanatRegiune2.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPBanatRegiune2_MouseEnter(object sender, MouseEventArgs e)
         {
             MPBanatRegiune2.StrokeThickness = 3;
+            mapl.ADDInfoCanvas(lista[reg2lista].Clima, lista[reg2lista].Temperatura.ToString(), lista[reg2lista].Precipitatii.ToString(), 45, 21);
+     
         }
 
         void MPBanatRegiune3_MouseLeave(object sender, MouseEventArgs e)
         {
             MPBanatRegiune3.StrokeThickness = 0;
+            mapl.RemoveinfoCanvas();
         }
         void MPBanatRegiune3_MouseEnter(object sender, MouseEventArgs e)
         {
             MPBanatRegiune3.StrokeThickness = 3;
+            mapl.ADDInfoCanvas(lista[reg3lista].Clima, lista[reg3lista].Temperatura.ToString(), lista[reg3lista].Precipitatii.ToString(), 45, 24);
+     
         }
     }
 }

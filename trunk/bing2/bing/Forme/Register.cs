@@ -218,7 +218,7 @@ namespace Forme
         }
         void RegionChooserTimmer_Tick(object sender, EventArgs e)
         {
-            if (AtributeGlobale.RegiuneaCurenta != AtributeGlobale.EnumRegiuni.Niciuna)
+            if (AtributeGlobale.RegiuneaCurenta != AtributeGlobale.EnumRegiuni.NoRegionSelected)
             {
                 RegionChooserTimmer.Stop();
                 RegisterMeniu.Visibility = Visibility.Visible;
@@ -229,7 +229,7 @@ namespace Forme
         {
             RegisterMeniu.Visibility = Visibility.Collapsed;
             tbinit.Visibility = Visibility.Visible;
-            AtributeGlobale.RegiuneaCurenta = AtributeGlobale.EnumRegiuni.Niciuna;
+            AtributeGlobale.RegiuneaCurenta = AtributeGlobale.EnumRegiuni.NoRegionSelected;
             RegionChooserTimmer.Start();
         }
         /// <summary>

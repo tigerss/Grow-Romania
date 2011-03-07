@@ -17,105 +17,51 @@ namespace bing.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatisticaAimal_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
-    public partial class StatisticaAimal_Result : bing.ServiceReference1.ComplexObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoginFunction_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class LoginFunction_Result : bing.ServiceReference1.ComplexObject {
         
-        private System.Nullable<int> BracField;
+        private decimal BaniDonatiField;
         
-        private int FK_UsrField;
-        
-        private System.Nullable<int> FocField;
-        
-        private string Imagine1Field;
-        
-        private System.Nullable<int> InundatieField;
-        
-        private System.Nullable<int> MancatiField;
+        private short NrDonatiiField;
         
         private string NumeField;
         
-        private System.Nullable<int> VanatiField;
+        private string PassField;
         
-        private System.Nullable<int> ViiField;
+        private string PozaField;
         
-        private System.Nullable<int> Vii_CumparatiField;
+        private string PrenumeField;
         
-        private System.Nullable<int> Vii_VandutiField;
+        private string RankField;
+        
+        private string RegiunenumeField;
+        
+        private double ScorField;
+        
+        private string UsrField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Brac {
+        public decimal BaniDonati {
             get {
-                return this.BracField;
+                return this.BaniDonatiField;
             }
             set {
-                if ((this.BracField.Equals(value) != true)) {
-                    this.BracField = value;
-                    this.RaisePropertyChanged("Brac");
+                if ((this.BaniDonatiField.Equals(value) != true)) {
+                    this.BaniDonatiField = value;
+                    this.RaisePropertyChanged("BaniDonati");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FK_Usr {
+        public short NrDonatii {
             get {
-                return this.FK_UsrField;
+                return this.NrDonatiiField;
             }
             set {
-                if ((this.FK_UsrField.Equals(value) != true)) {
-                    this.FK_UsrField = value;
-                    this.RaisePropertyChanged("FK_Usr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Foc {
-            get {
-                return this.FocField;
-            }
-            set {
-                if ((this.FocField.Equals(value) != true)) {
-                    this.FocField = value;
-                    this.RaisePropertyChanged("Foc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Imagine1 {
-            get {
-                return this.Imagine1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Imagine1Field, value) != true)) {
-                    this.Imagine1Field = value;
-                    this.RaisePropertyChanged("Imagine1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Inundatie {
-            get {
-                return this.InundatieField;
-            }
-            set {
-                if ((this.InundatieField.Equals(value) != true)) {
-                    this.InundatieField = value;
-                    this.RaisePropertyChanged("Inundatie");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Mancati {
-            get {
-                return this.MancatiField;
-            }
-            set {
-                if ((this.MancatiField.Equals(value) != true)) {
-                    this.MancatiField = value;
-                    this.RaisePropertyChanged("Mancati");
+                if ((this.NrDonatiiField.Equals(value) != true)) {
+                    this.NrDonatiiField = value;
+                    this.RaisePropertyChanged("NrDonatii");
                 }
             }
         }
@@ -134,53 +80,92 @@ namespace bing.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Vanati {
+        public string Pass {
             get {
-                return this.VanatiField;
+                return this.PassField;
             }
             set {
-                if ((this.VanatiField.Equals(value) != true)) {
-                    this.VanatiField = value;
-                    this.RaisePropertyChanged("Vanati");
+                if ((object.ReferenceEquals(this.PassField, value) != true)) {
+                    this.PassField = value;
+                    this.RaisePropertyChanged("Pass");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Vii {
+        public string Poza {
             get {
-                return this.ViiField;
+                return this.PozaField;
             }
             set {
-                if ((this.ViiField.Equals(value) != true)) {
-                    this.ViiField = value;
-                    this.RaisePropertyChanged("Vii");
+                if ((object.ReferenceEquals(this.PozaField, value) != true)) {
+                    this.PozaField = value;
+                    this.RaisePropertyChanged("Poza");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Vii_Cumparati {
+        public string Prenume {
             get {
-                return this.Vii_CumparatiField;
+                return this.PrenumeField;
             }
             set {
-                if ((this.Vii_CumparatiField.Equals(value) != true)) {
-                    this.Vii_CumparatiField = value;
-                    this.RaisePropertyChanged("Vii_Cumparati");
+                if ((object.ReferenceEquals(this.PrenumeField, value) != true)) {
+                    this.PrenumeField = value;
+                    this.RaisePropertyChanged("Prenume");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Vii_Vanduti {
+        public string Rank {
             get {
-                return this.Vii_VandutiField;
+                return this.RankField;
             }
             set {
-                if ((this.Vii_VandutiField.Equals(value) != true)) {
-                    this.Vii_VandutiField = value;
-                    this.RaisePropertyChanged("Vii_Vanduti");
+                if ((object.ReferenceEquals(this.RankField, value) != true)) {
+                    this.RankField = value;
+                    this.RaisePropertyChanged("Rank");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Regiunenume {
+            get {
+                return this.RegiunenumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegiunenumeField, value) != true)) {
+                    this.RegiunenumeField = value;
+                    this.RaisePropertyChanged("Regiunenume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Scor {
+            get {
+                return this.ScorField;
+            }
+            set {
+                if ((this.ScorField.Equals(value) != true)) {
+                    this.ScorField = value;
+                    this.RaisePropertyChanged("Scor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Usr {
+            get {
+                return this.UsrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
+                    this.UsrField = value;
+                    this.RaisePropertyChanged("Usr");
                 }
             }
         }
@@ -193,8 +178,9 @@ namespace bing.ServiceReference1 {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.Tranzactie))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.TranzactiiCumparare))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ComplexObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraDeces_Result1))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StatisticaAimal_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraDeces_Result1))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
     public partial class StructuralObject : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -470,9 +456,181 @@ namespace bing.ServiceReference1 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ComplexObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraDeces_Result1))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StatisticaAimal_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.ProceduraDeces_Result1))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
     public partial class ComplexObject : bing.ServiceReference1.StructuralObject {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StatisticaAimal_Result", Namespace="http://schemas.datacontract.org/2004/07/bing.Web", IsReference=true)]
+    public partial class StatisticaAimal_Result : bing.ServiceReference1.ComplexObject {
+        
+        private System.Nullable<int> BracField;
+        
+        private int FK_UsrField;
+        
+        private System.Nullable<int> FocField;
+        
+        private string Imagine1Field;
+        
+        private System.Nullable<int> InundatieField;
+        
+        private System.Nullable<int> MancatiField;
+        
+        private string NumeField;
+        
+        private System.Nullable<int> VanatiField;
+        
+        private System.Nullable<int> ViiField;
+        
+        private System.Nullable<int> Vii_CumparatiField;
+        
+        private System.Nullable<int> Vii_VandutiField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Brac {
+            get {
+                return this.BracField;
+            }
+            set {
+                if ((this.BracField.Equals(value) != true)) {
+                    this.BracField = value;
+                    this.RaisePropertyChanged("Brac");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FK_Usr {
+            get {
+                return this.FK_UsrField;
+            }
+            set {
+                if ((this.FK_UsrField.Equals(value) != true)) {
+                    this.FK_UsrField = value;
+                    this.RaisePropertyChanged("FK_Usr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Foc {
+            get {
+                return this.FocField;
+            }
+            set {
+                if ((this.FocField.Equals(value) != true)) {
+                    this.FocField = value;
+                    this.RaisePropertyChanged("Foc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Imagine1 {
+            get {
+                return this.Imagine1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Imagine1Field, value) != true)) {
+                    this.Imagine1Field = value;
+                    this.RaisePropertyChanged("Imagine1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Inundatie {
+            get {
+                return this.InundatieField;
+            }
+            set {
+                if ((this.InundatieField.Equals(value) != true)) {
+                    this.InundatieField = value;
+                    this.RaisePropertyChanged("Inundatie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Mancati {
+            get {
+                return this.MancatiField;
+            }
+            set {
+                if ((this.MancatiField.Equals(value) != true)) {
+                    this.MancatiField = value;
+                    this.RaisePropertyChanged("Mancati");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nume {
+            get {
+                return this.NumeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumeField, value) != true)) {
+                    this.NumeField = value;
+                    this.RaisePropertyChanged("Nume");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Vanati {
+            get {
+                return this.VanatiField;
+            }
+            set {
+                if ((this.VanatiField.Equals(value) != true)) {
+                    this.VanatiField = value;
+                    this.RaisePropertyChanged("Vanati");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Vii {
+            get {
+                return this.ViiField;
+            }
+            set {
+                if ((this.ViiField.Equals(value) != true)) {
+                    this.ViiField = value;
+                    this.RaisePropertyChanged("Vii");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Vii_Cumparati {
+            get {
+                return this.Vii_CumparatiField;
+            }
+            set {
+                if ((this.Vii_CumparatiField.Equals(value) != true)) {
+                    this.Vii_CumparatiField = value;
+                    this.RaisePropertyChanged("Vii_Cumparati");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Vii_Vanduti {
+            get {
+                return this.Vii_VandutiField;
+            }
+            set {
+                if ((this.Vii_VandutiField.Equals(value) != true)) {
+                    this.Vii_VandutiField = value;
+                    this.RaisePropertyChanged("Vii_Vanduti");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -817,6 +975,8 @@ namespace bing.ServiceReference1 {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.EntityKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.EntityKeyMember>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.LoginFunction_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.StatisticaAimal_Result>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bing.ServiceReference1.StatisticaAimal_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.ProceduraDeces_Result1>))]
@@ -874,6 +1034,11 @@ namespace bing.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ITranzactii")]
     public interface ITranzactii {
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/LoginUser", ReplyAction="http://tempuri.org/ITranzactii/LoginUserResponse")]
+        System.IAsyncResult BeginLoginUser(string nume, string passward, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result> EndLoginUser(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITranzactii/StatisticaAnimal", ReplyAction="http://tempuri.org/ITranzactii/StatisticaAnimalResponse")]
         System.IAsyncResult BeginStatisticaAnimal(int id, int idRegiune, System.AsyncCallback callback, object asyncState);
         
@@ -927,6 +1092,25 @@ namespace bing.ServiceReference1 {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ITranzactiiChannel : bing.ServiceReference1.ITranzactii, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoginUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoginUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result>)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1066,6 +1250,12 @@ namespace bing.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class TranzactiiClient : System.ServiceModel.ClientBase<bing.ServiceReference1.ITranzactii>, bing.ServiceReference1.ITranzactii {
         
+        private BeginOperationDelegate onBeginLoginUserDelegate;
+        
+        private EndOperationDelegate onEndLoginUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoginUserCompletedDelegate;
+        
         private BeginOperationDelegate onBeginStatisticaAnimalDelegate;
         
         private EndOperationDelegate onEndStatisticaAnimalDelegate;
@@ -1179,6 +1369,8 @@ namespace bing.ServiceReference1 {
             }
         }
         
+        public event System.EventHandler<LoginUserCompletedEventArgs> LoginUserCompleted;
+        
         public event System.EventHandler<StatisticaAnimalCompletedEventArgs> StatisticaAnimalCompleted;
         
         public event System.EventHandler<PreiaDecesCompletedEventArgs> PreiaDecesCompleted;
@@ -1202,6 +1394,54 @@ namespace bing.ServiceReference1 {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginLoginUser(string nume, string passward, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoginUser(nume, passward, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result> bing.ServiceReference1.ITranzactii.EndLoginUser(System.IAsyncResult result) {
+            return base.Channel.EndLoginUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoginUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string nume = ((string)(inValues[0]));
+            string passward = ((string)(inValues[1]));
+            return ((bing.ServiceReference1.ITranzactii)(this)).BeginLoginUser(nume, passward, callback, asyncState);
+        }
+        
+        private object[] OnEndLoginUser(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result> retVal = ((bing.ServiceReference1.ITranzactii)(this)).EndLoginUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoginUserCompleted(object state) {
+            if ((this.LoginUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoginUserCompleted(this, new LoginUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoginUserAsync(string nume, string passward) {
+            this.LoginUserAsync(nume, passward, null);
+        }
+        
+        public void LoginUserAsync(string nume, string passward, object userState) {
+            if ((this.onBeginLoginUserDelegate == null)) {
+                this.onBeginLoginUserDelegate = new BeginOperationDelegate(this.OnBeginLoginUser);
+            }
+            if ((this.onEndLoginUserDelegate == null)) {
+                this.onEndLoginUserDelegate = new EndOperationDelegate(this.OnEndLoginUser);
+            }
+            if ((this.onLoginUserCompletedDelegate == null)) {
+                this.onLoginUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoginUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoginUserDelegate, new object[] {
+                        nume,
+                        passward}, this.onEndLoginUserDelegate, this.onLoginUserCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult bing.ServiceReference1.ITranzactii.BeginStatisticaAnimal(int id, int idRegiune, System.AsyncCallback callback, object asyncState) {
@@ -1762,6 +2002,20 @@ namespace bing.ServiceReference1 {
             
             public TranzactiiClientChannel(System.ServiceModel.ClientBase<bing.ServiceReference1.ITranzactii> client) : 
                     base(client) {
+            }
+            
+            public System.IAsyncResult BeginLoginUser(string nume, string passward, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = nume;
+                _args[1] = passward;
+                System.IAsyncResult _result = base.BeginInvoke("LoginUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result> EndLoginUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result> _result = ((System.Collections.ObjectModel.ObservableCollection<bing.ServiceReference1.LoginFunction_Result>)(base.EndInvoke("LoginUser", _args, result)));
+                return _result;
             }
             
             public System.IAsyncResult BeginStatisticaAnimal(int id, int idRegiune, System.AsyncCallback callback, object asyncState) {

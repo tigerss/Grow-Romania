@@ -1209,10 +1209,6 @@ namespace bing.testService {
         
         private bool TrasniteField;
         
-        private bing.testService.Usr UsrField;
-        
-        private bing.testService.EntityReferenceOfUsrKvZjy4f9 UsrReferenceField;
-        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bing.testService.Camp Camp {
             get {
@@ -1443,32 +1439,6 @@ namespace bing.testService {
                 if ((this.TrasniteField.Equals(value) != true)) {
                     this.TrasniteField = value;
                     this.RaisePropertyChanged("Trasnite");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bing.testService.Usr Usr {
-            get {
-                return this.UsrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsrField, value) != true)) {
-                    this.UsrField = value;
-                    this.RaisePropertyChanged("Usr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bing.testService.EntityReferenceOfUsrKvZjy4f9 UsrReference {
-            get {
-                return this.UsrReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsrReferenceField, value) != true)) {
-                    this.UsrReferenceField = value;
-                    this.RaisePropertyChanged("UsrReference");
                 }
             }
         }
@@ -2098,8 +2068,6 @@ namespace bing.testService {
         
         private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Animal_Tranzact> Istoric_Animal_Tranzact1Field;
         
-        private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Deces> Istoric_Plante_DecesField;
-        
         private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Tranzact> Istoric_Plante_TranzactField;
         
         private System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Tranzact> Istoric_Plante_Tranzact1Field;
@@ -2267,19 +2235,6 @@ namespace bing.testService {
                 if ((object.ReferenceEquals(this.Istoric_Animal_Tranzact1Field, value) != true)) {
                     this.Istoric_Animal_Tranzact1Field = value;
                     this.RaisePropertyChanged("Istoric_Animal_Tranzact1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<bing.testService.Istoric_Plante_Deces> Istoric_Plante_Deces {
-            get {
-                return this.Istoric_Plante_DecesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Istoric_Plante_DecesField, value) != true)) {
-                    this.Istoric_Plante_DecesField = value;
-                    this.RaisePropertyChanged("Istoric_Plante_Deces");
                 }
             }
         }
@@ -5245,6 +5200,10 @@ namespace bing.testService {
         
         private bool IsSolvedField;
         
+        private string LatitudineField;
+        
+        private string LongitudineField;
+        
         private byte NivelProblemaField;
         
         private short NrFirmeDonatoareField;
@@ -5523,6 +5482,32 @@ namespace bing.testService {
                 if ((this.IsSolvedField.Equals(value) != true)) {
                     this.IsSolvedField = value;
                     this.RaisePropertyChanged("IsSolved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Latitudine {
+            get {
+                return this.LatitudineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LatitudineField, value) != true)) {
+                    this.LatitudineField = value;
+                    this.RaisePropertyChanged("Latitudine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Longitudine {
+            get {
+                return this.LongitudineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LongitudineField, value) != true)) {
+                    this.LongitudineField = value;
+                    this.RaisePropertyChanged("Longitudine");
                 }
             }
         }
@@ -7594,6 +7579,16 @@ namespace bing.testService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="testService.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/updateAchievements", ReplyAction="http://tempuri.org/IService1/updateAchievementsResponse")]
+        System.IAsyncResult BeginupdateAchievements(int userID, int hunger, int education, int equality, int mortality, int maternalHealth, int disease, int environment, int partnership, System.AsyncCallback callback, object asyncState);
+        
+        void EndupdateAchievements(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/updateChallenge", ReplyAction="http://tempuri.org/IService1/updateChallengeResponse")]
+        System.IAsyncResult BeginupdateChallenge(int challengeID, System.AsyncCallback callback, object asyncState);
+        
+        void EndupdateChallenge(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getPlantHistoryFromDB", ReplyAction="http://tempuri.org/IService1/getPlantHistoryFromDBResponse")]
         System.IAsyncResult BegingetPlantHistoryFromDB(int userID, string imagine1, System.AsyncCallback callback, object asyncState);
         
@@ -7891,6 +7886,18 @@ namespace bing.testService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<bing.testService.IService1>, bing.testService.IService1 {
         
+        private BeginOperationDelegate onBeginupdateAchievementsDelegate;
+        
+        private EndOperationDelegate onEndupdateAchievementsDelegate;
+        
+        private System.Threading.SendOrPostCallback onupdateAchievementsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginupdateChallengeDelegate;
+        
+        private EndOperationDelegate onEndupdateChallengeDelegate;
+        
+        private System.Threading.SendOrPostCallback onupdateChallengeCompletedDelegate;
+        
         private BeginOperationDelegate onBegingetPlantHistoryFromDBDelegate;
         
         private EndOperationDelegate onEndgetPlantHistoryFromDBDelegate;
@@ -8016,6 +8023,10 @@ namespace bing.testService {
             }
         }
         
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> updateAchievementsCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> updateChallengeCompleted;
+        
         public event System.EventHandler<getPlantHistoryFromDBCompletedEventArgs> getPlantHistoryFromDBCompleted;
         
         public event System.EventHandler<getPlantsFromDBCompletedEventArgs> getPlantsFromDBCompleted;
@@ -8043,6 +8054,112 @@ namespace bing.testService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.testService.IService1.BeginupdateAchievements(int userID, int hunger, int education, int equality, int mortality, int maternalHealth, int disease, int environment, int partnership, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginupdateAchievements(userID, hunger, education, equality, mortality, maternalHealth, disease, environment, partnership, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void bing.testService.IService1.EndupdateAchievements(System.IAsyncResult result) {
+            base.Channel.EndupdateAchievements(result);
+        }
+        
+        private System.IAsyncResult OnBeginupdateAchievements(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int userID = ((int)(inValues[0]));
+            int hunger = ((int)(inValues[1]));
+            int education = ((int)(inValues[2]));
+            int equality = ((int)(inValues[3]));
+            int mortality = ((int)(inValues[4]));
+            int maternalHealth = ((int)(inValues[5]));
+            int disease = ((int)(inValues[6]));
+            int environment = ((int)(inValues[7]));
+            int partnership = ((int)(inValues[8]));
+            return ((bing.testService.IService1)(this)).BeginupdateAchievements(userID, hunger, education, equality, mortality, maternalHealth, disease, environment, partnership, callback, asyncState);
+        }
+        
+        private object[] OnEndupdateAchievements(System.IAsyncResult result) {
+            ((bing.testService.IService1)(this)).EndupdateAchievements(result);
+            return null;
+        }
+        
+        private void OnupdateAchievementsCompleted(object state) {
+            if ((this.updateAchievementsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.updateAchievementsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void updateAchievementsAsync(int userID, int hunger, int education, int equality, int mortality, int maternalHealth, int disease, int environment, int partnership) {
+            this.updateAchievementsAsync(userID, hunger, education, equality, mortality, maternalHealth, disease, environment, partnership, null);
+        }
+        
+        public void updateAchievementsAsync(int userID, int hunger, int education, int equality, int mortality, int maternalHealth, int disease, int environment, int partnership, object userState) {
+            if ((this.onBeginupdateAchievementsDelegate == null)) {
+                this.onBeginupdateAchievementsDelegate = new BeginOperationDelegate(this.OnBeginupdateAchievements);
+            }
+            if ((this.onEndupdateAchievementsDelegate == null)) {
+                this.onEndupdateAchievementsDelegate = new EndOperationDelegate(this.OnEndupdateAchievements);
+            }
+            if ((this.onupdateAchievementsCompletedDelegate == null)) {
+                this.onupdateAchievementsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateAchievementsCompleted);
+            }
+            base.InvokeAsync(this.onBeginupdateAchievementsDelegate, new object[] {
+                        userID,
+                        hunger,
+                        education,
+                        equality,
+                        mortality,
+                        maternalHealth,
+                        disease,
+                        environment,
+                        partnership}, this.onEndupdateAchievementsDelegate, this.onupdateAchievementsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult bing.testService.IService1.BeginupdateChallenge(int challengeID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginupdateChallenge(challengeID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void bing.testService.IService1.EndupdateChallenge(System.IAsyncResult result) {
+            base.Channel.EndupdateChallenge(result);
+        }
+        
+        private System.IAsyncResult OnBeginupdateChallenge(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int challengeID = ((int)(inValues[0]));
+            return ((bing.testService.IService1)(this)).BeginupdateChallenge(challengeID, callback, asyncState);
+        }
+        
+        private object[] OnEndupdateChallenge(System.IAsyncResult result) {
+            ((bing.testService.IService1)(this)).EndupdateChallenge(result);
+            return null;
+        }
+        
+        private void OnupdateChallengeCompleted(object state) {
+            if ((this.updateChallengeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.updateChallengeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void updateChallengeAsync(int challengeID) {
+            this.updateChallengeAsync(challengeID, null);
+        }
+        
+        public void updateChallengeAsync(int challengeID, object userState) {
+            if ((this.onBeginupdateChallengeDelegate == null)) {
+                this.onBeginupdateChallengeDelegate = new BeginOperationDelegate(this.OnBeginupdateChallenge);
+            }
+            if ((this.onEndupdateChallengeDelegate == null)) {
+                this.onEndupdateChallengeDelegate = new EndOperationDelegate(this.OnEndupdateChallenge);
+            }
+            if ((this.onupdateChallengeCompletedDelegate == null)) {
+                this.onupdateChallengeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateChallengeCompleted);
+            }
+            base.InvokeAsync(this.onBeginupdateChallengeDelegate, new object[] {
+                        challengeID}, this.onEndupdateChallengeDelegate, this.onupdateChallengeCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult bing.testService.IService1.BegingetPlantHistoryFromDB(int userID, string imagine1, System.AsyncCallback callback, object asyncState) {
@@ -8688,6 +8805,38 @@ namespace bing.testService {
             
             public Service1ClientChannel(System.ServiceModel.ClientBase<bing.testService.IService1> client) : 
                     base(client) {
+            }
+            
+            public System.IAsyncResult BeginupdateAchievements(int userID, int hunger, int education, int equality, int mortality, int maternalHealth, int disease, int environment, int partnership, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[9];
+                _args[0] = userID;
+                _args[1] = hunger;
+                _args[2] = education;
+                _args[3] = equality;
+                _args[4] = mortality;
+                _args[5] = maternalHealth;
+                _args[6] = disease;
+                _args[7] = environment;
+                _args[8] = partnership;
+                System.IAsyncResult _result = base.BeginInvoke("updateAchievements", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndupdateAchievements(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("updateAchievements", _args, result);
+            }
+            
+            public System.IAsyncResult BeginupdateChallenge(int challengeID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = challengeID;
+                System.IAsyncResult _result = base.BeginInvoke("updateChallenge", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndupdateChallenge(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("updateChallenge", _args, result);
             }
             
             public System.IAsyncResult BegingetPlantHistoryFromDB(int userID, string imagine1, System.AsyncCallback callback, object asyncState) {

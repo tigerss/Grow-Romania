@@ -44,6 +44,8 @@ namespace bing
         Image img;
         bool BRegion=false;
         #endregion
+        public MainPage(int r)
+        { }
         public MainPage()
         {
             //ServiceReference3.ServiceDecesClient wcf = new ServiceReference3.ServiceDecesClient(bind, endpoint);
@@ -53,7 +55,7 @@ namespace bing
             //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             InitializeComponent();
-            ArrangePage();
+        
             //trimit canvasul de deasupra hartii
             maplayer = new MapLayers(map, canvas2, MeniuDreapa);
             map.SetView(new Location(maplayer.latitudine, maplayer.longitudine), maplayer.zoom);
@@ -62,16 +64,16 @@ namespace bing
             map.Children.Add(maplayer.PoligonTransilvania());
             map.Children.Add(maplayer.PoligonBaragan());
             map.Children.Add(maplayer.PoligonBanat());
-        
+            ArrangePage();
         }
-        List<ServiceReference3.Istoric_Animal_Deces> lista2;
-        void wcf_PreiaDecesCompleted(object sender, ServiceReference3.PreiaDecesCompletedEventArgs e)
-        {
-            lista2 = new List<ServiceReference3.Istoric_Animal_Deces>();
-            foreach (var c in e.Result)
-            lista2.Add(c);
-        }
-        List<ServiceReference1.StatisticaAimal_Result> listaAnimalHistory;
+       // List<ServiceReference1.Istoric_Animal_Deces> lista2;
+       // void wcf_PreiaDecesCompleted(object sender, ServiceReference3.PreiaDecesCompletedEventArgs e)
+       // {
+       ////     lista2 = new List<ServiceReference3.Istoric_Animal_Deces>();
+       //     foreach (var c in e.Result)
+       //     lista2.Add(c);
+       // }
+      
 
   
         private void ArrangePage()
@@ -80,14 +82,13 @@ namespace bing
             canvas.Width = double.Parse(HtmlPage.Window.Eval("screen.width").ToString());
             canvas.Height = double.Parse(HtmlPage.Window.Eval("screen.height").ToString());
             HtmlDocument d = HtmlPage.Document;
-            
             string c = d.QueryString.Count.ToString() ;
             //canvasu de sus
             btn2.Width = canvas.Width;
             // aranjenz in pagina gridu
             Canvas.SetLeft(LayoutRoot, canvas.Width / 2 - 500);
             Canvas.SetTop(LayoutRoot, 75);
-            LoginForm add = new LoginForm(MeniuDreapa);
+            LoginForm add = new LoginForm(MeniuDreapa,canvas2,maplayer);
             
             MeniuSus m = new MeniuSus(btn2, canvas.Width,canvas2);
             
@@ -95,20 +96,18 @@ namespace bing
 
           //  Tranzactii
        //     map.Visibility = Visibility.Collapsed;
-         //  canvas2.Children.Clear();
-          //  canvas2.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
+        //   canvas2.Children.Clear();
+      //      canvas2.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0x00, 0x00));
            //// Forme.t = new Forme.Tranzactii(canvas2);
        //  Forme.MyTranzactii t = new Forme.MyTranzactii(canvas2);
-       //   bing_maps.Forme.MyTranzactii t = new bing_maps.Forme.MyTranzactii(canvas2);
+     //    bing_maps.Forme.MyTranzactii t = new bing_maps.Forme.MyTranzactii(canvas2);
             #endregion
         #region History
          //  Thread.Sleep(new TimeSpan(0, 0, 0,5));
-                
-          
-         stat  s= new stat(canvas2);
+           //  stat  s= new stat(canvas2);
           //   canvas2.Children.Add(s);
-          //  History cs = new History();
-            canvas2.Children.Add(s);
+           // History cs = new History();
+          //   canvas2.Children.Add(s);
             #endregion
             //#region Holban
             //BasicHttpBinding bind = new BasicHttpBinding();
@@ -151,7 +150,6 @@ namespace bing
         //        add = new MeniuAnimal(MeniuDreapa, "Moldova", "Moldova2", "Padure", temp, templ);
         //}
         //#endregion
-
         private void SelectRegionButton()
         {
             pop = new Canvas()

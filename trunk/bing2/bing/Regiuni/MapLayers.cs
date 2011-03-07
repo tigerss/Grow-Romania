@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Windows;
+
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Ink;
@@ -12,13 +13,18 @@ using Microsoft.Maps.MapControl;
 using System.Windows.Threading;
 using System.Globalization;
 using bing;
+using System.Collections.Generic;
+using Forme;
+using System.ServiceModel;
 
 namespace Regiuni
 {
     public class MapLayers
     {
         #region Variabile Interne
-
+        BasicHttpBinding bind = new BasicHttpBinding();
+        EndpointAddress endpoint = new EndpointAddress("http://localhost:11201/Tranzactii.svc");
+        
         public  MapPolygon poligonMoldova = new MapPolygon();
         public  MapPolygon poligonBaragan = new MapPolygon();
         public  MapPolygon poligonTransilvania = new MapPolygon();
@@ -26,8 +32,8 @@ namespace Regiuni
         /// <summary>
         /// Harta de baza trimisa ca parametru
         /// </summary>
-        private Map map = new Map();
-       private Canvas c = new Canvas();
+       private Map map = new Map();
+       public Canvas c = new Canvas();
        
         internal DispatcherTimer timer = new DispatcherTimer();
 
@@ -47,7 +53,10 @@ namespace Regiuni
         /// Zoomu pe Romania
         /// </summary>
         public  readonly double zoom = 6;
-
+        /// <sumary>
+        /// Instanta curenta
+        /// </sumary>
+        private static MapLayers mapLayers;
 
         #endregion
         #region Variabile Trimise
@@ -84,8 +93,13 @@ namespace Regiuni
         public MapLayers()
         { }
         Canvas md;
+        List<bing.ServiceReference1.ProceduraRealJudet_Result> lista = new List<bing.ServiceReference1.ProceduraRealJudet_Result>();
         public MapLayers(Map m,Canvas can,Canvas MeniuDreapta)
         {
+           
+            bing.ServiceReference1.TranzactiiClient tc = new bing.ServiceReference1.TranzactiiClient(bind, endpoint) ;
+            tc.GetProceduraRealCompleted += new EventHandler<bing.ServiceReference1.GetProceduraRealCompletedEventArgs>(tc_GetProceduraRealCompleted);
+            tc.GetProceduraRealAsync(1);
             md = MeniuDreapta;
             this.map = m;
             c = can;
@@ -94,7 +108,15 @@ namespace Regiuni
             Z = zoom;
             Long = longitudine;
             Lat = latitudine;
-          
+            mapLayers = this;
+        }
+
+        void tc_GetProceduraRealCompleted(object sender, bing.ServiceReference1.GetProceduraRealCompletedEventArgs e)
+        {
+            foreach (var c in e.Result)
+            {
+                lista.Add(c);
+            }
         }
         #endregion
         #region Harti
@@ -1008,7 +1030,27 @@ namespace Regiuni
             return polyline;
         }
         #endregion
+        public void lol()
+        {
+            if (TimeIsOn == false)
+            {
+                TimeIsOn = true;
+                timer.Start();
+                bIsMousePressedMoldova = true;
 
+                Moldova m = new Moldova(map, c, md,this,lista,false);
+
+                map.Children.Add(m.MoldovaRegiune1());
+                map.Children.Add(m.MoldovaRegiune2());
+                map.Children.Add(m.MoldovaRegiune3());
+                map.Children.Add(m.MoldovaRegiune4());
+                poligonMoldova.Visibility = Visibility.Collapsed;
+                poligonBaragan.Visibility = Visibility.Collapsed;
+                poligonTransilvania.Visibility = Visibility.Collapsed;
+                poligonBanat.Visibility = Visibility.Collapsed;
+                AtributeGlobale.RegiuneaCurenta = AtributeGlobale.EnumRegiuni.Moldova;//Holban code;do not delete
+            }
+        }
         #region Evenimente
         void t_Tick(object sender, EventArgs e)
         {
@@ -1030,6 +1072,8 @@ namespace Regiuni
         }
 
         #region Evenimente Moldova
+      
+       
         void p_MouseLeftButtonDown_Moldova(object sender, MouseButtonEventArgs e)
         {
             if (TimeIsOn == false)
@@ -1038,7 +1082,7 @@ namespace Regiuni
                 timer.Start();
                 bIsMousePressedMoldova = true;
               
-                Moldova m = new Moldova(map,c,md);
+                Moldova m = new Moldova(map,c,md,this,lista,true);
                
                 map.Children.Add(m.MoldovaRegiune1());
                 map.Children.Add(m.MoldovaRegiune2());
@@ -1049,6 +1093,7 @@ namespace Regiuni
                 poligonTransilvania.Visibility = Visibility.Collapsed;
                 poligonBanat.Visibility = Visibility.Collapsed;
                 AtributeGlobale.RegiuneaCurenta = AtributeGlobale.EnumRegiuni.Moldova;//Holban code;do not delete
+                PaginaUser.getInstance().updateCurrentRegion();
             }
         }
         void p_MouseLeave_Moldova(object sender, MouseEventArgs e)
@@ -1072,7 +1117,7 @@ namespace Regiuni
                 TimeIsOn = true;
                 timer.Start();
                 bIsMousePressedBaragan = true;
-                Baragan b = new Baragan(map,c);
+                Baragan b = new Baragan(map, c, md, this, lista, false);
                 map.Children.Add(b.BaraganRegiune1());
                 map.Children.Add(b.BaraganRegiune2());
                 map.Children.Add(b.BaraganRegiune3());
@@ -1105,7 +1150,7 @@ namespace Regiuni
                 TimeIsOn = true;
                 timer.Start();
                 bIsMousePressedTransilvania = true;
-                Transilvania t = new Transilvania();
+                Transilvania t = new Transilvania(map, c, md, this, lista, false);
                 map.Children.Add(t.TransilvaniaRegiune1());
                 map.Children.Add(t.TransilvaniaRegiune2());
                 map.Children.Add(t.TransilvaniaRegiune3());
@@ -1137,7 +1182,7 @@ namespace Regiuni
             {
                 TimeIsOn = true;
                 bIsMousePressedBanat = true;
-                Banat m = new Banat();
+                Banat m = new Banat(map, c, md, this, lista, false);
                 map.Children.Add(m.BanatRegiune1());
                 map.Children.Add(m.BanatRegiune2());
                 map.Children.Add(m.BanatRegiune3());
@@ -1174,7 +1219,132 @@ namespace Regiuni
         }
 
         #endregion
+        #region PushPin
+        public void AddPushPin(List<ListaReal> list)
+        {
+            map.Children.Clear();
+            map.Children.Add(RomaniaMap());
+            foreach (var lol in list)
+            {
+               
+                    Canvas c = new Canvas() { Width = 7, Height = 7 };
+                    #region NivelProblema
+                    if (lol.InivelProblema == 1)
+                    { c.Background = new SolidColorBrush(Colors.Red); c.Opacity = 0.99; }
+                    else if (lol.InivelProblema == 2)
+                    { c.Background = new SolidColorBrush(Colors.White); c.Opacity = 0.98; }
+                    else if (lol.InivelProblema == 3)
+                    { c.Background = new SolidColorBrush(Colors.Orange); c.Opacity = 0.97; }
+                    #endregion
+              
+                c.MouseEnter += new MouseEventHandler(c_MouseEnter);
+                c.MouseLeave += new MouseEventHandler(c_MouseLeave);
+                c.MouseLeftButtonDown += new MouseButtonEventHandler(c_MouseLeftButtonDown);
+                MapLayer l = new MapLayer();
+                   #region NumeCampanie
+                TextBlock tx = new TextBlock() { Foreground = new SolidColorBrush(Colors.White), FontSize = 15, FontFamily = new FontFamily("Tahoma") };
+                tx.Text = lol.nume;
+                tx.Visibility = Visibility.Collapsed;
+                c.Children.Add(tx);
+                Canvas.SetLeft(tx,50);
+                Canvas.SetTop(tx, 5);
+                 #endregion    
+                tx = new TextBlock() { Foreground = new SolidColorBrush(Colors.White), FontSize = 13, FontFamily = new FontFamily("Tahoma") };
+                tx.Text ="Location: "+ lol.locatie;
+                tx.Visibility = Visibility.Collapsed;
+                c.Children.Add(tx);
+                Canvas.SetLeft(tx, 10);
+                Canvas.SetTop(tx, 30);
+                l.AddChild(c, lol.x);
+                map.Children.Add(l);
+            }
+        }
+        private static bool bisAddedInfoCanvas = false;
+        MapLayer MaplayerinfoJudet = new MapLayer();
+       public  void ADDInfoCanvas(string temp,string temperatura,string precipitatii,double lat,double longi)
+        {
+            if (bisAddedInfoCanvas == false)
+            {
+                MaplayerinfoJudet.Children.Clear();
+                Canvas c = new Canvas() { Width = 250, Height = 100 };
+                c.Background = new SolidColorBrush(Colors.Black); c.Opacity = 0.99;
+                RectangleGeometry rg = new RectangleGeometry() { Rect = new Rect(0, 0, 250, 100), RadiusX = 10, RadiusY = 10 };
+                c.Clip = rg;
+                MaplayerinfoJudet.AddChild(c, new Location(lat, longi));
+                TextBlock t = new TextBlock() { Text = "Info", Foreground = new SolidColorBrush(Colors.White), FontSize = 16 };
+                c.Children.Add(t);
+                Canvas.SetLeft(t, 80);
+                Canvas.SetTop(t, 5);
+                TextBlock climate = new TextBlock() { Text = "Climate: "+temp, Foreground = new SolidColorBrush(Colors.White), FontSize = 14 };
+                c.Children.Add(climate);
+                Canvas.SetLeft(climate, 10);
+                Canvas.SetTop(climate, 30);
+                TextBlock temperature = new TextBlock() { Text = "Temperature: "+ temperatura, Foreground = new SolidColorBrush(Colors.White), FontSize = 14 };
+                c.Children.Add(temperature);
+                Canvas.SetLeft(temperature, 10);
+                Canvas.SetTop(temperature, 50);
+                TextBlock precipitation = new TextBlock() { Text = "Precipitation: "+precipitatii, Foreground = new SolidColorBrush(Colors.White), FontSize = 14 };
+                c.Children.Add(precipitation);
+                Canvas.SetLeft(precipitation, 10);
+                Canvas.SetTop(precipitation, 70);
+                map.Children.Add(MaplayerinfoJudet);
+                bisAddedInfoCanvas = true;
+            }
+        }
+       public void RemoveinfoCanvas()
+       {
+           map.Children.Remove(MaplayerinfoJudet);
+           bisAddedInfoCanvas = false;
+       }
+        void c_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Canvas z = (Canvas)sender;
+            MeniuSus s = new MeniuSus(c);
+        }
 
+        void c_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Canvas c = (Canvas)sender;
+            foreach (var z in c.Children)
+            {
+                z.Visibility = Visibility.Collapsed;
+            }
+            #region NivelProblema
+            if (Math.Round(c.Opacity,2) == 0.99)
+            {
+                c.Background = new SolidColorBrush(Colors.Red);
+            }
+            else if (Math.Round(c.Opacity, 2) == 0.98)
+            {
+                c.Background = new SolidColorBrush(Colors.White);
+            }
+            else if (Math.Round(c.Opacity, 2) == 0.97)
+            {
+                c.Background = new SolidColorBrush(Colors.Orange);
+            }
+            #endregion NivelProblema
+            RectangleGeometry rg = new RectangleGeometry() { Rect = new Rect(0, 0,7, 7) };
+            c.Clip = rg;
+            c.Width = 7;
+            c.Height = 7;
+        }
+
+        void c_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Canvas c = (Canvas)sender;
+            foreach (var z in c.Children)
+            {
+                z.Visibility = Visibility.Visible;
+            }
+         
+            RectangleGeometry rg = new RectangleGeometry() { Rect = new Rect(0, 0, 200, 88), RadiusX = 10, RadiusY = 10 };
+            c.Clip = rg;
+           
+            c.Background = new SolidColorBrush(Colors.Black);
+            c.Width = 200;
+            c.Height = 88;
+        }
+        #endregion
         public Transilvania Transilvania
         {
             get
@@ -1217,6 +1387,22 @@ namespace Regiuni
             set
             {
             }
+        }
+
+        /// <summary>
+        /// Get the current instance for global use
+        /// </summary>
+        /// <returns> current instance </returns>
+        public static MapLayers getInstance()
+        {
+            if (mapLayers != null)
+                return mapLayers;
+            return null;
+        }
+
+        public Canvas getMeniuDreapta()
+        {
+            return md;
         }
     }
 }

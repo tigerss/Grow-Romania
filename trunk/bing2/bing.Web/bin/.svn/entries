@@ -1,7 +1,7 @@
 10
 
 dir
-81
+77
 https://delphi.microsoft-lab.pub.ro/svn/proba1/trunk/bing2/bing.Web/bin
 https://delphi.microsoft-lab.pub.ro/svn/proba1
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-12-11T22:41:36.195000Z
+
 0ff3739012d2b7892943cdcc1c9ff527
 2010-11-17T20:31:18.465190Z
 62
@@ -42,23 +42,8 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-415232
+bing.Web.pdb.r61
+bing.Web.pdb.r62
 
 bing.Web.dll
 file
@@ -66,7 +51,7 @@ file
 
 
 
-2010-12-11T22:41:36.200000Z
+
 264b14b41448539d59453b21e26c8d81
 2010-11-17T20:31:18.465190Z
 62
@@ -76,21 +61,6 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-318464
+bing.Web.dll.r61
+bing.Web.dll.r62
 

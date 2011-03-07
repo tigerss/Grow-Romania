@@ -49,7 +49,7 @@ LoginForm.cs
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/svn/proba1/!svn/ver/60/trunk/bing2/bing/Forme/LoginForm.cs
+/svn/proba1/!svn/ver/83/trunk/bing2/bing/Forme/LoginForm.cs
 END
 ApasaDonatii.cs
 K 25
@@ -87,29 +87,29 @@ svn:wc:ra_dav:version-url
 V 61
 /svn/proba1/!svn/ver/72/trunk/bing2/bing/Forme/Animalule.xaml
 END
-MeniuPicks.cs
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/svn/proba1/!svn/ver/72/trunk/bing2/bing/Forme/MeniuPicks.cs
-END
 Animalule.xaml.cs
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/proba1/!svn/ver/72/trunk/bing2/bing/Forme/Animalule.xaml.cs
 END
-MeniuSus.cs
+MeniuPicks.cs
 K 25
 svn:wc:ra_dav:version-url
-V 58
-/svn/proba1/!svn/ver/64/trunk/bing2/bing/Forme/MeniuSus.cs
+V 60
+/svn/proba1/!svn/ver/72/trunk/bing2/bing/Forme/MeniuPicks.cs
 END
 ADDPozaCuBorder.cs
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/proba1/!svn/ver/8/trunk/bing2/bing/Forme/ADDPozaCuBorder.cs
+END
+MeniuSus.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/proba1/!svn/ver/64/trunk/bing2/bing/Forme/MeniuSus.cs
 END
 ControlCuColturi.cs
 K 25

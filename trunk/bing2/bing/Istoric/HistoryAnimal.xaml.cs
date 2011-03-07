@@ -22,6 +22,11 @@ namespace bing
                 l.Add(new Data() { Text = c });
             dataGrid1.ItemsSource = l;
         }
+
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
      
     }
     public class Data

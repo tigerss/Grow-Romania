@@ -26,13 +26,13 @@
                 <ColumnDefinition Width="757" />
                 
             </Grid.ColumnDefinitions>
-                <Canvas Grid.Column="1" Width="763" Height="506" x:Name="canvas2">
-                <Grid Width="763" Height="506" Canvas.Top="0" Canvas.Left="0">
-                    <Border BorderThickness="3" BorderBrush="White" CornerRadius="2,2,2,2" Opacity="0.34"></Border>
-                <maps:Map x:Name="map" Opacity="1" Mode="Aerial" NavigationVisibility="Collapsed" AnimationLevel="None" Cursor="Hand" Culture="ro-ro" Width="757" Height="500" VerticalAlignment="Top" HorizontalAlignment="Center" MouseMove="map_MouseWrong" MouseWheel="map_MouseWrong" MouseLeftButtonUp="map_MouseWrong" ZoomLevel="6" CopyrightVisibility="Collapsed" CredentialsProvider="{Binding}" LogoVisibility="Collapsed" TargetViewChanged="map_TargetViewChanged" Margin="3,3,3,0" />
+                <Canvas Grid.Column="1" Width="763" Height="506" x:Name="canvas2" Background="Transparent">
+               
+                    <Border x:Name="mainBorder" BorderThickness="3" BorderBrush="White" Canvas.Left="0" Canvas.Top="0" CornerRadius="2,2,2,2" Height="506" Width="763" Opacity="0.34"></Border>
+                <maps:Map x:Name="map" CredentialsProvider="AkcuKynpI6-e5xIgEVaE7dowCWh9KUi6quMcpV_8RcWVUtUkHYT0DjgPgZj0QVrK" Opacity="1" Mode="Aerial" NavigationVisibility="Collapsed" AnimationLevel="None" Cursor="Hand" Culture="ro-ro" Width="757" Height="500" VerticalAlignment="Top" HorizontalAlignment="Center" MouseMove="map_MouseWrong" MouseWheel="map_MouseWrong" MouseLeftButtonUp="map_MouseWrong" ZoomLevel="6" CopyrightVisibility="Collapsed"  LogoVisibility="Collapsed" TargetViewChanged="map_TargetViewChanged" Margin="3,3,3,0" />
                  
-                </Grid>
-                <Popup x:Name="Popup" Width="50" Height="50" Canvas.Top="10" Canvas.Left="707" IsOpen="True"  >
+               
+                <Popup x:Name="Popup" Width="50" Height="50" Canvas.Top="10" Canvas.Left="707" IsOpen="False"  >
                   
                 </Popup>
             </Canvas>

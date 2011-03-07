@@ -9,17 +9,60 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Maps.MapControl;
+using System.Collections.Generic;
+using System.Windows.Threading;
+using System.Windows.Media.Imaging;
+using bing;
 
 namespace Regiuni
 {
     public class Transilvania
     {
+        bool i = false;
         private static MapPolygon MPTransilvaniaRegiune1;
         private static MapPolygon MPTransilvaniaRegiune2;
         private static MapPolygon MPTransilvaniaRegiune3;
         private static MapPolygon MPTransilvaniaRegiune4;
-        public Transilvania()
+        Map map = new Map();
+        private static Image img;
+        Canvas can = new Canvas();
+        DispatcherTimer dt;
+        Canvas md;
+        MapLayers mapl;
+        Map m;
+        int reg1lista;
+        int reg2lista;
+        int reg3lista;
+        int reg4lista;
+        List<bing.ServiceReference1.ProceduraRealJudet_Result> lista;
+        private PlaneProjection p = new PlaneProjection();
+        public Transilvania(Map m, Canvas c, Canvas md, MapLayers mapl, List<bing.ServiceReference1.ProceduraRealJudet_Result> lista, bool login)
         {
+            i = login;
+            this.md = md;
+            this.m = m;
+            this.mapl = mapl;
+            this.lista = lista;
+            dt = new DispatcherTimer();
+            for (int j = 0; j < lista.Count; j++)
+            {
+                if (lista[j].ID == 1)
+                {
+                    reg1lista = j;
+                }
+                if (lista[j].ID == 3)
+                {
+                    reg2lista = j;
+                }
+                if (lista[j].ID == 4)
+                {
+                    reg3lista = j;
+                }
+                if (lista[j].ID == 5)
+                {
+                    reg4lista = j;
+                }
+            }
             MPTransilvaniaRegiune1 = new MapPolygon();
             MPTransilvaniaRegiune2 = new MapPolygon();
             MPTransilvaniaRegiune3 = new MapPolygon();
@@ -34,8 +77,123 @@ namespace Regiuni
             MPTransilvaniaRegiune2.MouseLeave += new MouseEventHandler(MPTransilvaniaRegiune2_MouseLeave);
             MPTransilvaniaRegiune3.MouseLeave += new MouseEventHandler(MPTransilvaniaRegiune3_MouseLeave);
             MPTransilvaniaRegiune4.MouseLeave += new MouseEventHandler(MPTransilvaniaRegiune4_MouseLeave);
+            MPTransilvaniaRegiune1.MouseLeftButtonDown += new MouseButtonEventHandler(MPTransilvaniaRegiune1_MouseLeftButtonDown);
+            MPTransilvaniaRegiune2.MouseLeftButtonDown += new MouseButtonEventHandler(MPTransilvaniaRegiune2_MouseLeftButtonDown);
+            MPTransilvaniaRegiune3.MouseLeftButtonDown += new MouseButtonEventHandler(MPTransilvaniaRegiune3_MouseLeftButtonDown);
+            MPTransilvaniaRegiune4.MouseLeftButtonDown += new MouseButtonEventHandler(MPTransilvaniaRegiune4_MouseLeftButtonDown);
+            map = m;
+            can = c;
+            dt.Interval = new TimeSpan(0, 0, 0, 0, 10);
+            dt.Tick += new EventHandler(dt_Tick);
         }
 
+        void MPTransilvaniaRegiune4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 5, m, can));
+            }
+        }
+
+        void MPTransilvaniaRegiune3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 4, m, can));
+            }
+        }
+
+      
+        private static double grade = 0;
+        void dt_Tick(object sender, EventArgs e)
+        {
+
+            if (grade == 180)
+            {
+                dt.Stop();
+
+            }
+            else grade = grade + 2;
+            if (grade == 90)
+            {//intorc imaginea
+                #region Adaug imagine scap de harta
+                PlaneProjection planeproj = new PlaneProjection();
+                planeproj.RotationY = 180;
+                //terg harta
+                map.Visibility = Visibility.Collapsed;
+                can.Children.Remove(map);
+                //iau imaginea
+                img = new Image();
+                img.Projection = planeproj;
+                img.Width = can.Width;
+                img.Height = can.Height;
+                img.Stretch = Stretch.Fill;
+                img.Source = new BitmapImage(new Uri("Game/testcupod.jpg", UriKind.Relative));
+
+
+
+
+                #endregion
+
+                can.Children.Add(img);
+                Canvas.SetLeft(img, 0);
+                //adaug strop
+                pesteHarta pp = new pesteHarta(can, p, img, md, mapl, m);
+                pp.AdaugCampie();
+                can = pp.Intoarce();
+            }
+            p.RotationY = grade;
+            p.CenterOfRotationY = 0.5;
+            can.Projection = p;
+
+        }
+        private void Intoarce()
+        {
+            can.Background = new SolidColorBrush(Colors.Black);
+            dt.Start();
+        }
+        void MPTransilvaniaRegiune1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 1, m, can));
+            }
+        }
+        void MPTransilvaniaRegiune2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (i == true)
+            {
+                Intoarce();
+
+            }
+            else
+            {
+                can.Children.Clear();
+
+                can.Children.Add(new Info(lista, 3, m, can));
+            }
+        }
         public bing.pesteHarta nueterm
         {
             get
@@ -506,35 +664,48 @@ namespace Regiuni
 
         void MPTransilvaniaRegiune1_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg1lista].Clima, lista[reg1lista].Temperatura.ToString(), lista[reg1lista].Precipitatii.ToString(), 47, 25);
+     
+    
             MPTransilvaniaRegiune1.StrokeThickness = 3;
         }
         void MPTransilvaniaRegiune2_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg2lista].Clima, lista[reg2lista].Temperatura.ToString(), lista[reg2lista].Precipitatii.ToString(), 46.5, 24);
+     
             MPTransilvaniaRegiune2.StrokeThickness = 3;
         }
         void MPTransilvaniaRegiune3_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg3lista].Clima, lista[reg3lista].Temperatura.ToString(), lista[reg3lista].Precipitatii.ToString(), 47, 24);
+     
             MPTransilvaniaRegiune3.StrokeThickness = 3;
         }
         void MPTransilvaniaRegiune4_MouseEnter(object sender, MouseEventArgs e)
         {
+            mapl.ADDInfoCanvas(lista[reg4lista].Clima, lista[reg4lista].Temperatura.ToString(), lista[reg4lista].Precipitatii.ToString(), 48, 24);
+     
             MPTransilvaniaRegiune4.StrokeThickness = 3;
         }
 
         void MPTransilvaniaRegiune1_MouseLeave(object sender, MouseEventArgs e)
         {
+            mapl.RemoveinfoCanvas();
             MPTransilvaniaRegiune1.StrokeThickness = 0;
         }
         void MPTransilvaniaRegiune2_MouseLeave(object sender, MouseEventArgs e)
         {
+            mapl.RemoveinfoCanvas();
             MPTransilvaniaRegiune2.StrokeThickness = 0;
         }
         void MPTransilvaniaRegiune3_MouseLeave(object sender, MouseEventArgs e)
         {
+            mapl.RemoveinfoCanvas();
             MPTransilvaniaRegiune3.StrokeThickness = 0;
         }
         void MPTransilvaniaRegiune4_MouseLeave(object sender, MouseEventArgs e)
         {
+            mapl.RemoveinfoCanvas();
             MPTransilvaniaRegiune4.StrokeThickness = 0;
         }
     }

@@ -7,12 +7,12 @@
     d:DesignHeight="506" d:DesignWidth="763">
 
     <Canvas x:Name="LayoutRoot" Height="506" Width="763" Background="Black">
-        <ScrollViewer x:Name="scrollViewer" Height="391" Width="739" Canvas.Left="12" Canvas.Top="84"></ScrollViewer>
+        <ScrollViewer x:Name="scrollViewer" Height="391" Width="739" Background="Black" BorderThickness="0"  BorderBrush="Black" Canvas.Left="12" Canvas.Top="84" Style="{StaticResource ScrollViewerStyle1}"></ScrollViewer>
         <Image Height="25" Name="image1" Stretch="Fill" Width="25" 
                Source="../DesignImages/x.png" 
-               MouseLeftButtonDown="image1_MouseLeftButtonDown" 
+               MouseLeftButtonUp="image1_MouseLeftButtonUp" 
                MouseEnter="image1_MouseEnter" 
                MouseLeave="image1_MouseLeave"
-               Canvas.Left="728" Canvas.Top="12" Canvas.ZIndex="2"/>
+               Canvas.Left="728" Canvas.Top="12" Canvas.ZIndex="2" ImageFailed="image1_ImageFailed" />
     </Canvas>
 </UserControl>

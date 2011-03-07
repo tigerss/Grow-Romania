@@ -4,9 +4,8 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <StartPageUrl>
-          </StartPageUrl>
-          <StartAction>CurrentPage</StartAction>
+          <StartPageUrl>Default.aspx</StartPageUrl>
+          <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>True</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>
@@ -22,7 +21,7 @@
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
           <ProjectOutputReferences>
-            <Ref Project="{411D914F-675E-4845-937A-92C5FB46B31A}" Folder="ClientBin">bing.xap|System.ComponentModel.DataAnnotations.zip|System.Windows.Controls.Data.Input.zip|System.Windows.Controls.Data.zip|System.Windows.Controls.DataVisualization.Toolkit.zip|System.Windows.Controls.Input.Toolkit.zip|System.Windows.Controls.Layout.Toolkit.zip|System.Windows.Controls.Navigation.zip|System.Windows.Controls.Toolkit.zip|System.Windows.Controls.zip|System.Windows.Data.zip</Ref>
+            <Ref Project="{411D914F-675E-4845-937A-92C5FB46B31A}" Folder="ClientBin">bing.xap|System.ComponentModel.DataAnnotations.zip|System.Windows.Controls.Data.Input.zip|System.Windows.Controls.Data.zip|System.Windows.Controls.DataVisualization.Toolkit.zip|System.Windows.Controls.Input.Toolkit.zip|System.Windows.Controls.Layout.Toolkit.zip|System.Windows.Controls.Navigation.zip|System.Windows.Controls.Theming.RainierPurple.zip|System.Windows.Controls.Theming.Toolkit.zip|System.Windows.Controls.Toolkit.zip|System.Windows.Controls.zip|System.Windows.Data.zip</Ref>
           </ProjectOutputReferences>
         </WebProjectProperties>
       </FlavorProperties>
